@@ -1,0 +1,36 @@
+.three-d-roller-middle{
+  float: left;
+  height: 227px;
+  width: 82%;/*写给不支持calc()的浏览器*/
+  width: ~"-moz-calc(100% - 288px)";
+  width: ~"-webkit-calc(100% - 288px)";
+  width: ~"calc(100% - 288px)";
+  margin-left: -82px;
+  margin-right: -82px;
+  z-index: 999;
+  position: relative;
+  margin-top: 85px;
+  background-image: url("/src/js/component/library/images/middle.png");
+  background-size: 100% 100%;
+}
+
+.three-d-roller-left{
+  background-image: url("/src/js/component/library/images/ball.gif");
+  background-size: 100% 100%;
+  float: left;
+  width: 226px;
+  height: 407px;
+  transform: rotateY(45deg);
+  z-index: -1;
+}
+
+.three-d-roller-right{
+  background-image: url("/src/js/component/library/images/ball.gif");
+  background-size: 100% 100%;
+  float: left;
+  width: 226px;
+  height: 407px;
+  transform: rotateY(135deg) rotateX(180deg);
+  z-index: -1;
+  background-position-y: 12px;
+}

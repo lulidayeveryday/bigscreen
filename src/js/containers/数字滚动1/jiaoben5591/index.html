@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery数字滚动增加插件 - 站长素材</title>
+
+<style type="text/css">
+body{background-color: #272727}
+h2{text-align: center;color: #D7D7D7}
+#box{width: 100%;display: flex;justify-content: center;align-items: center;}
+#count{width: 200px;height: 200px;background-color: #0093FF;color: #FFFFFF;font-size: 36px;line-height: 200px;text-align: center;border-radius: 50%;font-family: "Arial Black";}
+</style>
+
+</head>
+<body>
+
+<div id="box">
+	<div id="count" onclick="test()"></div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/count.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#count").numberRock({
+		lastNumber:6666,
+		duration:5000,
+		easing:'swing',  //慢快慢
+	});
+});
+
+	function test() {
+		$("#count").numberRock({
+			lastNumber:16666,
+			duration:5000,
+			easing:'swing',  //慢快慢
+		});
+	}
+</script>
+
+</body>
+</html>

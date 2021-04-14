@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>欠费</title>
+    <link href="./arrearage.css" type="text/css" rel="stylesheet"/>
+    <script src="../jiaxing/js/jquery-3.3.1.min.js"></script>
+    <script src="./echarts.min.js"></script>
+    <script src="./arrearage.js"></script>
+</head>
+<body>
+<img src="./img/test.png" style="width: 100%;"/>
+<div>
+    <div class="arrearage-div-type">
+        <div class="arrearage-div-type-date">
+            <div class="arrearage-div-type-day date-active" onclick="clickType(this,1)">日</div>
+            <div class="arrearage-div-type-day" onclick="clickType(this,2)">月</div>
+        </div>
+    </div>
+    <div class="arrearage-div-content content-day">
+        <div class="arrearage-div-content-title">
+            <img src="img/money.png" style="height: 24px;width: 24px;margin: 8px 13px;vertical-align: middle;float: left">
+            <div style="float: left;height: 100%;line-height: 40px;">欠费情况【日】</div>
+            <div style="float: right;margin-right: 10px;color: #959595;font-size: 20px;line-height: 40px"> ></div>
+        </div>
+        <div>
+            <div class="content-all">
+                <span style="font-size: 30px;color: #FA4D60;font-weight: bold;">22.71</span><br>
+                <span style="font-size: 12px;color: #555555">欠费(万元)</span>
+            </div>
+            <div class="content-xf">
+                <table style="width: 100%;text-align: center">
+                    <tr>
+                        <td style="width: 50%">
+                            <span style="font-size: 20px;">19.07</span><br>
+                            <span style="font-size: 14px;color: #555555;">移网(万元)</span>
+                        </td>
+                        <td style="width: 50%">
+                            <span style="font-size: 20px;">36428.59</span><br>
+                            <span style="font-size: 14px;color: #555555;">固网(元)</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="arrearage-div-content content-month">
+        <div class="arrearage-div-content-title">
+            <img src="img/money.png" style="height: 24px;width: 24px;margin: 8px 13px;vertical-align: middle;float: left">
+            <div style="float: left;height: 100%;line-height: 40px;">欠费情况【月】</div>
+            <div style="float: right;margin-right: 10px;color: #959595;font-size: 20px;line-height: 40px"> ></div>
+        </div>
+        <div>
+            <div class="content-all">
+                <span style="font-size: 30px;color: #FA4D60;font-weight: bold;">222.71</span><br>
+                <span style="font-size: 12px;color: #555555">欠费(万元)</span>
+            </div>
+            <div class="content-xf">
+                <table style="width: 100%;text-align: center">
+                    <tr>
+                        <td style="width: 50%">
+                            <span style="font-size: 20px;">119.07</span><br>
+                            <span style="font-size: 14px;color: #555555;">移网(万元)</span>
+                        </td>
+                        <td style="width: 50%">
+                            <span style="font-size: 20px;">36528.59</span><br>
+                            <span style="font-size: 14px;color: #555555;">固网(元)</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

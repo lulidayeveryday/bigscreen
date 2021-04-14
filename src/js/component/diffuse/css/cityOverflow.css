@@ -1,0 +1,426 @@
+@media screen and (min-width:1921px){
+    html{
+        height: 100%;
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1920px){
+    html{
+        height: 100%;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1366px){
+    html{
+        height: 100%;
+        font-size: 10px;
+    }
+}
+
+body{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background: url("../image/background.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.countryOverflow-map{
+    position: absolute;
+    width: 94.5%;
+    height: 89%;
+    top: 6%;
+    left: 3%;
+    background: url("../image/twoLine.png") no-repeat;
+    background-size: 100% 100%;
+    z-index: 10;
+}
+
+.countryOverflow-list{
+    position: fixed;
+    width: 50%;
+    height: 89%;
+    top: 6%;
+    left: 100%;
+    z-index: 10;
+}
+
+.countryOverflow-list-title{
+    position: absolute;
+    top: 2%;
+    left: 4.5%;
+    width: 27%;
+    height: 3%;
+    background: url(../image/cityListTitle.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.countryOverflow-list-AZ{
+    position: absolute;
+    width: 8.2%;
+    top: 2%;
+    right: 5.5%;
+    height: 3%;
+    background: url("../image/AZ0.png") no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.countryOverflow-list-plate{
+    position: absolute;
+    width: 92%;
+    top: 8.5%;
+    left: 4%;
+    height: 3%;
+    background: url("../image/plateBg.png") no-repeat;
+    background-size: 100% 100%;
+    z-index: 50;
+}
+
+.countryOverflow-list-AZ-content{
+    position: absolute;
+    width: 90.5%;
+    top: 8%;
+    left: 4%;
+    height: 4%;
+    background-color: #132F5F;
+    color: #B4C7E7;
+    font-weight: bold;
+    z-index: 51;
+    border-radius: 3px;
+    display: none;
+}
+
+.countryOverflow-list-AZ-content>table{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+.countryOverflow-list-AZ-content>table td:hover{
+    color: #fff;
+}
+
+.countryOverflow-list-content{
+    position: absolute;
+    width: 93%;
+    height: 83%;
+    top: 11%;
+    left: 4%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 7px;
+}
+
+#listContentContent{
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: calc(100% - 5px);
+}
+
+.list-content-div{
+    width: 100%;
+    height: auto;
+    font-weight: bold;
+}
+
+.list-Dang{
+    position: fixed;
+    width: 50%;
+    height: 89%;
+    top: 6%;
+    left: 75%;
+    z-index: 51;
+    display: block;
+}
+
+.list-content-div1{
+    width: 30px;
+    height: auto;
+    float: left;
+    margin-top: 3px;
+}
+
+.list-content-div1-content{
+    color: white;
+    background-color: #3B4F72;
+    padding: 3px 0px 5px 1px;
+    text-align: center;
+    width: 14px;
+}
+
+.list-content-div2{
+    float: left;
+    width: calc(100% - 30px);
+    color: white;
+    font-size: 1.1rem;
+}
+
+.content-div2-title{
+    width: 33%;
+    float: left;
+    height: 50px;
+}
+
+.content-div2-bar{
+    width: 54%;
+    height: 7px;
+    margin-top: 5px;
+    border-radius: 1px;
+    background-color: #2E3D55;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 17px;
+}
+
+.content-div2-bar-color{
+    height: 100%;
+    border-radius: 2px;
+    background: -webkit-linear-gradient(left, #2A6AE4 , #24D2F9); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #2A6AE4, #24D2F9); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #2A6AE4, #24D2F9); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #2A6AE4 , #24D2F9); /* 标准的语法 */
+}
+
+.content-div2-bar-color-top{
+    height: 100%;
+    border-radius: 2px;
+    background: -webkit-linear-gradient(left, #7914E1 , #F7008F); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #7914E1, #F7008F); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #7914E1, #F7008F); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #7914E1 , #F7008F); /* 标准的语法 */
+}
+
+.countryOverflow-mapTitle>table{
+    position: relative;
+    height: 100%;
+    left: 6%;
+    color: white;
+    font-weight: bold;
+    width: 37%;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: SimHei;
+    vertical-align: middle;
+    border-spacing: 0;
+}
+
+.countryOverflow-list-title>table{
+    position: relative;
+    height: 100%;
+    left: 7%;
+    color: white;
+    width: 32%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+    font-family: SimHei;
+    vertical-align: middle;
+    border-spacing: 0;
+}
+
+.plate-div{
+    width: 16.6%;
+    color: white;
+    height: 100%;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.plate-div-active{
+    background-color: #40567C;
+}
+
+.countryOverflow-list-plate>table{
+    height: 100%;
+    width: 55%;
+    vertical-align: middle;
+    border-spacing: 0;
+}
+
+.countryOverflow-list-plate tr{
+    height: 100%;
+}
+
+.countryOverflow-maLine{
+    position: absolute;
+    width: 95.5%;
+    height: 0.3%;
+    top: 12%;
+    left: 2.4%;
+    background: url("../image/mapLine.png") no-repeat;
+    background-size: 100% 100%;
+    z-index: 12;
+}
+
+.countryOverflow-mapDiv{
+    position: absolute;
+    width: 95.5%;
+    height: 82.5%;
+    top: 14%;
+    left: 2.4%;
+    background: url("../image/mapBackground.png") no-repeat;
+    background-size: 100% 100%;
+    z-index: 12;
+}
+
+.countryOverflow-button-left{
+    position: absolute;
+    width: 2rem;
+    height: 4%;
+    top:51%;
+    right: 2.1%;
+    z-index: 40;
+    background: url("../image/buttonLeft.png") no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.countryOverflow-button-right{
+    position: absolute;
+    width: 2rem;
+    height: 4%;
+    top:51%;
+    right: calc(2.1% - 2rem);
+    z-index: 61;
+    background: url("../image/buttonRight.png") no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.font-bold{
+    font-weight: bold;
+}
+
+.mapEchart-title{
+    border-bottom: solid 2px #4ED1E3;
+    padding: 3px 0;
+}
+
+.font-blue{
+    color: #4FD3EB;
+}
+
+.font-red{
+    color: #920A35;
+}
+
+.font-gray{
+    color: #B8C6E1;
+}
+
+.font-green{
+    color: #3ED8AB;
+}
+
+.font-yellow{
+    color: #EEFA4C;
+}
+
+.countryOverflow-mapEchart{
+    position: absolute;
+    width: 14%;
+    height: 96%;
+    background: url("../image/leftBar.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.countryOverflow-mapEchart-div{
+    height: 9.5rem;
+}
+
+.countryOverflow-mapEchart>table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+}
+
+.countryOverflow-mapDiv-country{
+    position: absolute;
+    width: 86%;
+    height: 96%;
+    left: 14%;
+    top: 0;
+    z-index: 33;
+}
+
+.table-td1{
+    width: 24%;
+    color: #cacaca;
+}
+
+.table-td2{
+    width: 52%;
+}
+
+.table-td2-bar{
+    width: 100%;
+    height: 7px;
+    border-radius: 3px;
+    background-color: #2B5470;
+}
+
+.td2-bar-content{
+    height: 100%;
+    border-radius: 3px;
+    background: -webkit-linear-gradient(right, #2A6AE4 , #24D2F9); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left, #2A6AE4, #24D2F9); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left, #2A6AE4, #24D2F9); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to left, #2A6AE4 , #24D2F9); /* 标准的语法 */
+}
+
+.table-td3{
+    padding-left: 6px;
+    width: 24%;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.countryOverflow-mapDiv-bottom{
+    position: absolute;
+    width: 98%;
+    height: 1.5%;
+    top:97.8%;
+    left: 1%;
+    background: url("../image/mapBottomLine.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.countryOverflow-mapTitle{
+    position: absolute;
+    z-index: 11;
+    top: 10.9%;
+    left: 5.3%;
+    width: 13.5%;
+    height: 3%;
+    background: url("../image/cityMapTitle.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.countryOverflow-title{
+    position: absolute;
+    z-index: 11;
+    top: 4.3%;
+    left: 5.8%;
+    width: 16.5%;
+    height: 3.5%;
+    background: url("../image/cityTitle.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.countryOverflow-back{
+    position: absolute;
+    z-index: 11;
+    top: 4.3%;
+    left: 23.3%;
+    width: 5.5%;
+    height: 3.5%;
+    background: url("../image/back.png") no-repeat;
+    background-size: 100% 100%;
+}

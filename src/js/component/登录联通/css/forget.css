@@ -1,0 +1,154 @@
+@media screen and (min-width:1921px){
+    html{
+        height: 100%;
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1920px){
+    html{
+        height: 100%;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1440px){
+    html{
+        height: 100%;
+        font-size: 12px;
+    }
+}
+
+body{
+    margin: 0;
+    background-color: #4C4C4C;
+    width: 100%;
+    height: 100%;
+}
+
+.forgetJabNum-div{
+    background: #fff;
+    border-radius: 5px;
+    width: 32rem;
+    height: 36rem;
+    margin: 0 auto;
+    position: relative;
+    top: 12%;
+    padding: 5rem 4rem;
+}
+
+.forgetJabNum-div-title{
+    color: #464d5f;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.signin-form label {
+    color: #7c8089;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    max-width: 100%;
+}
+
+.signin-form .form-control:hover, .signin-form .form-control:focus {
+    border: 1px solid #474d5b;
+    color: #464e60;
+    box-shadow: 0px 5px 10px rgba(45,50,64,.2);
+}
+.signin-form input {
+    color: #464e60;
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 0 4%;
+    width: 92%;
+}
+.signin-form .form-control {
+    background: transparent;
+    border: transparent;
+    border: 1px solid #c3c6cf;
+    border-radius: 3px;
+    outline: 0!important;
+    box-shadow: none;
+    height: 3rem;
+    -webkit-transition: linear .5s;
+    -moz-transition: linear .5s;
+    -ms-transition: linear .5s;
+    -o-transition: linear .5s;
+    transition: linear .5s;
+}
+
+.identgying{
+    display: inline-block;
+    border: 1px solid #66707f;
+    width: 40%;
+    margin-left: 5%;
+    height: 3rem;
+    vertical-align: middle;
+}
+
+.btn.signin_btn, .btn.signin_btn:focus {
+    width: 100%;
+    padding: 0;
+    height: 4rem;
+    background: #5a84fd;
+    color: #fff;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    border-radius: 3px;
+    box-shadow: 0 5px 30px rgba(0,66,255,.3);
+    margin-top: 3rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.get-authentication{
+    display: inline-block;
+    width: 40%;
+    margin-left: 5%;
+    height: 3rem;
+    vertical-align: middle;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    cursor: pointer;
+}
+
+.get-authentication:active{
+    background-color: #696969;
+}
+
+.error-content{
+    height: 17rem;
+    color:#464e60;
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+}

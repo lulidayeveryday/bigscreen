@@ -1,0 +1,571 @@
+/* CSS Document */
+@charset "utf-8";
+*{list-style:none; font-family:'microsoft yahei';text-decoration:none;border:0;}
+html { height: 100%; }
+body {width: 100%;height: 100%;transform-origin:left top 0; margin: 0;}
+
+a{ text-decoration:none; color:#fff;  }
+p{ margin: 0; }
+
+@font-face {
+    font-family: "Percent";
+    src: url("../fonts/Quartz-Medium.otf");
+}
+/*@font-face {
+    font-family: "Source Bold";
+    src: url("../fonts/SourceHanSansCN-Bold.ttf");
+}*/
+
+
+.bg {
+    width: 100%;
+    height: 100%;
+    background: url(../img/bg.png) center center no-repeat;
+    position: relative;overflow: hidden;
+}
+.main {
+	/*width: 1830px;*/
+	height: 95%;
+	padding: 10px 45px 40px 45px;
+}
+.m-content {
+	width: 100%;
+	height: 100%;
+}
+
+.tab {
+    width: 100%;
+	height: 100%;
+}
+
+        
+ul.title {
+	width: 620px;
+	height: 47px;
+	list-style:none;
+	display:;
+	margin: 15px 0 8px 0;
+	padding: 0;
+}
+ul.title li {
+	width: 300px; 
+	height: 100%;
+	cursor:pointer;
+	float:left;
+	list-style:none;
+}
+ul.title li a {
+	width: 100%; 
+	height: 100%;
+	cursor:pointer;
+	float:left;
+	list-style:none;
+}
+ul.title li:first-child {
+	margin: 0 15px 0 0;
+	background: url(../img/title1_no.png) no-repeat; 
+	background-size: contain;
+}
+ul.title li:last-child {
+	margin: 0;
+	background: url(../img/title2_no.png) no-repeat; 
+	background-size: contain;
+}
+ul.title li:first-child:hover, ul.title li:first-child.active	{
+	background: url(../img/title1_on.png) no-repeat; 
+	background-size: contain;
+}
+ul.title li:last-child:hover, ul.title li:last-child.active	{
+	background: url(../img/title2_on.png) no-repeat; 
+	background-size: contain;
+}
+#content {
+	height: 93%;
+	width: 100%;  
+	line-height:24px;
+	border-top:none;  
+	padding:1px; 
+	/*border:1px solid #336699;*/
+	overflow: hidden;
+}
+.hide{display:none;}
+
+#content div.mod {
+	width: 100%;
+	height: 100%;
+	/*display: none;*/
+	padding: 0;
+}
+
+#content div ul {
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#content div ul li {
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#content .mod {
+	/*display: block;*/
+	opacity: 1;
+}
+#map {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	/*border: 1px solid #000;*/
+}
+#map2 {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	/*border: 1px solid rgba(21, 39, 57,0.8);*/
+}
+.map2 {
+	width: 99%;
+	height: 99%;
+	margin: 0;
+	padding: 0;
+	/*border: 1px solid rgba(21, 39, 57,0.8);*/
+}
+iframe { width: 100%;height: 100%; }
+
+.BMap_cpyCtrl {
+    display: none;
+}
+.anchorBL {
+    display: none;
+}
+/*路线热度排行*/
+.road_list {
+	position: absolute;
+	z-index: 3;
+	bottom: 55px;
+	left: 60px;
+	/*height: 150px;*/
+}
+.list_title {
+	height: 24px;
+	margin: 0 0 18px 28px;
+}
+.list_title span {
+	width: 5px;
+	height: 18px;
+	margin: 3px 0 0 0;
+	background: #21f4ed;
+	float: left;
+}
+p.list_name {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 24px;
+	margin: 0 13px;
+	float: left;
+	color: #fff;
+	font-family: "Source Bold"
+} 
+.road_1 {
+	width: 300px;
+	height: 50px;
+	border-radius: 10px;
+	background: rgba(14, 29, 40, 0.6);
+	margin: 0 0 10px 0
+}
+p.lit_num {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 50px;
+	margin: 0 28px;
+	color: #21f4ed;
+	float: left;
+	font-family: "Source Bold"
+}
+p.percent {
+	font-size: 30px;
+	line-height: 50px;
+	margin: 0;
+	font-family: "Percent";
+	color: #fff;
+	float: left;
+}
+p.percent span {
+	font-size: 18px;
+	line-height: 15px;
+	margin: 20px 0 0 0;
+	font-family: "Percent";
+	color: #fff;
+}
+p.p_zhanbi {
+	font-size: 18px;
+	line-height: 15px;
+	font-weight: bold;
+	margin: 20px 0 0 5px;
+	color: #21f4ed;
+	float: left;
+	font-family: "Source Bold"
+}
+span.img_no {
+	width: 21px;
+	height: 50px;
+	float: right;
+	margin: 0 15px 0 0;
+	background: url(../img/icon_no.png) center no-repeat; 
+	display: inline-block; 
+	vertical-align: middle;
+}
+/*切换样式*/
+.big {
+	width: 350px;
+	height: 80px;
+}
+.big p.lit_num {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 80px;
+	margin: 0 28px;
+	color: #21f4ed;
+	float: left;
+	font-family: "Source Bold"
+}
+.big p.percent {
+	font-size: 48px;
+	line-height: 80px;
+	margin: 0;
+	font-family: "Percent";
+	color: #fff;
+	float: left;
+}
+.big p.percent span {
+	font-size: 30px;
+	line-height: 15px;
+	margin: 30px 0 0 0;
+	font-family: "Percent";
+	color: #fff;
+}
+.big p.p_zhanbi {
+	font-size: 18px;
+	line-height: 15px;
+	font-weight: bold;
+	margin: 45px 0 0 5px;
+	color: #21f4ed;
+	float: left;
+	font-family: "Source Bold"
+}
+.big span.img_no {
+	width: 21px;
+	height: 80px;
+	float: right;
+	margin: 0 15px 0 0;
+	background: url(../img/icon_on.png) center no-repeat; 
+	display: inline-block; 
+	vertical-align: middle;
+}
+
+
+ /*地图图例*/
+.map_legend {
+	position: absolute;
+	z-index: 3;
+	bottom: 60px;
+	left: 60px;
+	width: 160px;
+	height: 150px;
+	background: linear-gradient( rgba(19, 39, 55, 0.1), rgba(15, 62, 86, 0.8));
+}
+.legend_name {
+	font-size: 14px;
+	line-height: 24px;
+	margin: 0 0 16px 15px;
+	color: #fff;
+}
+.map_legend p:first-child {
+	margin: 25px 0 16px 15px;
+}
+.map_legend p:first-child:before {
+	content: url(../img/icon1.png); 
+	margin-right: 20px; 
+	display: inline-block; 
+	vertical-align: middle;
+}
+.map_legend p:nth-child(2):before {
+	content: url(../img/icon2.png); 
+	margin-right: 20px; 
+	display: inline-block; 
+	vertical-align: middle;
+}
+.map_legend p:last-child:before {
+	content: url(../img/icon3.png); 
+	margin-right: 20px; 
+	display: inline-block; 
+	vertical-align: middle;
+}
+/*搜索框*/
+.search {
+	position: absolute;
+	z-index: 3;
+	/*width: 858px;*/
+	height: 68px;
+	top: 10px;
+	right: 45px;
+	background:rgba(21, 39, 57,0.5);
+	border-radius: 5px;
+}
+.s_main {
+	height: 40px;
+	margin: 15px 15px 15px 30px;
+	padding: 0;
+}
+p.s_name {
+	font-size: 18px;
+	line-height: 40px;
+	font-weight: bold;
+	color: #177e98;
+	margin: 0;
+	float: left;
+}
+select {
+	height: 40px;
+	font-size:16px;
+	line-height: 40px;
+	text-align: center;
+	letter-spacing: 1px;
+    /*padding: 0 10px 0 35px;
+    margin: 0 15px 0 10px;*/
+    float: left;
+    border: 1px solid #177e98;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+	overflow: hidden;
+	-webkit-appearance: none;  
+    -moz-appearance: none;   
+    appearance:none;
+    background-color: transparent;
+}
+select option{
+   text-align: center;
+   background-color: #152739;
+   outline: none;
+}	
+.select-1 {
+    width: 200px;
+    padding: 0 10px 0 35px;
+    margin: 0 15px 0 10px;
+    background: url('../img/xia.png') 175px center no-repeat;
+}
+.select-2 {
+    width: 120px;
+    padding: 0 10px 0 20px;
+    margin: 0 35px 0 5px;
+    background: url('../img/xia.png') 95px center no-repeat;
+}
+.select-3 {
+    width: 120px;
+    padding: 0 10px 0 20px;
+    margin: 0 50px 0 10px;
+    background: url('../img/xia.png') 95px center no-repeat;
+}
+.select-4 {
+    width: 200px;
+    padding: 0 10px 0 20px;
+    margin: 0 50px 0 10px;
+    background: url('../img/xia.png') 175px center no-repeat;
+}
+button {
+	width: 40px;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	float: left;
+	/*outline: none;*/
+	background: url('../img/search.png') center no-repeat;
+}
+
+
+@media(max-height: 1440px) {
+.s_main {
+    margin: 15px 10px 15px 10px;
+}
+.select-1 {
+    width: 170px;
+    padding: 0 10px 0 15px;
+    margin: 0 15px 0 10px;
+    background: url(../img/xia.png) 145px center no-repeat;
+}
+.select-2 {
+    width: 120px;
+    padding: 0 10px 0 20px;
+    margin: 0 10px 0 5px;
+    background: url(../img/xia.png) 95px center no-repeat;
+}
+.select-3 {
+    width: 120px;
+    padding: 0 10px 0 10px;
+    margin: 0 10px 0 10px;
+    background: url(../img/xia.png) 95px center no-repeat;
+}
+.select-4 {
+    width: 190px;
+    padding: 0 10px 0 10px;
+    margin: 0 10px 0 10px;
+    background: url(../img/xia.png) 165px center no-repeat;
+}
+}
+
+@media(max-height: 1366px) {
+.main {
+	/*width: 1830px;*/
+	height: 95%;
+	padding: 10px 30px 40px 30px;
+}
+       
+ul.title {
+	width: 520px;
+	height: 40px;
+}
+ul.title li {
+	width: 250px;
+}
+/*路线热度排行*/
+.road_list {
+	bottom: 40px;
+	left: 50px;
+	/*height: 150px;*/
+}
+.list_title {
+	height: 24px;
+	margin: 0 0 12px 23px;
+}
+p.list_name {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 24px;
+	margin: 0 13px;
+} 
+.road_1 {
+	width: 280px;
+	height: 45px;
+	border-radius: 10px;
+	background: rgba(14, 29, 40, 0.6);
+	margin: 0 0 10px 0;
+}
+p.lit_num {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 45px;
+	margin: 0 28px;
+}
+p.percent {
+	font-size: 28px;
+	line-height: 45px;
+}
+p.percent span {
+	font-size: 18px;
+	line-height: 15px;
+	margin: 20px 0 0 0;
+}
+p.p_zhanbi {
+	font-size: 16px;
+	line-height: 15px;
+	font-weight: bold;
+	margin: 20px 0 0 5px;
+}
+span.img_no {
+	width: 21px;
+	height: 45px;
+}
+/*切换样式*/
+.big {
+	width: 330px;
+	height: 70px;
+}
+.big p.lit_num {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 70px;
+	margin: 0 28px;
+}
+.big p.percent {
+	font-size: 44px;
+	line-height: 70px;
+}
+.big p.percent span {
+	font-size: 30px;
+	line-height: 15px;
+	margin: 30px 0 0 0;
+}
+.big p.p_zhanbi {
+	font-size: 16px;
+	line-height: 15px;
+	margin: 35px 0 0 5px;
+}
+.big span.img_no {
+	width: 21px;
+	height: 70px;
+}
+
+
+ /*地图图例*/
+.map_legend {
+	bottom: 40px;
+	left: 50px;
+}
+
+/*搜索框*/
+.search {
+	height: 60px;
+	top: 10px;
+	right: 30px;
+}
+.s_main {
+	height: 34px;
+	margin: 15px 15px 15px 30px;
+	padding: 0;
+}
+p.s_name {
+	font-size: 16px;
+	line-height: 34px;
+}
+select {
+	height: 34px;
+	font-size: 14px;
+	line-height: 34px;
+}
+
+.select-1 {
+    width: 170px;
+    padding: 0 10px 0 20px;
+    margin: 0 15px 0 10px;
+    background: url('../img/xia.png') 145px center no-repeat;
+}
+.select-2 {
+    width: 110px;
+    padding: 0 10px 0 10px;
+    margin: 0 10px 0 5px;
+    background: url('../img/xia.png') 85px center no-repeat;
+}
+.select-3 {
+    width: 110px;
+    padding: 0 10px 0 10px;
+    margin: 0 10px 0 10px;
+    background: url('../img/xia.png') 85px center no-repeat;
+}
+.select-4 {
+    width: 180px;
+    padding: 0 10px 0 10px;
+    margin: 0 10px 0 10px;
+    background: url('../img/xia.png') 155px center no-repeat;
+}
+button {
+	width: 34px;
+	height: 34px;
+}
+}

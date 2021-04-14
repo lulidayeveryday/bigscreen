@@ -1,0 +1,178 @@
+.tourism-div{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #060B11;
+    background-size: 100% 100%;
+}
+
+.tourism-top-div1{
+    width: 100px;
+    height: 100%;
+    color: #38DCF5;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    line-height: 72px;
+    cursor: pointer;
+}
+
+.tourism-top-div2{
+    position: relative;
+    top: -100%;
+    left: 100px;
+    width: 100px;
+    width: -moz-calc(100% - 200px);
+    width: -webkit-calc(100% - 200px);
+    width: calc(100% - 200px);
+    height: 100%;
+    color: #38DCF5;
+}
+
+.td-onblur{
+    font-size: 16px;
+    text-shadow: 0 0 0.5em, 0 0 0.8em;
+}
+
+.div2-table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: url('./images/time.png') no-repeat center;
+    background-size:100% 3%;
+    font-size: 12px;
+}
+
+.tourism-top-div3{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    color: #38DCF5;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    line-height: 72px;
+    cursor: pointer;
+}
+
+.tourism-central-div1{
+    width: 49%;
+    height: 99%;
+    height: -moz-calc(100% - 2px);
+    height: -webkit-calc(100% - 2px);
+    height: calc(100% - 2px);
+    width: -moz-calc(49% - 2px);
+    width: -webkit-calc(49% - 2px);
+    width: calc(49% - 2px);
+    margin-left: 0.5%;
+    background: url("./images/bg.jpg") no-repeat;
+    background-size: 100% 100%;
+    border:solid 1px #6AC9EB;
+}
+
+.tourism-central-div2{
+    position: relative;
+    top: -100%;
+    left: 50%;
+    width: 24.5%;
+    height: 49%;
+    background: url("./images/border1.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.tourism-central-div3{
+    position: relative;
+    top: -149%;
+    left: 75%;
+    width: 24.5%;
+    height: 49%;
+    background: url("./images/border1.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.tourism-central-div4{
+    position: relative;
+    top: -147%;
+    left: 50%;
+    width: 24.5%;
+    height: 49%;
+    background: url("./images/border1.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.tourism-central-div5{
+    position: relative;
+    top: -196%;
+    left: 75%;
+    width: 24.5%;
+    height: 49%;
+    margin-right: 0.5%;
+    background: url("./images/border1.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.tourism-bottom-div1{
+    width: 49%;
+    height: 100%;
+    margin-left: 0.5%;
+    background: url("./images/border-bottom.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.tourism-bottom-monthdiv1{
+    width: 99%;
+    height: 100%;
+    margin-left: 0.5%;
+    background: url("./images/month-bottom.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.tourism-bottom-div2{
+    position: relative;
+    top: -100%;
+    left: 50%;
+    width: 24.5%;
+    height: 100%;
+    background: url("./images/border1.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.tourism-bottom-div3{
+    position: relative;
+    top: -200%;
+    left: 75%;
+    width: 24.5%;
+    height: 100%;
+    background: url("./images/border1.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.tourism-bottom{
+    height: 29%;
+    height: -moz-calc((97% - 72px)*1/3);
+    height: -webkit-calc((97% - 72px)*1/3);
+    height: calc((97% - 72px)*1/3);
+    width: 100%;
+}
+
+.tourism-central{
+    height: 60%;
+    height: -moz-calc((97% - 72px)*2/3);
+    height: -webkit-calc((97% - 72px)*2/3);
+    height: calc((97% - 72px)*2/3);
+    width: 100%;
+    margin-bottom: 0.5%;
+}
+
+.tourism-top{
+    height: 72px;
+    width: 100%;
+    margin-bottom: 0.5%;
+    color: #38DCF5;
+}
+
+html{
+    height:100%
+}

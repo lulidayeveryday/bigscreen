@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>景区轨迹</title>
+    
+    <!-- 页面样式 -->
+    <link rel="stylesheet" type="text/css" href="./css/road.css">
+
+</head>
+<body class="bg">
+    <div class="main">
+        <div class="m-content">
+            <!-- tab切换卡 -->
+            <div class="tab">
+                <ul class="title">
+                    <li><a href="./road.html"></a></li>
+                    <li class="active"><a href="#"></a></li>
+                    <!--<li><a href="#">家居</a></li>-->
+                </ul>
+                <div id="content">
+                    
+                    
+                    <div class="mod" style="">
+                        <ul>
+                            <li>
+                                <div id="map2"><!-- <iframe src="./map2.html"></iframe> --></div>
+                                <!-- 地图图例 -->
+                                <div class="map_legend">
+                                    <p class="legend_name">出发点</p>
+                                    <p class="legend_name">一级关联点</p>
+                                    <p class="legend_name">二级关联点</p>
+                                </div>
+                                <!-- 搜索框 -->
+                                <div class="search">
+                                    <div class="s_main">
+                                        <p class="s_name">景点类别：</p>
+                                        <select class="select-3">
+                                            <option value="自然风光" selected="selected">自然风光</option>
+                                            <option value="飞鸽景区">人文景点</option>
+                                        </select>
+                                        <p class="s_name">起始景点：</p>
+                                        <select class="select-4">
+                                            <option value="西溪湿地" selected="selected">西溪国家湿地公园</option>
+                                            <option value="飞鸽景区">西湖景区</option>
+                                        </select>
+                                        <p class="s_name">景点范围：</p>
+                                        <select class="select-2">
+                                            <option value="杭州市" selected="selected">浙江省</option>
+                                            <option value="三岔河丹霞谷景区">杭州市</option>
+                                            <option value="西湖音乐喷泉">温州市</option>
+                                        </select>
+                                        <button type="button"></button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+    
+    
+</body>
+<!-- 引入百度地图 -->
+<script src="./echarts/echarts.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=INqth77f5jzQadrUvwDO9saQ"></script>
+<!-- 引入地图 -->
+<script src="./echarts/asset/js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/map2.js"></script>
+<!-- <script type="text/javascript" src="./js/map2-ceshi.js"></script> -->
+
+
+
+<!-- 热度排行切换样式 -->
+<script>
+$(function(){
+    $(".road_1").click(function() {
+        $(this).siblings('.road_1').removeClass('big');  // 删除其他兄弟元素的样式
+        $(this).addClass('big');                            // 添加当前元素的样式
+    });
+}); 
+
+</script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>菜单</title>
+    <link href="./menu.css" type="text/css" rel="stylesheet"/>
+    <script src="../jiaxing/js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div id="menuDiv">
+    <div class="menuDiv-content">
+        <div class="menuDiv-content-title">每日必看</div>
+        <table class="menuDiv-content-div">
+            <tr>
+                <td>
+                    <img src="img/menus1_1.png" class="menuDiv-content-img"><br>
+                    <span>发展</span>
+                </td>
+                <td>
+                    <img src="img/menus1_2.png" class="menuDiv-content-img"><br>
+                    <span>欠费</span>
+                </td>
+                <td>
+                    <img src="img/menus1_3.png" class="menuDiv-content-img"><br>
+                    <span>积分</span>
+                </td>
+                <td>
+                    <img src="img/menus1_4.png" class="menuDiv-content-img"><br>
+                    <span>地市自主</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="menuDiv-content">
+        <div class="menuDiv-content-title">贴身管家</div>
+        <table class="menuDiv-content-div">
+            <tr>
+                <td>
+                    <img src="img/menus2_1.png" class="menuDiv-content-img"><br>
+                    <span>收入</span>
+                </td>
+                <td>
+                    <img src="img/menus2_2.png" class="menuDiv-content-img"><br>
+                    <span>成本</span>
+                </td>
+                <td>
+                    <img src="img/menus2_3.png" class="menuDiv-content-img"><br>
+                    <span>薪酬</span>
+                </td>
+                <td>
+                    <img src="img/menus2_4.png" class="menuDiv-content-img"><br>
+                    <span>毛利</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="menuDiv-content">
+        <div class="menuDiv-content-title">家底清单</div>
+        <table class="menuDiv-content-div">
+            <tr>
+                <td>
+                    <img src="img/menus3_1.png" class="menuDiv-content-img"><br>
+                    <span>员工</span>
+                </td>
+                <td>
+                    <img src="img/menus3_2.png" class="menuDiv-content-img"><br>
+                    <span>楼宇端口</span>
+                </td>
+                <td>
+                    <img src="img/menus3_3.png" class="menuDiv-content-img"><br>
+                    <span>渠道</span>
+                </td>
+                <td>
+                    <img src="img/menus3_4.png" class="menuDiv-content-img"><br>
+                    <span>房产</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script>
+    $(function() {
+        var Height = window.screen.height; //设备屏幕高度
+        var heights = parseInt(Height * 0.5);
+        $("#menuDiv").css("height", heights+"px");
+    })
+</script>
+</body>
+</html>

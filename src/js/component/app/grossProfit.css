@@ -1,0 +1,73 @@
+body{
+    background-color: #F2F5FA;
+    margin: 0;
+    height: 100%;
+}
+
+html{
+    height: 100%;
+}
+
+.grossProfit-div{
+    padding: 15px;
+    background-color: white;
+}
+
+.grossProfit-div-title{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.grossProfit-div-num{
+    width: calc(47.5% - 1px);
+    height: 100%;
+    float: left
+}
+
+.grossProfit-div-num1{
+    width: 52.5%;
+    height: 100%;
+    float: left
+}
+
+.grossProfit-div-table{
+    width: calc(100% - 10px);
+    margin-left: 10px;
+    height: 100%;
+    font-size: 13px;
+    color: #4A4A4A;
+    font-weight: bold;
+}
+
+.percent-bar-title{
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.percent-bar-div1{
+    width: 100%;
+    border-radius: 5px;
+    height: 10px;
+    background-color: #F3F5F9;
+    z-index: 10;
+}
+
+.percent-bar-div2{
+    width: 100%;
+    border-radius: 5px;
+    height: 10px;
+    background-color: #FF7A6E;
+    z-index: 11;
+    position: relative;
+    top: -10px;
+}
+
+.percent-bar-num{
+    font-size: 15px;
+    font-weight: bold;
+    color: #FF7A6E;
+    padding-left: 3px;
+    position: relative;
+    top:-5px;
+}

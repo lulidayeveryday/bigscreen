@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link href="../css/login.css" rel="stylesheet" type="text/css">
+</head>
+<body class="body-bg">
+<div class="login-title">文旅大数据</div>
+<div id="login">
+    <div>
+        <span style="color: #1ADBB4;font-size: 14px;">SIGN IN NOW</span><br>
+        <span style="color: white;font-size: 18px;font-weight: bold;letter-spacing: 2px;padding-bottom: 30px;display: block;">登录系统</span>
+    </div>
+    <fieldset id="inputs">
+        <input id="username" type="text" autocomplete="off" placeholder="请输入用户名">
+        <input id="password" type="password" placeholder="请输入密码">
+        <input id="J_codetext" type="text" style="width: 250px;padding-left: 20px;vertical-align: top" autocomplete="off" placeholder="请输入右侧的验证码">
+        <div class="J_codeimg">
+            <canvas class="J_codeimg" id="myCanvas" onclick="createCode()">对不起，您的浏览器不支持canvas，请下载最新版浏览器!</canvas>
+        </div>
+        <div style="text-align: center;">
+            <span class="login-button" onclick="validate()">登录</span>
+        </div>
+    </fieldset>
+</div>
+
+<script src="../js/base/jquery-3.3.1.min.js"></script>
+<script src="../js/base/verificationNumbers.js"></script>
+</body>
+</html>

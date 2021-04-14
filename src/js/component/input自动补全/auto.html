@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>input自动补全</title>
+	<link rel="stylesheet" type="text/css" href="auto.css" />
+</head>
+<body>
+	<div class="wrap">
+		<input type="text" id="input" class="auto-inps">
+		<div class="auto hidden" id="auto">
+			<div class="auto_out">1</div>
+			<div class="auto_out">2</div>
+		</div>
+	</div>
+	
+
+	<script src="auto.js"></script>
+	<script>
+		var array = ['七里香','b0','b12','b22','b3','b4','b5','b6','如果爱','b7','b8','b2','abd','ab','acd','accd','abd','qq音乐','b1','cd','ccd','cbcv','小王子','cxf','b0'];
+        var autoComplete = new AutoComplete("input","auto",array);
+        document.getElementById("input").onkeyup = function(event){
+            autoComplete.start(event);
+        }
+	</script>
+</body>
+</html>

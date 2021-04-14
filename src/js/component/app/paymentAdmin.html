@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PC端新版薪酬计算流程</title>
+    <link href="./paymentAll.css" type="text/css" rel="stylesheet"/>
+    <script src="../jiaxing/js/jquery-3.3.1.min.js"></script>
+    <script src="./paymentAdmin.js"></script>
+</head>
+<body>
+<div class="paymentAdmin-div">
+    <table class="paymentAdmin-div-table">
+        <tr>
+            <td>
+                单元数量：<span style="color: #FF3C00;font-size: 1.8rem;font-weight: bold;" id="cellNum">5897</span>
+                <br>
+                人员数量：<span style="color: #FF3C00;font-size: 1.8rem;font-weight: bold;" id="crewNum">5897</span>
+            </td>
+            <td>
+                <div class="paymentAdmin-div-borderAll">
+                    <span class="borderAll-title1" id="paymentAll">27971.81</span>
+                    <br>
+                    <span class="borderAll-title2">薪酬总额</span>
+                </div>
+            </td>
+            <td>
+                <div class="paymentAdmin-div-border2">
+
+                </div>
+            </td>
+            <td>
+                <div class="paymentAdmin-div-border3">
+                    <table style="text-align: center;height: 100%;">
+                        <tr>
+                            <td>
+                                <div class="paymentAdmin-div-count">
+                                    <span style="font-weight: bold;padding-top: 0.3rem;display: inline-block;" id="paymentGx">2559.35</span><br>
+                                    <span>固薪</span>
+                                </div><div class="type-basic type-yes"></div>
+                                <div class="paymentAdmin-div-num"><span class="red" id="stocksGx">0</span>/<span id="allNumGx">100</span></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="paymentAdmin-div-add"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="paymentAdmin-div-count">
+                                    <span style="font-weight: bold;padding-top: 0.3rem;display: inline-block;" id="paymentJf">2559.35</span><br>
+                                    <span>积分薪酬</span>
+                                </div><div class="type-basic type-yes"></div>
+                                <div class="paymentAdmin-div-num"><span class="red" id="stocksJf">0</span>/<span id="allNumJf">100</span></div>
+                                <div class="paymentAdmin-div-button button1"><span class="button-font">录入</span></div>
+                                <div class="paymentAdmin-div-button button2"><span class="button-font">计算</span></div>
+                                <div class="paymentAdmin-div-button button3" onclick="if($('#JfLook').css('display')=='none'){$('#JfLook').css('display','block')}else {$('#JfLook').css('display','none')}"><span class="button-font">查看</span></div>
+                                <div class="paymentAdmin-div-button" id="JfLook" style="display: none" onmouseleave="$('#JfLook').css('display','none')">
+                                    <div style="margin-top: -2.5rem">
+                                        <div class="payment-pc-button-subset" style="margin-left: -1rem">A</div>
+                                        <div class="payment-pc-button-subset">B</div>
+                                        <div class="payment-pc-button-subset" style="margin-left: -1rem">C</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="paymentAdmin-div-add"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="paymentAdmin-div-count">
+                                    <span style="font-weight: bold;padding-top: 0.3rem;display: inline-block;" id="paymentKh">2559.35</span><br>
+                                    <span>考核薪酬</span>
+                                </div><div class="type-basic type-yes"></div>
+                                <div class="paymentAdmin-div-num"><span class="red" id="stocksKh">0</span>/<span id="allNumKh">100</span></div>
+                                <div class="paymentAdmin-div-button button1"><span class="button-font">录入</span></div>
+                                <div class="paymentAdmin-div-button button2"><span class="button-font">计算</span></div>
+                                <div class="paymentAdmin-div-button button3"><span class="button-font">查看</span></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="paymentAdmin-div-add"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="paymentAdmin-div-count">
+                                    <span style="font-weight: bold;padding-top: 0.3rem;display: inline-block;" id="paymentZl">2559.35</span><br>
+                                    <span>增量毛利</span>
+                                </div><div class="type-basic type-no"></div>
+                                <div class="paymentAdmin-div-num"><span class="red" id="stocksZl">0</span>/<span id="allNumZl">100</span></div>
+                                <div style="float: left">
+                                    <div class="paymentAdmin-div-button2 button1"><span class="button-font2">单元成本</span></div><br>
+                                    <div class="paymentAdmin-div-button2 button1" style="margin-top: 0.6rem"><span class="button-font2">毛利指标</span></div>
+                                </div>
+                                <div class="paymentAdmin-div-button button2"><span class="button-font">计算</span></div>
+                                <div class="paymentAdmin-div-button button3"><span class="button-font">查看</span></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="paymentAdmin-div-minus"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="paymentAdmin-div-count">
+                                    <span style="font-weight: bold;padding-top: 0.3rem;display: inline-block;" id="paymentFm">2559.35</span><br>
+                                    <span>负面清单</span>
+                                </div><div class="type-basic type-no"></div>
+                                <div class="paymentAdmin-div-num"><span class="red" id="stocksFm">0</span>/<span id="allNumFm">100</span></div>
+                                <div class="paymentAdmin-div-button button1"><span class="button-font">录入</span></div>
+                                <div class="paymentAdmin-div-button button2"><span class="button-font">计算</span></div>
+                                <div class="paymentAdmin-div-button button3"><span class="button-font">查看</span></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="./css/page1.css" type="text/css" />
+
+    <script>
+
+        function run(){
+            var time = new Date();//获取系统当前时间
+            var year = time.getFullYear();
+            var month = time.getMonth()+1;
+            var date= time.getDate();//系统时间月份中的日
+            var day = time.getDay();//系统时间中的星期值
+            var weeks = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+            var week = weeks[day];//显示为星期几
+            var hour = time.getHours();
+            var minutes = time.getMinutes();
+            var seconds = time.getSeconds();
+            if(month<10){
+                month = "0"+month;
+            }
+            if(date<10){
+                date = "0"+date;
+            }
+            if(hour<10){
+                hour = "0"+hour;
+            }
+            if(minutes<10){
+                minutes = "0"+minutes;
+            }
+            if(seconds<10){
+                seconds = "0"+seconds;
+            }
+            //var newDate = year+"年"+month+"月"+date+"日"+week+hour+":"+minutes+":"+seconds;
+            document.getElementById("date").innerHTML = year+"-"+month+"-"+date+"  "+hour+":"+minutes+":"+seconds;
+            setTimeout('run()',1000);
+        }
+
+        run();
+
+
+
+    </script>
+</head>
+<body  onload="run()">
+    <div class="content-div">
+        <div class="title-div">
+            <span style="font-size: 3rem;float: left;font-weight: 600;">实时监控</span>
+            <span style="font-size: 2.3rem;float: right;color: #A59E90;cursor: pointer;line-height: 70px;">更多 ></span>
+        </div>
+        <div class="date-div">
+            <span style="float: left" id="date">2018-2-21 10:00:00</span>
+            <span style="float: right">单位: 户</span>
+        </div>
+        <div class="list-content" style="border-bottom: solid #F8F7E6 6px;">
+            <div class="list-title"><span style="color: #FB6544">● </span>移网发展</div>
+            <div class="list-content-div">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td rowspan="2" class="table-td1">1800</td>
+                        <td style="padding-left: 35px;width: 22%">2G</td>
+                        <td style="color: #EC9B8B;width: 13%">84</td>
+                        <td style="width: 22%">3G</td>
+                        <td style="color: #EC9B8B;text-align: right;width: 13%;">4</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 35px;width: 22%">4G</td>
+                        <td style="color: #EC9B8B;">35</td>
+                        <td>2I</td>
+                        <td style="color: #EC9B8B;text-align: right;">35</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="list-content" style="border-bottom: solid #F8F7E6 6px;">
+            <div class="list-title"><span style="color: #FEC627">● </span>宽带发展</div>
+            <div class="list-content-div">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td class="table-td1">180</td>
+                        <td style="padding-left: 35px;width: 22%">IPTV</td>
+                        <td style="color: #EC9B8B;width: 13%">125</td>
+                        <td style="width: 22%">宽带</td>
+                        <td style="color: #EC9B8B;text-align: right;width: 13%">5</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="list-content">
+            <div class="list-title"><span style="color: #7073E6">● </span>融合发展</div>
+            <div class="list-content-div">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td class="table-td1">3180</td>
+                        <td style="padding-left: 35px;width: 22%">冰激凌</td>
+                        <td style="color: #EC9B8B;width: 13%">65</td>
+                        <td style="width: 22%">其他融合</td>
+                        <td style="color: #EC9B8B;text-align: right;width: 13%">5</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

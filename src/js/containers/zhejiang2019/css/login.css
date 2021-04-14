@@ -1,0 +1,181 @@
+
+html, body
+{
+    height: 100%;
+}
+
+body
+{
+    font: 12px 'Lucida Sans Unicode', 'Trebuchet MS', Arial, Helvetica;
+    margin: 0;
+}
+
+#login
+{
+    width: 400px;
+    margin: 0 0 0 -230px;
+    padding: 60px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    z-index: 0;
+}
+
+#login:before
+{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    background-color: rgba(7, 41, 54, 0.5);
+    border-radius: 15px;
+}
+
+fieldset
+{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+
+#inputs input
+{
+    padding: 10px 10px 10px 49px;
+    margin: 0 0 20px 0;
+    width: 340px;
+    border: 1px solid #134d6f;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: #6095B3;
+}
+
+#J_codetext{
+    width: 240px;
+    padding: 10px 10px 10px 29px;
+    background: #103e59;
+}
+
+input::-webkit-input-placeholder{
+    color:#6095B3;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#6095B3;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#6095B3;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    color:#6095B3;
+}
+
+#username
+{
+    background: #103e59 url("../img/login/user.png") no-repeat;
+    background-position: 10px 8px !important;
+}
+
+#password
+{
+    background: #103e59 url("../img/login/password.png") no-repeat;
+    background-position: 10px 8px !important;
+}
+
+#actions
+{
+    margin: 25px 0 0 0;
+}
+
+.login-button{
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 6px 35px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    background-color: #ffb94b;
+    border-radius: 18px;
+    background-image: -webkit-gradient(linear, left top, right top, from(#2895c2), to(#11eb9b));
+    background-image: -webkit-linear-gradient(right, #2895c2, #11eb9b);
+    background-image: -moz-linear-gradient(right, #2895c2, #11eb9b);
+    background-image: -ms-linear-gradient(right, #2895c2, #11eb9b);
+    background-image: -o-linear-gradient(right, #2895c2, #11eb9b);
+    background-image: linear-gradient(right, #2895c2, #11eb9b);
+}
+
+#submit
+{
+    background-color: #ffb94b;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fddb6f), to(#ffb94b));
+    background-image: -webkit-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -moz-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -ms-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: -o-linear-gradient(top, #fddb6f, #ffb94b);
+    background-image: linear-gradient(top, #fddb6f, #ffb94b);
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+
+    float: left;
+    height: 35px;
+    padding: 0;
+    width: 120px;
+    cursor: pointer;
+    font: bold 15px Arial, Helvetica;
+    color: #8f5a0a;
+}
+
+#submit::-moz-focus-inner
+{
+    border: none;
+}
+
+#actions a
+{
+    color: #3151A2;
+    float: right;
+    line-height: 35px;
+    margin-left: 10px;
+}
+
+.body-bg{
+    background: url("../img/login/bg2.gif") no-repeat;
+    background-size: 100% 100%;
+}
+
+.login-title{
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top:14%;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.J_codeimg{
+    width: 86px;
+    height: 37px;
+    z-index: 0;
+    background: #124E72;
+    margin-left: 15px;
+    border-radius: 6px;
+    display: inline-block;
+}

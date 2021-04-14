@@ -1,0 +1,153 @@
+@media screen and (min-width:1921px){
+    html{
+        height: 100%;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1366px){
+    html{
+        height: 100%;
+        font-size: 5px;
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1920px){
+    html{
+        height: 100%;
+        font-size: 10px;
+    }
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    background: url("./images/bg.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.header{
+    position: absolute;
+    left: 33.5%;
+    top: 3%;
+    height: 7%;
+    width: 54.5%;
+}
+
+.select{
+    position: absolute;
+    left: 5%;
+    height: 5.5%;
+    top: 12%;
+    width: 90%;
+}
+
+.time{
+    position: absolute;
+    left: 5%;
+    height: 6%;
+    top: 17.5%;
+    width: 90%;
+}
+
+.content{
+    position: absolute;
+    left: 5%;
+    top: 25%;
+    height: 70%;
+    width: 90%;
+}
+
+.menu-div{
+    float: left;
+    width: 140px;
+    height: 100%;
+    font-size: 1.6rem;
+}
+
+.class-time{
+    float: right;
+    width: 180px;
+    height: 50px;
+    margin-top: 11px;
+    color: #2de4ff;
+    line-height: 52px;
+    font-size: 1.6rem;
+}
+
+.menu-title{
+    width: 100%;
+    height: 100%;
+    color: #2de4ff;
+}
+
+.menu-table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.menu-content{
+    width: 400px;
+    height: 100px;
+}
+
+.tourism-top{
+    height: 72px;
+    width: 100%;
+    margin-bottom: 0.5%;
+    color: #38DCF5;
+}
+
+.tourism-top-div1{
+    width: 100px;
+    height: 100%;
+    color: #38DCF5;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    line-height: 72px;
+    cursor: pointer;
+}
+
+.tourism-top-div2{
+    position: relative;
+    top: -100%;
+    left: 100px;
+    width: 100px;
+    width: -moz-calc(100% - 200px);
+    width: -webkit-calc(100% - 200px);
+    width: calc(100% - 200px);
+    height: 100%;
+    color: #38DCF5;
+}
+
+.div2-table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: url('./images/time.png') no-repeat center;
+    background-size:100% 3%;
+    font-size: 12px;
+}
+
+.td-onblur{
+    font-size: 16px;
+    text-shadow: 0 0 0.5em, 0 0 0.8em;
+}
+
+.tourism-top-div3{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    color: #38DCF5;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    line-height: 72px;
+    cursor: pointer;
+}

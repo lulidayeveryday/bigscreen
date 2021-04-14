@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="tourism.css" type="text/css" />
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <script>
+        var remebers=0;
+        $(document).ready(function(){
+            echartsBar('#5760B7',"tourismCounty",'本月区县消费（万元）');
+            echartsBar('#96CFF4',"tourismBusinessTop",'本月商圈消费TOP6（万元）');
+            echartsPie('行政区消费类别',"tourismDistrict");
+            echartsPie('商圈消费类别',"tourismBusiness");
+            echartsLine();
+            echartsMap();
+            tableData(new Date());
+        });
+
+        function tableDatas(number) {
+            var newYear=new Date();
+            var year=newYear.getFullYear() + number;
+            var data='<table class="div2-table"><tbody><tr>';
+            for(var i=0;i<12;i++){
+                var uid="'td"+i+1+"'";
+                data+='<td id='+uid+' onclick="tdClick(this)"><span>';
+                data+=year+'年'+(i+1)+'月';
+                data+='</span><br/><span>●</span><br/><span class="zf" id='+'"spantd'+i+1+'"'+'>.</span></td>';
+            }
+            data+='</tr></tbody></table>';
+            document.getElementById("tourismData").innerHTML=data;
+        }
+
+        function tableData(myDate) {
+            var month=myDate.getMonth();
+            var year=myDate.getFullYear();
+            if(month==0){
+                month=12;
+                year-=year;
+            }
+            var data='<table class="div2-table"><tbody><tr>';
+            for(var i=0;i<12;i++){
+                var uid="'td"+i+1+"'";
+                if(i==(month-1)){
+                    data+='<td class="td-onblur" id='+uid+' onclick="tdClick(this)"><span>';
+                }else {
+                    data+='<td id='+uid+' onclick="tdClick(this)"><span>';
+                }
+                data+=year+'年'+(i+1)+'月';
+                if(i==(month-1)){
+                    data+='</span><br/><span>●</span><br/><span class="zf" id='+'"spantd'+i+1+'"'+'>▲</span></td>';
+                }else {
+                    data+='</span><br/><span>●</span><br/><span class="zf" id='+'"spantd'+i+1+'"'+'>.</span></td>';
+                }
+            }
+            data+='</tr></tbody></table>';
+            document.getElementById("tourismData").innerHTML=data;
+        }
+
+        function nextWeek() {
+            if(remebers==0){
+                return;
+            }
+            remebers+=1;
+            tableDatas(remebers)
+        }
+
+        function lastWeek() {
+            remebers-=1;
+            tableDatas(remebers)
+        }
+
+        function echartsMap() {
+            var data = [
+                {
+                    name: '淳安县',
+                    value: 25.3,
+                    manTime: 3500
+                },
+                {
+                    name: '建德市',
+                    value: 73.8,
+                    manTime: 3500
+                },
+                {
+                    name: '桐庐县',
+                    value: 92.0,
+                    manTime: 3500
+                },
+                {
+                    name: '富阳区',
+                    value: 62.1,
+                    manTime: 3500
+                },
+                {
+                    name: '临安市',
+                    value: 93.0,
+                    manTime: 3500
+                }
+            ];
+            var option = {
+                tooltip : {
+                    trigger: 'item',
+                    formatter: function (params) {
+                        return '<div style="width: 150px"><p>'+'<span style="color:#6AC9EB;">●</span>'+params.name+'</p>'+
+                                '<span>金额:</span>'+params.data.value+'<br/>'+'<span>人次:</span>'+params.data.manTime+'</div>';
+                    },
+                },
+                /*visualMap: {
+                    text:['高','低'],
+                    realtime: false,
+                    calculable: true,
+                    inRange: {
+                        color: ['#4FA9D8','#336DA3','#234883']
+                    },
+                    textStyle : {
+                        color : 'white',
+                    }
+                },*/
+                visualMap: {
+                    show:false,
+                    type: 'continuous',
+                    text: ['', ''],
+                    showLabel: false,
+                    seriesIndex: [0],
+                    /*min: 0,*/
+                    /*max: 7,*/
+                    inRange: {
+                        color: ['#edfbfb', '#b7d6f3', '#40a9ed', '#3598c1', '#215096', ]
+                    },
+                    textStyle: {
+                        color: '#000'
+                    },
+                    bottom: 120,
+                    left: 'left',
+                },
+
+                series : [
+                    {
+                        name: '数据',
+                        type: 'map',
+                        map: 'hangzhou', // 自定义扩展图表类型
+                        roam : true,
+                        itemStyle:{
+                            normal:{
+                                label:{
+                                    show:true,
+                                    textStyle:{
+                                        color:'#727882'
+                                    }
+                                }
+                            },
+                            emphasis:{
+                                label:{show:true,
+                                    textStyle:{
+                                        color:'#fff'
+                                    }},
+                                areaColor: '#75AFD6'
+                            }
+                        },
+                        data:data,
+
+                        // 文本位置修正
+                        textFixed : {
+                            'Yau Tsim Mong' : [-10, 0]
+                        },
+
+                    }
+                ]
+            };
+
+            $.getJSON('./js/V0330100.json', function (data) {
+                echarts.registerMap('hangzhou', data);
+                var chart = echarts.init(document.getElementById('tourismMap'));
+                chart.setOption(option);
+                $(window).resize(function() {
+                    chart.resize();
+                });
+            });
+        }
+
+        function echartsLine() {
+            var colors = ['#5793f3', '#d14a61', '#675bba'];
+
+            var option = {
+                title:[
+                    {text:"本月消费趋势",
+                        x: '2.5%',
+                        y: '15px',
+                        textStyle:{
+                            color:"#96CFF4",
+                            fontSize:"14"
+                        }
+                    }
+                ],
+                color: colors,
+                grid: [
+                    {
+                        y: '90px',
+                        x: '100px',
+                        x2: '150px',
+                        y2: '30px'
+                    },
+                ],
+                legend: {
+                    data: [
+                        {
+                            name: "消费金额",
+                            icon: "roundRect",
+                            textStyle: {
+                                "color": "#7d838b"
+                            }
+                        },
+                        {
+                            "name": "消费人次",
+                            "icon": "roundRect",
+                            "textStyle": {
+                                "color": "#7d838b"
+                            }
+                        },
+                        {
+                            "name": "消费笔数",
+                            "icon": "roundRect",
+                            "textStyle": {
+                                "color": "#7d838b"
+                            }
+                        }
+                    ],
+                    "top": "15px",
+                    left:'25%',
+                    itemGap:50,
+                    "textStyle": {
+                        "color": "#fff"
+                    }
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        axisTick: {
+                            show: false,
+                            alignWithLabel: true
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: '#939AA9'
+                            }
+                        },
+                        data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: '消费金额',
+                        min: 0,
+                        max: 250,
+                        position: 'right',
+                        axisLine: {
+                            lineStyle: {
+                                color: colors[0]
+                            }
+                        },
+                        splitLine: { //网格线
+                            show: true,
+                            lineStyle: {
+                                color: ['#3D4D68'],
+                                type: 'dashed'
+                            }
+                        },
+                        axisLabel: {
+                            formatter: '{value}'
+                        }
+                    },
+                    {
+                        type: 'value',
+                        name: '消费人次',
+                        min: 0,
+                        max: 250,
+                        position: 'right',
+                        offset: 80,
+                        splitLine: { //网格线
+                            show: true,
+                            lineStyle: {
+                                color: ['#3D4D68'],
+                                type: 'dashed'
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: colors[1]
+                            }
+                        },
+                        axisLabel: {
+                            formatter: '{value}'
+                        }
+                    },
+                    {
+                        type: 'value',
+                        name: '消费笔数',
+                        min: 0,
+                        max: 25,
+                        position: 'left',
+                        splitLine: { //网格线
+                            show: true,
+                            lineStyle: {
+                                color: ['#3D4D68'],
+                                type: 'dashed'
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: colors[2]
+                            }
+                        },
+                        axisLabel: {
+                            formatter: '{value}'
+                        }
+                    }
+                ],
+                series: [
+                    {
+                        name:'消费金额',
+                        type:'line',
+                        data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                        symbol:'none',
+                        itemStyle : {
+                            normal : {
+                                lineStyle:{
+                                    width:2,//折线宽度
+                                },
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 1,
+                                    color: '#C57C22' // 100% 处的颜色
+                                }, {
+                                    offset: 0,
+                                    color: '#ECDE4F' // 0% 处的颜色
+                                }], false),
+                                opacity: 0.4
+                            }
+                        }
+                    },
+                    {
+                        name:'消费人次',
+                        type:'line',
+                        yAxisIndex: 1,
+                        symbol:'none',
+                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                        itemStyle : {
+                            normal : {
+                                lineStyle:{
+                                    width:2,//折线宽度
+                                },
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 1,
+                                    color: '#8D1B54' // 100% 处的颜色
+                                }, {
+                                    offset: 0,
+                                    color: '#FA2FF8' // 0% 处的颜色
+                                }], false),
+                                opacity: 0.4
+                            }
+                        }
+                    },
+                    {
+                        name:'消费笔数',
+                        type:'line',
+                        yAxisIndex: 2,
+                        symbol:'none',
+                        data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2],
+                        itemStyle : {
+                            normal : {
+                                lineStyle:{
+                                    width:2,//折线宽度
+                                },
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 1,
+                                    color: '#266CBF' // 100% 处的颜色
+                                }, {
+                                    offset: 0,
+                                    color: '#42D7F5' // 0% 处的颜色
+                                }], false),
+                                opacity: 0.4
+                            }
+                        }
+                    }
+                ]
+            };
+
+            var chart = echarts.init(document.getElementById('tourismWeek'));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+
+        }
+
+        function echartsPie(title,id){
+            var option = {
+                title:[
+                    {text:title,
+                        x: '5%',
+                        y: '15px',
+                        textStyle:{
+                            color:"#96CFF4",
+                            fontSize:"14"
+                        }
+                    }
+                ],
+                series: [{
+                    type: 'pie',
+                    radius: ['20%', '40%'],
+                    center: ['50%', '60%'],
+                    roseType: 'radius',
+                    color: ['#6AC8EA', '#5463C2', '#9E5ABF', '#8FDF6C', '#D7CC7C', '#F37B85'],
+                    data: [{
+                        value: 7,
+                        name: '其他'
+                    }, {
+                        value: 4,
+                        name: '自己制作'
+                    }, {
+                        value: 35,
+                        name: '线下购买'
+                    }, {
+                        value: 53,
+                        name: '网上购买'
+                    }],
+                    labelLine: {
+                        normal: {
+                            lineStyle: {
+                                color: '#96CFF4'
+                            },
+                            smooth: 0,
+                            length: 20
+                        }
+                    },
+                    label: {
+                        normal: {
+                            textStyle: {
+                                fontSize: 14,
+                                color:'#96CFF4'
+                            },
+                            formatter: "{b}:{d}%"
+                        }
+                    },
+
+                    animationType: 'scale',
+                    animationEasing: 'elasticOut'
+                }]
+            }
+            var chart = echarts.init(document.getElementById(id));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+        }
+
+        function echartsBar(color,id,title){
+            var dataAll = [389, 259, 262, 324, 232, 176];
+            var yAxisData = ['原因1','原因2','原因3','原因4','原因5','原因6'];
+            var option = {
+                title:[
+                    {text:title,
+                        x: '5%',
+                        y: '15px',
+                        textStyle:{
+                            color:"#96CFF4",
+                            fontSize:"14"
+                        }
+                    }
+                ],
+                grid: [
+                    {
+                        x: '20%',
+                        y: '50px',
+                        width: '60%',
+                        height: '70%'
+                    },
+                ],
+                tooltip: {
+                    formatter: '{b}:{c}'
+                },
+                xAxis: [
+                    {gridIndex: 0,
+                        axisTick: {
+                            show:false
+                        },
+                        axisLabel: {
+                            show:false
+                        },
+                        splitLine: {
+                            show:false
+                        },
+                        axisLine: {
+                            show:false
+                        }
+                    },
+                ],
+                yAxis: [
+                    {  gridIndex: 0,
+                        interval:0,
+                        data:yAxisData.reverse(),
+                        axisTick: {
+                            show:false
+                        },
+                        axisLabel: {
+                            show:true
+                        },
+                        splitLine: {
+                            show:false
+                        },
+                        axisLine: {
+                            show:false,
+                            lineStyle:{
+                                color:"#96CFF4"
+                            }
+                        },
+                    }
+                ],
+                series: [
+                    {
+                        name: title,
+                        type: 'bar',
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        barWidth:'30%',
+                        itemStyle:{normal:{color:color}},
+                        label:{normal:{show:true, position:"right",textStyle:{color:"#96CFF4"}}},
+                        data: dataAll.sort(),
+                    }
+                ]
+            };
+            var chart = echarts.init(document.getElementById(id));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+        }
+
+        function tdClick(obj) {
+            $(".zf").each(function () {
+                $(this).text('.');
+            });
+            $("td").removeClass("td-onblur");
+            var wid="#"+obj.id;
+            var sid="#span"+obj.id;
+            $(wid).addClass('td-onblur');
+            $(sid).text('▲');
+        }
+    </script>
+</head>
+<body class="tourism-div">
+    <div class="tourism-top" id="tourismTop">
+        <div class="tourism-top-div1" id="topDiv1" onclick="lastWeek()">
+            <&nbsp;前一年
+        </div>
+        <div class="tourism-top-div2" id="tourismData">
+            <table class="div2-table">
+                <tbody>
+                <tr>
+                    <td class="td-onblur" id="td1" onclick="tdClick(this)">
+                        <span>2018年1月</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd1">▲</span>
+                    </td>
+                    <td id="td2" onclick="tdClick(this)">
+                        <span>2018年2月</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd2">.</span>
+                    </td>
+                    <td id="td3" onclick="tdClick(this)">
+                        <span>2018年3月</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd3">.</span>
+                    </td>
+                    <td id="td4" onclick="tdClick(this)">
+                        <span>2018年4月</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd4">.</span>
+                    </td>
+                    <td id="td5" onclick="tdClick(this)">
+                        <span>2018年5月</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd5">.</span>
+                    </td>
+                    <td id="td6" onclick="tdClick(this)">
+                        <span>2018年6月</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd6">.</span>
+                    </td>
+                    <td id="td7" onclick="tdClick(this)">
+                        <span>2018年7月</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd7">.</span>
+                    </td>
+                    <td id="td8" onclick="tdClick(this)">
+                        <span>2018年8月</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd8">.</span>
+                    </td>
+                    <td id="td9" onclick="tdClick(this)">
+                        <span>2018年9月</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd9">.</span>
+                    </td>
+                    <td id="td10" onclick="tdClick(this)">
+                        <span>2018年10月</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd10">.</span>
+                    </td>
+                    <td id="td11" onclick="tdClick(this)">
+                        <span>2018年11月</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd11">.</span>
+                    </td>
+                    <td id="td12" onclick="tdClick(this)">
+                        <span>2018年12月</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd12">.</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="div2-div"></div>
+        </div>
+        <div class="tourism-top-div3" id="topDiv2" onclick="nextWeek()">后一年&nbsp;></div>
+    </div>
+    <div class="tourism-central">
+        <div class="tourism-central-div1">
+            <div style="width: 100%;height: 100%" id="tourismMap"></div>
+        </div>
+        <div class="tourism-central-div2">
+            <div style="width: 100%;height: 100%" id="tourismCounty"></div>
+        </div>
+        <div class="tourism-central-div3">
+            <div style="width: 100%;height: 100%" id="tourismBusinessTop"></div>
+        </div>
+        <div class="tourism-central-div4">
+            <div style="width: 100%;height: 100%" id="tourismDistrict"></div>
+        </div>
+        <div class="tourism-central-div5">
+            <div style="width: 100%;height: 100%" id="tourismBusiness"></div>
+        </div>
+    </div>
+    <div class="tourism-bottom">
+        <div class="tourism-bottom-monthdiv1">
+            <div style="width: 100%;height: 100%" id="tourismWeek"></div>
+        </div>
+    </div>
+</body>
+</html>

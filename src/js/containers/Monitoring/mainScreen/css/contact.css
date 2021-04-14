@@ -1,0 +1,230 @@
+@media screen and (min-width:1921px){
+    html{
+        height: 100%;
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1920px){
+    html{
+        height: 100%;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1440px){
+    html{
+        height: 100%;
+        font-size: 12px;
+    }
+}
+
+body{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background: url("../image/background.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.contact-title{
+    height: 10%;
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.contact-xx-div{
+    position: absolute;
+    width: 95%;
+    left: 2.5%;
+    height: 50%;
+    top: 5%;
+    background: url("../image/contactXx.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.contact-xx-div-title{
+    height: 7.5%;
+}
+
+.contact-xx-map{
+    height: 92.5%;
+    width: 26%;
+    position: absolute;
+}
+
+.contact-line-div{
+    width: 43%;
+    height: 89%;
+    position: absolute;
+    left: 57%;
+    top: 11%;
+}
+
+.contact-line-div-title{
+    height: 3rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #549FF8;
+    line-height: 3rem;
+}
+
+.qs-tab{
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 1rem;
+    height: 2rem;
+    line-height: 2rem;
+    color: #fff;
+}
+
+.qs-tab-select{
+    display: inline-block;
+    background-color: #01C6FD;
+    height: 2rem;
+    border-radius: 1rem;
+}
+
+.qs-tab-span{
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.contact-line-div-chart{
+    height: 90%;
+    height: calc(100% - 3rem);
+    height:-moz-calc(100% - 3rem);
+    height:-webkit-calc(100% - 3rem);
+}
+
+.contact-xx-bar{
+    position: absolute;
+    height: 89.5%;
+    width: 26%;
+    left: 28%;
+    top: 11%;
+}
+
+.contact-bar-title{
+    height: 28%;
+    position: relative;
+}
+
+.contact-bar-div{
+    height: 71%;
+}
+
+.contact-tc-div{
+    position: absolute;
+    width: 47.2%;
+    height: 39.5%;
+    top: 56%;
+    left: 2.5%;
+    background: url("../image/contactTc.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.contact-tc-div-title{
+    height: 9%;
+}
+
+.contact-tc-div-chart{
+    height: 91%;
+}
+
+.contact-tc-chart-title{
+    display: inline-block;
+    font-size: 1rem;
+    height: 2.2rem;
+    line-height: 2rem;
+    color: #44A6D9;
+    border-bottom: solid 2px #4B9BAB;
+    margin-top: 0.7rem;
+    padding: 0 0.7rem;
+}
+
+.contact-tc-chart-div{
+    height: 90%;
+    height: calc(100% - 2.9rem - 2px);
+    height:-moz-calc(100% - 2.9rem - 2px);
+    height:-webkit-calc(100% - 2.9rem - 2px);
+}
+
+.contact-pop{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.contact-tc-table{
+    width: 100%;
+    height: 100%;
+    padding: 2% 15%;
+    color: #fff;
+    font-size: 12px;
+}
+
+.tc-table-img{
+    width: 1.8rem;
+    height: 1.5rem;
+    vertical-align: middle;
+}
+
+.table-td1{
+    width: 3rem;
+}
+
+.table-td2{
+    text-align: left;
+}
+
+.table-td3{
+    text-align: right;
+    color: #2088E0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.tc-table-icon{
+    display: inline-block;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+    background-color: #09A5E2;
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+}
+
+.font-color1 {
+    background: linear-gradient(to top, #D48109, #EA9713, #F4EABB);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.font-color2 {
+    background: linear-gradient(to top, #666D70, #9C9D9E, #fff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.font-color3 {
+    background: linear-gradient(to top, #A6532F, #D07141, #E5BB97);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.contact-zb-div{
+    position: absolute;
+    width: 47.2%;
+    height: 39.5%;
+    top: 56%;
+    left: 50.3%;
+    background: url("../image/contactTc.png") no-repeat;
+    background-size: 100% 100%;
+}
+

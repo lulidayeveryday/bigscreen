@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>应用监控</title>
+    <link rel="stylesheet" href="../css/applicationMonitor.css" type="text/css">
+</head>
+<body>
+<div class="rm-div">
+    <div class="rm-server">
+        <div class="rm-server-title">
+            <table class="server-left-title-table">
+                <tbody>
+                <tr>
+                    <td style="width: 57%;"><span class="title-table1">接口服务监控</span></td>
+                    <td>主机总数:<span class="title-num" id="allNum1">6</span>台</td>
+                    <td>网络连通:<span class="title-num"><span id="connect">5</span>/<span id="allNum2">6</span></span></td>
+                    <td style="width: 12rem">
+                        <span style="padding: 5px 0px;background-color:  #28496E;border-radius: 14px;">
+                           <span class="server-left-button server-left-button-active" id="daySpan" onclick="interfaceService(0)">天数据</span><span class="server-left-button" id="realSpan" onclick="interfaceService(1)">实 时</span>
+                        </span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="rm-server-content">
+            <div class="rm-server-content-title">
+                <table id="serverContent">
+                    <tbody>
+                    <tr>
+                        <td>
+                            杭分节假日<br>
+                            <img src="../img/normal.png" style="width: 3.6rem">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            杭分节假日<br>
+                            <img src="../img/normal.png" style="width: 3.6rem">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            杭分节假日<br>
+                            <img src="../img/normal.png" style="width: 3.6rem">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            杭分节假日<br>
+                            <img src="../img/normal.png" style="width: 3.6rem">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            杭分节假日<br>
+                            <img src="../img/normal.png" style="width: 3.6rem">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            杭分节假日<br>
+                            <img src="../img/normal.png" style="width: 3.6rem">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            杭分节假日<br>
+                            <img src="../img/normal.png" style="width: 3.6rem">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="rm-server-content-echarts" id="echartBar"></div>
+        </div>
+    </div>
+    <div class="rm-data">
+        <div class="rm-data-title">
+            <table><tr><td>应用页面展现数据监控</td></tr></table>
+        </div>
+        <div class="rm-data-time">
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        <div>数据时间</div>
+                        <div class="time-font" id="appTime">2018-08-26 18:32:21</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="rm-data-content">
+            <div class="data-div">
+                <div class="data-div-content">
+                    <div class="datas-div">
+                        <img src="../img/datas1.png" class="data-div-content-img">
+                        <table class="data-div-content-table">
+                            <tbody>
+                            <tr><td><span class="data-content-num" id="module">321</span>个</td></tr>
+                            <tr><td>页面模块数</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="datas-div">
+                        <img src="../img/datas2.png" class="data-div-content-img">
+                        <table class="data-div-content-table">
+                            <tbody>
+                            <tr><td><span class="data-content-num" id="survival">317</span>个</td></tr>
+                            <tr><td>存活数</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="datas-div">
+                        <img src="../img/datas3.png" class="data-div-content-img">
+                        <table class="data-div-content-table">
+                            <tbody>
+                            <tr><td><span class="data-content-num" id="app">13190</span></td></tr>
+                            <tr><td>应用访问</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="datas-div">
+                        <img src="../img/datas4.png" class="data-div-content-img">
+                        <table class="data-div-content-table">
+                            <tbody>
+                            <tr><td><span class="data-content-num" id="service">14269</span></td></tr>
+                            <tr><td>对外服务</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script src="../js/applicationMonitor.js"></script>
+</body>
+</html>

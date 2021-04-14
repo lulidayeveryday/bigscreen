@@ -1,0 +1,333 @@
+@media screen and (min-width:1921px){
+    html{
+        height: 100%;
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1920px){
+    html{
+        height: 100%;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1440px){
+    html{
+        height: 100%;
+        font-size: 12px;
+    }
+}
+
+body{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background: url("../image/background.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.mainScreen-title{
+    height: 10%;
+    width: 52.5%;
+    margin: 0 auto;
+    display: block;
+}
+
+.mainScreen-menu{
+    position: fixed;
+    width: 9%;
+    height: 28%;
+    top: 22.5%;
+    left: 4%;
+    z-index: 999;
+    transition:left 1s;
+    -moz-transition:left 1s; /* Firefox 4 */
+    -webkit-transition:left 1s; /* Safari and Chrome */
+    -o-transition:left 1s; /* Opera */
+}
+
+.mainScreen-menu-content{
+    float: left;
+    width: 85%;
+    height: 100%;
+    background: url("../image/select.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.mainScreen-menu-content-table{
+    width: 100%;
+    height: 100%;
+    color: #17E7E4;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.table-td{
+    background: url("../image/border.png") no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.table-td-sel{
+    background: url("../image/borderSelect.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.mainScreen-menu-icon{
+    float: left;
+    width: 15%;
+    height: 17%;
+    margin-top: 68%;
+    background: url("../image/btn.png") no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.mainScreen-cp {
+    position: absolute;
+    width: 63%;
+    height: 50%;
+    left: 3.5%;
+    top: 5%;
+    z-index: 9;
+}
+
+.mainScreen-cp-title{
+    height: 8%;
+    width: 35%;
+    background: url("../image/cp.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.mainScreen-cp-content{
+    height: 92%;
+}
+
+.mainScreen-cd-content-All{
+    height: 19%;
+    margin-left:2rem;
+    border-bottom: 2px dotted rgba(255,255,255,0.3);
+}
+
+.mainScreen-cd-content-All-table{
+    width: 100%;
+    height: 100%;
+}
+
+.mainScreen-cd-content-All-table td{
+    vertical-align: bottom;
+    padding-bottom: 0.3rem;
+}
+
+.mainScreen-cd-content-All-icon{
+    width: 1.8rem;
+    height: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.content-All-title{
+    color: white;
+    margin-left: 0.3rem;
+}
+
+.content-All-num{
+    font-size: 1.3rem;
+    color: #2de3fd;
+    font-weight: 600;
+    margin-left: 0.1rem;
+}
+
+.mainScreen-cd-content-map{
+    width: 52%;
+    float: left;
+    height: 80%;
+    height: calc(81% - 2px);
+    height:-moz-calc(81% - 2px);
+    height:-webkit-calc(81% - 2px);
+}
+
+.mainScreen-cd-content-bar{
+    width: 48%;
+    float: left;
+    height: 80%;
+    height: calc(81% - 2px);
+    height:-moz-calc(81% - 2px);
+    height:-webkit-calc(81% - 2px);
+}
+
+.content-bar-title{
+    height: 32%;
+    border-bottom: 2px dotted rgba(255,255,255,0.3);
+    position: relative;
+}
+
+.content-bar-content{
+    height: 67%;
+    height: calc(68% - 2px);
+    height:-moz-calc(68% - 2px);
+    height:-webkit-calc(68% - 2px);
+}
+
+.content-bar-div{
+    width: 100%;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0.5rem;
+}
+
+.content-bar-title-icon{
+    width: 4.2rem;
+    height: 3.2rem;
+    margin-left: 1rem;
+}
+
+.mainScreen-cd{
+    position: absolute;
+    width: 63%;
+    height: 41%;
+    left: 3.5%;
+    top: 55%;
+    background: url("../image/cd.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.mainScreen-cd-title{
+    height: 9%;
+}
+
+.mainScreen-cd-content{
+    height: 91%;
+}
+
+.mainScreen-cd-content-line{
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+.mainScreen-zt{
+    position: absolute;
+    width: 29%;
+    height: 43.5%;
+    left: 68%;
+    top: 11%;
+    background: url("../image/zt.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.mainScreen-zt-title{
+    height: 8.5%;
+}
+
+.mainScreen-zt-content{
+    height: 91.5%;
+}
+
+.zt-content-up{
+    position: relative;
+    height: 30%;
+    text-align: center;
+}
+
+.zt-content-line{
+    height: 2%;
+    width: 96%;
+    margin: 0 auto;
+    background: url(../image/zt3.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.zt-content-data{
+    width: 100%;
+    height: 68%;
+}
+
+.zt-content-data-div{
+    width: 49.7%;
+    float: left;
+    height: 100%;
+}
+
+.zt-content-data-line{
+    width: 0.6%;
+    height: 100%;
+    float: left;
+    background: url("../image/zt7.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.zt-content-up-div1{
+    height: 100%;
+    width: 33%;
+    display: inline-block;
+    margin-right: 2rem;
+    position: relative;
+    text-align: center;
+}
+
+.zt-content-up-font{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 0.5rem;
+}
+
+.zt-content-up-div1-img{
+    width: 100%;
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+}
+
+.zt-content-up-div2{
+    height: 100%;
+    width: 33%;
+    display: inline-block;
+    margin-left: 2rem;
+    position: relative;
+}
+
+.mainScreen-js{
+    position: absolute;
+    width: 29%;
+    height: 41%;
+    left: 68%;
+    top: 55%;
+    background: url("../image/js.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.mainScreen-js-title{
+    height: 9%;
+}
+
+.mainScreen-js-content{
+    height: 91%;
+    position: relative;
+}
+
+.mainScreen-js-content-div1{
+    width: 45%;
+    position: absolute;
+    height: 50%;
+    left: 5%;
+    top: 0;
+}
+
+.mainScreen-js-content-div2{
+    width: 45%;
+    position: absolute;
+    height: 50%;
+    left: 50%;
+    top: 0;
+}
+
+.mainScreen-js-content-div3{
+    width: 90%;
+    height: 30%;
+    position: absolute;
+    top: 63%;
+    left: 5%;
+}

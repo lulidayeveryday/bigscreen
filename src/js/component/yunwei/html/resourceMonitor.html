@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>资源监控</title>
+    <link rel="stylesheet" href="../css/resourceMonitor.css" type="text/css">
+</head>
+<body>
+    <div class="rm-div">
+        <div class="rm-server">
+            <div class="rm-server-title">
+                <table class="server-left-title-table">
+                    <tbody>
+                    <tr>
+                        <td style="width: 70%;"><span class="title-table1">服务器主机监控</span></td>
+                        <td>主机总数:<span class="title-num" id="allNum1">10</span>台</td>
+                        <td>网络连通:<span class="title-num"><span id="connect">9</span>/<span id="allNum2">10</span></span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="rm-server-content">
+                <div class="rm-server-content-show">
+                    <div class="rm-server-content-top">
+                        <div class="content-top-left">
+                            <img src="../img/left.png" onclick="lastTr()" class="top-left-img"/>
+                        </div>
+                        <div class="content-top-central">
+                            <div class="top-central-condition top-central-condition-blue"></div>
+                            <div class="top-central-bottom"></div>
+                        </div>
+                        <div class="content-top-right">
+                            <img src="../img/right.png" onclick="nextTr()" class="top-right-img"/>
+                        </div>
+                    </div>
+                    <div class="rm-server-content-bottom">
+                        <div class="left-bottom-title">
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="left-bottom-title-td1" ref="td1">主机A005</td>
+                                    <td class="left-bottom-title-td2">网络: <img src="../img/down.png" ref="td2Img"/> <span class="font-color" ref="td2Text">中断</span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="left-bottom-content">
+                            <div class="left-bottom-content-div1">
+                                <div class="echart-pie2">
+                                    <table>
+                                        <tbody>
+                                        <tr><td>
+                                            <img src="../img/redBg.png" class="pieChartImg" ref="pieChartImg"></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="echart-pie1" id="echartPie1"></div>
+                            </div>
+                            <div class="left-bottom-content-div2">
+                                <table>
+                                    <tbody>
+                                    <tr style="height: 40%">
+                                        <td>
+                                            <span class="data-content-num" ref="td4">269</span>个
+                                            <br/>
+                                            当前进程数
+                                        </td>
+                                    </tr>
+                                    <tr style="vertical-align: top">
+                                        <td>
+                                            <span class="data-content-num" ref="td5Num">64.3</span>GB
+                                            <br/>
+                                            内存剩余
+                                            <br/>
+                                            <span class="blue-bg" ref="td5">57%</span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rm-server-content-data">
+                    <table id="tableSort" class="table">
+                        <thead>
+                        <tr>
+                            <th type="string">
+                                主机编号<img src="../img/tableArrow.png" class="table-thImg">
+                            </th>
+                            <th type="string">
+                                网络<img src="../img/tableArrow.png" class="table-thImg">
+                            </th>
+                            <th type="number">
+                                存储空间<img src="../img/tableArrow.png" class="table-thImg">
+                            </th>
+                            <th type="number">
+                                当前进程数<img src="../img/tableArrow.png" class="table-thImg">
+                            </th>
+                            <th type="number">
+                                内存剩余<img src="../img/tableArrow.png" class="table-thImg">
+                            </th>
+                            <th type="number">
+                                CPU<img src="../img/tableArrow.png" class="table-thImg">
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody id="masterTable">
+                        <tr class="trBg trBgStar">
+                            <td id="A001">
+                                A001
+                            </td>
+                            <td>
+                                <img src="../img/good.png" class="table-tbody-img"/> 良好
+                            </td>
+                            <td>
+                                57.68%
+                            </td>
+                            <td>
+                                69
+                            </td>
+                            <td gb="64.5">
+                                43%
+                            </td>
+                            <td>
+                                67%
+                            </td>
+                        </tr>
+                        <tr class="trBg">
+                            <td id="A002">
+                                A002
+                            </td>
+                            <td>
+                                <img src="../img/good.png" class="table-tbody-img"/> 良好
+                            </td>
+                            <td>
+                                5%
+                            </td>
+                            <td>
+                                21
+                            </td>
+                            <td gb="64.5">
+                                49%
+                            </td>
+                            <td>
+                                60%
+                            </td>
+                        </tr>
+                        <tr class="trBg">
+                            <td id="A003">
+                                A003
+                            </td>
+                            <td>
+                                <img src="../img/good.png" class="table-tbody-img"/> 良好
+                            </td>
+                            <td>
+                                53%
+                            </td>
+                            <td>
+                                269
+                            </td>
+                            <td gb="64.5">
+                                17%
+                            </td>
+                            <td>
+                                64%
+                            </td>
+                        </tr>
+                        <tr class="trBg">
+                            <td id="A004">
+                                A004
+                            </td>
+                            <td>
+                                <img src="../img/good.png" class="table-tbody-img"/> 良好
+                            </td>
+                            <td>
+                                52%
+                            </td>
+                            <td>
+                                219
+                            </td>
+                            <td gb="64.5">
+                                57%
+                            </td>
+                            <td>
+                                26%
+                            </td>
+                        </tr>
+                        <tr class="trBg">
+                            <td id="A005">
+                                A005
+                            </td>
+                            <td>
+                                <img src="../img/down.png" class="table-tbody-img"/> 中断
+                            </td>
+                            <td>
+                                51%
+                            </td>
+                            <td>
+                                169
+                            </td>
+                            <td gb="64.5">
+                                17%
+                            </td>
+                            <td>
+                                64%
+                            </td>
+                        </tr>
+                        <tr class="trBg">
+                            <td id="A006">
+                                A006
+                            </td>
+                            <td>
+                                <img src="../img/good.png" class="table-tbody-img"/> 良好
+                            </td>
+                            <td>
+                                26% <img src="../img/warn.png" class="table-tbody-img"/>
+                            </td>
+                            <td>
+                                69
+                            </td>
+                            <td gb="645">
+                                4%
+                            </td>
+                            <td>
+                                6%
+                            </td>
+                        </tr>
+                        <tr class="trBg">
+                            <td id="A007">
+                                A007
+                            </td>
+                            <td>
+                                <img src="../img/good.png" class="table-tbody-img"/> 良好
+                            </td>
+                            <td>
+                                16%
+                            </td>
+                            <td>
+                                268
+                            </td>
+                            <td gb="64">
+                                77%
+                            </td>
+                            <td>
+                                63%
+                            </td>
+                        </tr>
+                        <tr class="trBg">
+                            <td id="A008">
+                                A008
+                            </td>
+                            <td>
+                                <img src="../img/good.png" class="table-tbody-img"/> 良好
+                            </td>
+                            <td>
+                                36%
+                            </td>
+                            <td>
+                                219
+                            </td>
+                            <td gb="4.5">
+                                47%
+                            </td>
+                            <td>
+                                82%
+                            </td>
+                        </tr>
+                        <tr class="trBg">
+                            <td id="A009">
+                                A009
+                            </td>
+                            <td>
+                                <img src="../img/good.png" class="table-tbody-img"/> 良好
+                            </td>
+                            <td>
+                                46%
+                            </td>
+                            <td>
+                                279
+                            </td>
+                            <td gb="65">
+                                41%
+                            </td>
+                            <td>
+                                62%
+                            </td>
+                        </tr>
+                        <tr class="trBg">
+                            <td id="A010">
+                                A010
+                            </td>
+                            <td>
+                                <img src="../img/good.png" class="table-tbody-img"/> 良好
+                            </td>
+                            <td>
+                                56%
+                            </td>
+                            <td>
+                                280
+                            </td>
+                            <td gb="5">
+                                4%
+                            </td>
+                            <td>
+                                2% <img src="../img/warn.png" class="table-tbody-img"/>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="rm-hadoop">
+            <div class="rm-hadoop-title">
+                <table><tr><td>hadoop集群</td></tr></table>
+            </div>
+            <div class="rm-hadoop-content">
+                <div class="hadoop-content-div1">
+                    <div class="echart-pie2">
+                        <table>
+                            <tbody>
+                            <tr><td>
+                                <img src="../img/blueBg.png" class="pieChartImg" ref="pieChartImg2"></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="echart-pie1" id="echartPie2"></div>
+                </div>
+                <div class="hadoop-content-div2">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <img src="../img/data2.png" class="hadoop-content-img">
+                                <br/>
+                                <span class="data-content-num">1789</span>个
+                                <br/>
+                                集群数据表
+                            </td>
+                            <td>
+                                <img src="../img/data5.png" class="hadoop-content-img">
+                                <br/>
+                                <span class="data-content-num">269</span>个
+                                <br/>
+                                集群运行中job个数
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="rm-data">
+            <div class="rm-data-title">
+                <table><tr><td>数据库资源</td></tr></table>
+            </div>
+            <div class="rm-data-content">
+
+                <div class="data-div">
+                    <div class="data-div-title"><span>MySQL</span></div>
+                    <div class="data-div-content">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <img src="../img/data1.png" class="data-div-content-img">
+                                    <table class="data-div-content-table">
+                                        <tbody>
+                                        <tr><td><span class="data-content-num" id="mysqlSpace">93</span>TB</td></tr>
+                                        <tr><td>数据库空间</td></tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td>
+                                    <img src="../img/data2.png" class="data-div-content-img">
+                                    <table class="data-div-content-table">
+                                        <tbody>
+                                        <tr><td><span class="data-content-num" id="mysqlTable">1789</span>个</td></tr>
+                                        <tr><td>数据库表</td></tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="../img/data3.png" class="data-div-content-img">
+                                    <table class="data-div-content-table">
+                                        <tbody>
+                                        <tr><td><span class="data-content-num" id="mysqlProcess">269</span>个</td></tr>
+                                        <tr><td>数据库运行过程数</td></tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td>
+                                    <img src="../img/data4.png" class="data-div-content-img">
+                                    <table class="data-div-content-table">
+                                        <tbody>
+                                        <tr><td><span class="data-content-num" id="mysqlLinker">269</span>个</td></tr>
+                                        <tr><td>数据连接数</td></tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="data-div">
+                    <div class="data-div-title"><span>Oracle</span></div>
+                    <div class="data-div-content">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <img src="../img/data1.png" class="data-div-content-img">
+                                    <table class="data-div-content-table">
+                                        <tbody>
+                                        <tr><td><span class="data-content-num" id="oracleSpace">93</span>TB</td></tr>
+                                        <tr><td>数据库空间</td></tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td>
+                                    <img src="../img/data2.png" class="data-div-content-img">
+                                    <table class="data-div-content-table">
+                                        <tbody>
+                                        <tr><td><span class="data-content-num" id="oracleTable">1789</span>个</td></tr>
+                                        <tr><td>数据库表</td></tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="../img/data3.png" class="data-div-content-img">
+                                    <table class="data-div-content-table">
+                                        <tbody>
+                                        <tr><td><span class="data-content-num" id="oracleProcess">269</span>个</td></tr>
+                                        <tr><td>数据库运行过程数</td></tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td>
+                                    <img src="../img/data4.png" class="data-div-content-img">
+                                    <table class="data-div-content-table">
+                                        <tbody>
+                                        <tr><td><span class="data-content-num" id="oracleLinker">269</span>个</td></tr>
+                                        <tr><td>数据连接数</td></tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/echarts.min.js"></script>
+    <script src="../js/resourceMonitor.js"></script>
+</body>
+</html>

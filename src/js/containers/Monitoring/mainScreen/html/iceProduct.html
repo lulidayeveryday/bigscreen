@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冰激凌产品监控</title>
+    <link rel="stylesheet" href="../css/iceProduct.css" type="text/css">
+</head>
+<body>
+<img src="../image/iceTitle.png" class="mainScreen-title">
+<div class="contact-pop">
+    <img src="../image/cdClose.png" class="contact-pop-close" onclick="$('.contact-pop').css('display','none')">
+    <div class="contact-pop-bg">
+        <div class="contact-pop-title">副卡</div>
+        <div class="contact-pop-title-type">
+            <table style="width: 100%;height: 100%;">
+                <tbody>
+                <tr>
+                    <td class="pop-td-select" onclick="popClickType(this)">地市</td>
+                    <td onclick="popClickType(this)">BU</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="contact-pop-table" id="scrollInner">
+            <table class="contact-pop-table-div">
+                <thead>
+                <tr style="height: 2.5rem;background-color: #2B4369;font-size: 1.1rem;">
+                    <th rowspan="2" style="border-right: solid 1px #485C81;">地市名称</th>
+                    <th colspan="3" style="border-bottom: solid 1px #485C81;border-right: solid 1px #485C81;">10元</th>
+                    <th colspan="3" style="border-bottom: solid 1px #485C81;">3元</th>
+                </tr>
+                <tr style="height: 2.5rem;background-color: #2B4369;font-size: 1.1rem;">
+                    <th>总计</th>
+                    <th>其中：新发展</th>
+                    <th style="border-right: solid 1px #485C81;">其中：老用户</th>
+                    <th>总计</th>
+                    <th>其中：新发展</th>
+                    <th>其中：老用户</th>
+                </tr>
+                </thead>
+                <tbody class="table-tbody">
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<div class="contact-pop1">
+    <img src="../image/cdClose.png" class="contact-pop-close" onclick="$('.contact-pop1').css('display','none')">
+    <div class="contact-pop-bg">
+        <div class="contact-pop-title">太原</div>
+        <div class="contact-pop-echarts-bar1">
+            <div class="contact-pop-echarts-bar-title">地市</div>
+            <div class="contact-pop-echarts-bar-div" id="popEchart1"></div>
+        </div>
+        <div class="contact-pop-echarts-bar2">
+            <div class="contact-pop-echarts-bar-title">BU</div>
+            <div class="contact-pop-echarts-bar-div" id="popEchart2"></div>
+        </div>
+        <div class="contact-pop-title-type1">
+            <table style="width: 100%;height: 100%;">
+                <tbody>
+                <tr>
+                    <td class="pop-td-select" onclick="popClickType(this,'地市')">地市</td>
+                    <td onclick="popClickType(this,'BU')">BU</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="contact-pop-table1" id="scrollInner1">
+            <table class="contact-pop-table-div">
+                <thead>
+                <tr style="height: 2.5rem;background-color: #2B4369;font-size: 1.1rem;">
+                    <th rowspan="2" style="border-right: solid 1px #485C81;"><span id="icePopType">地市</span>名称</th>
+                    <th colspan="10" style="border-bottom: solid 1px #485C81;border-right: solid 1px #485C81;">政企</th>
+                    <th colspan="10" style="border-bottom: solid 1px #485C81;">公众</th>
+                </tr>
+                <tr style="height: 2.5rem;background-color: #2B4369;font-size: 1.1rem;">
+                    <th>0折</th>
+                    <th>1折</th>
+                    <th>2折</th>
+                    <th>3折</th>
+                    <th>4折</th>
+                    <th>5折</th>
+                    <th>6折</th>
+                    <th>7折</th>
+                    <th>8折</th>
+                    <th style="border-right: solid 1px #485C81;">9折</th>
+                    <th>0折</th>
+                    <th>1折</th>
+                    <th>2折</th>
+                    <th>3折</th>
+                    <th>4折</th>
+                    <th>5折</th>
+                    <th>6折</th>
+                    <th>7折</th>
+                    <th>8折</th>
+                    <th>9折</th>
+                </tr>
+                </thead>
+                <tbody class="table-tbody">
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<div class="iceProduct-div-zk">
+    <div style="height: 4%;">
+        <table class="qualityMonitoring-title-table-up">
+            <tr>
+                <td>冰激凌折扣监控</td>
+            </tr>
+        </table>
+    </div>
+    <div style="height: 95%">
+        <div class="iceProduct-div-zk-table">
+            <table id="iceProductTable" style="width: 100%;height: 100%;font-size: 1.2rem;font-weight:bold;color: white;text-align: center;border-spacing: 0;border: solid 1px #1C617E;color: #28C5D8">
+                <thead>
+                <tr style="background-color: #1A537A;height: 3rem;font-size: 1.25rem;">
+                    <th colspan="2" style="text-align: left;"><span style="color: #28C5D8;cursor: pointer" onclick="iceTableType('政企','#28C5D8')">政企</span>/<span style="color: #EEDE14;cursor: pointer" onclick="iceTableType('公众','#EEDE14')">公众</span></th>
+                    <th style="color: white">日累计</th>
+                    <th style="color: white">月累计</th>
+                </tr>
+                </thead>
+                <tbody class="table-tbody">
+                <tr>
+                    <td rowspan="10" style="border-right: solid 1px #1C617E;width: 4rem" id="iceZkTableType">政企</td>
+                    <td style="font-size: 1rem;color:white;cursor: pointer;" onclick="renderData(this)">0折</td>
+                    <td>123</td>
+                    <td>259</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 1rem;color:white;cursor: pointer;" onclick="renderData(this)">1折</td>
+                    <td>123</td>
+                    <td>259</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 1rem;color:white;cursor: pointer;" onclick="renderData(this)">2折</td>
+                    <td>123</td>
+                    <td>259</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 1rem;color:white;cursor: pointer;" onclick="renderData(this)">3折</td>
+                    <td>123</td>
+                    <td>259</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 1rem;color: white;cursor: pointer;" onclick="renderData(this)">4折</td>
+                    <td>123</td>
+                    <td>259</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 1rem;color:white;cursor: pointer;" onclick="renderData(this)">5折</td>
+                    <td>123</td>
+                    <td>259</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 1rem;color:white;cursor: pointer;" onclick="renderData(this)">6折</td>
+                    <td>123</td>
+                    <td>259</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 1rem;color:white;cursor: pointer;" onclick="renderData(this)">7折</td>
+                    <td>123</td>
+                    <td>259</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 1rem;color:white;cursor: pointer;" onclick="renderData(this)">8折</td>
+                    <td>123</td>
+                    <td>259</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 1rem;color:white;cursor: pointer;" onclick="renderData(this)">9折</td>
+                    <td>123</td>
+                    <td>259</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="iceProduct-div-zk-pie1" id="iceProductPie1"></div>
+        <div class="iceProduct-div-zk-pie2" id="iceProductPie2"></div>
+        <div class="iceProduct-div-zk-bar1">
+            <div style="height: 13%">
+                <table style="width: 34%;height: 100%;margin: 0 auto;text-align: center;color: white;font-size: 1.25rem;">
+                    <tbody>
+                    <tr>
+                        <td class="iceProduct-div-zk-typeImg" onclick="fkPop1();">
+                            地市
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="height: 87%" id="iceProductBar1"></div>
+        </div>
+        <div class="iceProduct-div-zk-bar2">
+            <div style="height: 13%">
+                <table style="width: 34%;height: 100%;margin: 0 auto;text-align: center;color: white;font-size: 1.25rem;">
+                    <tbody>
+                    <tr>
+                        <td class="iceProduct-div-zk-typeImg" onclick="fkPop1();">
+                            BU
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="height: 87%" id="iceProductBar2"></div>
+        </div>
+    </div>
+</div>
+<div class="iceProduct-div-fk">
+    <div style="height: 13.6%;">
+        <table class="qualityMonitoring-title-table-up">
+            <tr>
+                <td>副卡</td>
+                <td style="color: white;text-align: right;font-weight: 500;font-size: 1rem;"><span style="cursor: pointer;" onclick="fkPop();">详情</span></td>
+            </tr>
+        </table>
+    </div>
+    <div style="height: 86.4%;" id="doubleBar"></div>
+</div>
+<div class="iceProduct-div-zd">
+    <div style="height: 6.2%;">
+        <table class="qualityMonitoring-title-table-up">
+            <tr>
+                <td>冰激凌终端合约</td>
+            </tr>
+        </table>
+    </div>
+    <div style="height: 93.8%">
+        <div class="iceProduct-div-zd-table">
+            <table class="iceProduct-div-zd-tab">
+                <thead>
+                <tr>
+                    <th rowspan="2">产品名称</th>
+                    <th colspan="2">终端合约量</th>
+                    <th colspan="2">带宽带</th>
+                </tr>
+                <tr>
+                    <th>日累计</th>
+                    <th>月累计</th>
+                    <th>日累计</th>
+                    <th>月累计</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>99元</td>
+                    <td>2635</td>
+                    <td>2635</td>
+                    <td>2635</td>
+                    <td>2635</td>
+                </tr>
+                <tr>
+                    <td>159元</td>
+                    <td>2635</td>
+                    <td>2635</td>
+                    <td>2635</td>
+                    <td>2635</td>
+                </tr>
+                <tr>
+                    <td>199元</td>
+                    <td>2635</td>
+                    <td>2635</td>
+                    <td>2635</td>
+                    <td>2635</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="iceProduct-div-zd-line1" id="iceProductLine1"></div>
+        <div class="iceProduct-div-zd-line2" id="iceProductLine2"></div>
+    </div>
+</div>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/jquery.nicescroll.js"></script>
+<script src="../js/iceProduct.js"></script>
+<script src="../js/echarts.min.js"></script>
+</body>
+</html>

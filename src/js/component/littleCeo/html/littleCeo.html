@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小CEO</title>
+    <link rel="stylesheet" href="../css/littleCeo.css" type="text/css">
+</head>
+<body>
+    <div class="littleCeo-menu">
+        <p class="littleCeo-menu-p">每日必看</p>
+        <ul>
+            <li class="littleCeo-menu-li">发展</li>
+            <li class="littleCeo-menu-li">欠费</li>
+            <li class="littleCeo-menu-li">积分</li>
+            <li class="littleCeo-menu-li">地市自主</li>
+        </ul>
+        <p class="littleCeo-menu-p">贴身管家</p>
+        <ul>
+            <li class="littleCeo-menu-li">收入</li>
+            <li class="littleCeo-menu-li">成本</li>
+            <li class="littleCeo-menu-li">薪酬</li>
+            <li class="littleCeo-menu-li">毛利</li>
+        </ul>
+        <p class="littleCeo-menu-p">家底清单</p>
+        <ul>
+            <li class="littleCeo-menu-li">员工</li>
+            <li class="littleCeo-menu-li">楼宇端口</li>
+            <li class="littleCeo-menu-li">渠道</li>
+            <li class="littleCeo-menu-li">房产</li>
+        </ul>
+    </div>
+    <div class="littleCeo-content">
+        <div class="littleCeo-content-title">
+            关键指标
+            <input id="begintime" class="littleCeo-content-title-input" type="text" onclick="setday(this)" readonly="readonly" />
+        </div>
+        <div class="littleCeo-content-indicators">
+            <div class="littleCeo-content-indicators-div1">
+                <table style="width: 100%;height: 100%;border-spacing: 0">
+                    <tbody>
+                    <tr class="littleCeo-content-indicators-title">
+                        <td class="littleCeo-content-indicators-content1" style="text-align: left">实时发展(户)</td>
+                        <td colspan="2" class="littleCeo-content-indicators-content1" style="text-align: right">截止今日09时19分</td>
+                    </tr>
+                    <tr>
+                        <td class="table-padding table-border" style="text-align: left">移网</td>
+                        <td class="table-padding table-color-blue table-border table-num" style="text-align: center">16</td>
+                        <td class="table-padding table-color-blue table-border" style="text-align: right;"><span style="cursor: pointer">查看明细</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-padding table-border" style="text-align: left">宽带</td>
+                        <td class="table-padding table-color-blue table-border table-num" style="text-align: center">16</td>
+                        <td class="table-padding table-color-blue table-border" style="text-align: right;"><span style="cursor: pointer">查看明细</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-padding" style="text-align: left">融合</td>
+                        <td class="table-padding table-color-blue table-num" style="text-align: center">16</td>
+                        <td class="table-padding table-color-blue" style="text-align: right;"><span style="cursor: pointer">查看明细</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="littleCeo-content-indicators-div2">
+                <table style="width: 100%;height: 100%;border-spacing: 0">
+                    <tbody>
+                    <tr class="littleCeo-content-indicators-title">
+                        <td class="littleCeo-content-indicators-content1" style="text-align: left">经营收入(万元)</td>
+                        <td class="littleCeo-content-indicators-content1" style="text-align: right">第7名</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="height: 11rem;" id="indicatorChart1"></td>
+                    </tr>
+                    <tr>
+                        <td class="table-padding" colspan="2" style="text-align: left;font-size: 1.1rem">
+                            <div style="height: 100%;width: 50%;float: left;text-align: center;" class="table-color-blue">
+                                完成值<br>
+                                1500.42
+                            </div>
+                            <div style="height: 100%;width: 50%;float: left;text-align: center;" class="table-color-blue">
+                                目标值<br>
+                                1500.42
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="littleCeo-content-indicators-div2">
+                <table style="width: 100%;height: 100%;border-spacing: 0">
+                <tbody>
+                <tr class="littleCeo-content-indicators-title">
+                    <td class="littleCeo-content-indicators-content1" style="text-align: left">成本使用(万元)</td>
+                    <td class="littleCeo-content-indicators-content1" style="text-align: right">第7名</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="height: 11rem;" id="indicatorChart2"></td>
+                </tr>
+                <tr>
+                    <td class="table-padding" colspan="2" style="text-align: left;font-size: 1.1rem">
+                        <div style="height: 100%;width: 50%;float: left;text-align: center;" class="table-color-blue">
+                            已使用<br>
+                            1500.42
+                        </div>
+                        <div style="height: 100%;width: 50%;float: left;text-align: center;" class="table-color-blue">
+                            动态可用<br>
+                            1500.42
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="littleCeo-content-indicators-div2">
+                <table style="width: 100%;height: 100%;border-spacing: 0">
+                <tbody>
+                <tr class="littleCeo-content-indicators-title">
+                    <td class="littleCeo-content-indicators-content1" style="text-align: left">毛利(万元)</td>
+                    <td class="littleCeo-content-indicators-content1" style="text-align: right">第7名</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="height: 11rem;" id="indicatorChart3"></td>
+                </tr>
+                <tr>
+                    <td class="table-padding" colspan="2" style="text-align: left;font-size: 1.1rem">
+                        <div style="height: 100%;width: 50%;float: left;text-align: center;" class="table-color-blue">
+                            完成值<br>
+                            1500.42
+                        </div>
+                        <div style="height: 100%;width: 50%;float: left;text-align: center;" class="table-color-blue">
+                            预算<br>
+                            1500.42
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="littleCeo-content-indicators-div1" style="margin-left: 1rem">
+                <table style="width: 100%;height: 100%;border-spacing: 0">
+                    <tbody>
+                    <tr class="littleCeo-content-indicators-title">
+                        <td class="littleCeo-content-indicators-content1" style="text-align: left">出账收入(万元)</td>
+                        <td class="littleCeo-content-indicators-content1" style="text-align: right">201810</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div style="width: 50%;height: 100%;float: left;" id="littleCeoLine"></div>
+                            <div style="width: 50%;height: 100%;float: left;">
+                                <table style="width: 100%;height: 100%;text-align: center;">
+                                    <tbody>
+                                    <tr>
+                                        <td class="table-color-blue table-num">4.66</td>
+                                    </tr>
+                                    <tr>
+                                        <td>环比 <span class="color-green">5.10%↑</span> <span class="color-red">5.10%↓</span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-padding" colspan="2" style="text-align: left;font-size: 1.1rem;border-top: solid 0.3rem #E7EAEC;height: 6rem">
+                            <table style="width: 100%;height: 100%;text-align: center;">
+                                <tbody>
+                                <tr>
+                                    <td>欠费(万元)</td>
+                                    <td style="font-size: 1.25rem;font-weight: bold;">5236</td>
+                                    <td>20180922</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/echarts2.min.js"></script>
+    <script type="text/javascript" src="../js/DatePicker.js"></script>
+    <script type="text/javascript" src="../js/littleCeo.js"></script>
+
+</body>
+</html>

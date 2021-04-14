@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>嘉兴红色旅游</title>
+    <link rel="stylesheet" href="index-copy.css" type="text/css" />
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/worldcloud.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=jtzqWbyVY3yLat4bKA8IbWCPmVQMgmGF"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            var widths=$(window).width();
+            var times=1;
+            if(widths<=1920&&widths>1366){
+                times=1
+            }else if(widths>1920){
+                times=2;
+            }else{
+                times=0.5;
+            }
+            $(window).resize(function() {
+                var width=$(window).width();
+
+                if(width<=1920&&width>1366){
+                    times=1
+                }else if(width>1920){
+                    times=2;
+                }else{
+                    times=0.5;
+                }
+
+                firstFunction(times);
+            });
+
+            firstFunction(times);
+
+        });
+
+        function firstFunction(times) {
+            //历史客流量
+            var thisWeek=[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6];
+            var lastWeek=[12.0, 54.9, 70, 5.2, 15.6, 6.7, 15.6];
+            echartsLine(thisWeek,lastWeek,times);
+
+            //来源地市TOP5
+            var topData=[23923, 34210, 25560, 124444, 314284];
+            echartsBar(topData,times);
+
+
+            //省内省外来源比例
+            var data1=[
+                {value:435, name:'省内'},
+                {value:679, name:'省外'}
+            ];
+            echartsPie(data1,'sourceTop',times);
+
+            //性别比例
+            var data2=[
+                {value:154, name:'男性'},
+                {value:96, name:'女性'}
+            ]
+            echartsPie(data2,'sexDiv',times);
+
+            //景区关联
+            var graphData=['南湖','北湖','东湖','西湖','南湖1','北湖1','东湖1','西湖1'];
+            var link=[
+                {
+                    "source": "东湖",
+                    "target": "南湖"
+                },
+                {
+                    "source": "南湖",
+                    "target": "西湖"
+                },
+                {
+                    "source": "西湖",
+                    "target": "北湖"
+                },
+                {
+                    "source": "北湖",
+                    "target": "东湖1"
+                },
+                {
+                    "source": "东湖1",
+                    "target": "南湖1"
+                },
+                {
+                    "source": "南湖1",
+                    "target": "西湖1"
+                },
+                {
+                    "source": "西湖1",
+                    "target": "北湖1"
+                },
+            ]
+            echartGraph(graphData,link,times);
+
+            //年龄分布
+            var age=[
+                {rank:0.1,data:'10%'},
+                {rank:0.3,data:'30%'},
+                {rank:0.48,data:'48%'},
+                {rank:0.10,data:'12%'}
+            ];
+            ageDistribution(age);
+
+            //字符云
+            var keywords = {
+                "visualMap": 22199,
+                "continuous": 10288,
+                "contoller": 620,
+                "series": 274470,
+                "gauge": 12311,
+                "detail": 1206,
+                "piecewise": 4885,
+                "textStyle": 32294,
+                "markPoint": 18574
+            };
+            worldClouds(keywords,times);
+
+            //地图
+            var mapData=[
+                {point:[120.1492582719,30.2354914501],title:'南湖风景名胜区',rank:'5A',flow:25365,id:0},
+                {point:[120.7674208409,30.7609350590],title:'中公一大纪念船',rank:'5A',flow:25365,id:1},
+                {point:[120.7676906437,30.7530190550],title:'南湖革命纪念馆',rank:'5A',flow:25365,id:2}
+            ]
+            var central=[120.7674208409,30.7609350590];
+            bdMap(mapData,central);
+        }
+
+        function bdMap(mapData,central) {
+            var style1={
+                color:'white',
+                /*backgroundColor:'red',*/
+                fontWeight:600,
+                border:'0',
+                padding:'10px',
+                lineHeight:'22px',
+                fontSize:'14px',
+                width:'150px',
+                height:'100px',
+                background:"url('./img/lable.png') no-repeat",
+                backgroundSize: '100% 100%',
+                display:"block"
+            };
+            var style2={
+                display:"none"
+            };
+            var map = new BMap.Map("allmap");    // 创建Map实例
+            map.centerAndZoom(new BMap.Point(central[0], central[1]), 10);  // 初始化地图,设置中心点坐标和地图级别
+            map.setMapStyle({
+                styleJson:[
+                    {
+                        "featureType": "background",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#705639ff"
+                        }
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#4c3d2dff"
+                        }
+                    },
+                    {
+                        "featureType": "districtlabel",
+                        "elementType": "labels.text.fill",
+                        "stylers": {
+                            "color": "#d9c36cff"
+                        }
+                    },
+                    {
+                        "featureType": "districtlabel",
+                        "elementType": "labels.text.stroke",
+                        "stylers": {
+                            "color": "#644b35ff"
+                        }
+                    }
+                ]
+            });
+
+            var pt=[];
+            var marker=[];
+            var label=[];
+            var num=[];
+            var myIcon = new BMap.Icon("./img/mapicon.png", new BMap.Size(44,44));
+
+            for(var i=0;i<mapData.length;i++){
+                pt[i] = new BMap.Point(mapData[i].point[0], mapData[i].point[1]);
+                marker[i] = new BMap.Marker(pt[i],{icon:myIcon});  // 创建标注
+                map.addOverlay(marker[i]);
+                label[i] = new BMap.Label(mapData[i].title+"<br/><br/>景区等级:"+mapData[i].rank+"<br/>实时客流:"+mapData[i].flow,{offset:new BMap.Size(-15,-120)});
+                label[i].setStyle(style2);
+                marker[i].setLabel(label[i]);
+                num[i]=0;
+
+
+                //添加监听事件
+                (function() {
+                    var thePoint = mapData[i];
+                    marker[i].addEventListener("click",
+                            //显示信息的方法
+                            function() {
+                                var wid=thePoint.id;
+                                map.setCenter(new BMap.Point(thePoint.point[0], thePoint.point[1]));
+                                if(num[wid]%2==0){
+                                    for(var i=0;i<mapData.length;i++){
+                                        if(i==wid){
+                                            label[wid].setStyle(style1)
+                                            marker[wid].setLabel(label[wid]);
+                                            num[i]=1;
+                                        }else {
+                                            label[i].setStyle(style2)
+                                            marker[i].setLabel(label[i]);
+                                            num[i]=0;
+                                        }
+                                    }
+                                }else {
+                                    label[wid].setStyle(style2)
+                                    marker[wid].setLabel(label[wid]);
+                                    num[wid]=0;
+                                }
+                            }
+                            );
+                })();
+
+
+                /*marker[i].addEventListener("click", function(e){
+                    debugger;
+                    if(num[i]%2==0){
+                        label[i].setStyle(style1)
+                        marker[i].setLabel(label[i]);
+                    }else {
+                        label[i].setStyle(style2)
+                        marker[i].setLabel(label[i]);
+                    }
+                    num[i]++;
+                });*/
+            }
+
+            /*var pt1 = new BMap.Point(mapData[0].point[0], mapData[0].point[1]);
+            var pt2 = new BMap.Point(mapData[1].point[0], mapData[1].point[1]);
+            var pt3 = new BMap.Point(mapData[2].point[0], mapData[2].point[1]);*/
+
+
+            /*var marker1 = new BMap.Marker(pt1,{icon:myIcon});  // 创建标注
+            map.addOverlay(marker1);              // 将标注添加到地图中
+            var marker2 = new BMap.Marker(pt2,{icon:myIcon});  // 创建标注
+            map.addOverlay(marker2);              // 将标注添加到地图中
+            var marker3 = new BMap.Marker(pt3,{icon:myIcon});  // 创建标注
+            map.addOverlay(marker3);              // 将标注添加到地图中*/
+
+          /*  var label1 = new BMap.Label(mapData[0].title+"<br/><br/>景区等级:"+mapData[0].rank+"<br/>实时客流:"+mapData[0].flow,{offset:new BMap.Size(-15,-120)});
+            var label2 = new BMap.Label(mapData[1].title+"<br/><br/>景区等级:"+mapData[1].rank+"<br/>实时客流:"+mapData[1].flow,{offset:new BMap.Size(-15,-120)});
+            var label3 = new BMap.Label(mapData[2].title+"<br/><br/>景区等级:"+mapData[2].rank+"<br/>实时客流:"+mapData[2].flow,{offset:new BMap.Size(-15,-120)});*/
+            /*label1.setStyle(style2);
+            label2.setStyle(style2);
+            label3.setStyle(style2);*/
+            /*marker1.setLabel(label1);
+            marker2.setLabel(label2);
+            marker3.setLabel(label3);*/
+            /*var num1=0
+            var num2=0
+            var num3=0*/
+
+            /*marker1.addEventListener("click", function(){
+                if(num1%2==0){
+                    label1.setStyle(style1)
+                    marker1.setLabel(label1);
+                }else {
+                    label1.setStyle(style2)
+                    marker1.setLabel(label1);
+                }
+                num1++;
+            });
+
+            marker2.addEventListener("click", function(){
+                if(num2%2==0){
+                    label2.setStyle(style1)
+                    marker2.setLabel(label2);
+                }else {
+                    label2.setStyle(style2)
+                    marker2.setLabel(label2);
+                }
+                num2++;
+            });
+
+            marker3.addEventListener("click", function(){
+                if(num3%2==0){
+                    label3.setStyle(style1)
+                    marker3.setLabel(label3);
+                }else {
+                    label3.setStyle(style2)
+                    marker3.setLabel(label3);
+                }
+                num3++;
+            });*/
+
+
+            map.setCurrentCity("杭州");          // 设置地图显示的城市 此项是必须设置的
+            map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+        }
+        
+        function worldClouds(keywords,times) {
+
+            var data = [];
+            for (var key in keywords) {
+                data.push({
+                    name: key,
+                    value: Math.sqrt(keywords[key])
+                })
+            }
+            /*var maskImage = new Image();
+            maskImage.src = imgsrc;*/
+            var option = {
+                /* tooltip: {},//鼠标划入的提示框 */
+                series: [{
+                    type: 'wordCloud', //绘图类型为字符云
+                    width:"100%",//所占整体宽度
+                    height:"100%",//所占整体高度
+                    /*maskImage: maskImage,*/
+                    sizeRange: [16*times, 50*times],//文字大小[最小，最大]
+                    /* rotationRange: [0,0],//旋转最大和最小角度 */
+                    //rotationStep:30,//文字旋转单位，30表示30°的倍数
+                    /* shape: 'ellipse',//整体字符云展现的图形 */
+                    /* autoSize: {
+                     enable: true,
+                     minSize: 2
+                     }, */
+                    textStyle: {//文字样式设置
+                        normal: {
+                            color: function() {//颜色
+                                var col= 'rgb(' + [//返回随机生成的颜色
+                                            Math.round(Math.random() * 160),
+                                            Math.round(Math.random() * 160),
+                                            Math.round(Math.random() * 160)
+                                        ].join(',') + ')';
+
+                                return col;
+                            }
+                        },
+                        emphasis: {//鼠标划入样式
+                            shadowBlur: 10,//文字阴影模糊度
+                            shadowColor: '#fff'//文字阴影颜色
+                        }
+                    },
+                    data: data
+                }]
+            };
+
+
+            var chart = echarts.init(document.getElementById('worldCloud'));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+
+        }
+        
+        function ageDistribution(age) {
+            var data='<div style="width: 100%;height: 8%"></div><table class="age-table"><tbody>';
+            data+='<tr><td style="width: 26%;background-color: rgba(196,0,1,'+age[0].rank+')"></td><td style="width: 19%"></td><td>少年 <span class="fontB">'+age[0].data+'</span></td></tr>';
+            data+='<tr><td style="background-color: rgba(196,0,1,'+age[1].rank+')"></td><td></td><td>青年 <span class="fontB">'+age[1].data+'</span></td></tr>';
+            data+='<tr><td style="background-color: rgba(196,0,1,'+age[2].rank+')"></td><td></td><td>中年 <span class="fontB">'+age[2].data+'</span></td></tr>';
+            data+='<tr><td style="background-color: rgba(196,0,1,'+age[3].rank+')"></td><td></td><td>老年 <span class="fontB">'+age[3].data+'</span></td></tr>';
+            data+='</tbody></table>';
+            document.getElementById("ageDistribution").innerHTML=data;
+        }
+        
+        function echartGraph(graphData,links,times) {
+            var graphDatas=[];
+            for(var i=0;i<graphData.length;i++){
+                graphDatas[i]={
+                    name:graphData[i],
+                    symbol:'image://./img/point.png',
+                }
+            }
+            var option = {
+                animationDurationUpdate: 1500,
+                animationEasingUpdate: 'quinticInOut',
+                series: [{
+                    type: 'graph',
+                    tooltip: {},
+                    layout: 'force',
+                    edgeSymbol: ['', 'arrow'],
+                    force: {
+                        repulsion: 60*times,
+                        edgeLength: [50*times, 90*times]
+                    },
+                    symbolSize: 30,//图标大小
+                    focusNodeAdjacency: true,
+
+                    label: {
+                        normal: {
+                            position: 'right',
+                            fontWeight: 'bold',
+                            formatter: '{b}',
+                            normal: {
+                                textStyle: {
+                                    fontFamily: '宋体'
+                                }
+                            }
+                        }
+                    },
+                    edgeLabel: {
+                        normal: {
+                            textStyle: {
+                                fontSize: 13*times,
+                                fontWeight: 'bold',
+                                fontFamily: '宋体'
+                            }
+                        }
+                    },
+
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                rotate: true,
+                                show: true,
+                                textStyle: {
+                                    color: '#000',
+                                    fontWeight: 'bold',
+                                    fontSize: 12*times
+                                }
+                            }
+                        },
+                        emphasis: {
+                            label: {
+                                show: true
+                                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+                            }
+                        }
+                    },
+
+                    data: graphDatas,
+                    // links: [],
+                    links: links,
+                    lineStyle: {
+                        normal: {
+                            width:2,
+                            color: '#C40001',
+                            curveness: 0,
+                            type: "solid"
+                        }
+                    }
+                }]
+            };
+
+            var chart = echarts.init(document.getElementById('graphDiv'));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+        }
+
+        function echartsLine(thisWeek,lastWeek,times) {
+            var colors = ['#5793f3', '#d14a61', '#675bba'];
+
+            var option = {
+                title:[
+                    {text:"客流量",
+                        x: '2.5%',
+                        y: 10+'px',
+                        textStyle:{
+                            color:"#000",
+                            fontSize:14*times
+                        }
+                    }
+                ],
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        lineStyle: {
+                            color: '#57617B'
+                        }
+                    }
+                },
+                color: colors,
+                grid: [
+                    {
+                        y: 50*times+'px',
+                        x: 80*times+'px',
+                        y2: 30*times+'px'
+                    },
+                ],
+                legend: {
+                    data: [
+                        {
+                            name: "本周",
+                            icon: "roundRect",
+                            textStyle: {
+                                "color": "#000",
+                                fontSize: 12*times
+                            }
+                        },
+                        {
+                            name: "上周",
+                            icon: "roundRect",
+                            textStyle: {
+                                "color": "#000",
+                                fontSize: 12*times
+                            }
+                        }
+                    ],
+                    "top": 15+"px",
+                    right: 20*times+'px',
+                    itemGap:30,
+                    "textStyle": {
+                        "color": "#fff",
+                        fontSize: 12*times
+                    }
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        axisTick: {
+                            show: false,
+                            alignWithLabel: true
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: 'black',
+                                fontSize: 12*times
+                            }
+                        },
+                        splitLine: { //网格线
+                            show: true,
+                            lineStyle: {
+                                color: ['#A99D88'],
+                                type: 'solid'
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: '#818C93'
+                            }
+                        },
+                        data: ['周一','周二','周三','周四','周五','周六','周日']
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        axisLine: {
+                            lineStyle: {
+                                color: '#818C93'
+                            }
+                        },
+                        splitLine: { //网格线
+                            show: false,
+                            lineStyle: {
+                                color: ['#3D4D68'],
+                                type: 'dashed'
+                            }
+                        },
+                        axisLabel: {
+                            formatter: '{value}',
+                            textStyle: {
+                                color: 'black',
+                                fontSize: 12*times
+                            }
+                        }
+                    }
+                ],
+                series: [
+                    {
+                        name:'本周',
+                        type:'line',
+                        smooth:true,
+                        data:thisWeek,
+                        symbol:'none',
+                        areaStyle: {
+                            normal: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 0,
+                                    color: 'rgba(84,149,196,0.9)' // 0% 处的颜色
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(212,135,172,0.9)' // 100% 处的颜色
+                                }], false),
+                                shadowColor: 'rgba(0, 0, 0, 0.1)',
+                                shadowBlur: 10
+                            }
+                        },
+                        itemStyle : {
+                            normal : {
+                                lineStyle:{
+                                    width:1,//折线宽度
+                                },
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 1,
+                                    color: 'rgba(212,135,172,0.9)' // 100% 处的颜色
+                                }, {
+                                    offset: 0,
+                                    color: 'rgba(84,149,196,0.9)' // 0% 处的颜色
+                                }], false),
+                                opacity: 0.4
+                            }
+                        }
+                    },
+                    {
+                        name:'上周',
+                                type:'line',
+                        smooth:true,
+                        data:lastWeek,
+                            symbol:'none',
+                            areaStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                offset: 1,
+                                color: 'rgba(231,157,40,0.7)' // 100% 处的颜色
+                            }, {
+                                offset: 0,
+                                color: 'rgba(198,8,3,0.7)' // 0% 处的颜色
+                            }], false),
+                                    shadowColor: 'rgba(0, 0, 0, 0.1)',
+                                    shadowBlur: 10
+                        }
+                    },
+                        itemStyle : {
+                            normal : {
+                                lineStyle:{
+                                    width:1,//折线宽度
+                                },
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 1,
+                                    color: 'rgba(231,157,40,0.7)' // 100% 处的颜色
+                                }, {
+                                    offset: 0,
+                                    color: 'rgba(198,8,3,0.7)' // 0% 处的颜色
+                                }], false),
+                                        opacity: 0.4
+                            }
+                        }
+                    }
+                ]
+            };
+            var chart = echarts.init(document.getElementById('historyFlow'));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+        }
+
+        function echartsBar(data1,times) {
+            var data1Max = Math.max.apply( Math, data1 );
+            var data2 = [];
+            for(var i = 0;i<data1.length;i++){
+                data2.push(data1Max*1.2)
+            }
+
+            var option = {
+                grid: {
+                    left: '15%',
+                    top: '5%',
+                    bottom: '5%',
+                    right: '15%'
+                },
+                legend: {
+                    show: false
+                },
+
+                xAxis: {
+                    splitLine: {
+                        show: false
+                    },
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    },
+                    axisLabel: {
+                        show: false
+                    }
+                },
+                yAxis: {
+                    splitLine: {
+                        show: false
+                    },
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
+                    },
+                    axisLabel: {
+                        color: '#000',
+                        textStyle: {
+                            color: '#000', //百分比颜色
+                            fontWeight:600,
+                            fontSize: 15*times,
+                        },
+                    },
+                    data: ['北京', '上海', '广州', '深圳', '杭州']
+                },
+                series: [{
+                    type: 'bar',
+                    barGap: '-100%',
+                    barWidth: 12*times,
+                    itemStyle: {
+                        normal: {
+                            color: '#C40001'
+                        }
+                    },
+                    z: -10,
+                    data: data1
+                },
+                    {
+                        type: 'bar',
+                        barGap: '-100%',
+                        barWidth: 12*times,
+                        itemStyle: {
+                            normal: {
+                                color: '#F1E6D4'
+                            }
+                        },
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'right',
+                                textStyle: {
+                                    color: '#000',
+                                    fontSize: 13*times,
+                                    fontWeight:600
+                                },
+                                offset: [40,0],
+                                formatter: function(params){
+                                    return data1[params.dataIndex]===0?'-':data1[params.dataIndex]
+                                }
+                            }
+                        },
+                        z: -100,
+                        data: data2
+                    }]
+            };
+            var chart = echarts.init(document.getElementById('cityTop'));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+        }
+
+        function echartsPie(data,id,times) {
+            var data1=[];
+            for(var i=0;i<100;i++){
+                data1.push(2);
+                data1.push(1);
+            }
+
+            var option = {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{b}: {c} ({d}%)",
+
+                },
+                legend: {
+                    show:false
+                },
+                startAngle:120,
+                series: [{
+                    type: 'pie',
+                    // center: [110, 95],
+                    // radius: [88, 90],
+                    radius: ['76%', '77%'],
+                    labelLine: {
+                        normal: {
+                            show: 0,
+                        },
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: function(a) {
+                                if (a.data == 2) {
+                                    return '#F1E6D4';
+                                }
+                                if (a.data == 1) {
+                                    return 'rgba(0,0,0, 0)';
+                                }
+                            },
+                            fontSize:12*times
+                        },
+                    },
+                    data: data1
+                },
+                    {
+                        name:'比例',
+                        type:'pie',
+                        startAngle:45,
+                        radius: ['60%', '72%'],
+                        color: ['#F0E5D3', '#C40001'],
+                        label: {
+                            normal: {
+                                formatter: '{b}\n{d}%',
+                                textStyle:{
+                                    color:'#000',
+                                    fontSize:14*times,
+                                    fontWeight:600
+                                }
+                            }
+
+                        },
+                        labelLine: {
+                            normal: {
+                                /*length: 25,
+                                length2: 10,*/
+                                lineStyle: {
+                                    type: 'solid',
+                                    color:'#C40001',
+                                    width: 2
+                                }
+                            },
+                        },
+                        data:data
+                    }
+                ]
+            };
+            var chart = echarts.init(document.getElementById(id));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+        }
+    </script>
+</head>
+<body class="jiaxing-body">
+    <div class="jiaxing-content">
+        <div class="jiaxing-content-left">
+            <div class="content-left-top-dv"></div>
+            <div class="content-left-top" id="allmap"></div>
+            <div style="width: 100%;height: 4%"></div>
+            <div class="content-left-bottom">
+                <div class="content-left-bottom-top"></div>
+                <div style="height: 2.5%"></div>
+                <div class="content-left-bottom-bottom">
+                    <div id="historyFlow" style="width:100%;height:100%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="jiaxing-content-right">
+            <div class="content-right-top">
+                <div class="content-right-top-title"></div>
+                <div style="height: 3.5%"></div>
+                <div class="content-right-top-div1">
+                    <div class="top-div1-title">01&nbsp;来源地市TOP5</div>
+                    <div class="top-div1-content" id="cityTop"></div>
+                </div>
+                <div class="content-right-top-div2">
+                    <div class="top-div1-title">02&nbsp;省内/省外来源比例</div>
+                    <div class="top-div1-content" id="sourceTop"></div>
+                </div>
+            </div>
+            <div style="height: 1%"></div>
+            <div class="content-right-bottom">
+                <div class="right-bottom-left">
+                    <div class="bottom-left-div1">
+                        <div class="bottom-left-div1-title"></div>
+                        <div style="height: 3.5%"></div>
+                        <div class="bottom-left-div1-content1">
+                            <div class="top-div1-title">01&nbsp;年龄分布</div>
+                            <div class="top-div1-content" id="ageDistribution">
+                                <div style="width: 100%;height: 8%"></div>
+                                <table class="age-table">
+                                    <tbody>
+                                    <tr>
+                                        <td style="width: 45%"></td>
+                                        <td>0-20岁 <span class="fontB">30%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>20-40岁 <span class="fontB">30%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>40-60岁 <span class="fontB">30%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>60-80岁 <span class="fontB">30%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>>=80岁 <span class="fontB">30%</span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="bottom-left-div1-content2">
+                            <div class="top-div1-title">02&nbsp;性别比例</div>
+                            <div class="top-div1-content" id="sexDiv"></div>
+                        </div>
+                    </div>
+                    <div style="height: 2%"></div>
+                    <div class="bottom-left-div2">
+                        <div class="bottom-left-div2-title"></div>
+                        <div style="height: 3.5%"></div>
+                        <div class="bottom-left-div2-content">
+                            <div style="width: 100%;height:100%;" id="graphDiv"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-bottom-right">
+                    <div class="right-bottom-right-title"></div>
+                    <div style="height: 1.9%"></div>
+                    <div class="right-bottom-right-content">
+                        <div id="worldCloud" style="width: 100%;height: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

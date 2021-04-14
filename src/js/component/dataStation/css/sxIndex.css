@@ -1,0 +1,785 @@
+@media screen and (min-width:1921px){
+    html{
+        height: 100%;
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1920px){
+    html{
+        height: 100%;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1440px){
+    html{
+        height: 100%;
+        font-size: 12px;
+    }
+}
+
+body{
+    margin: 0;
+}
+
+/*轮播样式*/
+
+ul,
+ol,
+li,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.ft-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ft-carousel .carousel-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.ft-carousel .carousel-inner .carousel-item {
+    float: left;
+    height: 100%;
+}
+
+.ft-carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+}
+
+.ft-carousel .carousel-indicators {
+    position: absolute;
+    left: 0;
+    bottom: 2rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0;
+}
+
+.ft-carousel .carousel-indicators span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255,255,255,0.5);
+    margin: 0 4px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.ft-carousel .carousel-indicators span.active {
+    background-color: #fff;
+}
+
+.ft-carousel .carousel-btn {
+    position: absolute;
+    top: 50%;
+    width: 1.6rem;
+    height: 2.4rem;
+    margin-top: -1.2rem;
+    margin-right: 3rem;
+    margin-left: 3rem;
+    cursor: pointer;
+}
+
+.ft-carousel .carousel-prev-btn {
+    left: 0;
+    background: url(../images/sx/leftIcon_.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.ft-carousel .carousel-prev-btn:hover {
+    left: 0;
+    background: url(../images/sx/leftIcon.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.ft-carousel .carousel-next-btn {
+    right: 0;
+    background: url(../images/sx/rightIcon_.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.ft-carousel .carousel-next-btn:hover {
+    right: 0;
+    background: url(../images/sx/rightIcon.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*滚动条凹槽的颜色，还可以设置边框属性*/
+::-webkit-scrollbar-track-piece {
+background-color:#eee;
+}
+/*滚动条的宽度*/
+::-webkit-scrollbar {
+width:9px;
+    height:9px;
+}
+/*滚动条的设置*/
+::-webkit-scrollbar-thumb {
+background-color:#163254;
+    background-clip:padding-box;
+    min-height:28px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color:#bbb;
+}
+
+
+
+
+
+
+
+
+
+
+.example {
+    width: 100%;
+    height: 26rem;
+    font-size: 2.5rem;
+    text-align: center;
+    background-color: #464576;
+    z-index: 10;
+}
+.carousel-item{line-height: 336px;color: #fff;font-family:  Arial Black}
+
+.index-title{
+    height: 3.5rem;
+    width: 100%;
+    position: absolute;
+    top:0;
+    z-index: 99;
+    color:white;
+    font-size: 1.2rem;
+    line-height: 3.5rem;
+    border-bottom: solid 1px rgba(141, 153, 170, 0.15);
+}
+
+.index-title-logo{
+    position: absolute;
+    height: 2.5rem;
+    left: 15%;
+    top:0.5rem;
+}
+
+.index-title-login{
+    position: absolute;
+    right: 15%;
+}
+
+.index-title-menu{
+    position: absolute;
+    right: 30%;
+}
+
+.index-title-menu span{
+    padding: 0 1.5rem ;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.menu-active{
+    border-bottom: 3px solid #66b4f4;
+}
+
+.index-navigator{
+    height: 10rem;
+    border-bottom: solid 1px #efefef;
+}
+
+.index-capability{
+    padding: 0 10%;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.index-navigator-table{
+    width: 70%;
+    height: 100%;
+    margin: 0 15%;
+    text-align: center;
+}
+
+.index-navigator-table td:hover{
+    box-shadow: 0px 4px 10px 0px rgba(8, 109, 224, 0.28);
+    cursor: pointer;
+}
+
+.index-navigator-table img{
+    height: 3rem;
+    width: 3rem;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.index-navigator-table div{
+    display: inline-block;
+    text-align: left;
+    line-height: 1.5rem;
+    vertical-align: middle;
+    margin-left: 0.7rem;
+    cursor: pointer;
+}
+
+.index-navigator-table-span1{
+    font-size: 1.3rem;
+    color: #333333;
+}
+
+.index-navigator-table-span2{
+    font-size: 0.9rem;
+    color: #888888;
+}
+
+.index-content-head{
+    text-align: center;
+    margin: 1.5rem;
+}
+
+.index-content-head-span1{
+    font-size: 1.5rem;
+    color: #333333;
+}
+
+.index-content-head-span1-white{
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.index-content-head-span2{
+    font-size: 1rem;
+    color: #888888;
+    padding-top: 0.7rem;
+    display: inline-block;
+}
+
+.index-content-head-span2-white{
+    font-size: 1rem;
+    color: #fefefe;
+    padding-top: 0.7rem;
+    display: inline-block;
+}
+
+.index-content-head-span3{
+    display: inline-block;
+    width: 2.5rem;
+    height: 0.25rem;
+    background-color: #e74955;
+}
+
+.index-content-head-span3-white{
+    display: inline-block;
+    width: 2.5rem;
+    height: 0.25rem;
+    background-color: #fff;
+}
+
+.index-capability-tab{
+    height: 3rem;
+    border: solid 1px #d9d9d9 ;
+    background-color: white;
+    border-radius: 1.5rem;
+    padding: 0 0.2rem;
+}
+
+.index-capability-tab-div{
+    float: left;
+    width: 20%;
+    height: 2.8rem;
+    border-radius: 1.4rem;
+    margin: 0.1rem 0;
+    text-align: center;
+    line-height: 2.8rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.index-capability-tab-active{
+    background-image: linear-gradient(90deg,
+    #0d65fd 0%,
+    #279dfd 100%);
+    color: white;
+}
+
+.index-capability-content{
+    margin: 3rem 0;
+    height: 45rem;
+}
+
+.index-capability-content-table{
+    width: 100%;
+    height: 100%;
+    border-spacing: 2rem 0;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.capability-table-title{
+    color: #222;
+    font-size: 1.5rem;
+    margin-bottom: 1.3rem;
+}
+
+.capability-img{
+    width: 80%;
+    position: absolute;
+    bottom: 2rem;
+    left: 10%;
+}
+
+.capability-img2{
+    width: 60%;
+    position: absolute;
+    bottom: 2rem;
+    left: 20%;
+}
+
+.index-capability-content-table td{
+    background-color: white;
+    padding: 2rem;
+    vertical-align: top;
+    position: relative;
+}
+
+.index-capability-content-table td:hover{
+    box-shadow: -5px 10px 14px 0px rgba(144, 144, 144, 0.28);
+}
+
+.index-capability-content-img{
+    float: left;
+    height: 100%;
+    width: 25rem;
+    background: url("../images/sx/capability1.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.index-capability-content-information{
+    margin-left: 2.5rem;
+    float: left;
+    height: 100%;
+    color: #333;
+    max-width: 60%;
+}
+
+.capability-content-information-span1{
+    font-size: 1.5rem;
+}
+
+.capability-content-information-span2{
+    font-size: 0.9rem;
+    line-height: 5.5rem;
+}
+
+.capability-content-information-span3{
+    font-size: 0.9rem;
+    line-height: 2.5rem;
+}
+
+.capability-content-information-span3>span>span{
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    border: solid 2px #0d66fd;
+    margin-right: 0.7rem;
+}
+
+.capability-content-information-span3>span{
+    display: inline-block;
+    margin-right: 4rem;
+}
+
+.index-dataAsset{
+    padding: 0 10%;
+    background-color: #f3f3f5;
+    overflow: hidden;
+}
+
+.index-dataAsset-tab{
+    height: 3.5rem;
+    font-size: 1.1rem;
+    color: #333;
+    background-color:white;
+    margin-bottom: 2rem;
+}
+
+.index-dataAsset-tab table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.index-dataAsset-tab-active{
+    border-bottom: solid 3px #0d66fd;
+}
+
+.index-dataAsset-class{
+    background-color: white;
+    margin-bottom: 2rem;
+}
+
+.index-dataAsset-class-table{
+    height: 16rem;
+    width: 100%;
+    border-spacing: 0;
+    text-align: center;
+}
+
+.index-dataAsset-table{
+    width: 100%;
+    border-spacing: 0;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.index-dataAsset-table img{
+    height: 6rem;
+    margin: 1rem 0;
+}
+
+.index-dataAsset-table td{
+    width:33.3%;
+    vertical-align: top;
+    padding: 0 4rem;
+}
+
+.index-dataAsset-table td:hover{
+    background-color: white;
+    border-radius: 2rem;
+}
+
+.index-dataAsset-table div{
+    font-size: 1.5rem;
+    color: #222;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.index-dataAsset-table span{
+    font-size: 1.2rem;
+    color: #222;
+    display: block;
+    margin-bottom: 4rem;
+    text-align: left;
+}
+
+.index-dataAsset-class-table td{
+    border: solid 1px #eaeaea;
+    vertical-align: top;
+}
+
+.index-dataAsset-class-table img{
+    height: 6rem;
+    margin: 3.5rem 0 2rem;
+}
+
+.xuanzhun{
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+    -webkit-animation: rotate 3s linear infinite;
+    -moz-animation: rotate 3s linear infinite;
+    -o-animation: rotate 3s linear infinite;
+    animation: rotate 3s linear infinite;
+}
+@-webkit-keyframes rotate{from{-webkit-transform: rotate(0deg)}
+    to{-webkit-transform: rotate(360deg)}
+}
+@-moz-keyframes rotate{from{-moz-transform: rotate(0deg)}
+    to{-moz-transform: rotate(359deg)}
+}
+@-o-keyframes rotate{from{-o-transform: rotate(0deg)}
+    to{-o-transform: rotate(359deg)}
+}
+@keyframes rotate{from{transform: rotate(0deg)}
+    to{transform: rotate(359deg)}
+}
+
+.index-dataAsset-class-table span{
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.index-dataSafe{
+    position: relative;
+    height: 31rem;
+    background: url("../images/sx/safe-bg.png") no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+    padding: 0 15%;
+}
+
+.index-operation{
+    position: relative;
+    height: 35rem;
+    overflow: hidden;
+    padding: 0 15%;
+}
+
+.index-operation-content{
+    height: 20rem;
+    position: relative;
+    top:1.7rem;
+    text-align: center;
+}
+
+.index-operation-content-div{
+    display: inline-block;
+    width: 18rem;
+    height: 100%;
+    background-color: #666666;
+    border: solid 1px #d9d9d9;
+    margin: 0 0.5rem;
+}
+
+.index-operation-content-div:hover{
+    background-color: #0d66fd;
+    box-shadow: 0px 4px 10px 0px rgba(8, 109, 224, 0.28);
+}
+
+.index-operation-content-title{
+    height: 4.5rem;
+    text-align: center;
+}
+
+.index-operation-content-text{
+    height: 15.5rem;
+    background-color: white;
+    padding: 0 1.5rem;
+    text-align: left;
+}
+
+.index-operation-content-title img{
+    height: 2.5rem;
+    margin-top: 1rem;
+}
+
+.index-dataSafe-left{
+    position: absolute;
+    top:10.5rem;
+    right: 51%;
+    height: 15rem;
+    width: 38rem;
+}
+
+.index-dataSafe-right{
+    position: absolute;
+    top:10.5rem;
+    left: 51%;
+    height: 15rem;
+    width: 38rem;
+}
+
+.index-dataSafe-content1{
+    width: 32rem;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 4px;
+    position: absolute;
+    right: 0;
+    z-index: 50;
+}
+
+.index-dataSafe-img{
+    width: 19rem;
+    height: 12rem;
+    position: absolute;
+    left: 0;
+    top: 1.5rem;
+    background: url("../images/sx/safe1.png") no-repeat;
+    background-size: 100% 100%;
+    z-index: 51;
+}
+
+.index-dataSafe-img2{
+    width: 19rem;
+    height: 12rem;
+    position: absolute;
+    left: 0;
+    top: 1.5rem;
+    background: url("../images/sx/safe2.png") no-repeat;
+    background-size: 100% 100%;
+    z-index: 51;
+}
+
+.index-dataSafe-text{
+    width: 16rem;
+    height: 12rem;
+    position: absolute;
+    right: 1.6rem;
+    top: 1.5rem;
+    z-index: 51;
+}
+
+.index-governance{
+    height: 50rem;
+    background-color: #2b303b;
+    overflow: hidden;
+    padding: 0 8%;
+    position: relative;
+}
+
+.index-governance-content{
+    width: 26rem;
+    width: -moz-calc(100%);
+    width: -webkit-calc(100% - 63rem);
+    width: calc(100% - 63rem);
+    height: 38rem;
+    color: white;
+    font-size: 1.2rem;
+    position: relative;
+    left: 63rem;
+}
+
+.index-governance img{
+    position: absolute;
+    height: 38rem;
+    width: 59rem;
+    left: 8%;
+    -webkit-transition: linear .5s;
+    -moz-transition: linear .5s;
+    -ms-transition: linear .5s;
+    -o-transition: linear .5s;
+    transition: linear .5s;
+    z-index: 100;
+}
+
+.index-governance-runImg{
+    position: absolute;
+    height: 38rem;
+    width: 59rem;
+    z-index: 999;
+}
+
+.index-governance-img-left{
+    -webkit-transform: skew(0deg,-10deg);
+    -moz-transform:skew(0deg,-10deg);
+    transform:skew(0deg,-10deg);
+}
+
+.index-governance-img-right{
+    -webkit-transform: skew(0deg,10deg);
+    -moz-transform:skew(0deg,10deg);
+    transform:skew(0deg,10deg);
+}
+
+.index-governance-table{
+    border-spacing: 1rem 1.5rem;
+    margin-top: 4rem;
+}
+
+.index-governance-table-td{
+    width: 18rem;
+    color: white;
+    height: 4rem;
+    background-color: rgba(255,255,255,0.1);
+    border: solid 1px #636870;
+    line-height: 4rem;
+}
+
+.index-governance-table img{
+    height: 2rem;
+    position: relative;
+    top:0.5rem;
+    margin: 0 1rem 0 1.5rem;
+}
+
+.governance-active{
+    background-color: rgba(58,143,221,0.1);
+    border: solid 1px #3a8fdd;
+}
+
+.index-governance-img{
+    height: 19rem;
+    position: absolute;
+    bottom: 3rem;
+    left: 57%;
+}
+
+.index-product{
+    position: relative;
+    height: 19rem;
+    padding: 0 15%;
+}
+
+.index-product-table{
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.index-product-table td{
+    width: 25%;
+}
+
+.index-product-table img{
+    width: 2.1rem;
+    margin-bottom: 0.7rem;
+}
+
+.index-product-content{
+    margin-top: 3rem;
+}
+
+.index-product-table-num{
+    font-size: 1.75rem;
+    color: #da0401;
+}
+
+.index-bottom{
+    height: 10rem;
+    background-color: #202020;
+    text-align: center;
+    font-size: 0.9rem;
+    color: white;
+    padding-top: 2rem;
+    line-height: 2.3rem;
+}
+
+.index-governance-content-num{
+    width: 2rem;
+    border-radius: 50%;
+    height: 2rem;
+    background-color: #5fc4dd;
+    display: inline-block;
+    line-height: 2rem;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 700;
+    margin-right: 1rem;
+}
+
+.index-governance-content-title{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #70e3ff;
+}
+
+.index-governance-content-content{
+    margin: 1rem 1.5rem 2.5rem;
+}
+
+.index-governance-content-content span{
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 1.1rem;
+}

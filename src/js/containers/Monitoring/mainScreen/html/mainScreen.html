@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>山西联通运营监控大屏</title>
+    <link rel="stylesheet" href="../css/mainScreen.css" type="text/css">
+</head>
+<body>
+<img src="../image/mainTitle.png" class="mainScreen-title">
+<div class="mainScreen-menu">
+    <div class="mainScreen-menu-content">
+        <div style="height: 13%" onclick="showData('山西');"></div>
+        <div style="height: 87%">
+            <table class="mainScreen-menu-content-table">
+                <tbody>
+                <tr>
+                    <td class="table-td table-td-sel" id="menuAll" onclick="selectMenu(this)">产品合计</td>
+                </tr>
+                <tr>
+                    <td class="table-td" id="menu0" onclick="selectMenu(this)">2I产品</td>
+                </tr>
+                <tr>
+                    <td class="table-td" id="menu1" onclick="selectMenu(this)">冰激凌产品</td>
+                </tr>
+                <tr>
+                    <td class="table-td" id="menu2" onclick="selectMenu(this)">融合产品</td>
+                </tr>
+                <tr>
+                    <td class="table-td" id="menu3" onclick="selectMenu(this)">固话产品</td>
+                </tr>
+                <tr>
+                    <td class="table-td" id="menu4" onclick="selectMenu(this)">宽带产品</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="mainScreen-menu-icon" onshow="yes" onclick="menuHide()" id="showMenu"></div>
+</div>
+<div class="mainScreen-cp">
+    <div class="mainScreen-cp-title"></div>
+    <div class="mainScreen-cp-content">
+        <div class="mainScreen-cd-content-All">
+            <table class="mainScreen-cd-content-All-table">
+                <tbody>
+                <tr>
+                    <td>
+                        <div style="display: inline-block">
+                            <img src="../image/icon.png" class="mainScreen-cd-content-All-icon">
+                        </div>
+                        <div style="display: inline-block">
+                            <span class="content-All-title">发展合计</span><br>
+                            <span class="content-All-num">25896325</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: inline-block">
+                            <img src="../image/icon.png" class="mainScreen-cd-content-All-icon">
+                        </div>
+                        <div style="display: inline-block">
+                            <span class="content-All-title">2I用户</span><br>
+                            <span class="content-All-num">25896325</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: inline-block">
+                            <img src="../image/icon.png" class="mainScreen-cd-content-All-icon">
+                        </div>
+                        <div style="display: inline-block">
+                            <span class="content-All-title">冰激凌用户</span><br>
+                            <span class="content-All-num">25896325</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: inline-block">
+                            <img src="../image/icon.png" class="mainScreen-cd-content-All-icon">
+                        </div>
+                        <div style="display: inline-block">
+                            <span class="content-All-title">融合用户</span><br>
+                            <span class="content-All-num">25896325</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: inline-block">
+                            <img src="../image/icon.png" class="mainScreen-cd-content-All-icon">
+                        </div>
+                        <div style="display: inline-block">
+                            <span class="content-All-title">固话业务</span><br>
+                            <span class="content-All-num">25896325</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: inline-block">
+                            <img src="../image/icon.png" class="mainScreen-cd-content-All-icon">
+                        </div>
+                        <div style="display: inline-block">
+                            <span class="content-All-title">宽带业务</span><br>
+                            <span class="content-All-num">25896325</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: inline-block">
+                            <img src="../image/icon.png" class="mainScreen-cd-content-All-icon">
+                        </div>
+                        <div style="display: inline-block">
+                            <span class="content-All-title">其他</span><br>
+                            <span class="content-All-num">25896325</span>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mainScreen-cd-content-map" id="mainMap"></div>
+        <div class="mainScreen-cd-content-bar">
+            <div class="content-bar-title">
+                <table class="content-bar-div">
+                    <tbody>
+                    <tr>
+                        <td><img src="../image/icon.png" class="content-bar-title-icon"/></td>
+                        <td style="color: white;font-size: 1.1rem"><span id="developmentTotal">山西</span>发展合计</td>
+                        <td style="font-size: 2.5rem;font-weight: 600;color: #27abbd;"><span>25396</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="cityBar" class="content-bar-content"></div>
+        </div>
+    </div>
+</div>
+<div class="mainScreen-cd">
+    <div class="mainScreen-cd-title"></div>
+    <div class="mainScreen-cd-content">
+        <div class="mainScreen-cd-content-line" id="doubleLine"></div>
+        <div class="mainScreen-cd-content-line" id="barLine"></div>
+    </div>
+</div>
+<div class="mainScreen-zt">
+    <div class="mainScreen-zt-title"></div>
+    <div class="mainScreen-zt-content">
+        <div class="zt-content-up">
+            <div class="zt-content-up-div1">
+                <img src="../image/zt1.png" class="zt-content-up-div1-img"/>
+                <div class="zt-content-up-font">
+                    <span style="color: white;font-size: 1rem;line-height: 2.5rem">降套用户受理量</span><br/>
+                    <span style="color: #26DDF8;font-size: 1.6rem">259632587</span>
+                </div>
+            </div>
+            <div class="zt-content-up-div2">
+                <img src="../image/zt2.png" class="zt-content-up-div1-img"/>
+                <div class="zt-content-up-font">
+                    <span style="color: white;font-size: 1rem;line-height: 2.5rem">离网人数</span><br/>
+                    <span style="color: #26DDF8;font-size: 1.6rem">259632587</span>
+                </div>
+            </div>
+        </div>
+        <div class="zt-content-line"></div>
+        <div class="zt-content-data">
+            <div class="zt-content-data-div">
+                <table style="width: 100%;height: 100%;text-align: center">
+                    <tbody>
+                    <tr style="height: 3rem;">
+                        <td><span style="float: left;color: white;font-size: 1.2rem;margin-left: 1rem;line-height: 3rem;">主动离网</span><span style="float: right;color: #26A5B8;font-size: 1rem;line-height: 3rem">单位：人</span></td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-size: 1.8rem;color: #68FDFB">136958741</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0 2rem;">
+                            <img src="../image/zt4.png" style="width: 2rem;height: 2rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                            <span style="font-size: 1rem;color: white;float: left;line-height: 2rem;">手机</span>
+                            <span style="font-size: 1.3rem;color: #28AEBF;float:right;line-height: 2rem;">252359874</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0 2rem;">
+                            <img src="../image/zt5.png" style="width: 2rem;height: 2rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                            <span style="font-size: 1rem;color: white;float: left;line-height: 2rem;">固话</span>
+                            <span style="font-size: 1.3rem;color: #28AEBF;float:right;line-height: 2rem;">252359874</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0 2rem;">
+                            <img src="../image/zt6.png" style="width: 2rem;height: 2rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                            <span style="font-size: 1rem;color: white;float: left;line-height: 2rem;">宽带</span>
+                            <span style="font-size: 1.3rem;color: #28AEBF;float:right;line-height: 2rem;">252359874</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="zt-content-data-line"></div>
+            <div class="zt-content-data-div">
+                <table style="width: 100%;height: 100%;text-align: center">
+                    <tbody>
+                    <tr style="height: 3rem;">
+                        <td><span style="float: left;color: white;font-size: 1.2rem;margin-left: 1rem;line-height: 3rem;">被动离网</span><span style="float: right;color: #26A5B8;font-size: 1rem;line-height: 3rem">单位：人</span></td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-size: 1.8rem;color: #68FDFB">136958741</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0 2rem;">
+                            <img src="../image/zt4.png" style="width: 2rem;height: 2rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                            <span style="font-size: 1rem;color: white;float: left;line-height: 2rem;">手机</span>
+                            <span style="font-size: 1.3rem;color: #28AEBF;float:right;line-height: 2rem;">252359874</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0 2rem;">
+                            <img src="../image/zt5.png" style="width: 2rem;height: 2rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                            <span style="font-size: 1rem;color: white;float: left;line-height: 2rem;">固话</span>
+                            <span style="font-size: 1.3rem;color: #28AEBF;float:right;line-height: 2rem;">252359874</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0 2rem;">
+                            <img src="../image/zt6.png" style="width: 2rem;height: 2rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                            <span style="font-size: 1rem;color: white;float: left;line-height: 2rem;">宽带</span>
+                            <span style="font-size: 1.3rem;color: #28AEBF;float:right;line-height: 2rem;">252359874</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mainScreen-js">
+    <div class="mainScreen-js-title"></div>
+    <div class="mainScreen-js-content">
+        <div class="mainScreen-js-content-div1">
+            <table style="width: 100%;height: 100%;text-align: center">
+                <tbody>
+                <tr style="height: 4rem;">
+                    <td><span style="font-size: 1.1rem;color: white;font-weight: bold">语音网内结算TOP 3</span></td>
+                </tr>
+                <tr>
+                    <td style="padding:0 2rem;">
+                        <img src="../image/1st.png" style="width: 2rem;height: 1.8rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                        <span style="font-size: 1.1rem;color: #28AEBF;float: left;line-height: 2rem;">产品一</span>
+                        <span style="font-size: 1rem;color: white;float:right;line-height: 2rem;">874</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0 2rem;">
+                        <img src="../image/2nd.png" style="width: 2rem;height: 1.8rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                        <span style="font-size: 1.1rem;color: #28AEBF;float: left;line-height: 2rem;">产品二</span>
+                        <span style="font-size: 1rem;color: white;float:right;line-height: 2rem;">874</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0 2rem;">
+                        <img src="../image/3rd.png" style="width: 2rem;height: 1.8rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                        <span style="font-size: 1.1rem;color: #28AEBF;float: left;line-height: 2rem;">产品三</span>
+                        <span style="font-size: 1rem;color: white;float:right;line-height: 2rem;">2523</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mainScreen-js-content-div2">
+            <table style="width: 100%;height: 100%;text-align: center">
+                <tbody>
+                <tr style="height: 4rem;">
+                    <td><span style="font-size: 1.1rem;color: white;font-weight: bold">语音网间结算TOP 3</span></td>
+                </tr>
+                <tr>
+                    <td style="padding:0 2rem;">
+                        <img src="../image/1st.png" style="width: 2rem;height: 1.8rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                        <span style="font-size: 1.1rem;color: #28AEBF;float: left;line-height: 2rem;">产品一</span>
+                        <span style="font-size: 1rem;color: white;float:right;line-height: 2rem;">874</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0 2rem;">
+                        <img src="../image/2nd.png" style="width: 2rem;height: 1.8rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                        <span style="font-size: 1.1rem;color: #28AEBF;float: left;line-height: 2rem;">产品二</span>
+                        <span style="font-size: 1rem;color: white;float:right;line-height: 2rem;">874</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0 2rem;">
+                        <img src="../image/3rd.png" style="width: 2rem;height: 1.8rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                        <span style="font-size: 1.1rem;color: #28AEBF;float: left;line-height: 2rem;">产品三</span>
+                        <span style="font-size: 1rem;color: white;float:right;line-height: 2rem;">2523</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mainScreen-js-content-div3">
+            <table style="width: 100%;height: 100%;text-align: center">
+                <tbody>
+                <tr style="height: 3rem;">
+                    <td colspan="3"><span style="font-size: 1.1rem;color: white;font-weight: bold">流量网内结算TOP 3</span></td>
+                </tr>
+                <tr>
+                    <td style="padding-right: 1rem">
+                        <img src="../image/1st.png" style="width: 2rem;height: 1.8rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                        <span style="font-size: 1.1rem;color: #28AEBF;float: left;line-height: 2rem;">产品一</span>
+                        <span style="font-size: 1rem;color: white;float:right;line-height: 2rem;">87422</span>
+                    </td>
+                    <td style="">
+                        <img src="../image/2nd.png" style="width: 2rem;height: 1.8rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                        <span style="font-size: 1.1rem;color: #28AEBF;float: left;line-height: 2rem;">产品二</span>
+                        <span style="font-size: 1rem;color: white;float:right;line-height: 2rem;">874</span>
+                    </td>
+                    <td style="padding-left: 1rem">
+                        <img src="../image/3rd.png" style="width: 2rem;height: 1.8rem;vertical-align: middle;float: left;margin-right: 0.5rem"/>
+                        <span style="font-size: 1.1rem;color: #28AEBF;float: left;line-height: 2rem;">产品三</span>
+                        <span style="font-size: 1rem;color: white;float:right;line-height: 2rem;">2523</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script src="../js/mainScreen.js"></script>
+</body>
+</html>

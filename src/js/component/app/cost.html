@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>成本</title>
+    <link href="./cost.css" type="text/css" rel="stylesheet"/>
+    <script src="../jiaxing/js/jquery-3.3.1.min.js"></script>
+    <script src="./echarts.min.js"></script>
+    <script src="./cost.js"></script>
+</head>
+<body>
+<div class="cost-pie">
+    <div class="cost-pie-echart" id="costPie"></div>
+    <div class="cost-pie-table">
+        <table style="width: 100%;height: 100%;text-align: center">
+            <tbody>
+            <tr>
+                <td style="width: 50%">
+                    <span class="cost-pie-table-num">25893.23</span><br>
+                    <span class="cost-pie-table-title">总成本 (万元)</span>
+                </td>
+                <td style="width: 50%">
+                    <span class="cost-pie-table-num">5893.03</span><br>
+                    <span class="cost-pie-table-title">使用成本 (万元)</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="cost-table">
+    <div class="cost-table-tr">
+        <table class="cost-div-table">
+            <tbody>
+            <tr>
+                <td style="width: 37%">指标</td>
+                <td style="width: 33%">当月使用成本(元)</td>
+                <td style="width: 30%">成本总额(元)</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="cost-table-tr">
+        <table class="cost-div-table-content">
+            <tbody>
+            <tr>
+                <td style="width: 37%;font-weight: bold;vertical-align: middle;padding-left: 18px;text-align: left">
+                    <img src="img/add.png" class="table-img-add" onclick="showChild(this)">
+                    <span style="line-height: 36px;">营销类成本</span>
+                </td>
+                <td style="width: 33%">25636.25</td>
+                <td style="width: 30%">42544.26</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="table-content">
+            <table class="cost-div-table-content-child">
+                <tbody>
+                <tr>
+                    <td style="width: 37%;font-weight: bold;">
+                        营销类成本
+                    </td>
+                    <td style="width: 33%">25636.25</td>
+                    <td style="width: 30%">42544.26</td>
+                </tr>
+                <tr>
+                    <td style="width: 37%;font-weight: bold;">
+                        营销类成本
+                    </td>
+                    <td style="width: 33%">25636.25</td>
+                    <td style="width: 30%">42544.26</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="cost-table-tr">
+        <table class="cost-div-table-content">
+            <tbody>
+            <tr>
+                <td style="width: 37%;font-weight: bold;vertical-align: middle;padding-left: 18px;text-align: left">
+                    <img src="img/add.png" class="table-img-add" onclick="showChild(this)">
+                    <span style="line-height: 36px;">运营类成本</span>
+                </td>
+                <td style="width: 33%">25636.25</td>
+                <td style="width: 30%">42544.26</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="table-content">
+            <table class="cost-div-table-content-child">
+                <tbody>
+                <tr>
+                    <td style="width: 37%;font-weight: bold;">
+                        营销类成本
+                    </td>
+                    <td style="width: 33%">25636.25</td>
+                    <td style="width: 30%">42544.26</td>
+                </tr>
+                <tr>
+                    <td style="width: 37%;font-weight: bold;">
+                        营销类成本
+                    </td>
+                    <td style="width: 33%">25636.25</td>
+                    <td style="width: 30%">42544.26</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="cost-table-tr">
+        <table class="cost-div-table-content">
+            <tbody>
+            <tr>
+                <td style="width: 37%;font-weight: bold;vertical-align: middle;padding-left: 18px;text-align: left">
+                    <img src="img/add.png" class="table-img-add" onclick="showChild(this)">
+                    <span style="line-height: 36px;">终端类成本</span>
+                </td>
+                <td style="width: 33%">25636.25</td>
+                <td style="width: 30%">42544.26</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="table-content">
+            <table class="cost-div-table-content-child">
+                <tbody>
+                <tr>
+                    <td style="width: 37%;font-weight: bold;">
+                        营销类成本
+                    </td>
+                    <td style="width: 33%">25636.25</td>
+                    <td style="width: 30%">42544.26</td>
+                </tr>
+                <tr>
+                    <td style="width: 37%;font-weight: bold;">
+                        营销类成本
+                    </td>
+                    <td style="width: 33%">25636.25</td>
+                    <td style="width: 30%">42544.26</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="cost-table-tr">
+        <table class="cost-div-table-content">
+            <tbody>
+            <tr>
+                <td style="width: 37%;font-weight: bold;vertical-align: middle;padding-left: 18px;text-align: left">
+                    <img src="img/add.png" class="table-img-add" onclick="showChild(this)">
+                    <span style="line-height: 36px;">其他成本</span>
+                </td>
+                <td style="width: 33%">25636.25</td>
+                <td style="width: 30%">42544.26</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="table-content">
+            <table class="cost-div-table-content-child">
+                <tbody>
+                <tr>
+                    <td style="width: 37%;font-weight: bold;">
+                        营销类成本
+                    </td>
+                    <td style="width: 33%">25636.25</td>
+                    <td style="width: 30%">42544.26</td>
+                </tr>
+                <tr>
+                    <td style="width: 37%;font-weight: bold;">
+                        营销类成本
+                    </td>
+                    <td style="width: 33%">25636.25</td>
+                    <td style="width: 30%">42544.26</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

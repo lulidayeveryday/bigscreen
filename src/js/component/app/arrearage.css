@@ -1,0 +1,63 @@
+body{
+    background-color: #F2F5FA;
+    margin: 0;
+    height: 100%;
+}
+
+html{
+    height: 100%;
+}
+
+.arrearage-div-type{
+    padding: 20px 0;
+}
+
+.arrearage-div-type-date{
+    width: 200px;
+    height: 36px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 18px;
+}
+
+.arrearage-div-type-day{
+    width: 50%;
+    border-radius: 18px;
+    height: 100%;
+    color: #242424;
+    font-size: 16px;
+    vertical-align: middle;
+    line-height: 36px;
+    text-align: center;
+    float: left;
+}
+
+.date-active{
+    background-color: #FF7745;
+    color: white;
+}
+
+.arrearage-div-content{
+    margin: 5px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.content-month{
+    display: none;
+}
+
+.arrearage-div-content-title{
+    height: 40px;
+    border-bottom: 1px solid #F2F5FA;
+    font-size: 16px;
+}
+
+.content-all{
+    padding: 10px;
+    text-align: center;
+}
+
+.content-xf{
+    padding: 10px 0 15px;
+}

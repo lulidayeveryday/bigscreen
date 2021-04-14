@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>山西联通触点监控</title>
+    <link rel="stylesheet" href="../css/contact.css" type="text/css">
+</head>
+<body>
+<img src="../image/contactTitle.png" class="contact-title">
+<div class="contact-xx-div">
+    <div class="contact-xx-div-title">
+        <table style="height: 100%;color: #36D2F7;font-size: 1.25rem;margin-left: 1rem;font-weight: bold;">
+            <tbody>
+            <tr>
+                <td>触点信息</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="contact-xx-map" id="xxMap"></div>
+    <div class="contact-xx-bar">
+        <div style="height: 50%">
+            <div class="contact-bar-title">
+                <table style="width: 95%;position: absolute;bottom: 0;padding-bottom: 0.2rem;border-bottom: 1px dotted #017dad;">
+                    <tbody>
+                    <tr>
+                        <td style="padding-left: 0.5rem;width: 4.5rem"><img src="../image/dayGrow.png" style="height: 2.7rem;vertical-align: middle;"></td>
+                        <td style="font-size: 1rem;color: white;">当日发展</td>
+                        <td style="color: white;vertical-align: bottom;font-size: 1rem;text-align: right">
+                            当日合计<span style="padding-left: 1rem;color: #27AABD;font-weight: bold;font-size: 1.2rem;">27560</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="contact-bar-div" id="dayBar"></div>
+        </div>
+        <div style="height: 50%">
+            <div class="contact-bar-title">
+                <table style="width: 95%;position: absolute;bottom: 0;padding-bottom: 0.2rem;border-bottom: 1px dotted #058679;">
+                    <tbody>
+                    <tr>
+                        <td style="padding-left: 0.5rem;width: 4.5rem"><img src="../image/mouthGrow.png" style="height: 2.7rem;vertical-align: middle;"></td>
+                        <td style="font-size: 1rem;color: white;">当月发展</td>
+                        <td style="color: white;vertical-align: bottom;font-size: 1rem;text-align: right">
+                            当月合计<span style="padding-left: 1rem;color: #27AABD;font-weight: bold;font-size: 1.2rem;">275602560</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="contact-bar-div" id="monthBar"></div>
+        </div>
+    </div>
+    <div class="contact-line-div">
+        <div class="contact-line-div-title">触点趋势 <div style="float: right;" class="qs-tab"><span class="qs-tab-span qs-tab-select" onclick="selectTab(0,this)">日</span><span class="qs-tab-span" onclick="selectTab(0,this)">月</span></div></div>
+        <div class="contact-line-div-chart" id="channelLine"></div>
+    </div>
+</div>
+<div class="contact-tc-div">
+    <div class="contact-tc-div-title">
+        <table style="height: 100%;color: #36D2F7;font-size: 1.25rem;margin-left: 1rem;font-weight: bold;">
+            <tbody>
+            <tr>
+                <td>渠道细分与排名</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="height: 91%;">
+        <div style="width: 50%;height: 100%;float: left;text-align: center">
+            <div class="contact-tc-chart-title" style="border: none;">渠道细分列表</div>
+            <div class="contact-tc-chart-div">
+                <table class="contact-tc-table">
+                    <tbody>
+                    <tr>
+                        <td class="table-td1">
+                            <img src="../image/1st.png" class="tc-table-img">
+                        </td>
+                        <td class="table-td2">渠道列表细分1</td>
+                        <td class="table-td3 font-color1">25632541</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <img src="../image/2nd.png" class="tc-table-img">
+                        </td>
+                        <td class="table-td2">渠道列表细分1</td>
+                        <td class="table-td3 font-color2">25632541</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <img src="../image/3rd.png" class="tc-table-img">
+                        </td>
+                        <td class="table-td2">渠道列表细分1</td>
+                        <td class="table-td3 font-color3">25632541</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">4</span>
+                        </td>
+                        <td class="table-td2">渠道列表细分1</td>
+                        <td class="table-td3">25632541</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div style="width: 50%;height: 100%;float: left;text-align: center">
+            <div class="contact-tc-chart-title" style="border: none;">TOP10 套餐</div>
+            <div class="contact-tc-chart-div">
+                <table class="contact-tc-table">
+                    <tbody>
+                    <tr>
+                        <td class="table-td1">
+                            <img src="../image/1st.png" class="tc-table-img">
+                        </td>
+                        <td class="table-td2">渠道列表细分1</td>
+                        <td class="table-td3 font-color1">25632541</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <img src="../image/2nd.png" class="tc-table-img">
+                        </td>
+                        <td class="table-td2">渠道列表细分1</td>
+                        <td class="table-td3 font-color2">25632541</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <img src="../image/3rd.png" class="tc-table-img">
+                        </td>
+                        <td class="table-td2">渠道列表细分1</td>
+                        <td class="table-td3 font-color3">25632541</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">4</span>
+                        </td>
+                        <td class="table-td2">渠道列表细分1</td>
+                        <td class="table-td3">25632541</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">5</span>
+                        </td>
+                        <td class="table-td2">渠道列表细分1</td>
+                        <td class="table-td3">25632541</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">6</span>
+                        </td>
+                        <td class="table-td2">渠道列表细分1</td>
+                        <td class="table-td3">25632541</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">7</span>
+                        </td>
+                        <td class="table-td2">渠道列表细分1</td>
+                        <td class="table-td3">25632541</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">8</span>
+                        </td>
+                        <td class="table-td2">渠道列表细分1</td>
+                        <td class="table-td3">25632541</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">9</span>
+                        </td>
+                        <td class="table-td2">渠道列表细分1</td>
+                        <td class="table-td3">25632541</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">10</span>
+                        </td>
+                        <td class="table-td2">渠道列表细分1</td>
+                        <td class="table-td3">25632541</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="contact-zb-div">
+    <div class="contact-tc-div-title">
+        <table style="height: 100%;color: #36D2F7;font-size: 1.25rem;margin-left: 1rem;font-weight: bold;">
+            <tbody>
+            <tr>
+                <td>触点占比</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="contact-tc-div-chart">
+        <div style="width: 50%;height: 100%;float: left;text-align: center">
+            <div class="contact-tc-chart-title">当日占比</div>
+            <div class="contact-tc-chart-div" id="pieChart"></div>
+        </div>
+        <div style="width: 50%;height: 100%;float: left;text-align: center">
+            <div class="contact-tc-chart-title">当月占比</div>
+            <div class="contact-tc-chart-div">
+                <table style="width: 100%;height: 100%;padding: 12% 9%;font-size: 1rem">
+                    <tbody>
+                    <tr>
+                        <td rowspan="4" style="background: url('../image/triangle.png') no-repeat;background-size: 100% 100%;width: 60%;">
+                            
+                        </td>
+                        <td style="color: #01C6FD; "><span id="monthContact1">线下轻触点</span><span style="padding-left: 1rem" id="monthContactPercent1">25%</span></td>
+                    </tr>
+                    <tr>
+                        <td style="color: #0DC79E; "><span id="monthContact2">线下传统</span><span style="padding-left: 1rem" id="monthContactPercent2">25%</span></td>
+                    </tr>
+                    <tr>
+                        <td style="color: #FC7F6B; "><span id="monthContact3">线上电渠</span><span style="padding-left: 1rem" id="monthContactPercent3">25%</span></td>
+                    </tr>
+                    <tr>
+                        <td style="color: #B2ED40; "><span id="monthContact4">线上本地</span><span style="padding-left: 1rem" id="monthContactPercent4">25%</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script src="../js/contact.js"></script>
+</body>
+</html>

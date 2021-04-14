@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>山西联通产品销售量监控</title>
+    <link rel="stylesheet" href="../css/salesVolume.css" type="text/css">
+</head>
+<body>
+<div class="sales-volume-content-title">
+    <table style="width: 100%;height: 100%;vertical-align: middle;color: #5692d9;font-size: 1.25rem;">
+        <tbody>
+        <tr>
+            <td style="font-size: 1.6rem;color: #34CCEF;font-weight: bold;">》 全省<span id="salesVolumeType">移网</span>发展产品结构</td>
+            <td style="width: 8rem;">
+                <input type="radio" id="radio-1-1" name="radio-1-set" class="regular-radio" checked /><label for="radio-1-1"></label> 当天
+            </td>
+            <td>
+                <input type="radio" id="radio-1-2" name="radio-1-set" class="regular-checkbox"/><label for="radio-1-2"></label> 累计
+            </td>
+            <td style="width: 22rem;">
+                筛选 <input type="search" class="input-select-class" id="salesVolumeSearch" style="float: none;"/>
+            </td>
+            <td style="width: 8rem;">
+                <input type="button" onclick="searchClick()" value="查询" class="orange"/>
+            </td>
+            <td style="color: #ec6f13;width: 8rem;">
+                <input type="checkbox" id="checkbox-sc" class="regular-checkbox" /><label for="checkbox-sc" style="vertical-align: middle"></label> 查看收藏
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="sales-volume-content-table" id="scrollInner">
+        <table class="contact-pop-table-div">
+            <tbody class="table-tbody">
+            <tr>
+                <td>
+                    <input type="radio" id="radio1-1" name="radio-1" class="regular-checkbox"/><label for="radio1-1"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio1-2" name="radio-1" class="regular-checkbox"/><label for="radio1-2"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio1-3" name="radio-1" class="regular-checkbox"/><label for="radio1-3"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio1-4" name="radio-1" class="regular-checkbox"/><label for="radio1-4"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio1-5" name="radio-1" class="regular-checkbox"/><label for="radio1-5"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio1-6" name="radio-1" class="regular-checkbox"/><label for="radio1-6"></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" id="radio2-1" name="radio-1" class="regular-checkbox"/><label for="radio2-1"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio2-2" name="radio-1" class="regular-checkbox"/><label for="radio2-2"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio2-3" name="radio-1" class="regular-checkbox"/><label for="radio2-3"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio2-4" name="radio-1" class="regular-checkbox"/><label for="radio2-4"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio2-5" name="radio-1" class="regular-checkbox"/><label for="radio2-5"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio2-6" name="radio-1" class="regular-checkbox"/><label for="radio2-6"></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" id="radio3-1" name="radio-1" class="regular-checkbox"/><label for="radio3-1"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio3-2" name="radio-1" class="regular-checkbox"/><label for="radio3-2"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio3-3" name="radio-1" class="regular-checkbox"/><label for="radio3-3"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio3-4" name="radio-1" class="regular-checkbox"/><label for="radio3-4"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio3-5" name="radio-1" class="regular-checkbox"/><label for="radio3-5"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio3-6" name="radio-1" class="regular-checkbox"/><label for="radio3-6"></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" id="radio4-1" name="radio-1" class="regular-checkbox"/><label for="radio4-1"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio4-2" name="radio-1" class="regular-checkbox"/><label for="radio4-2"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio4-3" name="radio-1" class="regular-checkbox"/><label for="radio4-3"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio4-4" name="radio-1" class="regular-checkbox"/><label for="radio4-4"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio4-5" name="radio-1" class="regular-checkbox"/><label for="radio4-5"></label>
+                </td>
+                <td>
+                    <input type="radio" id="radio4-6" name="radio-1" class="regular-checkbox"/><label for="radio4-6"></label>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+</div>
+
+<div class="sales-volume-content-sc" onclick="scClick()">收藏选中项</div>
+
+<div id="ele">
+    <div class="Pagination">
+    </div>
+</div>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/jquery.nicescroll.js"></script>
+<!--<script src="../js/salesVolume.js"></script>-->
+<script src="../js/echarts.min.js"></script>
+</body>
+</html>

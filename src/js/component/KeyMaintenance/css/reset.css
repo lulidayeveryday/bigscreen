@@ -1,0 +1,147 @@
+
+input:-webkit-autofill {
+    background-color: #FAFFBD;
+    background-image: none;
+    color: #000
+}
+body,h1,h2,h3,h4,h5,h6,p,hr,pre,blockquote,dl,dt,dd,ul,ol,li,figure,fieldset,button,input,textarea,th,td {
+    margin: 0;
+    padding: 0
+}
+button,input,select,textarea {
+    font-size: 100%
+}
+button{
+    border: none;
+    cursor: pointer;
+}
+button:focus{
+    outline: none;
+}
+input:focus{
+    outline: none;
+}
+select {
+    border-color: #ccc
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+    font-weight: 400
+}
+
+address,cite,dfn,em,var,i {
+    font-style: normal
+}
+
+strong,b {
+    font-weight: 400
+}
+
+code,kbd,samp,tt {
+    font-family: "Courier New",Courier,monospace
+}
+
+ul,ol {
+    list-style: none
+}
+
+a {
+    color: #0087e3;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: none
+}
+
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic
+}
+
+legend {
+    color: #000
+}
+
+fieldset {
+    border: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+caption,th {
+    text-align: left
+}
+
+abbr,acronym {
+    border: 0;
+    font-variant: normal
+}
+
+del {
+    text-decoration: line-through
+}
+
+sub,sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -.5em
+}
+
+sub {
+    bottom: -.25em
+}
+
+iframe {
+    display: block
+}
+
+article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section {
+    display: block
+}
+
+mark {
+    background: #FF0;
+    color: #000
+}
+
+audio,canvas,video {
+    display: inline-block;
+    *display: inline;
+    *zoom:1}
+
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+*:before,*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+/*定义字体*/
+@font-face {
+    font-family:LetsgodigitalRegular;
+    src:url('./Let_s_go_Digital_Regular.ttf'),
+    url('./Let_s_go_Digital_Regular.ttf'),
+    url('./Let_s_go_Digital_Regular.ttf'); /* IE9 */
+}
+.fl-left{
+    float: left;
+}
+.fl-right{
+    float: right;
+}

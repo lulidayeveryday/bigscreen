@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>山西联通产品销售量监控</title>
+    <link rel="stylesheet" href="../css/salesVolume.css" type="text/css">
+</head>
+<body>
+<img src="../image/salesVolumeTitle.png" class="mainScreen-title">
+<div class="qualityMonitoring-type">
+    <table style="width: 100%;height: 100%;color: #36D2F7;font-size: 1.2rem;text-align: center;">
+        <tbody>
+        <tr>
+            <td style="width: 42%;cursor: pointer;" onclick="provinceSel()">移网</td><td style="width: 16%"></td><td id="cityName" style="width: 42%;cursor: pointer;" onclick="citySel()">宽带</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="sales-volume-content-title">
+    <table style="width: 100%;height: 100%;vertical-align: middle;color: #5692d9;font-size: 1.25rem;">
+        <tbody>
+        <tr>
+            <td style="font-size: 1.6rem;color: #34CCEF;font-weight: bold;">》 全省<span id="salesVolumeType">移网</span>发展产品结构</td>
+            <td style="width: 8rem;">
+                <input type="radio" id="radio-1-1" name="radio-1-set" class="regular-radio" checked /><label for="radio-1-1"></label> 当天
+            </td>
+            <td>
+                <input type="radio" id="radio-1-2" name="radio-1-set" class="regular-radio"/><label for="radio-1-2"></label> 累计
+            </td>
+            <td style="width: 22rem;">
+                筛选 <input type="search" class="input-select-class" id="salesVolumeSearch" style="float: none;"/>
+            </td>
+            <td style="width: 8rem;">
+                <input type="button" onclick="searchClick()" value="查询" class="orange"/>
+            </td>
+            <td style="color: #ec6f13;width: 8rem;">
+                <input type="checkbox" id="checkbox-sc" class="regular-checkbox" /><label for="checkbox-sc" style="vertical-align: middle"></label> 查看收藏
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="sales-volume-content-line"></div>
+<div class="sales-volume-content-table" id="scrollInner">
+        <table class="contact-pop-table-div">
+            <thead>
+            <tr style="height: 3rem;background-color: #2B4369;font-size: 1.1rem;">
+                <th></th>
+                <th>分类</th>
+                <th>产品</th>
+                <th>太原</th>
+                <th>大同</th>
+                <th>阳泉</th>
+                <th>长治</th>
+                <th>晋城</th>
+                <th>朔州</th>
+                <th>忻州</th>
+                <th>晋中</th>
+                <th>吕梁</th>
+                <th>临汾</th>
+                <th>运城</th>
+            </tr>
+            </thead>
+            <tbody class="table-tbody">
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-1" class="regular-checkbox" /><label for="checkbox-1-1"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-2" class="regular-checkbox" /><label for="checkbox-1-2"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-3" class="regular-checkbox" /><label for="checkbox-1-3"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-4" class="regular-checkbox" checked/><label for="checkbox-1-4"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-5" class="regular-checkbox" /><label for="checkbox-1-5"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-6" class="regular-checkbox" /><label for="checkbox-1-6"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-7" class="regular-checkbox" /><label for="checkbox-1-7"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-8" class="regular-checkbox" /><label for="checkbox-1-8"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-9" class="regular-checkbox" /><label for="checkbox-1-9"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-10" class="regular-checkbox" /><label for="checkbox-1-10"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-11" class="regular-checkbox" /><label for="checkbox-1-11"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-12" class="regular-checkbox" /><label for="checkbox-1-12"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-13" class="regular-checkbox" /><label for="checkbox-1-13"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-14" class="regular-checkbox" checked/><label for="checkbox-1-14"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox-1-15" class="regular-checkbox" /><label for="checkbox-1-15"></label>
+                </td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+            </tr>
+            </tbody>
+        </table>
+</div>
+
+<div class="sales-volume-content-sc" onclick="scClick()">收藏选中项</div>
+
+<div id="ele">
+    <div class="Pagination">
+    </div>
+</div>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/jquery.nicescroll.js"></script>
+<script src="../js/salesVolume.js"></script>
+<script src="../js/echarts.min.js"></script>
+</body>
+</html>

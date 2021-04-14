@@ -1,0 +1,156 @@
+@media screen and (min-width:1921px){
+    html{
+        height: 100%;
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1920px){
+    html{
+        height: 100%;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1366px){
+    html{
+        height: 100%;
+        font-size: 10px;
+    }
+}
+
+body{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #F3F3F4;
+}
+
+.littleCeo-menu{
+    width: 13rem;
+    height: 90%;
+    height: -moz-calc(100% - 4.8rem);
+    height: -webkit-calc(100% - 4.8rem);
+    height: calc(100% - 4.8rem);
+    background-color: white;
+    position: absolute;
+    top:1rem;
+    left: 1rem;
+    border-top: solid 0.3rem #E7EAEC;
+    padding: 1rem;
+}
+
+.littleCeo-content{
+    position: absolute;
+    left: 17rem;
+    top: 1rem;
+    width: 80%;
+    width: -moz-calc(100% - 18rem);
+    width: -webkit-calc(100% - 18rem);
+    width: calc(100% - 18rem);
+    height: 90%;
+    height: -moz-calc(100% - 2.5rem);
+    height: -webkit-calc(100% - 2.5rem);
+    height: calc(100% - 2.5rem);
+    overflow-y: auto;
+}
+
+.littleCeo-content-title{
+    height: 3rem;
+    background-color: white;
+    border-top: solid 0.3rem #E7EAEC;
+    font-size: 1rem;
+    color: #828486;
+    font-weight: bold;
+    line-height: 3rem;
+    padding-left: 1rem;
+}
+
+.littleCeo-content-indicators{
+    height: 19rem;
+}
+
+.littleCeo-content-indicators-div1{
+    height: 18.7rem;
+    border-top: solid 0.3rem #E7EAEC;
+    background-color: white;
+    width: 22%;
+    width: -moz-calc((100% - 4rem)/4);
+    width: -webkit-calc((100% - 4rem)/4);
+    width: calc((100% - 4rem)/4);
+    float: left;
+}
+
+.table-padding{
+    padding: 0 0.9rem;
+}
+
+.table-border{
+    border-bottom: solid 1px #F2F3F4;
+}
+
+.table-num{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.table-color-blue{
+    color: #4380C2;
+}
+
+.littleCeo-content-indicators table{
+    color: #8f9195;
+}
+
+.littleCeo-content-indicators-title{
+    height: 3rem;
+}
+
+.littleCeo-content-indicators-content1{
+    border-bottom: solid 1px #F2F3F4;
+    padding: 0 0.8rem;
+}
+
+.littleCeo-content-indicators-div2{
+    height: 18.7rem;
+    border-top: solid 0.3rem #E7EAEC;
+    background-color: white;
+    width: 22%;
+    width: -moz-calc((100% - 4rem)/6);
+    width: -webkit-calc((100% - 4rem)/6);
+    width: calc((100% - 4rem)/6);
+    float: left;
+    margin-left: 1rem;
+}
+
+.littleCeo-menu-p{
+    background-color: #F5F5F5;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #828486;
+    font-weight: bold;
+}
+
+.littleCeo-menu-li{
+    color: #1C84C6;
+    cursor: pointer;
+    height: 2rem;
+    list-style-type:none;
+    list-style-image: url(../image/liPoint.png);
+}
+
+.littleCeo-content-title-input{
+    position: absolute;
+    right: 2rem;
+    top:1rem;
+}
+
+.color-green{
+    color: #1ABAB5;
+    font-size: 1.1rem;
+}
+
+.color-red{
+    color: #ED6287;
+    font-size: 1.1rem;
+}

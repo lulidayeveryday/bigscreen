@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>景区轨迹</title>
+    
+    <!-- 页面样式 -->
+    <link rel="stylesheet" type="text/css" href="./css/road.css">
+
+</head>
+<body class="bg">
+	<div class="main">
+		<div class="m-content">
+			<!-- tab切换卡 -->
+            <div class="tab">
+                <ul class="title">
+                    <li class="active"><a href="#"></a></li>
+                    <li><a href="./map2.html"></a></li>
+                    <!--<li><a href="#">家居</a></li>-->
+                </ul>
+                <div id="content">
+                    
+                    <div class="mod">
+                        <ul>
+                            <li>
+                                <div id="map"></div>
+                                <!-- 路线热度排行 -->
+                                <div class="road_list">
+                                    <div class="list_title">
+                                        <span></span>
+                                        <p class="list_name">路线热度排行</p>
+                                        <img src="./img/day.png" alt="">
+                                    </div>
+                                    <div class="road_1 big" id="line1" onclick="openLine(1)">
+                                        <p class="lit_num">No.1</p>
+                                        <p class="percent">43.2<span class="">%</span></p>
+                                        <p class="p_zhanbi">占比</p>
+                                        <span class="img_no"></span>
+                                    </div>
+                                    <div class="road_1" id="line2" onclick="openLine(2)">
+                                        <p class="lit_num">No.2</p>
+                                        <p class="percent">29.1<span class="">%</span></p>
+                                        <p class="p_zhanbi">占比</p>
+                                        <span class="img_no"></span>
+                                    </div>
+                                    <div class="road_1" id="line3" onclick="openLine(3)">
+                                        <p class="lit_num">No.3</p>
+                                        <p class="percent">27.7<span class="">%</span></p>
+                                        <p class="p_zhanbi">占比</p>
+                                        <span class="img_no"></span>
+                                    </div>
+                                      
+                                </div>
+                                <!-- 搜索框 -->
+                                <div class="search">
+                                    <div class="s_main">
+                                        <p class="s_name">起点：</p>
+                                        <select class="select-1">
+                                            <option value="西湖音乐喷泉" selected="selected">西湖音乐喷泉</option>
+                                            <option value="土城旅游圈">西溪湿地</option>
+                                            <option value="飞鸽景区">飞鸽景区</option>
+                                        </select>
+                                        <p class="s_name">终点：</p>
+                                        <select class="select-1">
+                                            <option value="西溪湿地" selected="selected">西溪湿地</option>
+                                            <option value="飞鸽景区">飞鸽景区</option>
+                                            <option value="西湖音乐喷泉">西湖音乐喷泉</option>
+                                        </select>
+                                        <p class="s_name">范围：</p>
+                                        <select class="select-2">
+                                            <option value="杭州市" selected="selected">杭州市</option>
+                                            <option value="飞鸽景区">温州市</option>
+                                            <option value="习部圈">浙江省</option>
+                                        </select>
+                                        <button type="button"></button>
+                                    </div>
+                                </div>
+
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+			
+
+		</div>
+	</div>
+	
+	
+</body>
+<!-- 引入百度地图 -->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=INqth77f5jzQadrUvwDO9saQ"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/LuShu/1.2/src/LuShu_min.js"></script>
+<!-- 引入地图 -->
+<script src="./echarts/asset/js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="./js/map1.js"></script> -->
+<script type="text/javascript" src="./js/map1-1.js"></script>
+
+
+
+<!-- 热度排行切换样式 -->
+<script>
+$(function(){
+    $(".road_1").click(function() {
+        $(this).siblings('.road_1').removeClass('big');  // 删除其他兄弟元素的样式
+        $(this).addClass('big');                            // 添加当前元素的样式
+    });
+}); 
+
+</script>
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务监控</title>
+    <link rel="stylesheet" href="../css/taskMonitor.css" type="text/css">
+</head>
+<body>
+<div class="taskMonitor-div">
+    <div class="taskMonitor-dataFlow">
+        <div class="taskMonitor-dataFlow-bg"></div>
+        <div class="taskMonitor-dataFlow-data1">
+            <div class="dataFlow-content">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td colspan="2" style="font-weight: bold">数据源</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="green-font" id="dataFlowA1">12089</span>
+                            <br/>
+                            <span>完成数</span>
+                        </td>
+                        <td>
+                            <span class="blue-font" id="dataFlowA2">12089</span>
+                            <br/>
+                            <span>任务数</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="taskMonitor-dataFlow-data2">
+            <div class="dataFlow-content">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td colspan="2" style="font-weight: bold">基础数据加工</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="green-font" id="dataFlowB1">12089</span>
+                            <br/>
+                            <span>完成数</span>
+                        </td>
+                        <td>
+                            <span class="blue-font" id="dataFlowB2">12089</span>
+                            <br/>
+                            <span>任务数</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="taskMonitor-dataFlow-data3">
+            <div class="dataFlow-content">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td colspan="2" style="font-weight: bold">模型处理</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="green-font" id="dataFlowC1">12089</span>
+                            <br/>
+                            <span>完成数</span>
+                        </td>
+                        <td>
+                            <span class="blue-font" id="dataFlowC2">12089</span>
+                            <br/>
+                            <span>任务数</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="taskMonitor-dataFlow-data4">
+            <div class="dataFlow-content">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td colspan="2" style="font-weight: bold">应用汇总</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="green-font" id="dataFlowD1">12089</span>
+                            <br/>
+                            <span>完成数</span>
+                        </td>
+                        <td>
+                            <span class="blue-font" id="dataFlowD2">12089</span>
+                            <br/>
+                            <span>任务数</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="taskMonitor-taskFlow">
+        <img src="../img/flowAll.png" class="taskMonitor-flowAll" onclick="taskFlowShow()"/>
+        <div class="taskMonitor-taskFlow-legend">
+            <img src="../img/taskGreen.png" class="taskFlow-legend-img"/> 成功
+            <img src="../img/taskWhite.png" class="taskFlow-legend-img"/> 运行中
+            <img src="../img/taskRed.png" class="taskFlow-legend-img"/> 失败
+            <img src="../img/taskBlue.png" class="taskFlow-legend-img"/> 未运行
+        </div>
+        <div id="taskFlowContent">
+            <div class="taskMonitor-taskFlow-point taskFlow-point1">
+                <img src="../img/pointGreen.png" class="taskFlow-point-img">
+                <div class="taskFlow-point-border border-green">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td colspan="2" class="border-title">信令</td>
+                        </tr>
+                        <tr>
+                            <td>成功数</td>
+                            <td class="font-green">13</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="taskFlow-line2 line-green"></div>
+            <div class="taskMonitor-taskFlow-point taskFlow-point2">
+                <img src="../img/pointGreen.png" class="taskFlow-point-img">
+                <div class="taskFlow-point-border border-green">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td colspan="2" class="border-title">短时过路剔除</td>
+                        </tr>
+                        <tr>
+                            <td>成功数</td>
+                            <td class="font-green">13</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="taskFlow-line3 line-green"></div>
+            <div class="taskMonitor-taskFlow-point taskFlow-point3">
+                <img src="../img/pointGreen.png" class="taskFlow-point-img">
+                <div class="taskFlow-point-border border-green">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td colspan="2" class="border-title">常驻剔除</td>
+                        </tr>
+                        <tr>
+                            <td>成功数</td>
+                            <td class="font-green">13</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="taskFlow-line4 line-white"></div>
+            <div class="taskMonitor-taskFlow-point taskFlow-point4">
+                <div class="taskFlow-point-borders border-white">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td colspan="2" class="border-title">游客清单</td>
+                        </tr>
+                        <tr>
+                            <td class="font-green">13</td>
+                            <td class="font-blue">42</td>
+                        </tr>
+                        <tr>
+                            <td>成功数</td>
+                            <td>任务数</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <img src="../img/pointWhite.png" class="taskFlow-point-imgs">
+            </div>
+            <div class="taskFlow-line5 line-blue"></div>
+            <div class="taskMonitor-taskFlow-point taskFlow-point5">
+                <img src="../img/pointBlue.png" class="taskFlow-point-img">
+                <div class="taskFlow-point-border border-blue">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td colspan="2" class="border-title">游客量</td>
+                        </tr>
+                        <tr>
+                            <td>任务数</td>
+                            <td class="font-blue">13</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="taskFlow-line6 line-red"></div>
+            <div class="taskMonitor-taskFlow-point taskFlow-point6">
+                <img src="../img/pointRed.png" class="taskFlow-point-img">
+                <div class="taskFlow-point-border border-red">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td colspan="2" class="border-title">常驻剔除</td>
+                        </tr>
+                        <tr>
+                            <td>成功数</td>
+                            <td class="font-red">13</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="taskFlow-line7 line-blue"></div>
+            <div class="taskMonitor-taskFlow-point taskFlow-point7">
+                <img src="../img/pointBlue.png" class="taskFlow-point-img">
+                <div class="taskFlow-point-border border-blue">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td colspan="2" class="border-title">驻足游客</td>
+                        </tr>
+                        <tr>
+                            <td>任务数</td>
+                            <td class="font-blue">13</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="taskMonitor-taskFlow-point taskFlow-point8">
+                <img src="../img/pointGreen.png" class="taskFlow-point-img">
+                <div class="taskFlow-point-border border-green">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td colspan="2" class="border-title">信令</td>
+                        </tr>
+                        <tr>
+                            <td>成功数</td>
+                            <td class="font-green">13</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="taskFlow-line9 line-green"></div>
+            <div class="taskMonitor-taskFlow-point taskFlow-point9">
+                <img src="../img/pointGreen.png" class="taskFlow-point-img">
+                <div class="taskFlow-point-border border-green">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td colspan="2" class="border-title">实时位置轨迹模型</td>
+                        </tr>
+                        <tr>
+                            <td>成功数</td>
+                            <td class="font-green">13</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="taskFlow-line10 line-white"></div>
+            <div class="taskMonitor-taskFlow-point taskFlow-point10">
+                <img src="../img/pointWhite.png" class="taskFlow-point-img">
+                <div class="taskFlow-point-border border-white">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td colspan="2" class="border-title">用户实时位置轨迹</td>
+                        </tr>
+                        <tr>
+                            <td class="font-green">13</td>
+                            <td class="font-blue">42</td>
+                        </tr>
+                        <tr>
+                            <td>成功数</td>
+                            <td>任务数</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="taskFlow-line11 line-blue"></div>
+            <div class="taskMonitor-taskFlow-point taskFlow-point11">
+                <img src="../img/pointBlue.png" class="taskFlow-point-img">
+                <div class="taskFlow-point-border border-blue">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td colspan="2" class="border-title">用户实时位置天数据</td>
+                        </tr>
+                        <tr>
+                            <td>任务数</td>
+                            <td class="font-blue">13</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="taskFlow-title">--------------● 客流</div>
+        <div class="taskFlow-title1">--------------● 驻足</div>
+        <div class="taskFlow-title2">----------------------● 实时位置</div>
+    </div>
+    <div class="taskMonitor-taskMonitor">
+        <div class="taskMonitor-taskMonitor-div1">
+            <div class="taskMonitor-div-title">
+                <div class="font-title">数据源(本地+公司)</div>
+            </div>
+            <div class="taskMonitor-div-content">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <img src="../img/taskData1.png" class="data-div-content-img">
+                            <table class="data-div-content-table">
+                                <tbody>
+                                <tr><td><span class="data-content-num" id="taskMonitorA1">93</span>个</td></tr>
+                                <tr><td>接口总数</td></tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td>
+                            <img src="../img/taskData2.png" class="data-div-content-img">
+                            <table class="data-div-content-table">
+                                <tbody>
+                                <tr><td><span class="data-content-num" id="taskMonitorA2">89</span>个</td></tr>
+                                <tr><td>成功个数</td></tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="../img/taskData3.png" class="data-div-content-img">
+                            <table class="data-div-content-table">
+                                <tbody>
+                                <tr><td><span class="data-content-num" id="taskMonitorA3">26</span>个</td></tr>
+                                <tr><td>失败个数</td></tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="taskMonitor-taskMonitor-div2">
+            <div class="taskMonitor-div-title">
+                <div class="font-title">实时流程</div>
+            </div>
+            <div class="taskMonitor-div-content">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <img src="../img/taskData4.png" class="data-div-content-img">
+                            <table class="data-div-content-table">
+                                <tbody>
+                                <tr><td><span class="data-content-num" id="taskMonitorB1">93</span>个</td></tr>
+                                <tr><td>运行总数</td></tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="../img/taskData2.png" class="data-div-content-img">
+                            <table class="data-div-content-table">
+                                <tbody>
+                                <tr><td><span class="data-content-num" id="taskMonitorB2">26</span>个</td></tr>
+                                <tr><td>成功个数</td></tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="taskMonitor-taskMonitor-div3">
+            <div class="taskMonitor-div-title">
+                <div class="font-title">天流程</div>
+            </div>
+            <div class="taskMonitor-div-content">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <img src="../img/taskData4.png" class="data-div-content-img">
+                            <table class="data-div-content-table">
+                                <tbody>
+                                <tr><td><span class="data-content-num" id="taskMonitorC1">93</span>个</td></tr>
+                                <tr><td>运行总数</td></tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="../img/taskData2.png" class="data-div-content-img">
+                            <table class="data-div-content-table">
+                                <tbody>
+                                <tr><td><span class="data-content-num" id="taskMonitorC2">26</span>个</td></tr>
+                                <tr><td>成功个数</td></tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="taskMonitor-taskMonitor-div4">
+            <div class="taskMonitor-div-title">
+                <div class="font-title">月流程</div>
+            </div>
+            <div class="taskMonitor-div-content">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <img src="../img/taskData4.png" class="data-div-content-img">
+                            <table class="data-div-content-table">
+                                <tbody>
+                                <tr><td><span class="data-content-num" id="taskMonitorD1">93</span>个</td></tr>
+                                <tr><td>运行总数</td></tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="../img/taskData2.png" class="data-div-content-img">
+                            <table class="data-div-content-table">
+                                <tbody>
+                                <tr><td><span class="data-content-num" id="taskMonitorD2">26</span>个</td></tr>
+                                <tr><td>成功个数</td></tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="taskMonitor-taskMonitor-div5">
+            <div class="taskMonitor-div-title">
+                <div class="font-title">任务异常</div>
+                <div class="task-more-button" onclick="taskExceptionShow()">more ></div>
+            </div>
+            <div class="taskMonitor-div-content1">
+                <table>
+                    <tbody id="taskException">
+                    <tr class="table-th">
+                        <td>任务名</td>
+                        <td>时长</td>
+                        <td>平均时长</td>
+                    </tr>
+                    <tr>
+                        <td>筛选实时用户</td>
+                        <td><span class="font-green">120</span>ms</td>
+                        <td><span class="font-blue">20</span>ms</td>
+                    </tr>
+                    <tr>
+                        <td>建立实时位置轨迹模型</td>
+                        <td><span class="font-red">120</span>ms</td>
+                        <td><span class="font-blue">20</span>ms</td>
+                    </tr>
+                    <tr>
+                        <td>驻足游客</td>
+                        <td><span class="font-green">120</span>ms</td>
+                        <td><span class="font-blue">20</span>ms</td>
+                    </tr>
+                    <tr>
+                        <td>常住剔除</td>
+                        <td><span class="font-green">120</span>ms</td>
+                        <td><span class="font-blue">20</span>ms</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="taskMonitor-more">
+        <div class="taskMonitor-more-content">
+            <div class="more-content-title">
+                任务异常
+                <span class="content-title-close" onclick="taskExceptionHidden()">+</span>
+            </div>
+            <div class="more-content-middle">
+                <table>
+                    <tr class="more-table-th">
+                        <th>任务名</th>
+                        <th>时长</th>
+                        <th>平均时长</th>
+                    </tr>
+                    <tbody id="taskExceptionMore">
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-red">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            筛选实时用户
+                        </td>
+                        <td>
+                            <span class="font-green">120</span>ms
+                        </td>
+                        <td>
+                            <span class="font-blue">20</span>ms
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="more-content-bottom">
+                <div class="more-content-button"><img style="width: 1.5rem;vertical-align: middle" src="../img/send.png"/> 发送到手机</div>
+            </div>
+        </div>
+    </div>
+    <div class="taskMonitor-flowMore">
+        <img src="../img/close.png" class="taskMonitor-flowMore-close" onclick="taskFlowHidden()"/>
+        <div class="taskMonitor-taskFlow-legends">
+            <img src="../img/taskGreen.png" class="taskFlow-legend-img"/> 成功
+            <img src="../img/taskWhite.png" class="taskFlow-legend-img"/> 运行中
+            <img src="../img/taskRed.png" class="taskFlow-legend-img"/> 失败
+            <img src="../img/taskBlue.png" class="taskFlow-legend-img"/> 未运行
+        </div>
+        <div class="taskMonitor-flowMore-tree" id="flowTree"></div>
+    </div>
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/echarts.min.js"></script>
+    <script src="../js/jquery.nicescroll.js"></script>
+    <script src="../js/taskMonitor.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务监控</title>
+    <link rel="stylesheet" href="./css/taskMonitor.css" type="text/css">
+</head>
+<body>
+<div class="taskMonitor-div">
+    <div class="taskMonitor-more">
+        <div class="taskMonitor-more-content">
+            <div class="more-content-title">
+                用户标签
+                <span class="content-title-close" onclick="taskExceptionHidden()">+</span>
+            </div>
+            <div class="more-content-middle">
+                <table>
+                    <tr class="more-table-th">
+                        <th>标签名称</th>
+                        <th>表名</th>
+                    </tr>
+                    <tbody id="taskExceptionMore">
+                    <tr>
+                        <td>
+                            标签名称
+                        </td>
+                        <td>
+                            dw.dw_v_u_a_user_dinner
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            标签名称
+                        </td>
+                        <td>
+                            dw.dw_v_u_a_user_dinner
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            标签名称
+                        </td>
+                        <td>
+                            dw.dw_v_u_a_user_dinner
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            标签名称
+                        </td>
+                        <td>
+                            dw.dw_v_u_a_user_dinner
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="more-content-bottom">
+                <div class="more-content-button" onclick="taskExceptionHidden()">确定</div>
+            </div>
+        </div>
+    </div>
+    <div class="taskMonitor-flowMore">
+        <div class="taskMonitor-flowMore-tree" id="flowTree"></div>
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/jquery.nicescroll.js"></script>
+    <script src="./js/taskMonitor.js"></script>
+</div>
+</body>
+</html>

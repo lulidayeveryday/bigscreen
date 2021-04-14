@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PC端新版薪酬计算流程</title>
+    <link href="./paymentAll.css" type="text/css" rel="stylesheet"/>
+    <script src="../jiaxing/js/jquery-3.3.1.min.js"></script>
+    <script src="./paymentCeoPc.js"></script>
+</head>
+<body>
+<div class="paymentAdmin-div" style="height: 38rem">
+    <table class="paymentAdmin-div-table" style="height: 32rem;margin: 0 auto;">
+        <tr>
+            <td>
+                单元数量：<span style="color: #FF3C00;font-size: 1.8rem;font-weight: bold;" id="cellNum">5897</span>
+                <br>
+                人员数量：<span style="color: #FF3C00;font-size: 1.8rem;font-weight: bold;" id="crewNum">5897</span>
+            </td>
+            <td>
+                <div class="paymentAdmin-div-borderAll">
+                    <span class="borderAll-title1" id="paymentAll">27971.81</span>
+                    <br>
+                    <span class="borderAll-title2">薪酬总额</span>
+                </div>
+            </td>
+            <td>
+                <div class="paymentAdmin-div-border33">
+
+                </div>
+            </td>
+            <td>
+                <div class="paymentAdmin-div-border4">
+                    <table style="text-align: center;height: 100%;">
+                        <tr>
+                            <td>
+                                <div class="paymentAdmin-div-count">
+                                    <span style="font-weight: bold;padding-top: 0.3rem;display: inline-block;" id="paymentGx">2559.35</span><br>
+                                    <span>固薪</span>
+                                </div><div id="paymentTypeGx" class="type-basic type-yes"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="paymentAdmin-div-add"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="paymentAdmin-div-count">
+                                    <span style="font-weight: bold;padding-top: 0.3rem;display: inline-block;" id="paymentJf">2559.35</span><br>
+                                    <span>积分薪酬</span>
+                                </div><div id="paymentTypeJf" class="type-basic type-yes"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="paymentAdmin-div-add"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="paymentAdmin-div-count">
+                                    <span style="font-weight: bold;padding-top: 0.3rem;display: inline-block;" id="paymentTd">2559.35</span><br>
+                                    <span>团队薪酬</span>
+                                </div>
+                                <img src="./img/equal.png" style="height: 2.3rem;margin-top: 0.85rem;float: left" >
+                                <div style="height: 4rem;float: left">
+                                    <table style="margin-top: -6.5rem">
+                                        <tr>
+                                            <td>
+                                                <div class="paymentAdmin-div-counts">
+                                                    <span style="font-weight: bold;padding-top: 0.3rem;display: inline-block;" id="paymentKh">2559.35</span><br>
+                                                    <span>考核薪酬</span>
+                                                </div>
+                                                <div id="paymentTypeKh" class="type-basic type-yes"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="paymentAdmin-div-add"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="paymentAdmin-div-counts">
+                                                    <span style="font-weight: bold;padding-top: 0.3rem;display: inline-block;" id="paymentZl">2559.35</span><br>
+                                                    <span>增量毛利</span>
+                                                </div>
+                                                <div id="paymentTypeZl" class="type-basic type-yes"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="paymentAdmin-div-minus"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="paymentAdmin-div-counts">
+                                                    <span style="font-weight: bold;padding-top: 0.3rem;display: inline-block;" id="paymentFm">2559.35</span><br>
+                                                    <span>负面清单</span>
+                                                </div>
+                                                <div id="paymentTypeFm" class="type-basic type-yes"></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="payment-pc-table">
+    <div class="payment-pc-table-p">团队薪酬分配</div>
+    <table class="payment-pc-table-table">
+        <thead>
+        <tr>
+            <th>客户经理</th>
+            <th>固薪</th>
+            <th>积分薪酬</th>
+            <th>考核薪酬</th>
+            <th>增量毛利</th>
+            <th>负面清单</th>
+            <th>薪酬总额</th>
+        </tr>
+        </thead>
+    </table>
+    <div class="table-tbody">
+    <table class="payment-pc-table-table" id="paymentTable">
+        <tr>
+            <td class="payment-pc-table-name">尚方</td>
+            <td id="dataGx0">654.23</td>
+            <td id="dataJf0">654.23</td>
+            <td id="dataKh0" onclick="editEvent(this,0)">654.23</td>
+            <td id="dataZl0" onclick="editEvent(this,0)">654.23</td>
+            <td id="dataFm0" onclick="editEvent(this,0)">654.23</td>
+            <td id="dataZe0" >654.23</td>
+        </tr>
+        <tr>
+            <td class="payment-pc-table-name">尚方</td>
+            <td id="dataGx1">654.23</td>
+            <td id="dataJf1">654.23</td>
+            <td id="dataKh1" onclick="editEvent(this,1)">654.23</td>
+            <td id="dataZl1" onclick="editEvent(this,1)">654.23</td>
+            <td id="dataFm1" onclick="editEvent(this,1)">654.23</td>
+            <td id="dataZe1" >654.23</td>
+        </tr>
+        <tr>
+            <td class="payment-pc-table-name">尚方</td>
+            <td id="dataGx2">654.23</td>
+            <td id="dataJf2">654.23</td>
+            <td id="dataKh3" onclick="editEvent(this,1)">654.23</td>
+            <td id="dataZl3" onclick="editEvent(this,1)">654.23</td>
+            <td id="dataFm3" onclick="editEvent(this,1)">654.23</td>
+            <td id="dataZe3" >654.23</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+<div class="payment-pc-button" onclick="clickPayment()">提交</div>
+</body>
+</html>

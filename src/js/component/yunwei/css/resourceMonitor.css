@@ -1,0 +1,506 @@
+@media screen and (min-width:1921px){
+    html{
+        height: 100%;
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1920px){
+    html{
+        height: 100%;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 1366px){
+    html{
+        height: 100%;
+        font-size: 8px;
+    }
+}
+
+body{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.rm-div{
+    width: 100%;
+    height: 100%;
+    background: url("../img/resourceBg.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.rm-server{
+    position: absolute;
+    width: 62.5%;
+    height: 80.5%;
+    top: 11.5%;
+    left: 4.5%;
+    background: url("../img/serverBg.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.rm-server-title{
+    height: 7%;
+    color: white;
+    vertical-align: middle;
+}
+
+.server-left-title-table{
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+}
+
+.title-table1{
+    padding-left: 10px;
+    margin-left: 20px;
+    border-left: 5px solid #00F6F7;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.title-num{
+    font-size: 1.6rem;
+    color: #2CDFFA;
+}
+
+.rm-server-content{
+    height: 93%;
+}
+
+.rm-server-content-show{
+    width: 43%;
+    float: left;
+    height: 100%;
+}
+
+.rm-server-content-data{
+    width: 55%;
+    float: left;
+    height: 100%;
+}
+
+.rm-server-content-top{
+    height: 64%;
+}
+
+.rm-server-content-bottom{
+    height: 31%;
+    width: 67%;
+    margin: 0 auto;
+    background: url("../img/red.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.left-bottom-title{
+    height: 20%;
+}
+
+.left-bottom-content{
+    height: 80%;
+}
+
+.left-bottom-content-div1{
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+.echart-pie1{
+    width: 100%;
+    height: 100%;
+    z-index: 33;
+    position: relative;
+    top: -100%;
+}
+
+.echart-pie2{
+    z-index: 22;
+    width: 100%;
+    height: 100%;
+}
+
+.echart-pie2 table{
+    width: 100%;
+    height: 100%;
+}
+
+.left-bottom-content-div2{
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+.left-bottom-content-div2 table{
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.pieChartImg{
+    display: block;
+    width: 45%;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+.left-bottom-title table{
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.left-bottom-title table td{
+    vertical-align: bottom;
+}
+
+.left-bottom-title-td1{
+    width: 60%;
+    font-size: 1.3rem;
+    padding-left: 2rem;
+}
+
+.left-bottom-title-td2{
+    font-size: 1rem;
+}
+
+.font-color{
+    color: #FF005D;
+}
+
+.left-bottom-title-td2 img{
+    width: 1.1rem;
+    vertical-align: bottom;
+}
+
+.content-top-left{
+    width: 26%;
+    float: left;
+    height: 100%;
+}
+
+.top-left-img{
+    position: relative;
+    width: 26%;
+    top: 66%;
+    left: 30%;
+    cursor: pointer;
+}
+
+.top-right-img{
+    position: relative;
+    width: 26%;
+    top: 66%;
+    left: 40%;
+    cursor: pointer;
+}
+
+.content-top-central{
+    width: 47%;
+    float: left;
+    height: 100%;
+}
+
+.top-central-condition{
+    position: relative;
+    height: 76.5%;
+    top: 13%;
+}
+
+.top-central-condition-blue{
+    background: url("../img/unCondition0.png") no-repeat;
+    background-size: 100% 100%;
+    animation:myfirst 1s infinite;
+    -moz-animation:myfirst 1s infinite; /* Firefox */
+    -webkit-animation:myfirst 1s infinite; /* Safari and Chrome */
+    -o-animation:myfirst 1s infinite; /* Opera */
+}
+
+.top-central-condition-red{
+    background: url("../img/condition0.png") no-repeat;
+    background-size: 100% 100%;
+    animation:myfirsts 1s infinite;
+    -moz-animation:myfirsts 1s infinite; /* Firefox */
+    -webkit-animation:myfirsts 1s infinite; /* Safari and Chrome */
+    -o-animation:myfirsts 1s infinite; /* Opera */
+}
+
+.table-tbody-img{
+    width: 1.2rem;
+    vertical-align: middle;
+}
+
+.top-central-bottom{
+    position: relative;
+    height: 7%;
+    width: 16%;
+    margin: 0 auto;
+    top: 16%;
+    background: url("../img/bottom1.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.content-top-right{
+    width: 26%;
+    float: left;
+    height: 100%;
+}
+
+.rm-hadoop{
+    position: absolute;
+    width: 27.2%;
+    height: 21.5%;
+    top: 11.5%;
+    left: 68.5%;
+    background: url("../img/hadoopBg.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.rm-hadoop-title{
+    height: 18%;
+    font-size: 1.4rem;
+    color: #00FFFF;
+    font-weight: bold;
+}
+
+.rm-hadoop-title table{
+    height: 100%;
+    margin-left: 4%;
+}
+
+.rm-hadoop-content{
+    height: 82%;
+}
+
+.hadoop-content-div1{
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+.hadoop-content-div2{
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+.hadoop-content-img{
+    height: 40%;
+}
+
+.hadoop-content-div2 table{
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.rm-data{
+    position: absolute;
+    width: 27.2%;
+    height: 56.5%;
+    top: 35.5%;
+    left: 68.5%;
+    background: url("../img/dataBg.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.rm-data-title{
+    height: 7%;
+    font-size: 1.4rem;
+    color: #00FFFF;
+    font-weight: bold;
+}
+
+.rm-data-title table{
+    height: 100%;
+    margin-left: 4%;
+}
+
+.rm-data-content{
+    height: 93%;
+}
+
+.data-div{
+    height: 50%;
+    width: 100%;
+}
+
+.data-div-title{
+    height: 28px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+.data-div-content>table{
+    width: 100%;
+    height: 100%;
+}
+
+.data-div-content{
+    height: calc(100% - 28px);
+}
+
+.data-div-content-img{
+    height: 65%;
+    float: left;
+    margin-left: 10%;
+}
+
+.data-div-content-table{
+    float: left;
+    font-size: 1.2rem;
+    color: white;
+    height: 65%;
+    margin-left: 5%;
+}
+
+.data-content-num{
+    font-size: 2rem;
+    color: #2BDBF6;
+}
+
+.blue-bg{
+    font-size: 1.2rem;
+    display: inline-block;
+    color: #2BDBF6;
+    padding: 0.25rem;
+    margin-top: 0.3rem;
+    background-color: rgba(43,219,246,0.1);
+}
+
+.data-div-title span{
+    padding-left: 0.7rem;
+    margin-left: 1.5rem;
+    border-left: solid 3px #22ffff;
+}
+
+.table-thImg{
+    vertical-align: middle;
+    width: 1.1rem;
+}
+
+.table
+{
+    border-collapse: separate;
+    border-spacing: 0px 12px;
+    width: 100%;
+    font-size: 1.3rem;
+    margin-top: 2.5rem;
+    text-align: center;
+    height: 90%;
+    color: white;
+    cursor: default; /*该属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状,default默认光标（通常是一个箭头）*/
+}
+.table tbody tr
+{
+
+}
+
+.trBg{
+    background: url("../img/trBg.png") no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.trBgStar{
+    background: url("../img/trBgStar.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.table td
+{
+}
+.table th
+{
+    text-align: center;
+    cursor: pointer; /*光标呈现为指示链接的指针（一只手）*/
+}
+.sequence
+{
+    text-align: center;
+}
+.hover
+{
+    background-color: #3399FF;
+}
+
+@keyframes myfirst
+{
+    0%   {background-image: url("../img/unCondition0.png")}
+    20%  {background-image: url("../img/unCondition1.png")}
+    40%  {background-image: url("../img/unCondition2.png")}
+    60% {background-image: url("../img/unCondition3.png")}
+    80% {background-image: url("../img/unCondition4.png")}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+    0%   {background-image: url("../img/unCondition0.png")}
+    20%  {background-image: url("../img/unCondition1.png")}
+    40%  {background-image: url("../img/unCondition2.png")}
+    60% {background-image: url("../img/unCondition3.png")}
+    80% {background-image: url("../img/unCondition4.png")}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+    0%   {background-image: url("../img/unCondition0.png")}
+    20%  {background-image: url("../img/unCondition1.png")}
+    40%  {background-image: url("../img/unCondition2.png")}
+    60% {background-image: url("../img/unCondition3.png")}
+    80% {background-image: url("../img/unCondition4.png")}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+    0%   {background-image: url("../img/unCondition0.png")}
+    20%  {background-image: url("../img/unCondition1.png")}
+    40%  {background-image: url("../img/unCondition2.png")}
+    60% {background-image: url("../img/unCondition3.png")}
+    80% {background-image: url("../img/unCondition4.png")}
+}
+
+
+@keyframes myfirsts
+{
+    0%   {background-image: url("../img/condition0.png")}
+    20%  {background-image: url("../img/condition1.png")}
+    40%  {background-image: url("../img/condition2.png")}
+    60% {background-image: url("../img/condition3.png")}
+    80% {background-image: url("../img/condition4.png")}
+}
+
+@-moz-keyframes myfirsts /* Firefox */
+{
+    0%   {background-image: url("../img/condition0.png")}
+    20%  {background-image: url("../img/condition1.png")}
+    40%  {background-image: url("../img/condition2.png")}
+    60% {background-image: url("../img/condition3.png")}
+    80% {background-image: url("../img/condition4.png")}
+}
+
+@-webkit-keyframes myfirsts /* Safari and Chrome */
+{
+    0%   {background-image: url("../img/condition0.png")}
+    20%  {background-image: url("../img/condition1.png")}
+    40%  {background-image: url("../img/condition2.png")}
+    60% {background-image: url("../img/condition3.png")}
+    80% {background-image: url("../img/condition4.png")}
+}
+
+@-o-keyframes myfirsts /* Opera */
+{
+    0%   {background-image: url("../img/condition0.png")}
+    20%  {background-image: url("../img/condition1.png")}
+    40%  {background-image: url("../img/condition2.png")}
+    60% {background-image: url("../img/condition3.png")}
+    80% {background-image: url("../img/condition4.png")}
+}

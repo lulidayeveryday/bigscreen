@@ -1,0 +1,185 @@
+@media screen and (min-width:1921px){
+    html{
+        height: 100%;
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1920px){
+    html{
+        height: 100%;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 1366px){
+    html{
+        height: 100%;
+        font-size: 8px;
+    }
+}
+
+body{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.rm-div{
+    width: 100%;
+    height: 100%;
+    background: url("../img/applicationBg.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.rm-server{
+    position: absolute;
+    width: 74.6%;
+    height: 80.5%;
+    top: 11.5%;
+    left: 4.5%;
+    background: url("../img/serverBg.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.rm-server-title{
+    height: 7%;
+    color: white;
+    vertical-align: middle;
+}
+
+.server-left-title-table{
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+}
+
+.title-table1{
+    padding-left: 10px;
+    margin-left: 20px;
+    border-left: 5px solid #00F6F7;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.title-num{
+    font-size: 1.6rem;
+    color: #2CDFFA;
+}
+
+.server-left-button{
+    padding: 5px 10px;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.server-left-button-active{
+    background-color: #3191E3;
+}
+
+.rm-server-content{
+    height: 93%;
+    position: relative;
+}
+
+.rm-server-content-echarts{
+    width: 90%;
+    height: 95%;
+    float: right;
+}
+
+.rm-server-content-title{
+    width: 16%;
+    height: calc(95% - 60px);
+    margin-top: 60px;
+    float: left;
+    position: absolute;
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.rm-server-content-title table{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.rm-data-title table{
+    height: 100%;
+    margin-left: 1rem;
+    color: #2DE4FF;
+}
+
+.rm-data{
+    position: absolute;
+    width: 14.4%;
+    height: 80.5%;
+    top: 11.5%;
+    left: 80.6%;
+    background: url("../img/dataBgs.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.rm-data-title{
+    height: 5%;
+    font-size: 1.4rem;
+    color: #00FFFF;
+    font-weight: bold;
+}
+
+.rm-data-content{
+    height: 83.4%;
+}
+
+.data-div{
+    height: 100%;
+    width: 100%;
+}
+
+.data-div-content{
+    height: 100%;
+}
+
+.rm-data-time table{
+    height: 100%;
+    color: white;
+    margin-left: 13%;
+    font-size: 1rem;
+}
+
+.data-div-content-img{
+    width: 26%;
+    float: left;
+    margin-left: 15%;
+}
+
+.datas-div{
+    height: 11%;
+    margin-top: 2rem;
+}
+
+.data-content-num{
+    font-size: 2rem;
+    color: #2BDBF6;
+}
+
+.time-font{
+    margin-top: 0.3rem;
+    font-size: 0.2rem;
+    font-weight: 600;
+    color: #2DE4FF;
+}
+
+.data-div-content-table{
+    float: left;
+    font-size: 1.2rem;
+    color: white;
+    /*height: 65%;*/
+    margin-left: 5%;
+}
+
+.rm-data-time{
+    height: 11.6%;
+}

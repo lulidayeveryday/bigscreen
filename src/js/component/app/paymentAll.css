@@ -1,0 +1,268 @@
+@media screen and (min-width:1921px){
+    html{
+        height: 100%;
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1920px){
+    html{
+        height: 100%;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1366px){
+    html{
+        height: 100%;
+        font-size: 10px;
+    }
+}
+
+body{
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.paymentAdmin-div{
+    width: 100%;
+    height: 100%;
+}
+
+.paymentAdmin-div-table{
+    height: 100%;
+    font-size: 1.5rem;
+}
+
+.paymentAdmin-div-borderAll{
+    width: 8rem;
+    height: 5rem;
+    background: url("./img/money1.png") no-repeat;
+    background-size: 100% 100%;
+    padding-left: 6rem;
+    line-height: 1.5rem;
+    margin: 1.1rem;
+}
+
+.paymentAdmin-div-border2{
+    width: 8rem;
+    height: 32rem;
+    background: url("./img/equal2.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.paymentAdmin-div-border33{
+    width: 5.8rem;
+    height: 23rem;
+    background: url("./img/equal3.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.paymentAdmin-div-border3{
+    height: 37rem;
+}
+
+.paymentAdmin-div-border4{
+    height: 29rem;
+}
+
+.paymentAdmin-div-count{
+    width: 9rem;
+    height: 4rem;
+    background: url("./img/money2.png") no-repeat;
+    background-size: 100% 100%;
+    float: left;
+    font-size: 1.25rem;
+}
+
+.paymentAdmin-div-counts{
+    width: 9rem;
+    height: 4rem;
+    float: left;
+    font-size: 1.25rem;
+}
+
+.type-basic{
+    float: left;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 1rem;
+    margin-top: 1.25rem;
+}
+
+.type-yes{
+    background: url("./img/yes.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.type-no{
+    background: url("./img/no.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.paymentAdmin-div-add{
+    width: 2rem;
+    height: 2rem;
+    background: url("./img/add2.png") no-repeat;
+    background-size: 100% 100%;
+    margin-left: 3.5rem;
+}
+
+.green{
+    color: #6AE145;
+}
+
+.red{
+    color: #DF0024;
+}
+
+.paymentAdmin-div-minus{
+    width: 2rem;
+    height: 2rem;
+    background: url("./img/minus.png") no-repeat;
+    background-size: 100% 100%;
+    margin-left: 3.5rem;
+}
+
+.paymentAdmin-div-button{
+    width: 5rem;
+    height: 2.5rem;
+    float: left;
+    margin: 1rem 0 0 2rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-align: left;
+    cursor: pointer;
+}
+
+.button1{
+    background: url("./img/button3.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.button2{
+    background: url("./img/button2.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.payment-pc-button-subset{
+    width: 4rem;
+    height: 2rem;
+    margin-bottom: 0.8rem;
+    border-radius: 0.8rem;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    color: white;
+    background-color: #999;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button3{
+    background: url("./img/button1.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.paymentAdmin-div-num{
+    color: #444;
+    font-size: 1.6rem;
+    font-weight: bold;
+    float: left;
+    margin: 1.1rem 0 0 2rem;
+}
+
+.paymentAdmin-div-button2{
+    width: 6rem;
+    height: 2rem;
+    float: left;
+    margin: 0rem 0 0 2rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+}
+
+.button-font{
+    display: inline-block;
+    margin-left: 0.8rem;
+    margin-top: 0.25rem;
+}
+
+.button-font2{
+    display: inline-block;
+    margin-left: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+.borderAll-title1{
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #F1680C;
+    font-weight: bold;
+    margin-top: 1.1rem;
+}
+
+.borderAll-title2{
+    font-size: 1.2rem;
+    color: #555555;
+}
+
+.payment-pc-table{
+    border-top: solid 1rem #E6E9EC;
+}
+
+.payment-pc-table-p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+    padding: 1rem 1.5rem;
+}
+
+.payment-pc-table-table{
+    width: 100%;
+    font-size: 1rem;
+    color: #444444;
+    text-align: center;
+    border-spacing: 0;
+    border-bottom: solid 1px #aaa;
+}
+
+.payment-pc-table-table th{
+    background-color: #F5F4F8;
+    font-size: 1.2rem;
+    width: calc(100% / 7);
+    height: 2.6rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.payment-pc-table tbody td{
+    height: 2.25rem;
+    width: calc(100% / 7);
+    border-bottom: solid 1px #eee;
+}
+
+.payment-pc-table-name{
+    color: orange;
+}
+
+.table-tbody{
+    max-height: 16rem;
+    overflow-y: auto;
+}
+
+.payment-pc-button{
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 15px;
+    line-height: 25px;
+    margin: 10px auto;
+    color: white;
+    background-color: #ff4600;
+    font-weight: bold;
+}

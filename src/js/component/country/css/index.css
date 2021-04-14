@@ -1,0 +1,544 @@
+
+@media screen and (min-width:1921px){
+    html{
+        height: 100%;
+        font-size: 20px;
+    }
+
+    .back-last{
+        height: 100px;
+        line-height: 100px;
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1920px){
+    html{
+        height: 100%;
+        font-size: 10px;
+    }
+
+    .back-last{
+        height: 50px;
+        line-height: 50px;
+    }
+}
+
+@media screen and (max-width: 1366px){
+    html{
+        height: 100%;
+        font-size: 8px;
+    }
+
+    .back-last{
+        height: 40px;
+        line-height: 40px;
+    }
+}
+
+.age-table{
+    width: 80%;
+    height: 84%;
+    margin: 0% 10%;
+    background: url("../img/border4.png") no-repeat;
+    background-size: 100% 100%;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.resident-table{
+    width: 80%;
+    height: 84%;
+    margin: 0% 10%;
+    background: url("../img/border3.png") no-repeat;
+    background-size: 100% 100%;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.fontB{
+    color: #00F7EF;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.country-body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    background: url("../img/background.png") no-repeat;
+    background-size: 100% 100%;
+    color: white;
+}
+
+.pf-login{
+    position: absolute;
+    left: 30px;
+    width: 70px;
+    height: 80px;
+    margin: auto;
+    top:0;
+    bottom: 0;
+    z-index: 99;
+    background: url("../img/pfLogin.png") no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.pf-content{
+    position: absolute;
+    width: 430px;
+    height: 94%;
+    z-index: 999;
+    left: -450px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    transition:left 2s;
+    -moz-transition:left 2s; /* Firefox 4 */
+    -webkit-transition:left 2s; /* Safari and Chrome */
+    -o-transition:left 2s; /* Opera */
+}
+
+.pf-content-table {
+    width: 90%;
+    margin: auto;
+    height: 98%;
+    color: #F2DE6D;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.pf-content-div1{
+    float: left;
+    width: 390px;
+    height: 100%;
+    background: url("../img/pfBackground.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.title-content{
+    text-indent: 2em;
+    line-height: 22px;
+}
+
+.lb-img{
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.pf-content-titleImg{
+    width: 37px;
+    vertical-align: middle;
+}
+
+.table-title1{
+    height: 20px;
+    background: url("../img/pfTitle1.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.table-title2{
+    height: 20px;
+    background: url("../img/pfTitle2.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.table-title3{
+    height: 20px;
+    background: url("../img/pfTitle3.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.table-tdTitle{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    height: 60px;
+    color: white;
+}
+
+.pf-content-div2{
+    width: 40px;
+    height: 80px;
+    margin: auto;
+    top:0;
+    bottom: 0;
+    background: url("../img/pfButton.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 385px;
+    cursor: pointer;
+}
+
+.back-last{
+    background: url("../img/backlastbg.png") no-repeat;
+    background-size: 100% 100%;
+    width: 7.5%;
+    position: absolute;
+    top: 3%;
+    left: 2%;
+    color: #20F3F0;
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.title-flow{
+    width: 59.5%;
+    position: absolute;
+    height: 9.6%;
+    left: 38.6%;
+    top: 10.8%;
+}
+
+.title-flow-table{
+    width: 100%;
+    height: 100%;
+    font-size: 2.3rem;
+    color: #12F4F2;
+    font-weight: 600;
+}
+
+.title-td1{
+    background: url("../img/titletd1.png") no-repeat;
+    background-size: 80%;
+}
+
+.title-td4{
+    background: url("../img/tabletd4.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.table-td4-num{
+    position: relative;
+    text-align: center;
+    padding-top: 10%;
+    left: 35%;
+    width: 54%;
+    height: 70%;
+}
+
+.content-div1{
+    width: 100%;
+    height: 85.5%;
+}
+
+.content-div2{
+    width: 100%;
+    height: 86.6%;
+}
+
+.content-div3{
+    width: 100%;
+    height: 86.5%;
+    overflow: hidden;
+}
+
+.fine-table{
+    width: 92%;
+    /*height: 94%;*/
+    margin: 0% 4%;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 2.3rem;
+}
+
+.age-color{
+    width: 15px;
+    height: 7px;
+    margin: auto;
+    border-radius: 4px;
+}
+
+.zl-table{
+    position: relative;
+    width: 30px;
+    height: 30%;
+    top: -30%;
+    color: white;
+    font-size: 12px;
+}
+
+.zl-div{
+    position: relative;
+    width: 30px;
+    height: 30%;
+    top: -60%;
+    left: 30px;
+    color: white;
+    font-size: 12px;
+}
+
+.fine-table td{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.sex-ratio{
+    width: 24.8%;
+    height: 25.6%;
+    background: url("../img/sexratio.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 41.3%;
+    top: 23.5%;
+}
+
+.age-distribution{
+    width: 14.8%;
+    height: 25.6%;
+    background: url(../img/agedistribution.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 67.3%;
+    top: 23.5%;
+}
+
+.resident-analysis{
+    width: 14.8%;
+    height: 25.6%;
+    background: url(../img/resident.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 83.3%;
+    top: 23.5%;
+}
+
+.history-flow{
+    width: 37.8%;
+    height: 28.6%;
+    position: absolute;
+    top: 67.9%;
+    left: 2%;
+    background: url("../img/historyflow.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.scenic-spots{
+    position: absolute;
+    width: 27.8%;
+    height: 44.5%;
+    left: 41.3%;
+    top: 52%;
+    background: url("../img/scenicSpots.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.fine-line{
+    position: absolute;
+    width: 27.8%;
+    height: 44.5%;
+    left: 70.3%;
+    top: 52%;
+    background: url("../img/fineLine.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.title-td3{
+    background: url("../img/tabletd3.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.point-basic {
+    width: 1.3%;
+    height: 3.8%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.title-basic{
+    height: 2%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.point-position1{
+    left: 23%;
+    top: 5%;
+}
+
+.title-point-position1{
+    width: 5.5%;
+    left: 25%;
+    top: 6%;
+}
+
+.point-position2{
+    left: 24.7%;
+    top: 18.3%;
+}
+
+.title-point-position2{
+    width: 5.5%;
+    left: 26.7%;
+    top: 19.3%;
+}
+
+.point-position3{
+    left: 11.3%;
+    top: 20.2%;
+}
+
+.title-point-position3{
+    width: 5.5%;
+    left: 13.3%;
+    top: 21.2%;
+}
+
+.point-position4{
+    left: 30.3%;
+    top: 24.2%;
+}
+
+.title-point-position4{
+    width: 5.5%;
+    left: 32.3%;
+    top: 25.2%;
+}
+
+.point-position5{
+    left: 23.1%;
+    top: 25.5%;
+}
+
+.title-point-position5{
+    width: 5.5%;
+    left: 25.1%;
+    top: 26.5%;
+}
+
+.point-position6{
+    left: 31.3%;
+    top: 28%;
+}
+
+.title-point-position6{
+    width: 5.5%;
+    left: 33.3%;
+    top: 29%;
+}
+
+.point-position7{
+    left: 20.9%;
+    top: 27.8%;
+}
+
+.title-point-position7{
+    width: 5.5%;
+    left: 22.9%;
+    top: 28.8%;
+}
+
+.point-position8{
+    left: 15.0%;
+    top: 30.5%;
+}
+
+.title-point-position8{
+    width: 5.5%;
+    left: 17.0%;
+    top: 31.5%;
+}
+
+.point-position9{
+    left: 4.4%;
+    top: 29.1%;
+}
+
+.title-point-position9{
+    width: 5.5%;
+    left: 6.4%;
+    top: 30.1%;
+}
+
+.point-position10{
+    left: 3.24%;
+    top: 34.5%;
+}
+
+.title-point-position10{
+    width: 5.5%;
+    left: 5.24%;
+    top: 35.5%;
+}
+
+.point-position11{
+    left: 29.7%;
+    top: 30.5%;
+}
+
+.title-point-position11{
+    width: 5.5%;
+    left: 31.7%;
+    top: 31.5%;
+}
+
+.point-position12{
+    left: 2.4%;
+    top: 37.9%;
+}
+
+.title-point-position12{
+    width: 5.5%;
+    left: 4.4%;
+    top: 38.9%;
+}
+
+.point-position13{
+    left: 13%;
+    top: 43.5%;
+}
+
+.title-point-position13{
+    width: 5.5%;
+    left: 15%;
+    top: 44.5%;
+}
+
+.point-position14{
+    left: 23.2%;
+    top: 41.7%;
+}
+
+.title-point-position14{
+    width: 5.5%;
+    left: 25.2%;
+    top: 42.7%;
+}
+
+.point-position15{
+    left: 21.5%;
+    top: 46.5%;
+}
+
+.title-point-position15{
+    width: 5.5%;
+    left: 23.5%;
+    top: 47.5%;
+}
+
+.point-position16{
+    left: 7.6%;
+    top: 46.8%;
+}
+
+.title-point-position16{
+    width: 5.5%;
+    left: 9.6%;
+    top: 47.8%;
+}
+
+.fine-table-title{
+    background-color: #032A3B;
+}
+
+.table-padding{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.fine-table-content{
+    color: #00FEFA;
+}

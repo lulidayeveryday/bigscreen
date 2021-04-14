@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YangtzeDelta</title>
+    <meta charset="UTF-8">
+    <title>YangtzeDelta</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="../resources/css/common.css">
+    <link rel="stylesheet" href="../dist/My97Date/My97DatePicker/skin/WdatePicker.css" />
+    <link rel="stylesheet" href="../resources/css/YangtzeDelta.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="headDiv">
+        <span class="headLogo">
+            <img src="../resources/images/YangtzeDelta/deltaLogo.png" alt="">
+        </span>
+        <h2>长三角旅游概况</h2>
+        <div class="rightPart">
+            <div class="unicomLogo">
+                <img src="../resources/images/YangtzeDelta/unicomLogo.png" alt="">
+            </div>
+            <img class="setIcon" src="../resources/images/YangtzeDelta/setIcon.png" alt="">
+
+            <div class="toolBar">
+                <div class="toolContain">
+                    <span class="closeBtn">
+                        <img src="../resources/images/YangtzeDelta/closeBtn.png" alt="">
+                    </span>
+                    <span class="navBtn">
+                       <img src="../resources/images/YangtzeDelta/navBtn.png" alt="">
+                        <i class="textI">系统导航</i>
+                        <!--导航下拉-->
+                        <ul class="titleSelect">
+                            <li>
+
+                                <i class="icon">
+                                    <img src="../resources/images/YangtzeDelta/titleService.png" alt="">
+                                </i>
+                                <span>
+                                    景区旅游
+                                </span>
+                                <i>
+                                    >
+                                </i>
+                                <ul class="subList">
+                                    <li>
+                                        景区信息管理
+                                        <i class="downArrow">︿</i>
+
+                                    </li>
+                                    <li>
+                                        旅行社行业位置管理啦
+                                        <i class="downArrow">︿</i>
+                                        <ul class="subList2">
+                                            <li>
+                                                旅游投诉评价
+                                            </li>
+                                            <li>
+                                                旅游投诉评价
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <i class="icon">
+                                    <img src="../resources/images/YangtzeDelta/titleService.png" alt="">
+                                </i>
+                                <span>
+                                    景区旅游
+                                </span>
+                                <i>
+                                    >
+                                </i>
+                            </li>
+                            <li>
+                                <i class="icon">
+                                    <img src="../resources/images/YangtzeDelta/titleService.png" alt="">
+                                </i>
+                                <span>
+                                    景区旅游
+                                </span>
+                                <i>
+                                    >
+                                </i>
+                            </li>
+                        </ul>
+                    </span>
+                    <ul>
+                        <li>
+                            <img src="../resources/images/YangtzeDelta/browsHistory.png" alt="">
+                            <ul class="browsHistory">
+
+                            </ul>
+                        </li>
+                        <li>
+                            <img src="../resources/images/YangtzeDelta/fullDis.png" alt="">
+                        </li>
+                        <li>
+                            <img src="../resources/images/YangtzeDelta/safeQuit.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="rangeMask">
+        <div class="rangeContainer" id="rangeContainer">
+            <p>选择地域 <img class="closeMask" src="../resources/images/YangtzeDelta/closeIcon.png"/></p>
+            <div class="maskContent">
+
+                <p class="btnP">
+                    <span>
+                        全选
+                    </span>
+                    <span>
+                        反选
+                    </span>
+                    <span>
+                        清空
+                    </span>
+                    <span class="inquireBtn">
+                    查询
+                    </span>
+                </p>
+                <div class="contentDiv">
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="mainContainer">
+        <div class="bottomLine">
+            <div class="datePick">
+                <img src="../resources/images/YangtzeDelta/datePick.png" alt="" class="notHide">
+                <!--<div id="dayDatePickDemo"></div>&lt;!&ndash;日历控件&ndash;&gt;-->
+                <div class="dayDatePickDemo notHide" id="dayDatePickDemo">
+                    <input id="d12" class="notHide" type="hidden" value="2019-03-09"/>
+                    <img class="notHide" onclick="WdatePicker({el:'d12',onpicked:pickedFunc})" src="../resources/images/YangtzeDelta/edit.png" width="16" height="22" align="absmiddle">
+                </div>
+
+            </div>
+            <div class="locPick">
+                <img src="../resources/images/YangtzeDelta/locPick.png" alt="">
+            </div>
+        </div>
+        <div class="leftPart">
+            <div class="lTop">
+                <p class="detalTop5">
+                    长三角景区客流量Top5
+                    <img src="../resources/images/YangtzeDelta/time_1day.png"/>
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            No.1
+                            <span>
+                                西湖名胜风景区
+                            </span>
+                        </p>
+                        <ul>
+                            <li>332910</li>
+                            <li>
+                                较上周同时段 <br/>
+                                <span>7103</span>
+                                <img src="../resources/images/YangtzeDelta/TOP5_Upicon.png" alt="">
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>
+                            No.2
+                            <span>
+                                西湖名胜风景区
+                            </span>
+                        </p>
+                        <ul>
+                            <li>332910</li>
+                            <li>
+                                较上周同时段 <br/>
+                                <span>7103</span>
+                                <img src="../resources/images/YangtzeDelta/TOP5_Upicon.png" alt="">
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>
+                            No.3
+                            <span>
+                                西湖名胜风景区
+                            </span>
+                        </p>
+                        <ul>
+                            <li>332910000</li>
+                            <li>
+                                较上周同时段 <br/>
+                                <span>7103</span>
+                                <img src="../resources/images/YangtzeDelta/TOP5_Upicon.png" alt="">
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>
+                            No.4
+                            <span>
+                                西湖名胜风景区
+                            </span>
+                        </p>
+                        <ul>
+                            <li>332910000</li>
+                            <li>
+                                较上周同时段 <br/>
+                                <span>7103</span>
+                                <img src="../resources/images/YangtzeDelta/TOP5_Upicon.png" alt="">
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>
+                            No.5
+                            <span>
+                                西湖名胜风景区
+                            </span>
+                        </p>
+                        <ul>
+                            <li>332910</li>
+                            <li>
+                                较上周同时段 <br/>
+                                <span>7103</span>
+                                <img src="../resources/images/YangtzeDelta/TOP5_Upicon.png" alt="">
+
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="lBottom">
+                <p>长三角旅游资源</p>
+                <ul>
+                    <li>
+                        <span class="sceneLevel">5A景区</span><br/>
+                        <span class="sceneNum">40家</span>
+                    </li>
+                    <li>
+                        <span class="sceneLevel">5A景区</span><br/>
+                        <span class="sceneNum">40家</span>
+                    </li>
+                    <li>
+                        <span class="sceneLevel">5A景区</span><br/>
+                        <span class="sceneNum">40家</span>
+                    </li>
+                    <li>
+                        <span class="sceneLevel">5A景区</span><br/>
+                        <span class="sceneNum">40家</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="middlePart">
+            <ul>
+                <li class="midTop">
+                    <p>
+                        长三角客流总体分布
+                        <img src="../resources/images/YangtzeDelta/time_1day.png"/>
+                    </p>
+                    <div class="midTMain">
+                        <ul>
+                            <li class="midTL">
+                                总客流量 <br/>
+                                <span class="totalNum">3432434</span> <br/>
+                                较上周总时段 <br/>
+                                <span class="riseNum">92103</span>
+                                <img src="../resources/images/YangtzeDelta/TOP5_Upicon.png" alt="">
+                            </li>
+                            <li class="midTR">
+                                <div class="jiangsu">
+                                    <img src="../resources/images/YangtzeDelta/jiangsu.png" alt="">
+                                    <p>
+                                        江苏
+                                        <span class="provincePer">19.4%</span>
+                                    </p>
+                                </div>
+                                <div class="zhejiang">
+                                    <img src="../resources/images/YangtzeDelta/zhejiang.png" alt="">
+                                    <p>
+                                        浙江
+                                        <span class="provincePer">19.4%</span>
+                                    </p>
+                                </div>
+                                <div class="shanghai">
+                                    <img src="../resources/images/YangtzeDelta/shanghai.png" alt="">
+                                    <p>
+                                        上海
+                                        <span class="provincePer">19.4%</span>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="midMid">
+                    <p>
+                        长三角区域外游客来源占比
+                        <img src="../resources/images/YangtzeDelta/time_1day.png"/>
+                    </p>
+                    <ul class="midMain">
+                        <li>
+                            <div class="mid1" id="mid1">
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mid1" id="mid2">
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mid1" id="mid3">
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mid1" id="mid4">
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mid1" id="mid5">
+
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="midBottom">
+                    <p>
+                        长三角区域内游客来源占比
+                        <img src="../resources/images/YangtzeDelta/time_1day.png"/>
+                    </p>
+                    <ul class="bottomMain">
+                        <li>
+                            <div class="mid1" id="mid6">
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mid1" id="mid7">
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mid1" id="mid8">
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mid1" id="mid9">
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mid1" id="mid10">
+
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="rightPart">
+            <p>
+                游客性别年龄分布
+                <img src="../resources/images/YangtzeDelta/time_1day.png"/>
+            </p>
+            <div class="rightTop">
+                <p>游客性别分布</p>
+                <div class="genderCircle" id="genderCircle">
+
+                </div>
+            </div>
+            <div class="rightBottom">
+                <p>游客年龄分布</p>
+                <div>
+                    <div class="mulCircle" id="mulCircle">
+
+                    </div>
+                    <ul class="mulDes">
+                        <li>
+                            <h1>33.5%</h1>
+                            <p>
+
+                                <span>
+                                    0-12
+                                </span>岁
+                            </p>
+                        </li>
+                        <li>
+                            <h1>33.5%</h1>
+                            <p>
+
+                                <span>
+                                    0-12
+                                </span>岁
+                            </p>
+                        </li>
+                        <li>
+                            <h1>33.5%</h1>
+                            <p>
+
+                                <span>
+                                    0-12
+                                </span>岁
+                            </p>
+                        </li>
+                        <li>
+                            <h1>33.5%</h1>
+                            <p>
+
+                                <span>
+                                    0-12
+                                </span>岁
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../dist/jquery/jquery-1.8.3.min.js"></script>
+    <script src="../dist/echarts/echarts.4.1.0.js"></script>
+    <script type="text/javascript" src="../dist/My97Date/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="../dist/peacock.js"></script>
+    <script src="../dist/echarts/echarts.4.1.0.js"></script>
+    <script src="../resources/js/YangtzDelta.js"></script>
+    <script>
+
+    </script>
+
+
+</body>
+</html>

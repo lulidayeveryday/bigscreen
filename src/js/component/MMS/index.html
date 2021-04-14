@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>彩信</title>
+    <!-- import CSS -->
+    <!--<link rel="stylesheet" href="./css/element-ui.css">-->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="./css/mms.css">
+</head>
+<body>
+<div id="app">
+    <div class="mms-div">
+        <div id="uploadDiv1" class="uploadDiv">
+            <div class="demo-input-suffix">
+                主题：
+                <el-input
+                        placeholder="请输入主题"
+                        style="width: 60rem;"
+                        v-model="subject">
+                </el-input>
+            </div>
+            <div class="demo-input-suffix">
+                文本：
+                <el-input
+                        placeholder="请输入主题"
+                        type="textarea"
+                        :rows="2"
+                        style="width: 60rem"
+                        v-model="content">
+                </el-input>
+            </div>
+            <div class="demo-input-suffix">
+                <el-row :gutter="20">
+                    <el-col :span="12">
+                        <el-upload
+                                class="upload-demo"
+                                ref="upload1"
+                                action="https://jsonplaceholder.typicode.com/posts/"
+                                :http-request="newAction"
+                                :on-preview="handlePreview"
+                                :on-remove="handleRemoveImg"
+                                :on-change="onChangeImg"
+                                :before-upload="beforeUploadImg"
+                                accept=".gif,.jpg,.jpeg,.png,.GIF,.JPG,.PNG"
+                                :limit="1"
+                                :file-list="fileListImg"
+                                :auto-upload="false">
+                            <el-button slot="trigger" size="small" type="primary">选取图片</el-button>
+                            <div slot="tip" class="el-upload__tip">只能上传图片，且不能超过200kb</div>
+                        </el-upload>
+                    </el-col>
+                    <el-col :span="12">
+                        <el-upload
+                                class="upload-demo"
+                                ref="upload2"
+                                action="https://jsonplaceholder.typicode.com/posts/"
+                                :http-request="newAction"
+                                :on-preview="handlePreview"
+                                :on-remove="handleRemoveXls"
+                                :on-change="onChangeXls"
+                                :before-upload="beforeUploadXls"
+                                accept=".xlsx,.xls"
+                                :limit="1"
+                                :file-list="fileListXls"
+                                :auto-upload="false">
+                            <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
+                            <div slot="tip" class="el-upload__tip">只能上传xlsx/xls文件</div>
+                        </el-upload>
+                    </el-col>
+                </el-row>
+            </div>
+        </div>
+        <div class="uploadDiv" style="background: none;">
+            <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
+        </div>
+    </div>
+</div>
+</body>
+<!--<script src="./js/vue.js"></script>
+<script src="./js/element-ui.js"></script>-->
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function() {
+            return {
+                divNum:1,
+                subject:'',
+                content:'',
+                fileListXls: [],
+                fileListImg: [],
+                fileData: [],
+            }
+        },
+        methods: {
+            submitUpload() {
+                /*this.$refs.upload1.submit();
+                this.$refs.upload2.submit();*/
+                this.newAction();
+            },
+            handleRemove(file, fileList) {
+                console.log(file, fileList);
+            },
+            handleRemoveImg(file, fileList){
+                debugger
+                this.fileListImg = fileList;
+                // this.fileData.push(file.raw)
+            },
+            handleRemoveXls(file, fileList){
+                debugger
+                this.fileListXls = fileList;
+                // this.fileData.push(file.raw)
+            },
+            handlePreview(file) {
+                console.log(file);
+            },
+            beforeUploadXls(file) {
+                debugger
+                this.fileData.filesXls = file;
+                /*console.log(file)
+                var testmsg=file.name.substring(file.name.lastIndexOf('.')+1)
+                const extension = testmsg === 'xls'
+                const extension2 = testmsg === 'xlsx'
+                // const isLt2M = file.size / 1024 / 1024 < 10
+                if(!extension && !extension2) {
+                    this.$message({
+                        message: '上传文件只能是 xls、xlsx格式!',
+                        type: 'warning'
+                    });
+                }*/
+                // if(!isLt2M) {
+                //     this.$message({
+                //         message: '上传文件大小不能超过 10MB!',
+                //         type: 'warning'
+                //     });
+                // }
+                // return (extension || extension2) && isLt2M
+                /*return extension || extension2*/
+            },
+            beforeUploadImg(file) {
+                debugger
+                this.fileData.filesImg = file;
+                /*const isJPG = file.type === 'image/jpeg';
+                const isLt2M = file.size / 1024 / 1024 < 2;
+
+                if (!isJPG) {
+                    this.$message.error('上传头像图片只能是 JPG 格式!');
+                }
+                /!*if (!isLt2M) {
+                    this.$message.error('上传头像图片大小不能超过 2MB!');
+                }*!/
+                // return isJPG && isLt2M;
+                return isJPG;*/
+            },
+            newAction(){
+                let params = new FormData()
+                let fileData = this.fileData;
+                let xls = this.fileListXls;
+                let img = this.fileListImg;
+                let subject = this.subject;
+                let content = this.content;
+                if(subject === ''){
+                    this.$message({
+                        message: '请输入主题',
+                        type: 'warning'
+                    });
+                    return
+                }
+                if(content === ''){
+                    this.$message({
+                        message: '请输入文本',
+                        type: 'warning'
+                    });
+                    return
+                }
+                if(xls.length!==1 || img.length!==1){
+                        this.$message({
+                            message: '请选择一个图片，一个文件',
+                            type: 'warning'
+                        });
+                        return
+                }
+
+                debugger;
+
+                const isLt2M = img[0].size / 1024 < 200;
+                if (!isLt2M) {
+                    this.$message.error('上传头像图片大小不能超过 200Kb!');
+                    return
+                }
+
+                params.append("fileImg", img[0].raw);
+                params.append("fileXls", xls[0].raw);
+                params.append("subject", subject);
+                params.append("content", content);
+
+            },
+            onChangeImg(file, fileList){
+                debugger
+                this.fileListImg = fileList;
+                // this.fileData.push(file.raw)
+            },
+            onChangeXls(file, fileList){
+                debugger
+                this.fileListXls = fileList;
+                // this.fileData.push(file.raw)
+            }
+        }
+    })
+</script>
+</html>

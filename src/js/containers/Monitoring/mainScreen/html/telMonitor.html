@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>山西联通固话产品监控</title>
+    <link rel="stylesheet" href="../css/telMonitor.css" type="text/css">
+</head>
+<body>
+<img src="../image/telMonitorTitle.png" class="mainScreen-title">
+<div class="contact-pop">
+    <img src="../image/cdClose.png" class="contact-pop-close" onclick="$('.contact-pop').css('display','none')">
+    <div class="contact-pop-bg">
+        <div class="contact-pop-title">公众</div>
+        <div class="contact-pop-title-type">
+            <table style="width: 100%;height: 100%;">
+                <tbody>
+                <tr>
+                    <td class="pop-td-select" onclick="popClickType(this)">产品-地市</td>
+                    <td onclick="popClickType(this)">产品-BU</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="contact-pop-table" id="scrollInner">
+            <table class="contact-pop-table-div">
+                <thead>
+                <tr style="height: 3rem;background-color: #2B4369;font-size: 1.1rem;">
+                    <th>产品</th>
+                    <th>太原</th>
+                    <th>大同</th>
+                    <th>阳泉</th>
+                    <th>长治</th>
+                    <th>晋城</th>
+                    <th>朔州</th>
+                    <th>忻州</th>
+                    <th>晋中</th>
+                    <th>吕梁</th>
+                    <th>临汾</th>
+                    <th>运城</th>
+                </tr>
+                </thead>
+                <tbody class="table-tbody">
+                <tr>
+                    <td>产品1</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+
+                <tr>
+                    <td>产品1</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>产品1</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>产品1</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>产品1</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>产品1</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>产品1</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>产品1</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>产品1</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>产品1</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>产品1</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<div class="contact-pop1">
+    <img src="../image/cdClose.png" class="contact-pop-close" onclick="$('.contact-pop1').css('display','none')">
+    <div class="contact-pop-bg">
+        <div class="contact-pop-title">政企</div>
+        <div class="contact-pop-table" id="scrollInner1">
+            <table class="contact-pop-table-div">
+                <thead>
+                <tr style="height: 3rem;background-color: #2B4369;font-size: 1.1rem;">
+                    <th></th>
+                    <th>合计</th>
+                    <th>靓号</th>
+                    <th>集客</th>
+                    <th>商客</th>
+                </tr>
+                </thead>
+                <tbody class="table-tbody">
+                <tr>
+                    <td>太原</td>
+                    <td>84522</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>大同</td>
+                    <td>84522</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>阳泉</td>
+                    <td>84522</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>长治</td>
+                    <td>84522</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>晋城</td>
+                    <td>84522</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>朔州</td>
+                    <td>84522</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>忻州</td>
+                    <td>84522</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>晋中</td>
+                    <td>84522</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>吕梁</td>
+                    <td>84522</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>临汾</td>
+                    <td>84522</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>运城</td>
+                    <td>84522</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<div class="iceProduct-div-zk">
+    <div style="height: 4%;">
+        <table class="qualityMonitoring-title-table-up">
+            <tr>
+                <td>发展监控</td>
+            </tr>
+        </table>
+    </div>
+    <div style="height: 95%">
+        <div class="telMonitor-del" id="telMonitorDel"></div>
+        <div class="zt-content-up">
+            <div class="zt-content-up-div2" id="percentPie1"></div>
+            <div class="zt-content-up-div2" style="margin: 0 3%;" id="percentPie2"></div>
+            <div class="zt-content-up-div2" id="percentPie3"></div>
+        </div>
+    </div>
+</div>
+
+<div class="contact-zb-div2">
+    <div class="contact-tc-div-title">
+        <table style="height: 100%;color: #36D2F7;font-size: 1.25rem;margin-left: 1rem;font-weight: bold;">
+            <tbody>
+            <tr>
+                <td>号码消费排名TOP</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="contact-tc-div-chart">
+        <div style="width: 50%;height: 100%;float: left;text-align: center">
+            <div class="chart-title" style="border: none;">吸金用户TOP 10</div>
+            <div class="contact-tc-chart-div">
+                <table class="contact-tc-table">
+                    <tbody>
+                    <tr>
+                        <td class="table-td1">
+                            <img src="../image/1st.png" class="tc-table-img">
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3 font-color1">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <img src="../image/2nd.png" class="tc-table-img">
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3 font-color2">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <img src="../image/3rd.png" class="tc-table-img">
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3 font-color3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">4</span>
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">5</span>
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">6</span>
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">7</span>
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">8</span>
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">9</span>
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">10</span>
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div style="width: 50%;height: 100%;float: left;text-align: center">
+            <div class="chart-title" style="border: none;">靓号用户TOP 10</div>
+            <div class="contact-tc-chart-div">
+                <table class="contact-tc-table">
+                    <tbody>
+                    <tr>
+                        <td class="table-td1">
+                            <img src="../image/1st.png" class="tc-table-img">
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3 font-color1">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <img src="../image/2nd.png" class="tc-table-img">
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3 font-color2">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <img src="../image/3rd.png" class="tc-table-img">
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3 font-color3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">4</span>
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">5</span>
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">6</span>
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">7</span>
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">8</span>
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">9</span>
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-td1">
+                            <span class="tc-table-icon">10</span>
+                        </td>
+                        <td class="table-td2">158*******1269</td>
+                        <td class="table-td3">25632541<span class="table-td-yuan">元</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="contact-zb-div">
+    <div class="contact-tc-div-title">
+        <table style="height: 100%;color: #36D2F7;font-size: 1.25rem;margin-left: 1rem;font-weight: bold;">
+            <tbody>
+            <tr>
+                <td>客户群监控</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="contact-tc-div-chart">
+        <div style="width: 50%;height: 100%;float: left;text-align: center">
+            <div class="contact-tc-chart-title" onclick="gzPop()">公众</div>
+            <div class="contact-tc-chart-div" id="pieChart1"></div>
+        </div>
+        <div style="width: 50%;height: 100%;float: left;text-align: center">
+            <div class="contact-tc-chart-title" onclick="zqPop()">政企</div>
+            <div class="contact-tc-chart-div" id="pieChart2">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/jquery.nicescroll.js"></script>
+<script src="../js/telMonitor.js"></script>
+<script src="../js/echarts.min.js"></script>
+</body>
+</html>

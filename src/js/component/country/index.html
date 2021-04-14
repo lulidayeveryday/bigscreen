@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>嘉兴乡村旅游</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/echarts.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            var widths=$(window).width();
+            var times=1;
+            if(widths<=1920&&widths>1366){
+                times=1
+            }else if(widths>1920){
+                times=2;
+            }else{
+                times=0.8;
+            }
+
+            firstFunction(times,0);
+            //首次加载概况
+            firstPf();
+
+        });
+
+        var pointData=[
+            {id:1, name: '姚庄镇北鹤村'},
+            {id:2, name: '大云镇缪家村'},
+            {id:3, name: '新塍镇潘家浜村'},
+            {id:4, name: '广陈镇山塘村'},
+            {id:5, name: '新丰镇竹林村'},
+            {id:6, name: '新仓镇三叉河村'},
+            {id:7, name: '凤桥镇永红村'},
+            {id:8, name: '王店镇建林村'},
+            {id:9, name: '桐乡墅丰村'},
+            {id:10, name: '洲泉镇马鸣村'},
+            {id:11, name: '乍浦镇马家荡村'},
+            {id:12, name: '大麻镇海华村'},
+            {id:13, name: '丁桥镇新仓村'},
+            {id:14, name: '澉浦镇澉东村'},
+            {id:15, name: '澉浦镇紫金山村'},
+            {id:16, name: '周王庙镇云龙村'}
+        ];
+
+        function pointClick(id) {
+            var widths=$(window).width();
+            var times=1;
+            if(widths<=1920&&widths>1366){
+                times=1
+            }else if(widths>1920){
+                times=2;
+            }else{
+                times=0.8;
+            }
+            firstFunction(times,id);
+            clickMap(id);
+        }
+
+        //首次页面概况
+        function firstPf() {
+            var title="南湖革命纪念馆";
+            var gk='打扫发顺丰发反反复复反反复复反反复复反反复复反反复复反反复复反反复复反反复复';
+            var jd='爱的发发v沙尘暴v型擦v不v刹想不想吃不寻常不寻常v吧v爸爸爸爸爸爸爸爸爸爸爸爸爸爸爸爸 '
+            var js='就asdfsafasjlk 就  阿的发生发生的发生的发生的法官在v刹擦vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv';
+            var imgs=['./img/background.png','./img/background.png','./img/background.png'];
+            var imgData=''
+            for (var i=0;i<imgs.length;i++){
+                imgData+='<li><img src="'+imgs[i]+'" class="lb-img"/></li>'
+            }
+            $('#pfContentTitle').html(title);//标题
+            $('#pfGk').html(gk);//概况
+            $('#pfJd').html(jd);//
+            $('#pfJs').html(js);
+            $('#slider').html(imgData);
+            slide();
+        }
+
+        //点击地图，弹出概况
+        function clickMap(id) {
+            var title;
+            if(id==0){
+                title='全市数据';
+            }else {
+                for (var i=0;i<pointData.length;i++){
+                    if(pointData[i].id==id){
+                        title=pointData[i].name;
+                        break;
+                    }
+                }
+            }
+
+            var gk='打扫发顺丰发反反复复反反复复反反复复反反复复反反复复反反复复反反复复反反复复';
+            var jd='爱的发发v沙尘暴v型擦v不v刹想不想吃不寻常不寻常v吧v爸爸爸爸爸爸爸爸爸爸爸爸爸爸爸爸 '
+            var js='就asdfsafasjlk 就  阿的发生发生的发生的发生的法官在v刹擦vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv';
+            var imgs=['./img/point.png','./img/background.png'];
+            var imgData=''
+            for (var i=0;i<imgs.length;i++){
+                imgData+='<li><img src="'+imgs[i]+'" class="lb-img"/></li>'
+            }
+            $('#pfContentTitle').html(title);//标题
+            $('#pfGk').html(gk);//概况
+            $('#pfJd').html(jd);//
+            $('#pfJs').html(js);
+            $('#slider').html(imgData);
+            slide()
+        }
+
+        function firstFunction(times,id) {
+            //性别比例
+            var data2=[
+                {value:84, name:'男性'},
+                {value:96, name:'女性'}
+            ]
+            echartsPie(data2,'sexDiv',times);
+
+            //年龄分布
+            var age=[
+                {rank:0.1,data:'10%'},
+                {rank:0.3,data:'30%'},
+                {rank:0.48,data:'48%'},
+                {rank:0.10,data:'12%'}
+            ];
+            ageDistribution(age);
+
+            //驻留分析
+            var resident=[
+                {rank:0.1,data:'10%'},
+                {rank:0.3,data:'30%'},
+                {rank:0.48,data:'48%'},
+                {rank:0.70,data:'72%'},
+                {rank:0.10,data:'12%'}
+            ];
+            residentDistribution(resident);
+
+            //历史客流量
+            var thisWeek=[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6];
+            var lastWeek=[12.0, 54.9, 70, 5.2, 15.6, 6.7, 15.6];
+            echartsLine(thisWeek,lastWeek,times);
+
+            //实时流量
+
+            var title='全市';
+            var flowNum=584128;
+            if(id==0){
+                title='全市数据';
+                flowNum=1111111;
+            }else {
+                for (var i=0;i<pointData.length;i++){
+                    if(pointData[i].id==id){
+                        title=pointData[i].name;
+                        break;
+                    }
+                }
+                flowNum=222222;
+            }
+
+            realFlow(title,flowNum);
+
+            //景区关联
+            var graphData= [
+                {x: 483, y: 401, name: '海盐紫金山村'},//中心点
+                {x: 80, y: 20, name: '新丰镇竹林村'},//最长
+                {x: 311, y: 60, name: '桐乡墅丰村'},
+                {x: 129, y: 245, name: '乍浦镇马家荡村'},
+                {x: 154, y: 400, name: '秀洲潘家浜村'},
+                {x: 438, y: 180, name: '洲泉镇马鸣村'},//最短
+            ];
+            var link=[
+                {source: '新丰镇竹林村', target: '海盐紫金山村'},//最长
+                {source: '桐乡墅丰村', target: '海盐紫金山村'},
+                {source: '乍浦镇马家荡村', target: '海盐紫金山村'},
+                {source: '秀洲潘家浜村', target: '海盐紫金山村'},
+                {source: '洲泉镇马鸣村', target: '海盐紫金山村'},//最短
+            ]
+
+            link[0].lineStyle={
+                normal: {
+                    color: "#fe740e"//最长
+                }
+            };
+            link[1].lineStyle={
+                normal: {
+                    color: "#fedf0e"
+                }
+            };
+            link[2].lineStyle={
+                normal: {
+                    color: "#0efe8a"
+                }
+            };
+            link[3].lineStyle={
+                normal: {
+                    color: "#0ffffc"
+                }
+            };
+            link[4].lineStyle={
+                normal: {
+                    color: "#ffffff"//最短
+                }
+            };
+            echartGraph(graphData,link,times);
+
+            //精品线路
+            var road=[
+                {
+                    data:['秀洲潘家浜村','秀洲潘家浜村','秀洲潘家浜村','秀洲潘家浜村'],
+                    title:'最美绿道百里钱塘乡村一日游'
+                },
+                {
+                    data:['秀洲潘家浜村','秀洲潘家浜村','秀洲潘家浜村','秀洲潘家浜村','秀洲潘家浜村','秀洲潘家浜村'],
+                    title:'最美绿道百里钱塘乡村一日游'
+                },
+                {
+                    data:['秀洲潘家浜村','秀洲潘家浜村','秀洲潘家浜村'],
+                    title:'最美绿道百里钱塘乡村一日游'
+                }
+            ]
+            /*roadRank(road);*/
+            roadSpeed();
+        }
+
+        var timer=30;
+        var upScroll = setInterval(myScrollTop,timer);
+        function roadSpeed() {
+            var content=document.getElementById("content");
+            var msg1=document.getElementById("table1");
+            var msg2=document.getElementById("table2");
+            msg2.innerHTML=msg1.innerHTML;
+            content.scrollTop=0;
+            content.onmouseover=function(){
+                clearInterval(upScroll);
+            };
+            content.onmouseout=function(){
+                upScroll = setInterval(myScrollTop,timer);
+            };
+        }
+
+        function myScrollTop(){
+            var content=document.getElementById("content");
+            var height=$('#content').height();
+            var divHight=$('#table1').height();
+            /*if(content.scrollTop>content.scrollHeight){*/
+            if(content.scrollTop>(divHight*2-height)){
+                content.scrollTop=0;
+            }else{
+                content.scrollTop++
+            }
+        }
+        
+        function realFlow(title,flowNum) {
+            document.getElementById("realFlowTitle").innerHTML=title;
+            $("#realFlowNum").numberRock({
+                speed:10,
+                count:flowNum
+            })
+        }
+
+        function roadRank(road) {
+            var data='<tbody>';
+            for(var i=0;i<road.length;i++){
+                if(i==3){
+                    break;
+                }
+                data+='<tr><td class="fine-table-title"><span style="color: #00F7EF">No.'+(i+1)+'</span> '+road[i].title+'</td></tr><tr><td class="fine-table-content"><img src="img/flag.png" style="height: 1.3rem"/> ';
+                for(var j=0;j<road[i].data.length;j++){
+                    if(j==road[i].data.length-1){
+                        data+=road[i].data[j];
+                    }else {
+                        data+=road[i].data[j]+' … ';
+                    }
+                }
+                data+='</td></tr>'
+            }
+            data+='</tbody>';
+            document.getElementById("fineTable").innerHTML=data;
+        }
+
+        function echartGraph(graphData,links,times) {
+            var symbol=[];
+            symbol[0]='image://./img/point1.png';//中心点图标
+            symbol[1]='image://./img/point1.png';//最长
+            symbol[2]='image://./img/point2.png';
+            symbol[3]='image://./img/point3.png';
+            symbol[4]='image://./img/point4.png';
+            symbol[5]='image://./img/point5.png';//最短
+            var graphDatas=[];
+            for(var i=0;i<graphData.length;i++){
+                graphDatas[i]={
+                    name:graphData[i].name,
+                    x:graphData[i].x,
+                    y:graphData[i].y,
+                    symbol:symbol[i],
+                }
+            }
+            var option = {
+                animationDurationUpdate: 1500,
+                animationEasingUpdate: 'quinticInOut',
+                tooltip: {
+                    formatter:'{b}'
+                },
+                series: [{
+                    type: 'graph',
+                    tooltip: {},
+                    edgeSymbol: ['', 'arrow'],
+                    symbolSize: 20,//图标大小
+                    focusNodeAdjacency: true,
+
+                    label: {
+                        normal: {
+                            show:false,
+                            position: 'right',
+                            fontWeight: 'bold',
+                            formatter: '{b}',
+                            normal: {
+                                textStyle: {
+                                    fontFamily: '宋体'
+                                }
+                            }
+                        }
+                    },
+                    edgeLabel: {
+                        normal: {
+                            textStyle: {
+                                fontSize: 13*times,
+                                fontWeight: 'bold',
+                                fontFamily: '宋体'
+                            }
+                        }
+                    },
+
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                rotate: true,
+                                show: false,
+                                textStyle: {
+                                    color: '#00F0FF',
+                                    fontWeight: 'bold',
+                                    fontSize: 12*times
+                                }
+                            }
+                        },
+                        emphasis: {
+                            label: {
+                                show: false
+                                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+                            }
+                        }
+                    },
+
+                    data: graphDatas,
+                    // links: [],
+                    links: links,
+                    lineStyle: {
+                        normal: {
+                            width:2,
+                            color: '#00F0FF',
+                            curveness: 0,
+                            type: "solid"
+                        }
+                    }
+                }]
+            };
+
+            var chart = echarts.init(document.getElementById('graphDiv'));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+        }
+
+        function echartsPie(data,id,times) {
+            /*var data1=[];
+            for(var i=0;i<100;i++){
+                data1.push(2);
+                data1.push(1);
+            }*/
+
+            var option = {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{b}: {c} ({d}%)",
+
+                },
+                legend: {
+                    show:false
+                },
+                startAngle:120,
+                series: [/*{
+                    type: 'pie',
+                    // center: [110, 95],
+                    // radius: [88, 90],
+                    radius: ['76%', '77%'],
+                    labelLine: {
+                        normal: {
+                            show: 0,
+                        },
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: function(a) {
+                                if (a.data == 2) {
+                                    return '#F1E6D4';
+                                }
+                                if (a.data == 1) {
+                                    return 'rgba(0,0,0, 0)';
+                                }
+                            },
+                            fontSize:12*times
+                        },
+                    },
+                    data: data1
+                },*/
+                    {
+                        name:'比例',
+                        type:'pie',
+                        startAngle:45,
+                        radius: ['40%', '66%'],
+                        color: ['#F2DE68', '#47C8CE'],
+                        label: {
+                            normal: {
+                                formatter: '{b}\n{d}%',
+                                textStyle:{
+                                    fontSize:14*times,
+                                    fontWeight:600
+                                }
+                            },
+                        },
+                        labelLine: {
+                            normal: {
+                                /*length: 25,
+                                 length2: 10,*/
+                                lineStyle: {
+                                    type: 'solid',
+                                    width: 2
+                                }
+                            },
+                        },
+                        data:data
+                    }
+                ]
+            };
+            var chart = echarts.init(document.getElementById(id));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+        }
+
+        function ageDistribution(age) {
+            var data='<div style="width: 100%;height: 8%"></div><table class="age-table"><tbody>';
+            data+='<tr><td style="width: 26%;background-color: rgba(0,247,239,'+age[0].rank+')"></td><td style="width: 17%"></td><td>0-20岁 <span class="fontB">'+age[0].data+'</span></td></tr>';
+            data+='<tr><td style="background-color: rgba(0,247,239,'+age[1].rank+')"></td><td></td><td>20-40岁 <span class="fontB">'+age[1].data+'</span></td></tr>';
+            data+='<tr><td style="background-color: rgba(0,247,239,'+age[2].rank+')"></td><td></td><td>40-60岁 <span class="fontB">'+age[2].data+'</span></td></tr>';
+            data+='<tr><td style="background-color: rgba(0,247,239,'+age[3].rank+')"></td><td></td><td>60-80岁 <span class="fontB">'+age[3].data+'</span></td></tr>';
+            data+='</tbody></table>';
+            document.getElementById("ageDistribution").innerHTML=data;
+        }
+
+        function residentDistribution(resident) {
+            var data='<div style="width: 100%;height: 8%"></div><table class="resident-table"><tbody>';
+            data+='<tr><td style="width: 26%;background-color: rgba(0,247,239,'+resident[0].rank+')"></td><td style="width: 17%"></td><td><1天 <span class="fontB">'+resident[0].data+'</span></td></tr>';
+            data+='<tr><td style="background-color: rgba(0,247,239,'+resident[1].rank+')"></td><td></td><td>1-2天 <span class="fontB">'+resident[1].data+'</span></td></tr>';
+            data+='<tr><td style="background-color: rgba(0,247,239,'+resident[2].rank+')"></td><td></td><td>2-3天 <span class="fontB">'+resident[2].data+'</span></td></tr>';
+            /*data+='<tr><td style="background-color: rgba(0,247,239,'+resident[3].rank+')"></td><td></td><td>3-5天 <span class="fontB">'+resident[3].data+'</span></td></tr>';
+            data+='<tr><td style="background-color: rgba(0,247,239,'+resident[4].rank+')"></td><td></td><td>>=5天 <span class="fontB">'+resident[4].data+'</span></td></tr>';*/
+            data+='</tbody></table>';
+            document.getElementById("resident").innerHTML=data;
+        }
+
+        function echartsLine(thisWeek,lastWeek,times) {
+            var colors = ['#5793f3', '#d14a61', '#675bba'];
+
+            var option = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        lineStyle: {
+                            color: '#fff'
+                        }
+                    }
+                },
+                color: colors,
+                grid: [
+                    {
+                        y: 50*times+'px',
+                        x: 80*times+'px',
+                        y2: 30*times+'px'
+                    },
+                ],
+                legend: {
+                    data: [
+                        {
+                            name: "本周",
+                            icon: "roundRect",
+                            textStyle: {
+                                "color": "#fff",
+                                fontSize: 12*times
+                            }
+                        },
+                        {
+                            name: "上周",
+                            icon: "roundRect",
+                            textStyle: {
+                                "color": "#fff",
+                                fontSize: 12*times
+                            }
+                        }
+                    ],
+                    "top": 15+"px",
+                    right: 20*times+'px',
+                    itemGap:30,
+                    "textStyle": {
+                        "color": "#fff",
+                        fontSize: 12*times
+                    }
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        axisTick: {
+                            show: false,
+                            alignWithLabel: true
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: '#fff',
+                                fontSize: 12*times
+                            }
+                        },
+                        splitLine: { //网格线
+                            show: true,
+                            lineStyle: {
+                                color: ['rgba(255,255,255,0.5)'],
+                                type: 'solid'
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: 'rgba(0,0,0,0.3)'
+                            }
+                        },
+                        data: ['周一','周二','周三','周四','周五','周六','周日']
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        axisLine: {
+                            lineStyle: {
+                                color: '#fff'
+                            }
+                        },
+                        splitLine: { //网格线
+                            show: false,
+                            lineStyle: {
+                                color: ['#3D4D68'],
+                                type: 'dashed'
+                            }
+                        },
+                        axisLabel: {
+                            formatter: '{value}',
+                            textStyle: {
+                                color: '#fff',
+                                fontSize: 12*times
+                            }
+                        }
+                    }
+                ],
+                series: [
+                    {
+                        name:'本周',
+                        type:'line',
+                        smooth:true,
+                        data:thisWeek,
+                        symbol:'none',
+                        areaStyle: {
+                            normal: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 1,
+                                    color: 'rgba(255,137,2,0.9)' // 100% 处的颜色
+                                }, {
+                                    offset: 0,
+                                    color: 'rgba(242,221,107,0.9)' // 0% 处的颜色
+                                }], false),
+                                shadowColor: 'rgba(0, 0, 0, 0.1)',
+                                shadowBlur: 10
+                            }
+                        },
+                        itemStyle : {
+                            normal : {
+                                lineStyle:{
+                                    width:1,//折线宽度
+                                },
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 1,
+                                    color: 'rgba(255,137,2,0.9)' // 100% 处的颜色
+                                }, {
+                                    offset: 0,
+                                    color: 'rgba(242,221,107,0.9)' // 0% 处的颜色
+                                }], false),
+                                opacity: 0.4
+                            }
+                        }
+                    },
+                    {
+                        name:'上周',
+                        type:'line',
+                        smooth:true,
+                        data:lastWeek,
+                        symbol:'none',
+                        areaStyle: {
+                            normal: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 1,
+                                    color: 'rgba(31,248,202,0.9)' // 100% 处的颜色
+                                }, {
+                                    offset: 0,
+                                    color: 'rgba(12,182,245,0.9)' // 0% 处的颜色
+                                }], false),
+                                shadowColor: 'rgba(0, 0, 0, 0.1)',
+                                shadowBlur: 10
+                            }
+                        },
+                        itemStyle : {
+                            normal : {
+                                lineStyle:{
+                                    width:1,//折线宽度
+                                },
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 1,
+                                    color: 'rgba(31,248,202,0.9)' // 100% 处的颜色
+                                }, {
+                                    offset: 0,
+                                    color: 'rgba(12,182,245,0.9)' // 0% 处的颜色
+                                }], false),
+                                opacity: 0.4
+                            }
+                        }
+                    }
+                ]
+            };
+            var chart = echarts.init(document.getElementById('historyFlow'));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+        }
+
+        function divHidden() {
+            $(".pf-login").css('display','block');
+            $(".pf-content").css('left','-450px');
+        }
+
+        function divShow() {
+            $(".pf-content").css('left','20px');
+            $(".pf-login").css('display','none');
+        }
+    </script>
+</head>
+<body class="country-body">
+    <div class="back-last" onclick="pointClick(0)">
+        <&nbsp返回全市
+    </div>
+    <div class="title-flow">
+        <table class="title-flow-table">
+            <tbody>
+            <tr>
+                <td style="width: 6%" class="title-td1"></td>
+                <td style="width: 20%;text-align: center" id="realFlowTitle">秀洲潘家浜村</td>
+                <td class="title-td3"></td>
+                <td style="width: 23%" class="title-td4">
+                    <div class="table-td4-num" id="realFlowNum">856236</div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="sex-ratio">
+        <div style="height: 14.5%"></div>
+        <div class="content-div1" id="sexDiv"></div>
+    </div>
+    <div class="age-distribution">
+        <div style="height: 14.5%"></div>
+        <div class="content-div1" id="ageDistribution">
+            <div style="width: 100%;height: 8%"></div>
+            <table class="age-table">
+                <tbody>
+                <tr>
+                    <td style="width: 45%"></td>
+                    <td>少年 <span class="fontB">30%</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>青年 <span class="fontB">30%</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>中年 <span class="fontB">30%</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>老年 <span class="fontB">30%</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="resident-analysis">
+        <div style="height: 14.5%"></div>
+        <div class="content-div1" id="resident">
+            <div style="width: 100%;height: 8%"></div>
+            <table class="resident-table">
+                <tbody>
+                <tr>
+                    <td style="width: 45%"></td>
+                    <td>1天 <span class="fontB">30%</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>2天 <span class="fontB">30%</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>3天 <span class="fontB">30%</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>4天 <span class="fontB">30%</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>>4天 <span class="fontB">30%</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="history-flow">
+        <div style="height: 13.4%"></div>
+        <div class="content-div2" id="historyFlow"></div>
+    </div>
+    <div class="scenic-spots">
+        <div style="height: 8.5%"></div>
+        <div class="content-div3" id="graphDiv"></div>
+        <div class="zl-table">
+            <table style="height: 100%;width: 100%;">
+                <tbody>
+                <tr>
+                    <td><div class="age-color" style="background-color: #fe740e"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="age-color" style="background-color: #fedf0e"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="age-color" style="background-color: #0efe8a"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="age-color" style="background-color: #0ffffc"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="age-color" style="background-color: #ffffff"></div></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="zl-div">
+            <table style="height: 100%;width: 100%;">
+                <tbody>
+                <tr>
+                    <td>最多</td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>最少</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="fine-line">
+        <div style="height: 8.5%"></div>
+        <div class="content-div3" style="padding-top: 3%" id="content">
+            <div style="height: 1%"></div>
+            <div class="fine-table" id="table1">
+                <table id="fineTable">
+                    <tbody>
+                    <tr>
+                        <td class="fine-table-title">
+                            No.1 凤桥—湘家荡亲子农耕体验两日游
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-padding">
+                            <img src="img/flag.png" style="height: 1.3rem"/>
+                            Day1 嘉兴市区 …… 三环东路 …… 余云公路 …… 梅花洲景区 …… 余云公路 …… 神润斋园艺场
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-padding" style="text-indent: 1.2em;">
+                            Day2 嘉兴市区 …… 中环东路 …… 城东路 …… 320国道 …… 湘家荡大道 …… 七大公路 …… 嘉卉园艺中心 …… 蓝沃现代农业园 …… 喜悦生态农场
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="fine-table-title">
+                            No.2 运河湿地荷美王江泾一日游
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/flag.png" style="height: 1.3rem"/>
+                            美丽乡村七彩古塘 …… 荷塘叶色 …… 运河湾湿地农庄 …… 三味藕堂 …… 美丽乡村水墨洪典 …… 莲泗荡风景区
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="fine-table-title">
+                            No.3 “宠上云端”巧克力甜蜜小镇一日游
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/flag.png" style="height: 1.3rem"/>
+                            歌斐颂巧克力景区 …… 碧云花海景区 …… 云澜湾温泉景区 …… 美华水产养殖观光基地
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="fine-table-title">
+                            No.4 七彩平湖醉美花海两日游
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-padding">
+                            <img src="img/flag.png" style="height: 1.3rem"/>
+                            Day1 平湖市区 …… 07S省道 …… 野丁路 …… 野马村 …… 金野路 …… 油菜花海 …… 澳多奇 …… 马厩村方家村自然村落保留点 …… 马厩集镇 …… 马厩庙 …… 马厩大桥 …… 大坟山遗址 …… 金黄公路 …… 百寿村 …… 金黄公路 …… 平斜公路 …… 通界集镇 …… 202省道（新07省道） …… 金虹公路健身购物休闲带
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-padding" style="text-indent: 1.2em;">
+                            Day2 经开大厦 …… 兴平一路 …… 中国虫草博物馆 …… 虹光路 …… 兴钟路 …… 茶花公园 …… 樱花公园 …… 钟埭村
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="fine-table-title">
+                            No.5 特色乡村五味村一日游
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/flag.png" style="height: 1.3rem"/>
+                            北团问农 …… 文溪探幽 …… 澉东品戏 …… 紫金坐望 …… 茶院养心
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="fine-table-title">
+                            No.6 最美绿道百里钱塘乡村一日游
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/flag.png" style="height: 1.3rem"/>
+                            丁桥镇新仓谷堡 …… 网红梁家墩 …… 丁桥镇桃园农庄 …… 上农蓝莓小镇 …… 云龙蚕俗文化园 …… 胡斗农家乐特色村
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="fine-table-title">
+                            No.7 恬静闲适乌镇田园归隐两日游
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-padding">
+                            <img src="img/flag.png" style="height: 1.3rem"/>
+                            Day1 申嘉湖高速乌镇互通 …… 姚太线 …… 环河路 …… 浔乌线 …… 乌村
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-padding" style="text-indent: 1.2em;">
+                            Day2 乌村 …… 环河路 …… 姚太线 …… 湖盐线 …… 龙河线 …… 石门湾现代农业园区
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="fine-table-title">
+                            No.8 大快朵颐洲泉猪肉吃货一日游
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/flag.png" style="height: 1.3rem"/>
+                            猪舍里农庄 …… 稻乡人家 …… 马鸣村
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="fine-table-title">
+                            No.9 文化之旅嫘祖传说亲子文化之旅一日游
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/flag.png" style="height: 1.3rem"/>
+                            沈莉高蚕桑农业生活园 …… 桃园村 …… 荣星村 …… 崇福镇新型现代农业园 …… 红冠飨庄
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="fine-table" id="table2"></div>
+        </div>
+    </div>
+
+    <div class="pf-login" onclick="divShow()"></div>
+
+    <div class="pf-content">
+        <div class="pf-content-div1">
+            <table class="pf-content-table">
+                <tbody>
+                <tr><td class="table-tdTitle"><img src="./img/pfRoom.png" class="pf-content-titleImg"/>&nbsp;<span id="pfContentTitle">秀洲潘家滨村概况</span></td></tr>
+                <tr><td class="table-title1"></td></tr>
+                <tr><td class="title-content" id="pfGk">复复反反复复反反复复反反复复反反复复反反复复反反复复反反复复反反复复反反复复反反复复反反复复凤飞飞</td></tr>
+                <tr><td class="table-title2"></td></tr>
+                <tr><td class="title-content" id="pfJd">发反反复复反反复复反反复复反反复复反反复复肤色浮想的就发大水发啊发反反复复反反复复反反复复反反复复反反复复肤色浮想的就发大水发啊发反反复复反反复复反反复复反反复复反反复复</td></tr>
+                <tr><td class="table-title3"></td></tr>
+                <tr><td class="title-content" id="pfJs">复复肤色浮想的就发大水发啊发反反复复反反复复反反复复反反复复反反复复肤色浮想的就发大水发啊发反反复复反反复复反反复复反反复复反反复复滨村概况</td></tr>
+                <tr><td style="height: 220px">
+                    <div id="wrapper">
+                        <div id="slider-wrap">
+                            <ul id="slider">
+                                <li>
+                                    <img src="./img/background.png" class="lb-img"/>
+                                </li>
+                                <li>
+                                    <img src="./img/background.png" class="lb-img"/>
+                                </li>
+                                <li>
+                                    <img src="./img/background.png" class="lb-img"/>
+                                </li>
+                                <li>
+                                    <img src="./img/background.png" class="lb-img"/>
+                                </li>
+                            </ul>
+
+                            <!--controls-->
+                            <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
+                            <div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
+                            <!--<div id="counter"></div>-->
+
+                            <div id="pagination-wrap">
+                                <ul>
+                                </ul>
+                            </div>
+                            <!--controls-->
+
+                        </div>
+                    </div>
+                </td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pf-content-div2" onclick="divHidden()"></div>
+    </div>
+
+    <div name='姚庄镇北鹤村' onclick="pointClick(1)" class="point-basic point-position1"></div>
+    <div class="title-basic title-point-position1" onclick="pointClick(1)"></div>
+    <div name='大云镇缪家村' onclick="pointClick(2)" class="point-basic point-position2"></div>
+    <div class="title-basic title-point-position2" onclick="pointClick(2)"></div>
+    <div name='新塍镇潘家浜村' onclick="pointClick(3)" class="point-basic point-position3"></div>
+    <div class="title-basic title-point-position3" onclick="pointClick(3)"></div>
+    <div name='广陈镇山塘村' onclick="pointClick(4)" class="point-basic point-position4"></div>
+    <div class="title-basic title-point-position4" onclick="pointClick(4)"></div>
+    <div name='新丰镇竹林村' onclick="pointClick(5)" class="point-basic point-position5"></div>
+    <div class="title-basic title-point-position5" onclick="pointClick(5)"></div>
+    <div name='新仓镇三叉河村' onclick="pointClick(6)" class="point-basic point-position6"></div>
+    <div class="title-basic title-point-position6" onclick="pointClick(6)"></div>
+    <div name='凤桥镇永红村' onclick="pointClick(7)" class="point-basic point-position7"></div>
+    <div class="title-basic title-point-position7" onclick="pointClick(7)"></div>
+    <div name='王店镇建林村' onclick="pointClick(8)" class="point-basic point-position8"></div>
+    <div class="title-basic title-point-position8" onclick="pointClick(8)"></div>
+    <div name='洲泉镇马鸣村' onclick="pointClick(10)" class="point-basic point-position10"></div>
+    <div class="title-basic title-point-position10" onclick="pointClick(10)"></div>
+    <div name='乍浦镇马家荡村' onclick="pointClick(11)" class="point-basic point-position11"></div>
+    <div class="title-basic title-point-position11" onclick="pointClick(11)"></div>
+    <div name='大麻镇海华村' onclick="pointClick(12)" class="point-basic point-position12"></div>
+    <div class="title-basic title-point-position12" onclick="pointClick(12)"></div>
+    <div name='丁桥镇新仓村' onclick="pointClick(13)" class="point-basic point-position13"></div>
+    <div class="title-basic title-point-position13" onclick="pointClick(13)"></div>
+    <div name='澉浦镇澉东村' onclick="pointClick(14)" class="point-basic point-position14"></div>
+    <div class="title-basic title-point-position14" onclick="pointClick(14)"></div>
+    <div name='澉浦镇紫金山村' onclick="pointClick(15)" class="point-basic point-position15"></div>
+    <div class="title-basic title-point-position15" onclick="pointClick(15)"></div>
+    <div name='周王庙镇云龙村' onclick="pointClick(16)" class="point-basic point-position16"></div>
+    <div class="title-basic title-point-position16" onclick="pointClick(16)"></div>
+
+
+    <script type="text/javascript" src="js/slide.js"></script>
+    <script src="js/count.js" ></script>
+</body>
+</html>

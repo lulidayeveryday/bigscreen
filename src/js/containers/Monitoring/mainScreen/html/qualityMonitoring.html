@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>山西联通产品质态监控</title>
+    <link rel="stylesheet" href="../css/qualityMonitoring.css" type="text/css">
+</head>
+<body>
+<img src="../image/qualityMonitoringTitle.png" class="mainScreen-title">
+<div class="qualityMonitoring-type">
+    <table style="width: 100%;height: 100%;color: #36D2F7;font-size: 1.2rem;text-align: center;">
+        <tbody>
+        <tr>
+            <td style="width: 42%;cursor: pointer;" onclick="provinceSel()">离网</td><td style="width: 16%"></td><td id="cityName" style="width: 42%;cursor: pointer;" onclick="citySel()">套餐变化</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="contact-pop">
+    <img src="../image/cdClose.png" class="contact-pop-close" onclick="$('.contact-pop').css('display','none')">
+    <div class="contact-pop-bg">
+        <div class="contact-pop-title">产品信息离网</div>
+        <div class="contact-pop-table" id="scrollInner">
+            <table class="contact-pop-table-div">
+                <thead>
+                <tr style="height: 3rem;background-color: #2B4369;font-size: 1.1rem;">
+                    <th>日累计</th>
+                    <th>环比</th>
+                    <th>月累计</th>
+                    <th>环比</th>
+                </tr>
+                </thead>
+                <tbody class="table-tbody">
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>588</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>8</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="qualityMonitoring-tc-area-div">
+            <table style="width: 100%;" class="qualityMonitoring-tc-area-div-table">
+                <tbody>
+                <tr>
+                    <td><img src="../image/areaTy.png">太原</td>
+                    <td><img src="../image/areaXz.png">忻州</td>
+                    <td><img src="../image/areaYc.png">运城</td>
+                    <td><img src="../image/areaJz.png">晋中</td>
+                    <td><img src="../image/areaSz.png">朔州</td>
+                    <td><img src="../image/areaJc.png">晋城</td>
+                    <td><img src="../image/areaCz.png">长治</td>
+                    <td><img src="../image/areaYq.png">阳泉</td>
+                    <td><img src="../image/areaDt.png">大同</td>
+                    <td><img src="../image/areaLl.png">吕梁</td>
+                    <td><img src="../image/areaLf.png">临汾</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<div class="qualityMonitoring-daily-net">
+    <div class="qualityMonitoring-title">
+        <table class="qualityMonitoring-title-table-up">
+            <tr>
+                <td>产品日累计离网率（TOP 10）</td>
+                <td class="qualityMonitoring-title-up">移网</td>
+            </tr>
+        </table>
+    </div>
+    <div class="qualityMonitoring-content" id="dailyNet"></div>
+</div>
+<div class="qualityMonitoring-month-net">
+    <div class="qualityMonitoring-title">
+        <table class="qualityMonitoring-title-table-up">
+            <tr>
+                <td>产品月累计离网率（TOP 10）</td>
+                <td class="qualityMonitoring-title-up">移网</td>
+            </tr>
+        </table>
+    </div>
+    <div class="qualityMonitoring-content" id="monthNet"></div>
+</div>
+<div class="qualityMonitoring-net-losing-rate">
+    <div class="qualityMonitoring-title">
+        <table class="qualityMonitoring-title-table-up">
+            <tr>
+                <td>离网率</td>
+                <td class="qualityMonitoring-title-up">移网</td>
+            </tr>
+        </table>
+    </div>
+    <div class="qualityMonitoring-content">
+        <div style="width: 53%;float: left;height: 100%" id="rateNetChart"></div>
+        <div style="width: 47%;float: left;height: 100%" id="rateNetTable">
+            <table class="qualityMonitoring-content-table">
+                <tbody>
+                <tr>
+                    <td><img src="../image/1stQuality.png"  class="qualityMonitoring-table-img"></td>
+                    <td class="qualityMonitoring-table-name" style="color: #FCB432;" id="rankName1">太原</td>
+                    <td class="qualityMonitoring-table-num" id="rankValue1">15%</td>
+                    <td><span  class="qualityMonitoring-table-rank">7</span></td>
+                    <td class="qualityMonitoring-table-name" id="rankName7">临汾</td>
+                    <td class="qualityMonitoring-table-num" id="rankValue7">15%</td>
+                </tr>
+                <tr>
+                    <td><img src="../image/2ndQuality.png"  class="qualityMonitoring-table-img"></td>
+                    <td class="qualityMonitoring-table-name" style="color: #CACACC;" id="rankName2">吕梁</td>
+                    <td class="qualityMonitoring-table-num" id="rankValue2">15%</td>
+                    <td><span  class="qualityMonitoring-table-rank">8</span></td>
+                    <td class="qualityMonitoring-table-name" id="rankName8">大同</td>
+                    <td class="qualityMonitoring-table-num" id="rankValue8">15%</td>
+                </tr>
+                <tr>
+                    <td><img src="../image/3rdQuality.png"  class="qualityMonitoring-table-img"></td>
+                    <td class="qualityMonitoring-table-name" style="color: #C6673A;" id="rankName3">阳泉</td>
+                    <td class="qualityMonitoring-table-num" id="rankValue3">15%</td>
+                    <td><span  class="qualityMonitoring-table-rank">9</span></td>
+                    <td class="qualityMonitoring-table-name" id="rankName9">长治</td>
+                    <td class="qualityMonitoring-table-num" id="rankValue9">15%</td>
+                </tr>
+                <tr>
+                    <td><span  class="qualityMonitoring-table-rank">4</span></td>
+                    <td class="qualityMonitoring-table-name" id="rankName4">晋城</td>
+                    <td class="qualityMonitoring-table-num" id="rankValue4">15%</td>
+                    <td><span  class="qualityMonitoring-table-rank">10</span></td>
+                    <td class="qualityMonitoring-table-name" id="rankName10">朔州</td>
+                    <td class="qualityMonitoring-table-num" id="rankValue10">15%</td>
+                </tr>
+                <tr>
+                    <td><span  class="qualityMonitoring-table-rank">5</span></td>
+                    <td class="qualityMonitoring-table-name" id="rankName5">晋中</td>
+                    <td class="qualityMonitoring-table-num" id="rankValue5">15%</td>
+                    <td><span  class="qualityMonitoring-table-rank">11</span></td>
+                    <td class="qualityMonitoring-table-name" id="rankName11">运城</td>
+                    <td class="qualityMonitoring-table-num" id="rankValue11">15%</td>
+                </tr>
+                <tr>
+                    <td><span  class="qualityMonitoring-table-rank">6</span></td>
+                    <td class="qualityMonitoring-table-name" id="rankName6">忻州</td>
+                    <td class="qualityMonitoring-table-num" id="rankValue6">15%</td>
+                    <td></td>
+                    <td class="qualityMonitoring-table-name"></td>
+                    <td class="qualityMonitoring-table-num"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="qualityMonitoring-daily-wb">
+    <div class="qualityMonitoring-title">
+        <table class="qualityMonitoring-title-table-down">
+            <tr>
+                <td>产品日累计离网率（TOP 10）</td>
+                <td class="qualityMonitoring-title-down">宽带</td>
+            </tr>
+        </table>
+    </div>
+    <div class="qualityMonitoring-content" id="dailyWb"></div>
+</div>
+<div class="qualityMonitoring-month-wb">
+    <div class="qualityMonitoring-title">
+        <table class="qualityMonitoring-title-table-down">
+            <tr>
+                <td>产品月累计离网率（TOP 10）</td>
+                <td class="qualityMonitoring-title-down">宽带</td>
+            </tr>
+        </table>
+    </div>
+    <div class="qualityMonitoring-content" id="monthWb"></div>
+</div>
+<div class="qualityMonitoring-wb-losing-rate">
+    <div class="qualityMonitoring-title">
+        <table class="qualityMonitoring-title-table-down">
+            <tr>
+                <td>离网率</td>
+                <td class="qualityMonitoring-title-down">宽带</td>
+            </tr>
+        </table>
+    </div>
+    <div class="qualityMonitoring-content">
+        <div style="width: 53%;float: left;height: 100%" id="rateWbChart"></div>
+        <div style="width: 47%;float: left;height: 100%" id="rateWbTable">
+            <table class="qualityMonitoring-content-table">
+                <tbody>
+                <tr>
+                    <td><img src="../image/1stQuality.png"  class="qualityMonitoring-table-img"></td>
+                    <td class="qualityMonitoring-table-name1" style="color: #FCB432;" id="rankNameWb1">太原</td>
+                    <td class="qualityMonitoring-table-num" id="rankValueWb1">15%</td>
+                    <td><span  class="qualityMonitoring-table-rank1">7</span></td>
+                    <td class="qualityMonitoring-table-name1" id="rankNameWb7">临汾</td>
+                    <td class="qualityMonitoring-table-num" id="rankValueWb7">15%</td>
+                </tr>
+                <tr>
+                    <td><img src="../image/2ndQuality.png"  class="qualityMonitoring-table-img"></td>
+                    <td class="qualityMonitoring-table-name1" style="color: #CACACC;" id="rankNameWb2">吕梁</td>
+                    <td class="qualityMonitoring-table-num" id="rankValueWb2">15%</td>
+                    <td><span  class="qualityMonitoring-table-rank1">8</span></td>
+                    <td class="qualityMonitoring-table-name1" id="rankNameWb8">大同</td>
+                    <td class="qualityMonitoring-table-num" id="rankValueWb8">15%</td>
+                </tr>
+                <tr>
+                    <td><img src="../image/3rdQuality.png"  class="qualityMonitoring-table-img"></td>
+                    <td class="qualityMonitoring-table-name1" style="color: #C6673A" id="rankNameWb3">阳泉</td>
+                    <td class="qualityMonitoring-table-num" id="rankValueWb3">15%</td>
+                    <td><span  class="qualityMonitoring-table-rank1">9</span></td>
+                    <td class="qualityMonitoring-table-name1" id="rankNameWb9">长治</td>
+                    <td class="qualityMonitoring-table-num" id="rankValueWb9">15%</td>
+                </tr>
+                <tr>
+                    <td><span  class="qualityMonitoring-table-rank1">4</span></td>
+                    <td class="qualityMonitoring-table-name1" id="rankNameWb4">晋城</td>
+                    <td class="qualityMonitoring-table-num" id="rankValueWb4">15%</td>
+                    <td><span  class="qualityMonitoring-table-rank1">10</span></td>
+                    <td class="qualityMonitoring-table-name1" id="rankNameWb10">朔州</td>
+                    <td class="qualityMonitoring-table-num" id="rankValueWb10">15%</td>
+                </tr>
+                <tr>
+                    <td><span  class="qualityMonitoring-table-rank1">5</span></td>
+                    <td class="qualityMonitoring-table-name1" id="rankNameWb5">晋中</td>
+                    <td class="qualityMonitoring-table-num" id="rankValueWb5">15%</td>
+                    <td><span  class="qualityMonitoring-table-rank1">11</span></td>
+                    <td class="qualityMonitoring-table-name1" id="rankNameWb11">运城</td>
+                    <td class="qualityMonitoring-table-num" id="rankValueWb11">15%</td>
+                </tr>
+                <tr>
+                    <td><span  class="qualityMonitoring-table-rank1">6</span></td>
+                    <td class="qualityMonitoring-table-name1" id="rankNameWb6">忻州</td>
+                    <td class="qualityMonitoring-table-num" id="rankValueWb6">15%</td>
+                    <td></td>
+                    <td class="qualityMonitoring-table-name"></td>
+                    <td class="qualityMonitoring-table-num"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/jquery.nicescroll.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script src="../js/qualityMonitoring.js"></script>
+</body>
+</html>

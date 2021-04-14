@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复盘分析</title>
+    <link rel="stylesheet" href="../css/revenueReview.css" type="text/css">
+    <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body>
+<div class="revenueReview-div">
+    <div class="revenueReview-div-title">
+        <div class="revenueReview-div-title-text">移动业务收入复盘分析</div>
+        <div class="revenueReview-div-title-month" style="top: 1.5rem;right: 13rem;">
+            <!--拍照月：<span id="monthStart">202012</span> / 评估月：<span id="monthEnd">202101</span>-->
+            <div class="layui-form">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label" style="width: auto;">评估月</label>
+                        <div class="layui-input-inline">
+                            <input type="text" class="layui-input" id="test3" placeholder="yyyy-MM">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="revenueReview-div-title-button" onclick="refreshData()">复盘</div>
+        <div class="revenueReview-div-title-table" onclick="toTableReview()">费用项相关报表展现</div>
+    </div>
+    <div class="revenueReview-div-dataStatistics">
+        <div class="revenueReview-div-content-title">
+            <div class="revenueReview-div-content-title-text">复盘数据统计</div>
+            <div class="revenueReview-div-content-tab" id="dataTjTab">
+                <span class="blue-bg" id="czsr" onclick="dataTj(0)">出账收入</span>
+                <span id="yhs" onclick="dataTj(1)">网上用户数</span>
+            </div>
+        </div>
+        <div class="revenueReview-div-content-div">
+            <div class="revenueReview-div-content-div-echarts" id="echartBar"></div>
+            <div class="revenueReview-div-content-div-info" id="dataTjTable">
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td colspan="6" class="revenueReview-div-content-div-infoTitle">移网全网</td>
+                    </tr>
+                    <tr style="border-bottom: solid 1px #6e6e6e">
+                        <td style="width: 11rem" class="table-td-bottom">本月出账收入：</td>
+                        <td class="table-td-bottom"></td>
+                        <td style="width: 4.5rem;" class="table-td-bottom">环比：</td>
+                        <td class="table-td-bottom">%</td>
+                        <td style="width: 4.5rem;" class="table-td-bottom">同比：</td>
+                        <td class="table-td-bottom">%</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="revenueReview-div-content-div-infoTitle">新增</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td-bottom">新增出账收入：</td>
+                        <td class="table-td-bottom"></td>
+                        <td class="table-td-bottom">环比：</td>
+                        <td class="table-td-bottom">%</td>
+                        <td class="table-td-bottom">同比：</td>
+                        <td class="table-td-bottom">%</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="revenueReview-div-content-div-infoTitle">保有</td>
+                    </tr>
+                    <tr>
+                        <td class="table-td-bottom">保有出账收入：</td>
+                        <td class="table-td-bottom"></td>
+                        <td class="table-td-bottom">环比：</td>
+                        <td class="table-td-bottom">%</td>
+                        <td class="table-td-bottom">同比：</td>
+                        <td class="table-td-bottom">%</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="revenueReview-div-content-div-infoTitle">流失</td>
+                    </tr>
+                    <tr>
+                        <td>流失出账收入：</td>
+                        <td></td>
+                        <td>环比：</td>
+                        <td>%</td>
+                        <td>同比：</td>
+                        <td>%</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="revenueReview-div-dimensionIndex">
+        <div class="revenueReview-div-content-title">
+            <div class="revenueReview-div-content-title-text">复盘维度指标分析</div>
+            <div class="revenueReview-div-content-div-tree-select">
+                <span style="background-color: #dedede">选中目标 : <span id="treeSelect"></span></span>
+            </div>
+        </div>
+        <div class="revenueReview-div-content-div tree-container">
+            <div class="revenueReview-div-content-div-tree" id="main"></div>
+            <div class="revenueReview-div-content-div-sel">
+                <div class="revenueReview-div-content-tab2" id="zbfxSel">
+                    <span class="tab2-span blue-bg" id="zbfxSel0" onclick="zbfxSel(0)">维度</span>
+                    <span class="tab2-span" id="zbfxSel1" onclick="zbfxSel(1)">指标</span>
+                </div>
+                <div class="search bar3">
+                    <input type="text" id="zbfxSearch" placeholder="请输入您要搜索的内容...">
+                    <img src="../img/search.png" onclick="zbfxSearch()">
+                </div>
+                <div class="revenueReview-div-tab2-content" id="zbfxCheckList">
+                </div>
+            </div>
+            <div class="revenueReview-div-content-div-tab">
+                <div class="revenueReview-div-content-tabs">
+                    <div class="revenueReview-div-content-tabs-title">维度</div>
+                    <div class="revenueReview-div-content-tabs-content" id="zbfxWdTab">
+                    </div>
+                </div>
+                <div class="revenueReview-div-content-tabs">
+                    <div class="revenueReview-div-content-tabs-title">指标</div>
+                    <div class="revenueReview-div-content-tabs-content"  id="zbfxZbTab">
+                    </div>
+                </div>
+            </div>
+            <!--右键弹出菜单-->
+            <div id="rightMenu" class="menu" style="display: none;">
+                <ul>
+                    <li>下线</li>
+                    <li>上线</li>
+                    <li>掉线</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="cakeTab">
+        <div class="revenueReview-div-content-title">
+            <div class="revenueReview-div-content-title-text">复盘流程分析</div>
+        </div>
+        <div id="crumbs">
+            <ul>
+                <li>
+                    <a>默认</a>
+                </li>
+                <li>
+                    <a>移网</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="revenueReview-div-dataAnalysis">
+        <div class="revenueReview-div-content-title">
+            <div class="revenueReview-div-content-title-text">复盘数据分析</div>
+            <div class="revenueReview-div-content-tab reshData">
+                <span onclick="fetchDataList()">刷新数据</span>
+            </div>
+        </div>
+        <div class="revenueReview-div-content-div2">
+            <div class="revenueReview-div-content-div-charts">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="show-tab-div show-tab-div-click" onclick="dataFx(this,'Table')">
+                                <div class="show-tab-div-img imgTable imgTableClick"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="show-tab-div" onclick="dataFx(this,'Bar')" title="维度只可以选择一个，指标最少需要选择一个">
+                                <div class="show-tab-div-img imgBar"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="show-tab-div" onclick="dataFx(this,'Line')" title="维度只可以选择一个，指标最少需要选择一个">
+                                <div class="show-tab-div-img imgLine"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="show-tab-div" onclick="dataFx(this,'Pie')" title="维度只可以选择一个，指标只可以选择一个">
+                                <div class="show-tab-div-img imgPie"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="show-tab-div" onclick="dataFx(this,'Rose')" title="维度只可以选择一个，指标只可以选择一个">
+                                <div class="show-tab-div-img imgRose"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <!--<div class="show-tab-div" onclick="dataFx(this,'Point')" title="维度只可以选择一个，指标最少需要选择一个">
+                                <div class="show-tab-div-img imgPoint"></div>
+                            </div>-->
+                        </td>
+                        <!--<td>
+                            &lt;!&ndash;<div class="show-tab-div" onclick="dataFx(this,'Map')">
+                                <div class="show-tab-div-img imgMap"></div>
+                            </div>&ndash;&gt;
+                        </td>-->
+                    </tr>
+                </table>
+            </div>
+            <div class="show-content-div">
+                <div id="tabTable">
+                </div>
+                <div id="tabLine" style="visibility: hidden">
+                </div>
+                <div id="tabLineTable" style="visibility: hidden"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="zbfsDialog">
+    <div class="zbfsDialog-content">
+        <div class="zbfsDialog-content-close" onclick="$('.zbfsDialog').css('display','none')">+</div>
+        <div class="zbfsDialog-content-div1">
+            <table>
+                <tr>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag1" draggable="true" ondragstart="drag(event)">＋</span>
+                    </td>
+                    <td></td>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag2" draggable="true" ondragstart="drag(event)">－</span>
+                    </td>
+                    <td></td>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag3" draggable="true" ondragstart="drag(event)">×</span>
+                    </td>
+                    <td></td>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag4" draggable="true" ondragstart="drag(event)">÷</span>
+                    </td>
+                    <td></td>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag5" draggable="true" ondragstart="drag(event)">and</span>
+                    </td>
+                    <td></td>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag6" draggable="true" ondragstart="drag(event)">or</span>
+                    </td>
+                    <td></td>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag7" draggable="true" ondragstart="drag(event)">in</span>
+                    </td>
+                    <td></td>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag8" draggable="true" ondragstart="drag(event)">!＝</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag9" draggable="true" ondragstart="drag(event)">＞</span>
+                    </td>
+                    <td></td>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag10" draggable="true" ondragstart="drag(event)">＜</span>
+                    </td>
+                    <td></td>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag11" draggable="true" ondragstart="drag(event)">>=</span>
+                    </td>
+                    <td></td>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag12" draggable="true" ondragstart="drag(event)"><=</span>
+                    </td>
+                    <td></td>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag13" draggable="true" ondragstart="drag(event)">(</span>
+                    </td>
+                    <td></td>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag14" draggable="true" ondragstart="drag(event)">)</span>
+                    </td>
+                    <td></td>
+                    <td>
+                        <span class="zbfsDialog-content-tableSpan" id="drag15" draggable="true" ondragstart="drag(event)">=</span>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="zbfsDialog-content-div2">
+            <table style="text-align: center">
+                <tr>
+                    <td>
+                        <div id="dialog1" class="container" style="padding:0.5rem 0;width: 14rem;min-height: 3rem;display:inline-block;background-color: #cccccc" ondrop="drop1(event)" ondragover="allowDrop(event)"></div>
+                    </td>
+                    <td id="field_name"></td>
+                    <td>
+                        <div id="dialog2" class="container" style="padding:0.5rem 0;width: 14rem;min-height: 3rem;display:inline-block;background-color: #cccccc" ondrop="drop2(event)" ondragover="allowDrop(event)"></div>
+                    </td>
+                    <td>
+                        <input type="text" id="dialogInput" style="width: 15rem">
+                    </td>
+                </tr>
+            </table>
+            <div class="delDrag">
+                <div id="drapDels"  ondrop="dropDel(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="submitDrag" onclick="dragTabSubmit()">
+                提交
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script src="../layui/layui.js"></script>
+<script src="../js/revenueReview.js"></script>
+</body>
+</html>

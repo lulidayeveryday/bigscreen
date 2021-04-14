@@ -1,0 +1,302 @@
+html, body, h1,h3, p{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    min-width: 1024px;
+}
+*{
+    user-select: none;
+}
+.color-blue{
+    color: #0cebff;
+    font-size: 16px;
+}
+
+.container .top,
+.container .bottom{
+    margin: 0 auto;
+}
+/* 上面的样式 */
+.container .section-bg-up{
+    background: url('../images/login/up.png');
+    background-size: 100% 100%;
+}
+.container .top {
+    position: relative;
+    max-width: 1360px;
+    height: 400px;
+    background-origin: content-box;
+    padding: 0 100px;
+    padding-top: 100px;
+    padding-bottom: 60px;
+}
+.top-img-container{
+    position: absolute;
+    width: 56%;
+    right: 10%;
+    top: 8%;
+}
+.top-img{
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+.top-img-cloud{
+    position: absolute;
+    width: 12%;
+    left: 45%;
+    top: 43%;
+    animation: mymove 3s ease-in-out infinite;
+}
+@keyframes mymove{
+   from{
+        top: 43%;
+        opacity: 0;
+   }
+   to{
+        top: 36%;
+        opacity: 1;
+   }
+}
+.h1{
+    color: #fff;
+    line-height: 1;
+    font-size: 32px;
+}
+.desc-text{
+    margin: 46px 0;
+}
+.desc-text p{
+    color: #ccd1df;
+    font-size: 14px;
+    line-height: 1.8;
+}
+.enter-btn{
+    width: 180px;
+    height: 50px;
+    background: #4163E6;
+    background: -webkit-linear-gradient(left, #4163E6 , #28A0E6); 
+    background: -o-linear-gradient(right, #4163E6, #28A0E6); 
+    background: -moz-linear-gradient(right, #4163E6, #28A0E6); 
+    background: linear-gradient(to right, #4163E6 , #28A0E6);
+    border-radius: 25px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 0 2px 16px 3px #244BBE;
+    cursor: pointer;
+}
+
+/* 下面的样式 */
+.container .bottom{
+    max-width: 1440px;
+}
+.container .section-bg-down{
+    background: url('../images/login/down.png');
+    background-size: 100% 100%;
+    height: auto;
+}
+.bottom-title{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.botton-item-container{
+    display: flex;
+    /* margin-top: 20px; */
+    justify-content: center;
+}
+.flex-center{
+    justify-content: center;
+}
+.bottom-item{
+    width: 22%;
+    background: url('../images/login/product-bg.png') center;
+    background-size: 100% 100%;
+    padding: 0;
+    text-align: center;
+    padding-bottom: 46px;
+    padding-top: 10px;
+    height: 200px;
+    position: relative;
+    cursor: pointer;
+}
+.img-center{
+    margin-top: 40px;
+    width: 120px;
+}
+.margin-one{
+    margin-top: 56px;
+}
+.margin-two{
+    margin-top: 26px;
+    height: 110px;
+    width: 90px;
+}
+.margin-four{
+    margin-top: 30px;
+}
+.margin-three{
+    width: 108px;
+}
+.bottom-item p{
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.8;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    left: 0;
+}
+.bottom-item span{
+    font-size: 12px;
+    color: #0cebff;
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+}
+
+/* 登录浮层 */
+.login-layer{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0, 0.4)
+}
+.login-content{
+    width: 520px;
+    height: 500px;
+    background-color: #1E2A52;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -260px;
+    margin-top: -250px;
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 5px;
+}
+.login-content .close-icon{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    line-height: 24px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transform: rotate(45deg);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.login-content span{
+    font-size: 16px;
+    color: #0cebff;
+}
+.login-content h3{
+    line-height: 1.4;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 50px;
+}
+.err-wrapper{
+    position: absolute;
+    left: 43px;
+    top: 106px;
+    display: none;
+}
+.err-wrapper span{
+    font-size: 16px;
+}
+.err-wrapper .err-msg{
+    font-size: 14px;
+}
+.input-wrapper{
+    position: relative;
+}
+.validation-warpper{
+    width: 110px;
+    height: 44px;
+    border: 1px solid #0cebff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 46px;
+    text-align: center;
+    border-radius: 3px;
+}
+.login-content input{
+    width: 100%;
+    height: 50px;
+    background-color: #1b2446;
+    border: 1px solid #293665;
+    font-size: 16px;
+    color: #717eab;
+    margin-bottom: 22px;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+.input-wrapper i{
+    width: 0;
+    height: 50px;
+    border-right: 1px solid #293665;;
+    position: absolute;
+    left: 48px;
+    top: 0;
+}
+::-webkit-input-placeholder { 
+    color:    #717eab;
+}
+:-moz-placeholder {
+   color:    #717eab;
+}
+::-moz-placeholder {
+   color:    #717eab;
+}
+:-ms-input-placeholder {
+   color:    #717eab;
+}
+.user-name, .password {
+    padding-left: 60px;
+    background: url('../images/login/user-icon.png') no-repeat 15px center;
+}
+.password{
+    background-image: url('../images/login/password-icon.png')
+}
+input.validation{
+    width: 290px;
+    padding-left: 14px;
+}
+.login-btn{
+    width: 140px;
+    height: 50px;
+    margin: 40px auto;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 25px;
+    background: -webkit-linear-gradient(left, #4163E6 , #28A0E6); 
+    background: -o-linear-gradient(right, #4163E6, #28A0E6); 
+    background: -moz-linear-gradient(right, #4163E6, #28A0E6); 
+    background: linear-gradient(to right, #4163E6 , #28A0E6); 
+    box-shadow: 0 2px 16px 3px #244BBE;
+    cursor: pointer;
+}
+/* 覆盖fullpage的css样式 */
+#fp-nav ul li a span{
+    border-color: #0cebff;
+    background-color: transparent;
+}
+#fp-nav ul li a.active span{
+    background-color: #0cebff;
+}

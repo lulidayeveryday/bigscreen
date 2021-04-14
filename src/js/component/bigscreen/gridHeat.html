@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="gridHeat.css" type="text/css" />
+    <title>大数据实时人流可视化</title>
+</head>
+<body>
+    <div class="header">
+        <div class="menu-div">
+            <div class="menu-title">
+                <table class="menu-table">
+                    <tbody>
+                    <tr>
+                        <td>选择地域&nbsp;∨<!--▼▲∧--></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="menu-content"></div>
+        </div>
+        <div class="menu-div">
+            <div class="menu-title">
+                <table class="menu-table">
+                    <tbody>
+                    <tr>
+                        <td>选择场景&nbsp;∨<!--▼▲∧--></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="menu-content"></div>
+        </div>
+        <div class="menu-div">
+            <div class="menu-title">
+                <table class="menu-table">
+                    <tbody>
+                    <tr>
+                        <td>选择用户&nbsp;∨<!--▼▲∧--></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="menu-content"></div>
+        </div>
+        <div class="class-time">天 / 小时 / 实时</div>
+    </div>
+    <div class="select"></div>
+    <div class="time">
+
+        <div class="tourism-top" id="tourismTop">
+            <div class="tourism-top-div1" id="topDiv1" onclick="lastWeek()">
+                <&nbsp;前一天
+            </div>
+            <div class="tourism-top-div2" id="tourismData">
+                <table class="div2-table">
+                    <tbody>
+                    <tr>
+                        <td class="td-onblur" id="td1" onclick="tdClick(this)">
+                            <span>0点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd1">▲</span>
+                        </td>
+                        <td id="td2" onclick="tdClick(this)">
+                            <span>1点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd2">.</span>
+                        </td>
+                        <td id="td3" onclick="tdClick(this)">
+                            <span>2点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd3">.</span>
+                        </td>
+                        <td id="td4" onclick="tdClick(this)">
+                            <span>3点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd4">.</span>
+                        </td>
+                        <td id="td5" onclick="tdClick(this)">
+                            <span>4点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd5">.</span>
+                        </td>
+                        <td id="td6" onclick="tdClick(this)">
+                            <span>5点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd6">.</span>
+                        </td>
+                        <td id="td7" onclick="tdClick(this)">
+                            <span>6点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd7">.</span>
+                        </td>
+                        <td id="td8" onclick="tdClick(this)">
+                            <span>7点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd8">.</span>
+                        </td>
+                        <td id="td9" onclick="tdClick(this)">
+                            <span>8点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd9">.</span>
+                        </td>
+                        <td id="td10" onclick="tdClick(this)">
+                            <span>9点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd10">.</span>
+                        </td>
+                        <td id="td11" onclick="tdClick(this)">
+                            <span>10点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd11">.</span>
+                        </td>
+                        <td id="td12" onclick="tdClick(this)">
+                            <span>11点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd12">.</span>
+                        </td>
+                        <td id="td13" onclick="tdClick(this)">
+                            <span>12点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd13">.</span>
+                        </td>
+                        <td id="td14" onclick="tdClick(this)">
+                            <span>13点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd14">.</span>
+                        </td>
+                        <td id="td15" onclick="tdClick(this)">
+                            <span>14点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd15">.</span>
+                        </td>
+                        <td id="td16" onclick="tdClick(this)">
+                            <span>15点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd16">.</span>
+                        </td>
+                        <td id="td17" onclick="tdClick(this)">
+                            <span>16点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd17">.</span>
+                        </td>
+                        <td id="td18" onclick="tdClick(this)">
+                            <span>17点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd18">.</span>
+                        </td>
+                        <td id="td19" onclick="tdClick(this)">
+                            <span>18点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd19">.</span>
+                        </td>
+                        <td id="td20" onclick="tdClick(this)">
+                            <span>19点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd20">.</span>
+                        </td>
+                        <td id="td21" onclick="tdClick(this)">
+                            <span>20点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd21">.</span>
+                        </td>
+                        <td id="td22" onclick="tdClick(this)">
+                            <span>21点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd22">.</span>
+                        </td>
+                        <td id="td23" onclick="tdClick(this)">
+                            <span>22点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd23">.</span>
+                        </td>
+                        <td id="td24" onclick="tdClick(this)">
+                            <span>23点</span><br/>
+                            <span>●</span><br/>
+                            <span class="zf" id="spantd24">.</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="div2-div"></div>
+            </div>
+            <div class="tourism-top-div3" id="topDiv2" onclick="nextWeek()">后一天&nbsp;></div>
+        </div>
+
+    </div>
+    <div class="content"></div>
+</body>
+</html>

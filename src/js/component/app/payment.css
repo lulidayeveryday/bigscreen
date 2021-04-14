@@ -1,0 +1,41 @@
+body{
+    background-color: #F2F5FA;
+    margin: 0;
+    height: 100%;
+}
+
+html{
+    height: 100%;
+}
+
+.payment-pie{
+    padding: 12px 15px;
+    background-color: white;
+}
+
+.payment-pie-title{
+    font-size: 19px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.payment-pie-content{
+    height: 160px;
+}
+
+.content1{
+    width: 48%;
+    height: 160px;
+    float: left;
+}
+
+.contentLine{
+    width: 100%;
+    height: 160px;
+}
+
+.content2{
+    width: 52%;
+    float: left;
+    height: 160px;
+}

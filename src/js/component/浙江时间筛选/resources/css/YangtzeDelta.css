@@ -1,0 +1,1193 @@
+@font-face {
+    font-family: "SourceHanSans";
+    src: url(../../dist/SourceHanSansCN-Regular.otf);
+}
+body{
+    background: url("../../resources/images/YangtzeDelta/deltaBg.png") no-repeat;
+    background-size:100% 100%;
+    color: #fff;
+    overflow: hidden;
+    font-family:"SourceHanSans";
+}
+.headDiv{
+    height: 7%;
+    padding:1.2% 2%;
+    position: relative;
+}
+.headDiv>h2{
+    margin-left: 20px;
+    float: left;
+    margin-top:1%;
+}
+.headLogo{
+    /*background: url("../resources/images/YangtzeDelta/deltaLogo.png") no-repeat;*/
+    /*background-size: contain;*/
+    /*width: 216px;*/
+    height: 100%;
+    /*line-height: 98px;*/
+    float: left;
+    padding-right: 25px;
+    border-right: 1px solid #2a526d;
+}
+.headLogo img{
+    float: left;
+    height: 72%;
+    margin-top: 4%;
+    /*margin-top: 15px;*/
+    vertical-align: middle;
+}
+.bottomLine{
+    width: 100%;
+    height: 0.3%;
+    position: absolute;
+    background: url("../../resources/images/YangtzeDelta/bottomLine.png") no-repeat;
+    background-size:100% 100%;
+    top: 0px;
+    left: 44px;
+}
+.bottomLine>div{
+    float: left;
+}
+.bottomLine>div>img{
+    width: 100%;
+    cursor: pointer;
+}
+.datePick{
+    position: absolute;
+    top: -11px;
+    left: 2.4%;
+    width: 1.6%;
+    height: 1000%;
+}
+.locPick{
+    position: absolute;
+    left: 4.7%;
+    top: -11px;
+    width: 1.6%;
+}
+.w1600 .datePick,.w1600 .locPick{
+    top: -11px;
+}
+.w1800 .datePick,.w1800 .locPick{
+    top: -13px;
+    width: 1.7%;
+}
+.w2100 .datePick,.w2100 .locPick{
+    top: -15px;
+    width: 1.6%;
+}
+.w2400 .datePick,.w2400 .locPick{
+    top: -16px;
+    width: 1.6%;
+}
+.w2500 .datePick,.w2500 .locPick{
+    top: -24px;
+    width: 1.6%;
+}
+.w2500 .headDiv>h2{
+    font-size: 46px;
+}
+.w2400 .headDiv>h2{
+    font-size: 36px;
+}
+.w2100 .headDiv>h2{
+    font-size: 34px;
+}
+.w1800 .headDiv>h2{
+    font-size: 30px;
+}
+.w1600 .headDiv>h2{
+    font-size: 27px;
+}
+.rightPart{
+    float: right;
+    height: 100%;
+    font-size: 12px;
+    min-width:12%;
+}
+.unicomLogo{
+    height: 100%;
+    /*line-height:98px;*/
+    /*width: 64%;*/
+    display: inline-block;
+    vertical-align: top;
+    /*width: 22%;*/
+    margin-left: 20px;
+}
+.unicomLogo>img{
+    height: 100%;
+
+    border-left: 1px solid #2a526d;
+}
+.toolBar{
+    display: inline-block;
+    float: left;
+    height:80%;
+    margin-top:2%;
+    /*width: 70%;*/
+    /*margin-right:10%;*/
+}
+.rightPart>img{
+    height: 70%;
+    margin-top:5%;
+}
+.toolContain{
+    display: none;
+    /*line-height: 68px;*/
+    /*height: 68px;*/
+    /*margin-top: 9px;*/
+    height:100%;
+
+}
+.rightPart>img{
+    /*display: none;*/
+}
+.toolContain span>img{
+    height: 100%;
+}
+.toolContain>ul{
+    float: left;
+    /*height: 50px;*/
+    /*margin-right: 15px;*/
+    height: 100%;
+}
+.toolContain>ul>li{
+    float: left;
+    /*height: 50px;*/
+    height:92%;
+}
+.toolContain>ul li>img{
+    height:100%;
+}
+
+.closeBtn{
+    /*height: 50px;*/
+    /*width: 50px;*/
+    float: right;
+    height:93%;
+
+}
+.navBtn{
+    /* background: url(../resources/images/YangtzeDelta/navBtn.png) no-repeat; */
+    /* background-size: contain; */
+    width:35%;
+    height: 90.3%;
+    line-height: 100%;
+    /* line-height: 50px; */
+    float: left;
+    /* padding-left: 11%; */
+    /* margin-right: 15px; */
+    vertical-align: middle;
+    margin-left: 6%;
+}
+.toolContain>span.navBtn>img{
+    height: 100%;
+    width: 108%;
+}
+.toolContain>ul>li:nth-child(2){
+    border-right: 1px solid #267a8b;
+    border-left: 1px solid #267a8b;
+}
+/*日历部分样式*/
+.iconfont.preBtn{
+    display: none;
+}
+.iconfont.nextBtn{
+    color: transparent;
+    width: 10px;
+    height: 10px;
+}
+#dayDatePickDemo{
+    width: 600%;
+    height: 132%;
+    line-height: 60px;
+    padding: 5px;
+    padding-left: 15px;
+    position: relative;
+    left: -6px;
+    top: 9px;
+    border: 1px solid #3bcbc8;
+
+    border-radius: 4px;
+}
+#dayDatePickDemo:after{
+    display:block;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-top:1px solid #3bcbc8;
+    border-left:1px solid #3bcbc8;
+    transform: rotate(45deg);
+    color: #3bcbc8;
+    position: absolute;
+    background-color: #224254;
+    top:-6px;
+
+}
+.cm-datepicker .cm-input{
+    position: relative;
+    top:-17px;
+}
+.nextBtn{
+    position: absolute;
+    right: 8%;
+    top: -30%;
+    width: 10%;
+    height: 100%
+}
+.nextBtn img{
+    width: 100%;
+}
+.cm-datepicker .cm-input{
+    background-color: transparent!important;
+    color: #fff;
+}
+/*重新定义日历的样式*/
+.WdateDiv .Wwday，.WdateDiv .Wday{
+    color: #fff!important;
+}
+.WdateDiv .WotherDay{
+    color: #55b7cb!important;
+}
+.WdateDiv .WdayOn, .WdateDiv .WwdayOn, .WdateDiv .Wselday, .WdateDiv .WotherDayOn{
+    background-color: #2eb9e9!important;
+}
+#dayDatePickDemo{
+    display: none;
+    background: #1f3343;
+    position: relative;
+    top:-0px;
+}
+.dayDatePickDemo>input{
+    width: 71%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    position: absolute;
+    top: 26%;
+}
+.dayDatePickDemo>input:focus{
+    outline: none;
+    border: none;
+}
+.dayDatePickDemo>img{
+    cursor: pointer;
+    height: 50%;
+    /* float: right; */
+    position: absolute;
+    right: 5%;
+    top: 25%;
+}
+.navBtn{
+    position: relative;
+}
+.textI{
+    font-style:normal;
+    position: absolute;
+    top: 30%;
+    left: 42%;
+    cursor: pointer;
+}
+.rightPart>img,.toolContain>ul li,.navBtn>img,.closeBtn>img{
+    cursor: pointer;
+}
+.WdateDiv .NavImg a, .WdateDiv .yminput, .WdateDiv .yminputfocus, .WdateDiv #dpQS{
+    background: none;
+}
+.WdateDiv .NavImgr a{
+    background: url("../../resources/images/YangtzeDelta/next.png") no-repeat;
+    background-size: contain;
+}
+.WdateDiv .NavImgrr a{
+    background: url("../../resources/images/YangtzeDelta/nextAll.png") no-repeat;
+    background-size: contain;
+}
+/*title*/
+.titleSelect{
+    position: absolute;
+    width: 200%;
+    border-radius: 4px;
+    background-color: #2c425a;
+    box-shadow: #305e78 0 0 30px 6px inset;//边框阴影 z-index: auto;
+    z-index:10;
+    display: none;
+}
+.titleSelect>li img{
+    vertical-align: middle;
+    margin-right: 4%;
+}
+.titleSelect>li, .titleSelect>li>ul.subList>li,.subList2>li{
+    width: 80%;
+height: 30px;
+    line-height: 30px;
+    padding:5% 10%;
+    position: relative;
+}
+.titleSelect>li>ul.subList>li{
+    padding:5%;
+    width: 90%;
+}
+
+.titleSelect>li>i{
+    color:#2796a0;
+}
+.subList{
+    width: 85%;
+    border-radius: 4px;
+    background-color:  #2c425a;
+    box-shadow: #305e78 0 0 30px 6px inset;//边框阴影
+top:100%;
+    z-index:100;
+}
+.titleSelect>li>ul.subList{
+    position: absolute;
+    left: 102%;
+    top: 0px;
+}
+.downArrow{
+    color:#2796a0;
+    /*transform:rotate(180deg);*/
+    /*-ms-transform:rotate(180deg); 	!* IE 9 *!*/
+    /*-moz-transform:rotate(180deg); 	!* Firefox *!*/
+    /*-webkit-transform:rotate(180deg); !* Safari 和 Chrome *!*/
+    /*-o-transform:rotate(180deg); 	!* Opera *!*/
+}
+.subList2{
+    width: 80%;
+    position: absolute;
+    left: 0;
+    border-radius: 4px;
+    background-color: #2c425a;
+    box-shadow: #305e78 0 0 30px 6px inset;
+    display: none;
+    z-index:1000;
+}
+.subList{
+    display: none;
+}
+.subList2>li,.subList>li,.titleSelect>li{
+    cursor: pointer;
+}
+.subList2>li:hover, .subList>li:hover, .titleSelect>li:hover{
+    background: #223a52;
+    color: #21eae5;
+}
+.subList2>li.active, .subList>li.active, .titleSelect>li.active{
+    background: #223a52;
+    color: #21eae5;
+}
+.subList2>li, .subList>li, .titleSelect>li{
+
+    color: #fff;
+}
+/*遮罩层*/
+.rangeMask{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.3);
+    display: none;
+    z-index:100;
+}
+.rangeContainer{
+    width: 35%;
+    height: 50%;
+    margin:0 auto;
+    margin-top:10%;
+    border:1px solid #21f4ed;
+    border-radius: 4px;
+    background: #2c425a;
+    overflow: scroll;
+}
+.rangeContainer>p {
+    padding: 2%;
+    height: 5%;
+    border-bottom: 2px solid #273b50;
+}
+.rangeContainer>p .closeMask{
+    float: right;
+    color: #21f4ed;
+    width: 12px;
+    padding-top:0px;
+    cursor: pointer;
+}
+.rangeContainer>div{
+    padding: 2%;
+}
+
+.maskContent{
+    height: 75%;
+}
+.maskContent>p{
+    height: 11%;
+    overflow: hidden;
+    height: auto;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+.maskContent p.btnP span{
+    padding:0px 2%;
+    cursor: pointer;
+    font-size: 13px;
+}
+.maskContent p.btnP span:nth-child(2){
+    border-right: 1px solid #21f4ed;
+    border-left: 1px solid #21f4ed;
+}
+.maskContent p.btnP span:nth-child(1){
+    padding-left: 0;
+}
+.contentDiv{
+    height:80%;
+    /*border:1px solid #0cebff;*/
+    border-radius: 6px;
+    overflow-y: scroll;
+}
+.contentDiv>ul{
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+.contentDiv>ul>li{
+    width: 100%;
+    height:auto;
+
+    border-radius: 6px;
+}
+.contentDiv>ul>li>div{
+    float: left;
+    height: 100%;
+    background: #1b344d;
+    border-radius: 6px;
+}
+.contentDiv>ul>li .leftDiv{
+    width: calc(100% - 4px - 80%);
+    border-right:4px solid #2c425a;
+    border-bottom:4px solid #2c425a;
+}
+.contentDiv>ul>li .rightDiv{
+    width: calc(80% - 20px);
+    height: calc(100% - 20px);
+    padding:10px;
+    border-bottom:4px solid #2c425a;
+}
+.leftDiv>label{
+    margin-left: 10%;
+    margin-top: 10px;
+}
+.rightDiv>div{
+
+    height:100%;
+    width: 100%;
+}
+.rightDiv>div>label{
+    width: calc(19% - 20px);
+}
+/*复选框*/
+.cm-radio-label, .cm-checkbox-label {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    /*margin-right: 10px;*/
+    padding-left: 20px;
+    line-height: 25px;
+    cursor: pointer;
+    font-size: 13px;
+}
+.cm-radio-label input, .cm-checkbox-label input {
+    position: absolute;
+    left: -9999px;
+}
+.cm-radio-label input:checked + i, .cm-checkbox-label input:checked + i {
+    border-color: #0cebff;
+    background:#2c425a;
+}
+.cm-radio-label i, .cm-checkbox-label i {
+    position: absolute;
+    top: 6px;
+    margin-left: 2px;
+    left: 0;
+    display: block;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    outline: 0;
+    border-width: 1px;
+    border-style: solid;
+    background: #2c425a;
+    border-color: #0cebff;
+    border-radius: 2px;
+    transition: border-color 0.3s;
+    -webkit-transition: border-color 0.3s;
+}
+.cm-radio-label input:checked + i:after, .cm-checkbox-label input:checked + i:after {
+    opacity: 1;
+}
+.cm-radio-label input + i:after, .cm-checkbox-label input + i:after {
+    position: absolute;
+    opacity: 0;
+    transition: opacity .1s;
+    -webkit-transition: opacity .1s;
+}
+.cm-checkbox-label input + i:after {
+    content: '\2714';
+    top: -8px;
+    left: 0;
+    font-family: 'iconfont';
+    font-size: 12px;
+    color: #0cebff;
+}
+.inquireBtn{
+    float: right;
+    font-size: 14px;
+    border-radius: 6px;
+    height: 30px;
+    line-height: 30px;
+    width: 60px;
+    /*margin-top:3%;*/
+    text-align: center;
+    cursor: pointer;
+    background:-webkit-linear-gradient(left top,#0dabf4,#13e6e9);
+
+    background:-o-linear-gradient(bottom right,#0dabf4,#13e6e9);
+
+    background:-moz-linear-gradient(bottom right,#0dabf4,#13e6e9);
+
+    background:linear-gradient(to bottom right,#0dabf4,#13e6e9);
+}
+/*景区选择*/
+.rightDiv>div>label{
+    position: relative;
+}
+.scenicChose{
+    display: none;
+}
+.rightDiv>div>label>.scenicChose{
+    position: absolute;
+    background-color: #2c425a;
+    z-index: 10;
+    padding:10px;
+    width: 150px;
+    border: 1px solid #21f4ed;
+    top: 115%;
+    left:-10%;
+}
+.rightDiv>div>label>.scenicChose .trangleTop{
+    width: 10px;
+    height: 10px;
+    border:none;
+    background: #2c425a;
+    border-top:1px solid #21f4ed;
+    border-left:1px solid #21f4ed;
+    transform: rotate(45deg);
+    top: -6px;
+    left: 10px
+}
+/*主体部分*/
+.mainContainer{
+    width: 96%;
+    height: 83.6%;
+    padding: 1.2% 2%;
+    position: relative;
+}
+/*主体左*/
+.leftPart{
+    display: inline-block;
+    width:18%;
+    height:100%;
+    float: left;
+}
+/*左上*/
+.lTop{
+    width: 100%;
+    height: 64%;
+    margin-bottom: 5%;
+}
+.lTop>ul>li>p{
+    color: #21f4ed;
+    height:15px;
+    line-height: 15px;
+    margin-bottom: 3%;
+    font-weight: bold;
+}
+.lTop>ul>li>p>span{
+    color: #fff;
+}
+.lTop>ul>li>ul>li:first-child{
+    line-height: 30px;
+    font-size: 22px;
+    color: #21f4ed;
+}
+.lTop>ul>li>ul>li:nth-child(2)>img{
+    height: 45%;
+    position: relative;
+    top: 2%;
+}
+.detalTop5{
+    width:90%;
+    height: 25px;
+    line-height:25px;
+    padding-left: 5%;
+    background: url("../../resources/images/YangtzeDelta/deltaTop5.png") no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 10px;
+}
+.detalTop5>img {
+    vertical-align: middle;
+    float: right;
+    margin-top: 3%;
+    height: 50%;
+}
+.lTop>ul{
+    overflow: hidden;
+    width: 90%;
+    padding:5%;
+    height:calc(100% - 10%  - 25px - 10px);
+    background: url("../../resources/images/YangtzeDelta/topLeftBg.png");
+    background-size: 100% 100%;
+}
+.lTop>ul>li{
+    width: 90%;
+    padding:3%;
+    height: 15%;
+    border-bottom: 1px dotted #21f4ed;
+}
+.lTop>ul>li:last-child{
+    border: none;
+}
+.lTop>ul>li>ul{
+    width: 100%;
+    height: calc(100% - 15px - 27%);
+}
+.lTop>ul>li>ul>li{
+    float: left;
+    padding:0 5%;
+    padding-left: 0;
+    height: 100%;
+}
+/*左下*/
+.lBottom{
+    width: 100%;
+    height: 33%;
+
+    background: url("../../resources/images/YangtzeDelta/deltaTriSource.png");
+    background-size: 100% 100%;
+}
+.lBottom>p{
+    height: 7.5%;
+    line-height: 12.5%;
+    padding:0 7%;
+    padding-top:5.6%;
+}
+.w1024  .lBottom>p,.w1300 .lBottom>p{
+    padding-top:8%;
+}
+.lBottom>ul{
+    width: 80%;
+    height: 76%;
+    padding: 5% 8%;
+    padding-top: 3%;
+}
+.lBottom>ul>li{
+    float: left;
+    width: 50%;
+    height:43%;
+    background: url("../../resources/images/YangtzeDelta/wheatIcon.png") no-repeat;
+    background-size: 80% 100%;
+    background-position: 50%;
+    text-align:center;
+}
+.lBottom>ul>li:nth-child(2){
+    margin-bottom: 10%;
+}
+.sceneLevel{
+    font-size: 13px;
+    font-weight: bold;
+    position: relative;
+    top:5%;
+}
+.sceneNum{
+    font-size: 16px;
+    font-weight: bold;
+    color: #f5c10c;
+    position: relative;
+    top:8%;
+}
+/*中间部分*/
+.middlePart{
+    width: 55%;
+    height:100%;
+    display: inline-block;
+    margin-left: 2%;
+}
+.middlePart>ul{
+    width: 100%;
+    height: 100%;
+}
+.middlePart>ul>li{
+    width: 100%;
+    height: 31%;
+    margin-bottom: 3%;
+}
+.middlePart>ul>li>p{
+    height: 11.5%;
+    padding: 0 3%;
+    padding-top: 0.7%;
+}
+.middlePart>ul>li>p>img{
+    float: right;
+    height: 55%;
+    margin-top: 0.4%;
+}
+.middlePart>ul>li:nth-child(1) {
+    background: url("../../resources/images/YangtzeDelta/middleTopBg.png") no-repeat;
+    background-size: 100% 100%;
+}
+.middlePart>ul>li:nth-child(2){
+    background: url("../../resources/images/YangtzeDelta/middleMidBg.png") no-repeat;
+    background-size: 100% 100%;
+}
+.middlePart>ul>li:nth-child(3){
+    background: url("../../resources/images/YangtzeDelta/middleDownBg.png") no-repeat;
+    background-size: 100% 100%;
+}
+/*中上部分*/
+.midTMain{
+    width: 100%;
+    height: 87%;
+}
+.midTMain>ul{
+    width:100%;
+    height: 100%;
+}
+.midTMain>ul>li{
+    float: left;
+    height: 58%;
+    padding:4%;
+}
+.midTMain>ul>li.midTL{
+    width:18%;
+    border-right: 1px dotted #15b5d7;
+}
+.midTMain>ul>li.midTR{
+    padding: 0;
+    height: 97%;
+    width: 73%;
+}
+.totalNum{
+    font-size: 20px;
+    line-height: 36px;
+    font-weight:bold;
+    color: #21f4ed;
+
+}
+.riseNum{
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: bold;
+
+}
+.midTL>img{
+    vertical-align: baseline;
+    height: 12%;
+    margin-left: 2%;
+}
+.midTR>div{
+    width: 27.3%;
+    float: left;
+    padding: 3%;
+    height: 81%;
+    text-align: center;
+}
+.midTR>div>img{
+    width: 84%;
+    height: 84%;
+}
+.provincePer{
+    font-size: 14px;
+    font-weight: bold;
+}
+/*中中部分*/
+.middlePart>ul>li.midMid>p{
+    height: 12%;
+    padding-top: 0.8%
+}
+.middlePart>ul>li.midMid>p>img{
+    margin-top: 0.4%;
+    height: 65%;
+}
+.middlePart>ul>li.midTop>p>img{
+    margin-top: 0.3%;
+    height: 60%;
+}
+.midMid>ul,.midBottom>ul{
+    width: 100%;
+    height: 86%;
+}
+.midMid>ul>li,.midBottom>ul>li{
+    float: left;
+    padding:3%;
+    width: 14%;
+    height: 65%;
+}
+.midBottom>ul>li{
+    height: 73%;
+}
+.midMain>li>div,.bottomMain>li>div{
+    width: 100%;
+    height: 100%;
+}
+/*右边部分*/
+.mainContainer .rightPart{
+    width: 23%;
+    margin-left: 2%;
+    overflow: hidden;
+    float: right;
+    height: 99%;
+    background: url("../../resources/images/YangtzeDelta/ageGenderBg.png") no-repeat;
+    background-size: 105% 100%;
+}
+.mainContainer .rightPart>p{
+    width: 81%;
+    padding: 0% 8%;
+    height: 3%;
+    padding-top: 2.1%;
+}
+.mainContainer .rightPart>p>img{
+    float: right;
+    height: 65%;
+    margin-top: 0.8%;
+}
+.rightTop{
+    width:87%;
+    height:33%;
+    position: relative;
+    left: 2%;
+    padding:0 5%;
+    padding-top:4%;
+    border-bottom: 1px dotted #21f4ed;
+}
+.rightBottom{
+    width:86%;
+    height: 56%;
+    padding:0 7%;
+    padding-top:4%;
+    padding-bottom: 5%;
+}
+.rightTop>p,.rightBottom>p{
+    height: 16px;
+    line-height: 16px;
+}
+.rightTop>p:before,.rightBottom>p:before{
+    content: '';
+    border:2px solid #12d6fa;
+    width: 0px;
+    height: 12px;
+    float: left;
+    margin-right: 3%;
+}
+/*右上*/
+.genderCircle{
+    width: 90%;
+    padding:5%;
+    height:calc(100% - 14% - 16px);
+
+}
+/*右下*/
+.rightBottom>div{
+    width: 100%;
+    height:calc(100% - 16px);
+}
+.rightBottom>div .mulCircle{
+    width: 100%;
+    height:60%;
+    overflow: hidden;
+}
+.rightBottom>div .mulDes{
+    width: 100%;
+    height: 40%;
+}
+.rightBottom>div .mulDes>li{
+    padding: 3% 5%;
+    width: 40%;
+    height: 35%;
+    float: left;
+    text-align: center;
+}
+
+.mulDes>li>p>span:before{
+    content: '';
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    border-radius: 50%;
+    border:1px solid #08e2d9;
+}
+.mulDes>li:nth-child(2)>p>span:before{
+    border:1px solid #10a5ed;
+}
+.mulDes>li:nth-child(3)>p>span:before{
+
+    border:1px solid #f3c010;
+}
+.mulDes>li:nth-child(4)>p>span:before{
+
+    border:1px solid #e51584;
+}
+/*设置兼容*/
+
+.w1366 .rangeContainer,.w1440 .rangeContainer,.w1600 .rangeContainer{
+    width: 40%;
+}
+.w1024 .rangeContainer,.w1300 .rangeContainer{
+    width:52%;
+}
+.w1024 .lTop>ul>li>ul>li:first-child{
+    font-size: 12px;
+}
+.w1024 .lTop>ul>li>ul>li:nth-child(2){
+    font-size: 10px;
+}
+.w1024 .lTop>ul>li,.w1300 .lTop>ul>li{
+    height:16%;
+}
+.w1300 .lTop>ul>li>ul>li:first-child{
+    font-size: 12px;
+}
+.w1300 .lTop>ul>li>ul>li:nth-child(2){
+    font-size: 10px;
+}
+.w1366 .lTop>ul{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    height: calc(100% - 6% - 25px - 10px);
+}
+.w1366 .lTop>ul>li>ul>li:first-child{
+    font-size: 18px;
+}
+.w1366 .lTop>ul>li>ul>li:nth-child(2){
+    font-size: 10px;
+}
+.w1366 .lTop>ul>li{
+    height: 16%;
+}
+.w1440 .lTop>ul>li>ul>li:first-child{
+    font-size: 16px;
+    line-height: 40px;
+}
+.w1440 .lTop>ul>li>ul>li:nth-child(2){
+    font-size: 10px;
+}
+.w1440 .lTop>ul>li{
+    height: 16%;
+}
+.w1440 .lTop>ul{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    height: calc(100% - 4% - 25px - 10px);
+}
+.w1440 .lTop>ul>li>p{
+    margin-bottom: 1%;
+}
+.w1600 .lTop>ul>li>ul>li:first-child{
+    font-size: 20px;
+}
+.w1600 .lTop>ul>li>ul>li:nth-child(2){
+    font-size:10px;
+}
+.w1600 .lTop>ul{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    height: calc(100% - 6% - 25px - 10px);
+}
+
+.w2100 .lTop>ul>li>ul>li:first-child{
+    font-size: 25px;
+    line-height: 50px;
+}
+.w2100 .lTop>ul>li>ul>li:nth-child(2){
+    font-size:14px;
+}
+.w2100 .lTop>ul>li{
+    height: 17%;
+    font-size: 16px;
+}
+.w2100 .lTop>ul>li>p{
+    margin-bottom: 7%;
+}
+.w2100 .midTMain>ul>li.midTL{
+    font-size: 20px;
+}
+.w1024 .sceneLevel{
+    font-size: 10px;
+    top:10%;
+}
+.w1024 .sceneNum{
+    font-size: 14px;
+    top:16%;
+}
+.w2100 .sceneLevel{
+
+    top:15%;
+}
+.w2100 .sceneNum{
+
+    top:20%;
+}
+.w1300 .sceneLevel{
+    font-size:12px;
+}
+.w1300 .sceneNum{
+    font-size: 14px;
+    top: -3%;
+}
+/*字体设置*/
+.lTop .detalTop5{
+    font-size: 12px;
+}
+.lTop ul p{
+    font-size: 12px;
+}
+.middlePart>ul>li.midMid>p,.middlePart>ul>li>p,.mainContainer .rightPart>p,.lBottom>p,.rightTop>p, .rightBottom>p{
+    font-size: 12px;
+}
+.mulDes h1{
+    font-size: 25px;
+    text-align: left;
+}
+.mulDes>li>p{
+    font-size: 12px;
+    text-align: left;
+}
+.midTMain>ul>li.midTL{
+    font-size: 12px;
+}
+.midTR>div>p{
+    font-size: 12px;
+}
+::-webkit-scrollbar {
+    width:5px;
+    height:5px;
+}
+::-webkit-scrollbar-track{
+    background: #1b344d;
+
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background:  #21f4ed;
+}
+/*标题右侧按钮兼容*/
+.closeBtn{
+    height: 90%;
+    margin-left:7%;
+
+}
+.navBtn{
+    height:89.3%;
+    margin-left: 4%;
+}
+.toolContain>ul>li{
+    height: 89.4%;
+}
+.rightPart>img{
+    height: 70%;
+}
+.w1366 .closeBtn{
+    height: 90%;
+}
+.w1366 .navBtn{
+    height:89.3%;
+    margin-left: 4%;
+}
+.w1366 .toolContain>ul>li{
+    height: 80%;
+}
+.w1366 .rightPart>img{
+    height: 72%;
+}
+.w1440 .closeBtn{
+    height: 90%;
+}
+.w1440 .navBtn{
+    height:89.3%;
+    margin-left: 4%;
+}
+.w1440 .toolContain>ul>li{
+     height: 80%;
+ }
+.w1440 .rightPart>img{
+    height: 72%;
+}
+.middlePart>ul>li:nth-child(3){
+    height: 33.5%;
+}
+.middlePart>ul>li:nth-child(2){
+    height: 27%;
+}
+
+.toolContain>ul>li{
+    position: relative;
+}
+.toolContain>ul>li .browsHistory{
+    position: absolute;
+    background: #fff;
+    border-radius: 10px;
+    width: 400%;
+    z-index: 10;
+    right: 0;
+    padding:8px;
+    color: #333;
+}
+.toolContain>ul>li .browsHistory:after{
+    content: '';
+    width: 11px;
+    height: 11px;
+    display: inline-block;
+    background: #fff;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -5px;
+    right: 12px;
+}
+.toolContain>ul>li .browsHistory>li{
+    height: 25px;
+    line-height: 25px;
+    padding: 0px 5px;
+}
+.toolContain>ul>li .browsHistory>li>span{
+    height: 20px;
+    line-height: 20px;
+}
+.toolContain>ul>li .browsHistory>li>span.iconCo{
+    float: right;
+}
+.toolContain>ul>li .browsHistory>li>span.iconCo>img{
+    height: 60%;
+    vertical-align: middle;
+}
+.toolContain>ul>li .browsHistory>li:hover{
+    color: #fff;
+    background: #539AA5;
+}
+.toolContain>ul>li .browsHistory>li.active{
+    color: #fff;
+    background: #539AA5;
+}
+.iconCo>img{
+    cursor: pointer;
+}
+.rightPart>img{
+    float: right;
+}
+.rightPart>div{
+    float: right;
+}
+.toolContain>ul,.toolContain>span{
+    float: right;
+}
+.browsHistory{
+    display: none;
+}

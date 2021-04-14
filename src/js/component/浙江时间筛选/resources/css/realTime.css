@@ -1,0 +1,473 @@
+html, body, .container{
+    height: 100%;
+    user-select: none;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    /* overflow: hidden; */
+    min-height: 590px;
+    min-width: 1024px;
+    background: url('../images/realTime/bg.png') no-repeat;
+    background-size: 100% 100%;
+    padding: 32px 3.6%;
+    color: #2de4ff;
+    box-sizing: border-box;
+    font-size: 14px;
+    /* font-family: 'SourceHanSansCN-Regular'; */
+}
+
+/* title部分样式 */
+.title{
+    height: 60px;
+    display: flex;
+    flex-shrink: 0;
+}
+.img-wrapper img{
+    height: 80px;
+    position: relative;
+    top: 7px;
+    flex-shrink: 0;
+}
+@media screen and (max-width: 1200px) { 
+    .img-wrapper img{
+      height: 65px;
+    }
+  }
+.title-nav{
+    flex: 1;
+    display: flex;
+    min-width: 516px;
+    justify-content: space-between;
+    background: #314165;
+}
+.nav-type{
+    align-self: center;
+    width: 140px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border-left: 1px solid #263556;
+    cursor: pointer;
+}
+.nav-type span.active{
+    color: #fff;
+}
+.nav-item-container > div{
+    display: inline-block;
+    height: 60px;
+    width: 120px;
+    box-sizing: border-box;
+    position: relative;
+}
+.select-area, .select-scene, .select-user{
+    height: 60px;
+    padding-left: 20px;
+    line-height: 60px;
+    background: url('../images/realTime/down-icon.png') no-repeat 90px;
+    background-size: 12px;
+    cursor: pointer;
+}
+.select-nav-btn.active{
+    background: #1f2a3f url('../images/realTime/up-icon.png') no-repeat 90px;
+    background-size: 12px;
+}
+.select-content{
+    position: absolute;
+    width: 512px;
+    /* min-height: 200px; */
+    background: #1f2a3f;
+    left: 0;
+    top: 60px;
+    z-index: 999;
+    padding-left: 12px;
+    padding-bottom: 40px;
+}
+.area-content, .scene-content, .user-content{
+    display: none;
+}
+.middle-width{
+    display: inline-block;
+    width: 70px;
+}
+.check-wrapper{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-size: 0;
+    margin: 3px 0;
+    margin-right: 6px;
+    height: 26px;
+}
+.check-name{
+    font-size: 12px;
+    padding-left: 4px;
+}
+.check-icon{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    top: 5px;
+    background: url('../images/realTime/down-icon.png') no-repeat center;
+    background-size: 12px;
+}
+.check-select{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #2de4ff;
+    border-radius: 3px;
+    position: relative;
+    top: 2px;
+}
+.check-select.selected{
+    background: url('../images/realTime/selected-icon.png') no-repeat center;
+    background-size: 10px;
+}
+.check-wrapper.active{
+    color: #fff;
+}
+.check-wrapper.active .check-icon{
+    background: url('../images/realTime/up-icon.png') no-repeat center;
+    background-size: 12px;
+}
+.check-wrapper.active .check-select{
+    border-color: #fff;
+}
+.source-area-title{
+    margin: 4px 0;
+}
+.source-item-wrapper{
+    margin-left: 48px;
+    margin-right: 28px;
+}
+.source-continent{
+    background: #314165;
+    padding: 4px 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.source-country{
+    background: #314165;
+    margin-top: 8px;
+    padding: 4px 8px;
+    max-height: 200px;
+    overflow: auto;
+    display: none;
+}
+.source-country::-webkit-scrollbar {
+    width: 4px;     
+    height: 4px;
+}
+.source-country::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.2);
+}
+.source-country::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 0;
+    background: rgba(0,0,0,0.1);
+}
+.source-hide {
+    height: 44px;
+    background: #314165;
+    border-top: 1px dashed #2de4ff;
+    position: relative;
+    display: none;
+}
+.source-hide-btn{
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    bottom: 10px;
+    right: 10px;
+    width: 38px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #2de4ff;
+    cursor: pointer;
+}
+.source-area, .terminal, .on-net, .user-type{
+    margin-bottom: 12px;
+}
+.user-confirm{
+    /* height: 40px; */
+    border-top: 1px dashed #2de4ff;
+}
+.user-confirm-btn{
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    bottom: 10px;
+    right: 10px;
+    width: 38px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #2de4ff;
+    cursor: pointer;
+}
+.clear-btn{
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    bottom: 10px;
+    right: 60px;
+    width: 38px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #2de4ff;
+    cursor: pointer;
+}
+
+
+
+
+.return {
+    height: 60px;
+    line-height: 60px;
+    padding-left: 32px;
+    padding-right: 11px;
+    margin-left: 10px;
+    background: #314165 url('../images/realTime/return-icon.png') no-repeat 10px;
+    background-size: 14px;
+    cursor: pointer;
+}
+/* filter部分样式 */
+.filter{
+    display: flex;
+    flex-shrink: 0;
+    height: 46px;
+    margin-top: 8px;
+    background: rgba(31,42,63,0.5);
+}
+.search-btn, .stop-play{
+    width: 90px;
+    height: 32px;
+    line-height: 32px;
+    align-self: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.filter-item-container{
+    flex: 1;
+    width: 60%;
+    align-self: center;
+    max-width: 1800px;
+    margin-right: 80px;
+    z-index: 3;
+    position: relative;
+}
+
+.search-btn{
+    background: linear-gradient(to right, #314165,#2de4ff) 100% 100%;
+    color: #fff;
+}
+/* swiper样式 */
+.filter .swiper-container{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 4px;
+}
+.filter .filter-item-container .swiper-button-next{
+    z-index: 2;
+    left: 102%;
+    background-size: 14px;
+    outline: none;
+}
+.filter .filter-item-container .swiper-button-prev{
+    z-index: 2;
+    left: 100%;
+    background-size: 14px;
+    outline: none;
+}
+.filter-item{
+    border: 1px solid #2de4ff;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 99;
+}
+.filter-name{
+    height: 30px;
+    display: block;
+    text-align: center;
+    border-right: 1px solid #2de4ff;
+}
+.fliter-close{
+    position: absolute;
+    top: -1px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+
+.search-btn .search-inner{
+    background: url('../images/realTime/search-icon.png') no-repeat 12px 10px;
+    background-size: 14px;
+    padding-left: 38px;
+}
+.stop-play{
+    box-sizing: border-box;
+    margin-left: 10px;
+    padding-left: 26px;
+    border: 1px solid #2de4ff;
+    background: url('../images/realTime/play-icon.png') no-repeat 8px 9px;
+    background-size: 14px;
+}
+.stop-play.active{
+    background: url('../images/realTime/stop-icon.png') no-repeat 8px 9px;
+    background-size: 14px;
+}
+
+/* 时间轴样式 */
+.time-line{
+    display: flex;
+    flex-shrink: 0;
+    margin-top: 10px;
+    font-size: 12px;
+}
+.pre{
+    padding-left: 24px;
+    background: url('../images/realTime/pre-icon.png') no-repeat left;
+    background-size: 10px;
+    cursor: pointer;
+    /* width: 90px; */
+}
+.next{
+    padding-right: 24px;
+    background: url('../images/realTime/next-icon.png') no-repeat right;
+    background-size: 10px;
+    cursor: pointer;
+    text-align: right;
+    /* width: 90px; */
+}
+.pre-date, .next-date{
+    width: 64px;
+}
+.next.disabled{
+    color: #ccc;
+    cursor: default;
+}
+.line{
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #7295d1;
+    height: 20px;
+    margin: 0 10px;
+    font-size: 10px;
+    color: #7295d1;
+}
+.timeline-item{
+    align-self: center;
+    position: relative;
+    cursor: pointer;
+}
+.timeline-item::after{
+    content: "";
+    position: absolute;
+    left: 40%;
+    bottom: -3px;
+    width: 4px;
+    height: 4px;
+    background: #7295d1;
+    border-radius: 50%;
+}
+.timeline-item.active{
+    color: #2de4ff;
+    font-size: 13px;
+    font-weight: bold;
+    bottom: 2px;
+}
+.timeline-item.active::before{
+    content: "";
+    border-radius: 5px;
+    height: 0;
+    width: 0;
+    border: 8px solid transparent;
+    border-bottom-color: #2de4ff;
+    position: absolute;
+    left: 14%;
+    bottom: -14px;
+}
+.timeline-item.disabled{
+    color: #ccc;
+    cursor: default;
+}
+
+
+/* 地图样式 */
+.map-wrapper{
+    flex: 1 1;
+    /* height: 800px; */
+    position: relative;
+    margin-top: 10px;
+}
+.map{
+    height: 100%;
+}
+
+.play-container{
+    display: flex;
+    align-items: stretch;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 700px;
+    height: 60px;
+    background: url('../images/realTime/play-bg.png');
+    background-size: 100% 100%;
+}
+.play-item{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    padding: 13px 0;
+}
+.play-item.active{
+    background: url('../images/realTime/playing-bg.png') no-repeat;
+    background-size: 100% 116%;
+}
+.left-decoration{
+    position: absolute;
+    left: -3%;
+    top: 40%;
+    width: 14px
+}
+.chart-dom{
+    width: 500px;
+    height: 250px;
+    background: url('../images/realTime/flow-bg.png');
+    background-size: 100% 100%;
+    position: absolute;
+    z-index: 9999;
+    left: 2px;
+    bottom: 2px;
+}
+.chart-title{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    padding-left: 20px;
+    font-size: 12px;
+}
+.chart-dom > div{
+    width: 100%;
+    height: 100%;
+}
+

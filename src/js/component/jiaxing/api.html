@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>api测试</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            debugger;
+            var name = '694853040721072128';
+            var current = 1;
+            var size = 10;
+            var appToken='eyJhbGciOiJIUzUxMiIsInppcCI6IkRFRiJ9.eNosjNsKwjAQBf9lH6WBTXZz2X5MIW1SqUIrTRRF_HdT9HXmzHnDpS7Qg-YUcSatSGZSzOxUnMaoZIrkjWWbfIYOyn1sYydsEK02jikY8Q6H06CbXkppum7XvKqS90feDxgr9NoGL5Y9cQf5efuD8ANxfaXtfKTtkFECsdNW0BgM8PkCAAD__w.aJIz-BL62VoFFacUJfCt3MpVQGRrsS7II1yGw_ZxIhwM9IGZklNR9yCaYqJJ8hRT4zzii23YYs8ijt7gWdEjpw'
+
+            $.ajax({
+                type : 'get',
+                url : 'http://133.128.186.45:9080/api/router/open-api/gojmp/riyaQzaa?e-item-no=694853040721072128&current=1&size=10',
+                headers:{'Content-Type':'application/json;charset=utf8','e-app-token':appToken},
+                async : false,//同步/异步
+                contentType : "application/x-www-form-urlencoded; charset=gbk",
+                dataType : 'json', //返回 JSON 数据
+                /*beforeSend : function(xhr) { //调用前触发，如加载效果等
+                    xhr.setRequestHeader("e-app-token:"+appToken);
+                },*/
+                success : function(data, status) {
+                    debugger;
+                    var datas = data.data;
+                    datas = JSON.parse(datas);
+                    var rstate = data.result;
+                    if (rstate == "0") {
+                        alert('接口调用成功！');
+                    } else {
+                        alert('接口调用失败！');
+                    }
+                },
+                complete : function() { //调用后触发（不管成功或失败）
+                },
+                error : function(data, status, e) {
+                }
+            });
+        })
+    </script>
+
+</head>
+<body>
+<div>aaa</div>
+</body>
+</html>

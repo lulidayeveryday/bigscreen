@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据中台</title>
+    <link rel="stylesheet" href="css/sxIndex.css" type="text/css">
+    <script>
+        window.onload = function(){setTimeout(function(){$(window).scrollTop(0)},5);}
+    </script>
+</head>
+<body>
+<!--表头-->
+<div class="index-title">
+    <img src="images/sx/logo.png" class="index-title-logo">
+    <div class="index-title-login"><span style="color: #fec80d;cursor: pointer;" onclick='window.location = "http://133.128.186.45:9800/epm-dataCloud-cas/index/registe"'>注册</span> | <span style="cursor: pointer;" onclick='window.location = "http://133.128.186.45:9800/cas/login?service=http://133.128.186.45:9800/portal/"'>登录</span></div>
+    <div class="index-title-menu">
+        <span class="menu-active" onclick="menuClick(this)">首页</span>
+        <!--<span onclick="menuClick(this)">背景</span>
+        <span onclick="menuClick(this)">解决问题</span>
+        <span onclick="menuClick(this)">建设目标</span>-->
+    </div>
+</div>
+<!--轮播-->
+<div class="example">
+    <div class="ft-carousel" id="carousel_1">
+        <ul class="carousel-inner">
+            <li class="carousel-item"><img src="images/sx/banner.png" /></li>
+        </ul>
+    </div>
+</div>
+<!--导航栏-->
+<div class="index-navigator">
+    <table class="index-navigator-table">
+        <tbody>
+        <tr>
+            <td href="#capability">
+                <img src="images/sx/demo5.png">
+                <div>
+                    <span class="index-navigator-table-span1">能力开放</span><br>
+                    <span class="index-navigator-table-span2">Ability to open up</span>
+                </div>
+            </td>
+            <td href="#governance">
+                <img src="images/sx/demo4.png">
+                <div>
+                    <span class="index-navigator-table-span1">数据治理</span><br>
+                    <span class="index-navigator-table-span2">Data governance</span>
+                </div>
+            </td>
+            <td href="#dataAsset">
+                <img src="images/sx/demo1.png">
+                <div>
+                    <span class="index-navigator-table-span1">数据资产</span><br>
+                    <span class="index-navigator-table-span2">Data assets</span>
+                </div>
+            </td>
+            <td href="#dataSafe">
+                <img src="images/sx/demo2.png">
+                <div>
+                    <span class="index-navigator-table-span1">数据安全</span><br>
+                    <span class="index-navigator-table-span2">Data security</span>
+                </div>
+            </td>
+            <td href="#operation">
+                <img src="images/sx/demo3.png">
+                <div>
+                    <span class="index-navigator-table-span1">统一监控</span><br>
+                    <span class="index-navigator-table-span2">Operation Monitoring</span>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--能力开放-->
+<div class="index-capability" id="capability">
+    <div class="index-content-head">
+        <span class="index-content-head-span1">能力开放</span><br>
+        <span class="index-content-head-span2">Ability to open up</span><br>
+        <span class="index-content-head-span3"></span>
+    </div>
+
+    <div class="index-capability-tab">
+        <div class="index-capability-tab-div index-capability-tab-active" onclick="capabilityTabClick(this,0)">资源开放</div>
+        <div class="index-capability-tab-div" onclick="capabilityTabClick(this,1)">数据服务</div>
+        <div class="index-capability-tab-div" onclick="capabilityTabClick(this,4)">用户标签</div>
+        <div class="index-capability-tab-div" onclick="capabilityTabClick(this,2)">工具开放</div>
+        <div class="index-capability-tab-div" onclick="capabilityTabClick(this,3)">数据科学能力开放</div>
+    </div>
+
+    <div class="index-capability-content">
+        <!--<div class="index-capability-content-img"></div>
+        <div class="index-capability-content-information">
+            <span class="capability-content-information-span1">资源开放</span><br>
+            &lt;!&ndash;<span class="capability-content-information-span2">资源开放简要介绍资源开放简要介绍资源开放简要介绍资源开放简要介绍</span>&ndash;&gt;<br>
+            <span class="capability-content-information-span3" id="informationContent">
+                <span><span></span>FTP资源</span>
+                <span><span></span>数据库资源</span>
+                <span><span></span>HDFS资源</span>
+            </span>
+        </div>-->
+        <table class="index-capability-content-table">
+           <tbody id="capabilityTable">
+            <tr>
+                <td style="width: 25%">
+                    <div class="capability-table-title">数据集成 CDP</div>
+                    <div>数据集成（Data Integration），简称 CDP ，是阿里对外提供的稳定高效、弹性伸缩的数据同步平台。 为阿里云大数据计算引擎（包括MaxCompute、AnalyticDB、OSS）提供离线（批量）数据进出通道。</div>
+                    <img src="images/sx/capability-bg1.png" class="capability-img">
+                </td>
+                <td style="width: 25%">
+                    <div class="capability-table-title">数据集成 CDP</div>
+                    <div>数据集成（Data Integration），简称 CDP ，是阿里对外提供的稳定高效、弹性伸缩的数据同步平台。 为阿里云大数据计算引擎（包括MaxCompute、AnalyticDB、OSS）提供离线（批量）数据进出通道。</div>
+                    <img src="images/sx/capability-bg2.png" class="capability-img">
+                </td>
+                <td style="width: 25%">
+                    <div class="capability-table-title">数据集成 CDP</div>
+                    <div>数据集成（Data Integration），简称 CDP ，是阿里对外提供的稳定高效、弹性伸缩的数据同步平台。 为阿里云大数据计算引擎（包括MaxCompute、AnalyticDB、OSS）提供离线（批量）数据进出通道。</div>
+                    <img src="images/sx/capability-bg1.png" class="capability-img">
+                </td>
+                <td style="width: 25%">
+                    <div class="capability-table-title">数据集成 CDP</div>
+                    <div>数据集成（Data Integration），简称 CDP ，是阿里对外提供的稳定高效、弹性伸缩的数据同步平台。 为阿里云大数据计算引擎（包括MaxCompute、AnalyticDB、OSS）提供离线（批量）数据进出通道。</div>
+                    <img src="images/sx/capability-bg2.png" class="capability-img">
+                </td>
+            </tr>
+           </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!--数据生产开发（数据治理）-->
+<div class="index-governance" id="governance">
+    <div class="index-content-head">
+        <span class="index-content-head-span1-white">数据治理</span><br>
+        <span class="index-content-head-span2-white">Data governance</span><br>
+        <span class="index-content-head-span3-white"></span>
+    </div>
+    <img src="images/sx/dataZl.png" id="governanceImg">
+    <div class="index-governance-runImg">
+        <div style="width: 30%;height: 100%;float: left;" onmouseover="$('#governanceImg').addClass('index-governance-img-left')" onmouseleave="$('#governanceImg').removeClass('index-governance-img-left')"></div>
+        <div style="width: 30%;height: 100%;float: right;" onmouseover="$('#governanceImg').addClass('index-governance-img-right')" onmouseleave="$('#governanceImg').removeClass('index-governance-img-right')"></div>
+    </div>
+    <div class="index-governance-content">
+        <div class="index-governance-content-div">
+            <span class="index-governance-content-num">1</span><span class="index-governance-content-title">数据建模BDA</span><br>
+            <div class="index-governance-content-content">
+                <span>逻辑模型</span>
+                <span>物理模型</span>
+                <span>仓库模型</span>
+            </div>
+        </div>
+        <div class="index-governance-content-div">
+            <span class="index-governance-content-num">2</span><span class="index-governance-content-title">元数据管理BMM</span><br>
+            <div class="index-governance-content-content">
+                <span>技术元数据</span>
+                <span>业务元数据</span>
+                <span>管理元数据</span>
+            </div>
+        </div>
+        <div class="index-governance-content-div">
+            <span class="index-governance-content-num">3</span><span class="index-governance-content-title">云化数据集成BDI</span><br>
+            <div class="index-governance-content-content">
+                <span>任务调度器</span>
+                <span>任务处理器</span>
+                <span>数据计算引擎</span>
+            </div>
+        </div>
+        <div class="index-governance-content-div">
+            <span class="index-governance-content-num">4</span><span class="index-governance-content-title">数据质量BDQ</span><br>
+            <div class="index-governance-content-content">
+                <span>规则配置</span>
+                <span>规则翻译执行引擎</span>
+                <span>问题管理</span>
+                <span>稽核工单流调度</span>
+            </div>
+        </div>
+        <div class="index-governance-content-div">
+            <span class="index-governance-content-num">5</span><span class="index-governance-content-title">统一监控</span><br>
+            <div class="index-governance-content-content">
+                <span>采集监控</span>
+                <span>加工监控</span>
+                <span>稽核监控</span>
+                <span>血缘监控</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="index-governance" id="governances">
+    <div class="index-content-head">
+        <span class="index-content-head-span1-white">数据治理</span><br>
+        <span class="index-content-head-span2-white">Data governance</span><br>
+        <span class="index-content-head-span3-white"></span>
+    </div>
+
+    <table class="index-governance-table">
+        <tbody>
+        <tr>
+            <td class="governance-active index-governance-table-td">
+                <img src="images/sx/listdemo1.png">
+                资源开放
+            </td>
+            <td class="index-governance-table-td">
+                <img src="images/sx/listdemo2.png">
+                数据服务
+            </td>
+        </tr>
+        <tr>
+            <td class="index-governance-table-td">
+                <img src="images/sx/listdemo3.png">
+                工具开放
+            </td>
+            <td class="index-governance-table-td">
+                <img src="images/sx/listdemo4.png">
+                数据科学能力开放
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <img src="images/sx/element.png" class="index-governance-img">
+</div>-->
+
+<!--产品数据-->
+<!--<div class="index-product" id="product">
+    <div class="index-content-head">
+        <span class="index-content-head-span1">产品数据</span><br>
+        <span class="index-content-head-span2">Product data</span><br>
+        <span class="index-content-head-span3"></span>
+    </div>
+    <div class="index-product-content">
+        <table class="index-product-table">
+            <tr>
+                <td>
+                    <img src="images/sx/api.png">
+                </td>
+                <td>
+                    <img src="images/sx/total.png">
+                </td>
+                <td>
+                    <img src="images/sx/today.png">
+                </td>
+                <td>
+                    <img src="images/sx/times.png">
+                </td>
+            </tr>
+            <tr>
+                <td>API总数</td>
+                <td>总调用量</td>
+                <td>今日调用量</td>
+                <td>单个API调用最高次</td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="index-product-table-num">159</span>个
+                </td>
+                <td>
+                    <span class="index-product-table-num">159</span>次
+                </td>
+                <td>
+                    <span class="index-product-table-num">159</span>次
+                </td>
+                <td>
+                    <span class="index-product-table-num">159</span>次
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>-->
+
+<!--数据资产-->
+<div class="index-dataAsset" id="dataAsset">
+    <div class="index-content-head">
+        <span class="index-content-head-span1">数据资产</span><br>
+        <span class="index-content-head-span2">Data assets</span><br>
+        <span class="index-content-head-span3"></span>
+    </div>
+
+    <table class="index-dataAsset-table">
+        <tbody>
+        <tr>
+            <td>
+                <img src="images/sx/feature-ico1.png"><br>
+                <div>资产信息采集</div>
+                <span>数据资产将与元数据、数据质量、ETL等模块通过接口互通，根据需求获取数据资产实体信息和数据资产监控指标，实现资产跨平台串联，增强资产在监控运维和价值评估中的数据协同</span>
+            </td>
+            <td>
+                <img src="images/sx/feature-ico2.png"><br>
+                <div>资产注册</div>
+                <span>基于元数据采集的对象，进行资产的自动标识以及手动补全，完善资产的业务和管理信息，通过数据资产注册赋予资产唯一性和权威性，以使资产能够在企业范围内或更大范围内得到认知</span>
+            </td>
+            <td>
+                <img src="images/sx/feature-ico3.png"><br>
+                <div>资产生命周期管理</div>
+                <span>对数据资产建立从注册到下线的全过程生命周期管理，监控数据资产的变更和使用情况，对数据资产何时需要重点治理、何时需要版本变更、何时需要下线释放资源做出合理的预警提示</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="images/sx/feature-ico4.png"><br>
+                <div>资产变更管理</div>
+                <span>构建自动化的资产采集、识别和分析流程，发现资产变更，并将变更产生的影响提前通知到资产使用者</span>
+            </td>
+            <td>
+                <img src="images/sx/feature-ico6.png"><br>
+                <div>资产分析评估</div>
+                <span>针对企业全域资产进行多维度多视角评估，直观展示资产现状。统计数据评估结果，进行趋势分析，根据资产的评估走势给出正向的指引或对风险的预警。通过权重计算资产六维评估价值分数，进行纵横比对和总体分布分析</span>
+            </td>
+            <td>
+                <img src="images/sx/feature-ico5.png"><br>
+                <div>资产安全管理</div>
+                <span>数据资产分层分级管控、敏感资产自动识别、资产发布审核、资产查阅申请审核</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!--<div class="index-dataAsset-tab">
+        <table>
+            <tbody>
+            <tr>
+                <td class="index-dataAsset-tab-active" onclick="dataAssetClick(this)">流程规范</td>
+                <td onclick="dataAssetClick(this)">资产盘点</td>
+                <td onclick="dataAssetClick(this)">资产评估</td>
+                <td onclick="dataAssetClick(this)">资产类别</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>-->
+
+    <!--<div class="index-dataAsset-class">
+        <table class="index-dataAsset-class-table">
+        <tbody>
+        <tr>
+            <td>
+                <img src="images/sx/icon1.png"><br>
+                <span>分类</span>
+            </td>
+            <td>
+                <img src="images/sx/icon2.png"><br>
+                <span>分类</span>
+            </td>
+            <td>
+                <img src="images/sx/icon3.png"><br>
+                <span>分类</span>
+            </td>
+            <td>
+                <img src="images/sx/icon4.png"><br>
+                <span>分类</span>
+            </td>
+            <td>
+                <img src="images/sx/icon5.png"><br>
+                <span>分类</span>
+            </td>
+        </tr>
+        </tbody>
+        </table>
+    </div>-->
+</div>
+
+<!--数据安全-->
+<div class="index-dataSafe" id="dataSafe">
+    <div class="index-content-head">
+        <span class="index-content-head-span1-white">数据安全</span><br>
+        <span class="index-content-head-span2-white">Data security</span><br>
+        <span class="index-content-head-span3-white"></span>
+    </div>
+
+    <div class="index-dataSafe-left">
+        <div class="index-dataSafe-content1">
+            <div class="index-dataSafe-text">
+                <span class="index-navigator-table-span1">数据安全</span><br><br>
+                <span class="index-navigator-table-span2">数据基于以往联通数据基础，增加了安全保障，数据基于以往联通数据基础数据基于以往联通数据基础数据基于以往联通数据基础数据基于以往联通数据基础</span>
+            </div>
+        </div>
+        <div class="index-dataSafe-img"></div>
+    </div>
+
+    <div class="index-dataSafe-right">
+        <div class="index-dataSafe-content1">
+            <div class="index-dataSafe-text">
+                <span class="index-navigator-table-span1">敏感数据保护</span><br><br>
+                <span class="index-navigator-table-span2">根据系统内置或客户自定义模型，通过AI、规则匹配等精准识别敏感文件或数据。
+丰富脱敏算法与自适应参数与算法配置，确保脱敏结果能用于用户开发、测试和分析环境。</span>
+            </div>
+        </div>
+        <div class="index-dataSafe-img2"></div>
+    </div>
+</div>
+
+<!--统一监控-->
+<div class="index-operation" id="operation">
+    <div class="index-content-head">
+        <span class="index-content-head-span1">统一监控</span><br>
+        <span class="index-content-head-span2">Operation Monitoring</span><br>
+        <span class="index-content-head-span3"></span>
+    </div>
+    <div class="index-operation-content">
+        <div class="index-operation-content-div">
+            <div class="index-operation-content-title">
+                <img src="images/sx/qu2.png">
+            </div>
+            <div class="index-operation-content-text">
+                <br><span class="index-navigator-table-span1" style="display: block;text-align: center">采集监控</span><br>
+                <span class="index-navigator-table-span2">以数据源为入口，提供对文件采集入库的监控，包括入库情况、开始时间、结束时间等</span>
+            </div>
+        </div>
+        <div class="index-operation-content-div">
+            <div class="index-operation-content-title">
+                <img src="images/sx/qu3.png">
+            </div>
+            <div class="index-operation-content-text">
+                <br><span class="index-navigator-table-span1" style="display: block;text-align: center">加工监控</span><br>
+                <span class="index-navigator-table-span2">以数据目标对象为入口，提供加工明细监控，包括加工流程、流程执行情况、起止时间等。</span>
+            </div>
+        </div>
+        <div class="index-operation-content-div">
+            <div class="index-operation-content-title">
+                <img src="images/sx/qu4.png">
+            </div>
+            <div class="index-operation-content-text">
+                <br><span class="index-navigator-table-span1" style="display: block;text-align: center">稽核监控</span><br>
+                <span class="index-navigator-table-span2">以实体对象为入口，提供稽核明细监控，包括稽核结果、稽核规则、执行状态、错误级别等。</span>
+            </div>
+        </div>
+        <div class="index-operation-content-div">
+            <div class="index-operation-content-title">
+                <img src="images/sx/qu5.png">
+            </div>
+            <div class="index-operation-content-text">
+                <br><span class="index-navigator-table-span1" style="display: block;text-align: center">血缘监控</span><br>
+                <span class="index-navigator-table-span2">以数据地图为入口，提供全局监控，监控每个对象的数据流转、稽核情况。</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="index-bottom">
+    <p>关于我们  |  联系我们  |  投诉举报  |  常见问题  |  帮助中心</p>
+    <p>技术支持：东方国信科技有限公司;经营许可证编号  京ICP备10030151</p>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/ft-carousel.min.js"></script>
+<script src="js/sxIndex.js"></script>
+</body>
+</html>

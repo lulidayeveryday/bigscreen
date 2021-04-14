@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html style="font-size: 100px;" lang="en"><head>
+    <meta charset="UTF-8">
+    <title>重点维系</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" href="./css/keyPointMaintain.css">
+</head>
+<body>
+<div class="indicator-container">
+    <div class="header">
+        <div class="middle-title">
+            <img src="./img/logo.png" class="unicom_logo">
+        </div>
+        <div class="date-wrapper">
+            <span id="date-span">2021年2月23日&nbsp;&nbsp;&nbsp;星期二</span><span id="hourDate">&nbsp;&nbsp;&nbsp;14:46</span>
+        </div>
+        <!--<div class="weather_wrapper">
+            <img class="fl-left" src="./img/weather.png" alt="">
+            <div class="fl-right">
+                <p><span class="fl-left">陕西</span><span class="fl-right">晴&nbsp;-16℃</span></p>
+                <p><span class="fl-left">空气质量：</span><span class="fl-right">良好</span></p>
+            </div>
+        </div>-->
+    </div>
+
+    <div class="content_div">
+        <div class="swiper-container swiper_main swiper-container-initialized swiper-container-horizontal">
+            <div class="swiper-pagination main-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span></div>
+            <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-5760px, 0px, 0px);">
+                <div class="swiper-slide" style="width: 1920px;">
+                    <div class="tabs_item " id="gyrh">
+                        <div class="left_content fl-left">
+                            <div class="left_top">
+                                <p class="content_title">
+                                    <span>实时办理量统计</span>
+                                </p>
+                                <div class="content_item">
+                                    <ul class="fl-left">
+                                        <li>
+                                            <p class="p_title">
+                                                日办理(户)
+                                            </p>
+                                            <p class="p_num" id="dayHandleNumber1">293</p>
+                                        </li>
+                                        <li>
+                                            <p class="p_title">
+                                                本月办理(户)
+                                            </p>
+                                            <p class="p_num" id="monthHandleNumber1">9461</p>
+                                        </li>
+                                    </ul>
+                                    <div id="gauage_container1" class="fl-right" style="user-select: none;" _echarts_instance_="ec_1614062206437"><div style="position: relative; overflow: hidden; width: 291px; height: 227px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas style="position: absolute; left: 0px; top: 0px; width: 291px; height: 227px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="291" height="227"></canvas></div></div>
+                                </div>
+                            </div>
+                            <div class="left_bot">
+                                <p class="content_title">
+                                    <span>重点产品办理统计</span>
+                                </p>
+                                <div class="swiper-container lb_swiper content_item swiper-container-initialized swiper-container-horizontal">
+                                    <div class="swiper-pagination2 swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span></div>
+                                    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                                        <div class="swiper-slide swiper-slide-active" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">共享版</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum1Product001">0</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum1Product001">0</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num upup" id="tbNum1Product001">0</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page1Product001">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide swiper-slide-next" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">冰激凌融合</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum1Product002">187</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum1Product002">5902</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum1Product002">-21.52</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page1Product002">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>陕西智慧沃家组合优化冰激凌融合产品（全国版）</td><td>97</td><td>3437</td><td class="down-txt">-21.82</td></tr><tr><td class="top2"></td><td>陕西智慧沃家组合优化畅越冰激凌融合产品(全国版)</td><td>90</td><td>2465</td><td class="down-txt">-21.09</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">组合版</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum1Product003">106</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum1Product003">3281</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum1Product003">-22.12</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page1Product003">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>陕西智慧沃家组合套餐（分摊优化版）</td><td>83</td><td>2730</td><td class="down-txt">-22.24</td></tr><tr><td class="top2"></td><td>陕西智慧沃家组合套餐（优化版）</td><td>23</td><td>551</td><td class="down-txt">-21.51</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-slide" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">其他松耦合</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum1Product018">0</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum1Product018">251</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum1Product018">-31.61</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page1Product018">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>手机低消+送宽带组合套餐</td><td>0</td><td>251</td><td class="down-txt">-31.61</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">王卡融合</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum1Product004">0</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum1Product004">27</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum1Product004">-6.90</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page1Product004">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>王卡宽带——100M</td><td>0</td><td>24</td><td class="down-txt">-7.69</td></tr><tr><td class="top2"></td><td>王卡宽带——200M</td><td>0</td><td>3</td><td class="up-txt">0.00</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                            </div>
+
+                        </div>
+                        <div class="right_content fl-right">
+                            <div class="">
+                                <p class="content_title">
+                                    <span>维度统计</span>
+                                </p>
+                                <div class="right_top">
+                                    <p><span>按地市</span></p>
+                                    <div class="rt_content">
+                                        <div class="rt_left fl-left" id="rt_bar1" style="user-select: none; position: relative;" _echarts_instance_="ec_1614062206442"><div style="position: relative; overflow: hidden; width: 625px; height: 331px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas style="position: absolute; left: 0px; top: 0px; width: 625px; height: 331px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="625" height="331"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px Microsoft YaHei; padding: 5px; left: 122px; top: 122px; pointer-events: none;">西安<br><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#5251ca;"></span>日办理量: 117<br><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#018bc9;"></span>本月累计办理量: 4,012<br><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#ff605d;"></span>累计同比: -22.23</div></div>
+                                        <div class="rt_right fl-left" id="rt_table1">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>地市</th>
+                                                    <th>日办理量</th>
+                                                    <th>本月累计办理量</th>
+                                                    <th>累计同比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody><tr><td>西安</td><td>117</td><td>4012</td><td class="down-txt">-22.23</td></tr><tr><td>咸阳</td><td>55</td><td>1698</td><td class="down-txt">-20.47</td></tr><tr><td>渭南</td><td>19</td><td>600</td><td class="down-txt">-23.76</td></tr><tr><td>宝鸡</td><td>20</td><td>681</td><td class="down-txt">-22.79</td></tr><tr><td>汉中</td><td>6</td><td>336</td><td class="down-txt">-22.76</td></tr><tr><td>延安</td><td>16</td><td>496</td><td class="down-txt">-25.41</td></tr><tr><td>榆林</td><td>20</td><td>572</td><td class="down-txt">-20.33</td></tr><tr><td>铜川</td><td>3</td><td>55</td><td class="down-txt">-28.57</td></tr><tr><td>安康</td><td>29</td><td>618</td><td class="down-txt">-19.22</td></tr><tr><td>商洛</td><td>8</td><td>393</td><td class="down-txt">-22.33</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right_bot">
+                                    <p><span>按渠道</span></p>
+                                    <div class="rb_content">
+                                        <div class="rb_left fl-left" id="rb_bar1" style="user-select: none; position: relative;" _echarts_instance_="ec_1614062206447"><div style="position: relative; overflow: hidden; width: 625px; height: 277px; padding: 0px; margin: 0px; border-width: 0px;"><canvas style="position: absolute; left: 0px; top: 0px; width: 625px; height: 277px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="625" height="277"></canvas></div><div></div></div>
+                                        <!--<div class="rb_mid fl-left" id="circle_bar1">
+                                        </div> -->
+                                        <div class="rb_right fl-left" id="rb_table1">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>渠道</th>
+                                                    <th>日办理量</th>
+                                                    <th>本月累计办理量</th>
+                                                    <th>累计同比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody><tr><td>实体渠道</td><td>285</td><td>9261</td><td class="down-txt">-21.85</td></tr><tr><td>电子渠道</td><td>0</td><td>2</td><td class="down-txt">-66.67</td></tr><tr><td>电话渠道</td><td>0</td><td>0</td><td class="down-txt">-100.00</td></tr><tr><td>政企渠道</td><td>8</td><td>196</td><td class="down-txt">-26.87</td></tr><tr><td>其他</td><td>0</td><td>2</td><td class="up-txt">0.00</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="width: 1920px;">
+                    <div class="tabs_item" id="jrrh">
+                        <div class="left_content fl-left">
+                            <div class="left_top">
+                                <p class="content_title">
+                                    <span>实时办理量统计</span>
+                                </p>
+                                <div class="content_item">
+                                    <ul class="fl-left">
+                                        <li>
+                                            <p class="p_title">
+                                                日办理(户)
+                                            </p>
+                                            <p class="p_num" id="dayHandleNumber2">228</p>
+                                        </li>
+                                        <li>
+                                            <p class="p_title">
+                                                本月办理(户)
+                                            </p>
+                                            <p class="p_num" id="monthHandleNumber2">7876</p>
+                                        </li>
+                                    </ul>
+                                    <div id="gauage_container2" class="fl-right" style="user-select: none;" _echarts_instance_="ec_1614062206438"><div style="position: relative; overflow: hidden; width: 291px; height: 227px; padding: 0px; margin: 0px; border-width: 0px;"><canvas style="position: absolute; left: 0px; top: 0px; width: 291px; height: 227px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="291" height="227"></canvas></div></div>
+                                </div>
+                            </div>
+                            <div class="left_bot">
+                                <p class="content_title">
+                                    <span>重点产品办理统计</span>
+                                </p>
+                                <div class="swiper-container lb_swiper content_item swiper-container-initialized swiper-container-horizontal">
+                                    <div class="swiper-pagination2 swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 6"></span></div>
+                                    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-3050px, 0px, 0px);">
+                                        <div class="swiper-slide" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">花呗</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum2Product006">132</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum2Product006">4032</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum2Product006">-25.00</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page2Product006">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>201910流量王59元（24）（花呗分期）（购机优惠）（陕西）</td><td>27</td><td>981</td><td class="down-txt">-23.66</td></tr><tr><td class="top2"></td><td>201910畅越98元存100元送652.65元红包电子券(24)(花呗分期)（购机送券）(陕西)</td><td>21</td><td>527</td><td class="down-txt">-29.73</td></tr><tr><td class="top3"></td><td>201910畅越48元存100元送320.6元红包电子券(24)(花呗分期)（购机送券）(陕西)</td><td>16</td><td>384</td><td class="down-txt">-23.20</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">招联</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum2Product005">88</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum2Product005">3450</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum2Product005">-21.23</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page2Product005">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>冰激凌套餐新招联1.0模式专享7折（12）-陕西</td><td>30</td><td>1351</td><td class="down-txt">-18.37</td></tr><tr><td class="top2"></td><td>畅越98元预存828元享7折折扣（12）(陕西)</td><td>11</td><td>537</td><td class="down-txt">-17.38</td></tr><tr><td class="top3"></td><td>畅越78元预存660元享7折折扣（12）(陕西)</td><td>7</td><td>231</td><td class="down-txt">-19.23</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">余额宝</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum2Product017">8</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum2Product017">371</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum2Product017">-25.35</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page2Product017">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>201910流量王59（24）（余额宝质押）（购机优惠）（陕西）</td><td>3</td><td>137</td><td class="down-txt">-20.35</td></tr><tr><td class="top2"></td><td>201910畅爽99元存100元送707.25元红包电子券(24)(余额宝质押)（购机送券）(陕西)</td><td>0</td><td>38</td><td class="down-txt">-24.00</td></tr><tr><td class="top3"></td><td>201910畅越98元存100元送701.1元红包电子券(24)(余额宝质押)（购机送券）(陕西)</td><td>3</td><td>37</td><td class="down-txt">-26.00</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-slide" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">贴息合约</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum2Product019">0</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum2Product019">23</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum2Product019">-8.00</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page2Product019">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>201910贴息合约(12)(陕西)</td><td>0</td><td>19</td><td class="up-txt">0.00</td></tr><tr><td class="top2"></td><td>201910贴息合约(24)(陕西)</td><td>0</td><td>4</td><td class="down-txt">-33.33</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide swiper-slide-prev" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">邮储信用卡</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum2Product023">0</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum2Product023">0</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num upup" id="tbNum2Product023">0</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page2Product023">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide swiper-slide-active" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">邮储储蓄质押</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum2Product024">0</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum2Product024">0</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num upup" id="tbNum2Product024">0</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page2Product024">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                            </div>
+                            <div class="">
+                            </div>
+                        </div>
+                        <div class="right_content fl-right">
+                            <div class="">
+                                <p class="content_title">
+                                    <span>维度统计</span>
+                                </p>
+                                <div class="right_top">
+                                    <p><span>按地市</span></p>
+                                    <div class="rt_content">
+                                        <div class="rt_left fl-left" id="rt_bar2" style="user-select: none; position: relative;" _echarts_instance_="ec_1614062206443"><div style="position: relative; overflow: hidden; width: 625px; height: 331px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas style="position: absolute; left: 0px; top: 0px; width: 625px; height: 331px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="625" height="331"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px Microsoft YaHei; padding: 5px; left: 407px; top: 99px; pointer-events: none;">榆林<br><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#5251ca;"></span>日办理量: 4<br><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#018bc9;"></span>本月累计办理量: 125<br><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#ff605d;"></span>累计同比: -23.78</div></div>
+                                        <div class="rt_right fl-left" id="rt_table2">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>地市</th>
+                                                    <th>日办理量</th>
+                                                    <th>本月累计办理量</th>
+                                                    <th>累计同比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody><tr><td>西安</td><td>95</td><td>3207</td><td class="down-txt">-24.02</td></tr><tr><td>咸阳</td><td>47</td><td>1419</td><td class="down-txt">-26.63</td></tr><tr><td>渭南</td><td>7</td><td>337</td><td class="down-txt">-27.99</td></tr><tr><td>宝鸡</td><td>31</td><td>1251</td><td class="down-txt">-19.29</td></tr><tr><td>汉中</td><td>19</td><td>735</td><td class="down-txt">-23.44</td></tr><tr><td>延安</td><td>5</td><td>193</td><td class="down-txt">-19.92</td></tr><tr><td>榆林</td><td>4</td><td>125</td><td class="down-txt">-23.78</td></tr><tr><td>铜川</td><td>2</td><td>83</td><td class="down-txt">-20.95</td></tr><tr><td>安康</td><td>10</td><td>261</td><td class="down-txt">-15.26</td></tr><tr><td>商洛</td><td>8</td><td>265</td><td class="down-txt">-18.96</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right_bot">
+                                    <p><span>按渠道</span></p>
+                                    <div class="rb_content">
+                                        <div class="rb_left fl-left" id="rb_bar2" style="user-select: none; position: relative;" _echarts_instance_="ec_1614062206448"><div style="position: relative; overflow: hidden; width: 625px; height: 277px; padding: 0px; margin: 0px; border-width: 0px;"><canvas style="position: absolute; left: 0px; top: 0px; width: 625px; height: 277px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="625" height="277"></canvas></div><div></div></div>
+                                        <!--<div class="rb_mid fl-left" id="circle_bar2">
+
+                                        </div>-->
+                                        <div class="rb_right fl-left" id="rb_table2">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>渠道</th>
+                                                    <th>日办理量</th>
+                                                    <th>本月累计办理量</th>
+                                                    <th>累计同比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody><tr><td>实体渠道</td><td>224</td><td>7759</td><td class="down-txt">-23.31</td></tr><tr><td>政企渠道</td><td>4</td><td>117</td><td class="down-txt">-26.88</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide-prev" style="width: 1920px;">
+                    <div class="tabs_item" id="yyrh">
+                        <div class="left_content fl-left">
+                            <div class="left_top">
+                                <p class="content_title">
+                                    <span>实时办理量统计</span>
+                                </p>
+                                <div class="content_item">
+                                    <ul class="fl-left">
+                                        <li>
+                                            <p class="p_title">
+                                                日办理(户)
+                                            </p>
+                                            <p class="p_num" id="dayHandleNumber3">205</p>
+                                        </li>
+                                        <li>
+                                            <p class="p_title">
+                                                本月办理(户)
+                                            </p>
+                                            <p class="p_num" id="monthHandleNumber3">5655</p>
+                                        </li>
+                                    </ul>
+                                    <div id="gauage_container3" class="fl-right" style="user-select: none;" _echarts_instance_="ec_1614062206439"><div style="position: relative; overflow: hidden; width: 291px; height: 227px; padding: 0px; margin: 0px; border-width: 0px;"><canvas style="position: absolute; left: 0px; top: 0px; width: 291px; height: 227px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="291" height="227"></canvas></div></div>
+                                </div>
+                            </div>
+                            <div class="left_bot">
+                                <p class="content_title">
+                                    <span>重点产品办理统计</span>
+                                </p>
+                                <div class="swiper-container lb_swiper content_item swiper-container-initialized swiper-container-horizontal">
+                                    <div class="swiper-pagination2 swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2"></span></div>
+                                    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-610px, 0px, 0px);">
+                                        <div class="swiper-slide swiper-slide-prev" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">冰激凌副卡</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum3Product016">149</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum3Product016">4425</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum3Product016">-25.22</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page3Product016">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>4G主副卡业务-语音副卡基本套餐</td><td>141</td><td>4008</td><td class="down-txt">-25.35</td></tr><tr><td class="top2"></td><td>5G副卡基本套餐(优享服务)</td><td>6</td><td>378</td><td class="down-txt">-23.79</td></tr><tr><td class="top3"></td><td>5G副卡基本套餐(极速服务)</td><td>2</td><td>39</td><td class="down-txt">-25.00</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide swiper-slide-active" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">亲情卡</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum3Product007">56</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum3Product007">1230</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum3Product007">-22.40</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page3Product007">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>亲情卡</td><td>51</td><td>1085</td><td class="down-txt">-22.00</td></tr><tr><td class="top2"></td><td>阿里宝卡亲情卡</td><td>3</td><td>62</td><td class="down-txt">-21.52</td></tr><tr><td class="top3"></td><td>腾讯王卡5G亲情卡套餐(优享服务)</td><td>2</td><td>57</td><td class="down-txt">-24.00</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                            </div>
+                        </div>
+                        <div class="right_content fl-right">
+                            <div class="">
+                                <p class="content_title">
+                                    <span>维度统计</span>
+                                </p>
+                                <div class="right_top">
+                                    <p><span>按地市</span></p>
+                                    <div class="rt_content">
+                                        <div class="rt_left fl-left" id="rt_bar3" style="user-select: none; position: relative;" _echarts_instance_="ec_1614062206444"><div style="position: relative; overflow: hidden; width: 625px; height: 331px; padding: 0px; margin: 0px; border-width: 0px;"><canvas style="position: absolute; left: 0px; top: 0px; width: 625px; height: 331px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="625" height="331"></canvas></div><div></div></div>
+                                        <div class="rt_right fl-left" id="rt_table3">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>地市</th>
+                                                    <th>日办理量</th>
+                                                    <th>本月累计办理量</th>
+                                                    <th>累计同比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody><tr><td>西安</td><td>100</td><td>2556</td><td class="down-txt">-26.42</td></tr><tr><td>咸阳</td><td>16</td><td>541</td><td class="down-txt">-26.29</td></tr><tr><td>渭南</td><td>11</td><td>550</td><td class="down-txt">-20.75</td></tr><tr><td>宝鸡</td><td>10</td><td>309</td><td class="down-txt">-24.63</td></tr><tr><td>汉中</td><td>18</td><td>313</td><td class="down-txt">-21.75</td></tr><tr><td>延安</td><td>7</td><td>190</td><td class="down-txt">-28.03</td></tr><tr><td>榆林</td><td>13</td><td>570</td><td class="down-txt">-21.27</td></tr><tr><td>铜川</td><td>1</td><td>54</td><td class="down-txt">-28.00</td></tr><tr><td>安康</td><td>21</td><td>400</td><td class="down-txt">-21.26</td></tr><tr><td>商洛</td><td>8</td><td>172</td><td class="down-txt">-21.46</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right_bot">
+                                    <p><span>按渠道</span></p>
+                                    <div class="rb_content">
+                                        <div class="rb_left fl-left" id="rb_bar3" style="user-select: none; position: relative;" _echarts_instance_="ec_1614062206449"><div style="position: relative; overflow: hidden; width: 625px; height: 277px; padding: 0px; margin: 0px; border-width: 0px;"><canvas style="position: absolute; left: 0px; top: 0px; width: 625px; height: 277px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="625" height="277"></canvas></div><div></div></div>
+                                        <!--<div class="rb_mid fl-left" id="circle_bar3">
+
+                                        </div>-->
+                                        <div class="rb_right fl-left" id="rb_table3">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>渠道</th>
+                                                    <th>日办理量</th>
+                                                    <th>本月累计办理量</th>
+                                                    <th>累计同比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody><tr><td>实体渠道</td><td>136</td><td>4029</td><td class="down-txt">-25.15</td></tr><tr><td>电子渠道</td><td>56</td><td>1361</td><td class="down-txt">-22.45</td></tr><tr><td>电话渠道</td><td>0</td><td>5</td><td class="down-txt">-37.50</td></tr><tr><td>政企渠道</td><td>12</td><td>256</td><td class="down-txt">-27.27</td></tr><tr><td>其他</td><td>1</td><td>4</td><td class="up-txt">0.00</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide-active" style="width: 1920px;">
+                    <div class="tabs_item" id="cyjh">
+                        <div class="left_content fl-left">
+                            <div class="left_top">
+                                <p class="content_title">
+                                    <span>实时办理量统计</span>
+                                </p>
+                                <div class="content_item">
+                                    <ul class="fl-left">
+                                        <li>
+                                            <p class="p_title">
+                                                日办理(户)
+                                            </p>
+                                            <p class="p_num" id="dayHandleNumber4">1114</p>
+                                        </li>
+                                        <li>
+                                            <p class="p_title">
+                                                本月办理(户)
+                                            </p>
+                                            <p class="p_num" id="monthHandleNumber4">18463</p>
+                                        </li>
+                                    </ul>
+                                    <div id="gauage_container4" class="fl-right" style="user-select: none;" _echarts_instance_="ec_1614062206440"><div style="position: relative; overflow: hidden; width: 291px; height: 227px; padding: 0px; margin: 0px; border-width: 0px;"><canvas style="position: absolute; left: 0px; top: 0px; width: 291px; height: 227px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="291" height="227"></canvas></div></div>
+                                </div>
+                            </div>
+                            <div class="left_bot">
+                                <p class="content_title">
+                                    <span>重点产品办理统计</span>
+                                </p>
+                                <div class="swiper-container lb_swiper content_item swiper-container-initialized swiper-container-horizontal">
+                                    <div class="swiper-pagination2 swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span></div>
+                                    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-610px, 0px, 0px);">
+                                        <div class="swiper-slide swiper-slide-prev" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">5G迁转</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum4Product011">36</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum4Product011">1355</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum4Product011">-25.22</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page4Product011">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>5G畅爽冰激凌套餐129元</td><td>17</td><td>502</td><td class="down-txt">-29.59</td></tr><tr><td class="top2"></td><td>5G畅爽冰激凌套餐199元</td><td>7</td><td>350</td><td class="down-txt">-25.21</td></tr><tr><td class="top3"></td><td>腾讯王卡5G版129元套餐</td><td>4</td><td>207</td><td class="down-txt">-16.87</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide swiper-slide-active" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">5G升级月包</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum4Product009">848</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum4Product009">11882</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum4Product009">-37.59</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page4Product009">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>5G升级包29元10G</td><td>371</td><td>6773</td><td class="down-txt">-35.72</td></tr><tr><td class="top2"></td><td>5G升级包49元20G</td><td>303</td><td>3372</td><td class="down-txt">-28.26</td></tr><tr><td class="top3"></td><td>5G升级包99元30G</td><td>150</td><td>1347</td><td class="down-txt">-49.85</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide swiper-slide-next" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">5G升级年包</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum4Product020">0</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum4Product020">18</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum4Product020">-55.00</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page4Product020">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>5G升级年包-360元(98-199档)(陕西)（立即生效）</td><td>0</td><td>9</td><td class="down-txt">-50.00</td></tr><tr><td class="top2"></td><td>5G升级年包-240元(98-199档)(陕西)(立即生效）</td><td>0</td><td>4</td><td class="down-txt">-60.00</td></tr><tr><td class="top3"></td><td>5G升级年包-240元(98-199档)(陕西)(次月生效）</td><td>0</td><td>3</td><td class="down-txt">-50.00</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="swiper-slide" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">4G畅越冰激凌迁转</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum4Product008">230</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum4Product008">5208</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum4Product008">-26.78</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page4Product008">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>畅越全国冰激凌套餐-98元档</td><td>57</td><td>1725</td><td class="down-txt">-24.61</td></tr><tr><td class="top2"></td><td>畅越全国冰激凌套餐-48元档</td><td>43</td><td>845</td><td class="down-txt">-26.84</td></tr><tr><td class="top3"></td><td>畅越全国冰激凌套餐-78元档</td><td>36</td><td>769</td><td class="down-txt">-26.34</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                            </div>
+
+
+                        </div>
+                        <div class="right_content fl-right">
+                            <div class="">
+                                <p class="content_title">
+                                    <span>维度统计</span>
+                                </p>
+                                <div class="right_top">
+                                    <p><span>按地市</span></p>
+                                    <div class="rt_content">
+                                        <div class="rt_left fl-left" id="rt_bar4" style="user-select: none; position: relative;" _echarts_instance_="ec_1614062206445"><div style="position: relative; overflow: hidden; width: 625px; height: 331px; padding: 0px; margin: 0px; border-width: 0px;"><canvas style="position: absolute; left: 0px; top: 0px; width: 625px; height: 331px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="625" height="331"></canvas></div><div></div></div>
+                                        <div class="rt_right fl-left" id="rt_table4">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>地市</th>
+                                                    <th>日办理量</th>
+                                                    <th>本月累计办理量</th>
+                                                    <th>累计同比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody><tr><td>西安</td><td>339</td><td>7114</td><td class="down-txt">-32.68</td></tr><tr><td>咸阳</td><td>133</td><td>2058</td><td class="down-txt">-42.03</td></tr><tr><td>渭南</td><td>48</td><td>1232</td><td class="down-txt">-36.63</td></tr><tr><td>宝鸡</td><td>133</td><td>1556</td><td class="down-txt">-36.31</td></tr><tr><td>汉中</td><td>62</td><td>1669</td><td class="down-txt">-27.43</td></tr><tr><td>延安</td><td>52</td><td>925</td><td class="down-txt">-28.41</td></tr><tr><td>榆林</td><td>155</td><td>2067</td><td class="down-txt">-33.96</td></tr><tr><td>铜川</td><td>86</td><td>267</td><td class="down-txt">-37.62</td></tr><tr><td>安康</td><td>88</td><td>1213</td><td class="down-txt">-32.16</td></tr><tr><td>商洛</td><td>18</td><td>362</td><td class="down-txt">-35.59</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right_bot">
+                                    <p><span>按渠道</span></p>
+                                    <div class="rb_content">
+                                        <div class="rb_left fl-left" id="rb_bar4" style="user-select: none; position: relative;" _echarts_instance_="ec_1614062206450"><div style="position: relative; overflow: hidden; width: 625px; height: 277px; padding: 0px; margin: 0px; border-width: 0px;"><canvas style="position: absolute; left: 0px; top: 0px; width: 625px; height: 277px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="625" height="277"></canvas></div><div></div></div>
+                                        <!--<div class="rb_mid fl-left" id="circle_bar4">
+                                        </div>-->
+                                        <div class="rb_right fl-left" id="rb_table4">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>渠道</th>
+                                                    <th>日办理量</th>
+                                                    <th>本月累计办理量</th>
+                                                    <th>累计同比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody><tr><td>实体渠道</td><td>192</td><td>5998</td><td class="down-txt">-25.70</td></tr><tr><td>电子渠道</td><td>524</td><td>7551</td><td class="down-txt">-35.47</td></tr><tr><td>电话渠道</td><td>348</td><td>4366</td><td class="down-txt">-40.81</td></tr><tr><td>政企渠道</td><td>19</td><td>240</td><td class="down-txt">-32.20</td></tr><tr><td>其他</td><td>31</td><td>308</td><td class="down-txt">-38.40</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide-next" style="width: 1920px;">
+                    <div class="tabs_item" id="qyb">
+                        <div class="left_content fl-left">
+                            <div class="left_top">
+                                <p class="content_title">
+                                    <span>实时办理量统计</span>
+                                </p>
+                                <div class="content_item">
+                                    <ul class="fl-left">
+                                        <li>
+                                            <p class="p_title">
+                                                日办理(户)
+                                            </p>
+                                            <p class="p_num" id="dayHandleNumber5">1401</p>
+                                        </li>
+                                        <li>
+                                            <p class="p_title">
+                                                本月办理(户)
+                                            </p>
+                                            <p class="p_num" id="monthHandleNumber5">40279</p>
+                                        </li>
+                                    </ul>
+                                    <div id="gauage_container5" class="fl-right" style="user-select: none;" _echarts_instance_="ec_1614062206441"><div style="position: relative; overflow: hidden; width: 291px; height: 227px; padding: 0px; margin: 0px; border-width: 0px;"><canvas style="position: absolute; left: 0px; top: 0px; width: 291px; height: 227px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="291" height="227"></canvas></div></div>
+                                </div>
+                            </div>
+                            <div class="left_bot">
+                                <p class="content_title">
+                                    <span>重点产品办理统计</span>
+                                </p>
+                                <div class="swiper-container lb_swiper content_item swiper-container-initialized swiper-container-horizontal">
+                                    <div class="swiper-pagination2 swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 6"></span></div>
+                                    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-3050px, 0px, 0px);">
+                                        <div class="swiper-slide" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">存量包打</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum5Product012">35</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum5Product012">1427</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum5Product012">-27.45</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page5Product012">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>15元包打30元(陕西)（12）</td><td>15</td><td>551</td><td class="down-txt">-16.39</td></tr><tr><td class="top2"></td><td>50元包打80元(陕西)(12)</td><td>12</td><td>366</td><td class="down-txt">-38.80</td></tr><tr><td class="top3"></td><td>25元包打50元（陕西）(12)</td><td>1</td><td>205</td><td class="down-txt">-9.69</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">双拼包</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum5Product022">946</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum5Product022">25029</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum5Product022">-26.97</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page5Product022">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>10元语音流量双拼月包(陕西)</td><td>579</td><td>11165</td><td class="down-txt">-25.85</td></tr><tr><td class="top2"></td><td>10元语音流量双拼年包（8折）(陕西)</td><td>126</td><td>6045</td><td class="down-txt">-21.76</td></tr><tr><td class="top3"></td><td>30元语音流量双拼月包(陕西)</td><td>110</td><td>2380</td><td class="down-txt">-34.56</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">权益包</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum5Product015">35</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum5Product015">254</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum5Product015">-98.61</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page5Product015">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>10元流量去哪儿网双拼包（陕西）</td><td>28</td><td>171</td><td class="down-txt">-59.38</td></tr><tr><td class="top2"></td><td>30元流量延壳双拼包产品-陕西</td><td>4</td><td>35</td><td class="down-txt">-53.33</td></tr><tr><td class="top3"></td><td>25元流量延壳双拼包（陕西）</td><td>3</td><td>17</td><td class="down-txt">-45.16</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">2I权益包</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum5Product013">50</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum5Product013">8650</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum5Product013">-24.12</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page5Product013">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>合约版超级会员（黄金版）立即生效</td><td>5</td><td>1994</td><td class="down-txt">-40.60</td></tr><tr><td class="top2"></td><td>合约版超级会员（黄金版）次月生效</td><td>19</td><td>1431</td><td class="down-txt">-25.62</td></tr><tr><td class="top3"></td><td>合约版超级会员（白金版）次月生效</td><td>16</td><td>1213</td><td class="down-txt">-31.08</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-slide swiper-slide-prev" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">场景包</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum5Product014">165</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum5Product014">2669</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum5Product014">-48.70</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page5Product014">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>20元7GB全国流量7天包</td><td>137</td><td>2128</td><td class="down-txt">-52.32</td></tr><tr><td class="top2"></td><td>15元3GB全国流量3天包</td><td>28</td><td>503</td><td class="down-txt">-28.25</td></tr><tr><td class="top3"></td><td>权益专属无限量限速加油包</td><td>0</td><td>38</td><td class="down-txt">-2.56</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-slide swiper-slide-active" style="width: 610px;">
+                                            <div class="lb_top">
+                                                <span class="line-txt fl-left">其他</span>
+                                            </div>
+                                            <div class="lb_tabs_item active">
+                                                <div class="lb_mid">
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">日办理(户)</p>
+                                                        <p class="p_num" id="dNum5Product021">170</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">本月办理(户)</p>
+                                                        <p class="p_num" id="mNum5Product021">2250</p>
+                                                    </div>
+                                                    <div class="lb_mid_item fl-left">
+                                                        <p class="p_title">累计同比(%)</p>
+                                                        <p class="p_num downdown" id="tbNum5Product021">-25.32</p>
+                                                    </div>
+                                                </div>
+                                                <div class="lb_bot" id="page5Product021">
+                                                    <table>
+                                                        <thead>
+                                                        <tr>
+                                                            <th>排行</th>
+                                                            <th>指标</th>
+                                                            <th>日办理量</th>
+                                                            <th>本月累计办理量</th>
+                                                            <th>同比</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody><tr><td class="top1"></td><td>0元100分钟语音+5G流量双拼包（3个月)(陕西）</td><td>3</td><td>646</td><td class="down-txt">-20.05</td></tr><tr><td class="top2"></td><td>5元1GB冰激凌加速包（自动叠加版）(陕西)</td><td>148</td><td>548</td><td class="down-txt">-38.84</td></tr><tr><td class="top3"></td><td>0元200分钟语音包（3个月）(陕西）</td><td>2</td><td>388</td><td class="down-txt">-11.01</td></tr></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                            </div>
+                        </div>
+                        <div class="right_content fl-right">
+                            <div class="">
+                                <p class="content_title">
+                                    <span>维度统计</span>
+                                </p>
+                                <div class="right_top">
+                                    <p><span>按地市</span></p>
+                                    <div class="rt_content">
+                                        <div class="rt_left fl-left" id="rt_bar5" style="user-select: none; position: relative;" _echarts_instance_="ec_1614062206446"><div style="position: relative; overflow: hidden; width: 625px; height: 331px; padding: 0px; margin: 0px; border-width: 0px;"><canvas style="position: absolute; left: 0px; top: 0px; width: 625px; height: 331px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="625" height="331"></canvas></div><div></div></div>
+                                        <div class="rt_right fl-left" id="rt_table5">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>地市</th>
+                                                    <th>日办理量</th>
+                                                    <th>本月累计办理量</th>
+                                                    <th>累计同比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody><tr><td>西安</td><td>465</td><td>17544</td><td class="down-txt">-24.89</td></tr><tr><td>咸阳</td><td>128</td><td>5368</td><td class="down-txt">-66.83</td></tr><tr><td>渭南</td><td>256</td><td>5279</td><td class="down-txt">-46.15</td></tr><tr><td>宝鸡</td><td>40</td><td>1492</td><td class="down-txt">-29.05</td></tr><tr><td>汉中</td><td>200</td><td>2542</td><td class="down-txt">-44.43</td></tr><tr><td>延安</td><td>26</td><td>1494</td><td class="down-txt">-73.42</td></tr><tr><td>榆林</td><td>160</td><td>2616</td><td class="down-txt">-50.84</td></tr><tr><td>铜川</td><td>5</td><td>165</td><td class="down-txt">-74.34</td></tr><tr><td>安康</td><td>112</td><td>3404</td><td class="down-txt">-43.46</td></tr><tr><td>商洛</td><td>9</td><td>375</td><td class="down-txt">-30.30</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right_bot">
+                                    <p><span>按渠道</span></p>
+                                    <div class="rb_content">
+                                        <div class="rb_left fl-left" id="rb_bar5" style="user-select: none; position: relative;" _echarts_instance_="ec_1614062206451"><div style="position: relative; overflow: hidden; width: 625px; height: 277px; padding: 0px; margin: 0px; border-width: 0px;"><canvas style="position: absolute; left: 0px; top: 0px; width: 625px; height: 277px; user-select: none; padding: 0px; margin: 0px; border-width: 0px;" data-zr-dom-id="zr_0" width="625" height="277"></canvas></div><div></div></div>
+                                        <!--<div class="rb_mid fl-left" id="circle_bar5">
+                                        </div>-->
+                                        <div class="rb_right fl-left" id="rb_table5">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>渠道</th>
+                                                    <th>日办理量</th>
+                                                    <th>本月累计办理量</th>
+                                                    <th>累计同比(%)</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody><tr><td>实体渠道</td><td>720</td><td>15990</td><td class="down-txt">-53.61</td></tr><tr><td>电子渠道</td><td>337</td><td>16955</td><td class="down-txt">-26.30</td></tr><tr><td>电话渠道</td><td>181</td><td>2467</td><td class="down-txt">-48.24</td></tr><tr><td>政企渠道</td><td>160</td><td>2820</td><td class="down-txt">-43.87</td></tr><tr><td>其他</td><td>3</td><td>2047</td><td class="down-txt">-70.33</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    </div>
+</div>
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src="./js/echarts.min.js"></script>
+<script src="./js/common1.js"></script>
+<script src="./js/swiper.js"></script>
+<script type="text/javascript" src="./js/keyPointMaintain.js"></script>
+
+</body></html>

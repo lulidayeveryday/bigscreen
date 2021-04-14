@@ -1,0 +1,627 @@
+@media screen and (min-width:1921px){
+    html{
+        height: 100%;
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1920px){
+    html{
+        height: 100%;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 1366px){
+    html{
+        height: 100%;
+        font-size: 8px;
+    }
+}
+
+body{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.taskMonitor-div{
+    width: 100%;
+    height: 100%;
+    background: url("../images/taskFlowFix.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.taskMonitor-taskFlow-legend{
+    position: absolute;
+    background-color: #06182A;
+    width: 22rem;
+    border-radius: 1rem;
+    height: 2rem;
+    color: white;
+    font-size: 1rem;
+    top:11%;
+    left: 2%;
+    line-height: 2rem;
+}
+
+.taskMonitor-taskFlow-legends{
+    position: absolute;
+    background-color: #06182A;
+    width: 22rem;
+    border-radius: 1rem;
+    height: 2rem;
+    color: white;
+    font-size: 1rem;
+    top:16.5%;
+    left: 5%;
+    line-height: 2rem;
+}
+
+.taskMonitor-flowMore-tree{
+    width: 89.5%;
+    height: 76%;
+    position: absolute;
+    top: 16%;
+    left: 5%;
+    z-index: 60;
+}
+
+.taskMonitor-taskFlow-point{
+    width: 11rem;
+    height: auto;
+    position: absolute;
+    text-align: center;
+    z-index: 50;
+}
+
+.taskMonitor-flowAll{
+    position: absolute;
+    right: 0;
+    bottom: 91%;
+    height: 7%;
+    cursor: pointer;
+}
+
+.taskFlow-line2{
+    width: 17%;
+    height: 1rem;
+    position: absolute;
+    top:28.5%;
+    z-index: 40;
+    left: calc(5rem);
+    transform:rotate(8deg);
+    -ms-transform:rotate(8deg); 	/* IE 9 */
+    -moz-transform:rotate(8deg); 	/* Firefox */
+    -webkit-transform:rotate(8deg); /* Safari 和 Chrome */
+    -o-transform:rotate(8deg); 	/* Opera */
+}
+
+.taskFlow-line3{
+    width: 18%;
+    height: 1rem;
+    position: absolute;
+    top:26.5%;
+    z-index: 40;
+    left: calc(17% + 5rem);
+    transform:rotate(-16deg);
+    -ms-transform:rotate(-16deg); 	/* IE 9 */
+    -moz-transform:rotate(-16deg); 	/* Firefox */
+    -webkit-transform:rotate(-16deg); /* Safari 和 Chrome */
+    -o-transform:rotate(-16deg); 	/* Opera */
+}
+
+.taskFlow-line4{
+    width: 18%;
+    height: 1rem;
+    position: absolute;
+    top:26.5%;
+    z-index: 40;
+    left: calc(34% + 5rem);
+    transform:rotate(15deg);
+    -ms-transform:rotate(15deg); 	/* IE 9 */
+    -moz-transform:rotate(15deg); 	/* Firefox */
+    -webkit-transform:rotate(15deg); /* Safari 和 Chrome */
+    -o-transform:rotate(15deg); 	/* Opera */
+}
+
+.taskFlow-line5{
+    width: 17%;
+    height: 1rem;
+    position: absolute;
+    top:26%;
+    z-index: 40;
+    left: calc(51% + 5rem);
+    transform:rotate(-15deg);
+    -ms-transform:rotate(-15deg); 	/* IE 9 */
+    -moz-transform:rotate(-15deg); 	/* Firefox */
+    -webkit-transform:rotate(-15deg); /* Safari 和 Chrome */
+    -o-transform:rotate(-15deg); 	/* Opera */
+}
+
+.taskFlow-line6{
+    width: 9%;
+    height: 1rem;
+    position: absolute;
+    top:35%;
+    z-index: 40;
+    left: calc(45% + 5rem);
+    transform:rotate(-61deg);
+    -ms-transform:rotate(-61deg); 	/* IE 9 */
+    -moz-transform:rotate(-61deg); 	/* Firefox */
+    -webkit-transform:rotate(-61deg); /* Safari 和 Chrome */
+    -o-transform:rotate(-61deg); 	/* Opera */
+}
+
+.taskFlow-line7{
+    width: 23%;
+    height: 1rem;
+    position: absolute;
+    top:47%;
+    z-index: 40;
+    left: calc(47% + 5rem);
+    transform:rotate(16deg);
+    -ms-transform:rotate(16deg); 	/* IE 9 */
+    -moz-transform:rotate(16deg); 	/* Firefox */
+    -webkit-transform:rotate(16deg); /* Safari 和 Chrome */
+    -o-transform:rotate(16deg); 	/* Opera */
+}
+
+.taskFlow-line9{
+    width: 18%;
+    height: 1rem;
+    position: absolute;
+    top:65%;
+    z-index: 40;
+    left: calc(5rem);
+    transform:rotate(-6deg);
+    -ms-transform:rotate(-6deg); 	/* IE 9 */
+    -moz-transform:rotate(-6deg); 	/* Firefox */
+    -webkit-transform:rotate(-6deg); /* Safari 和 Chrome */
+    -o-transform:rotate(-6deg); 	/* Opera */
+}
+
+.taskFlow-line10{
+    width: 19%;
+    height: 1rem;
+    position: absolute;
+    top:69%;
+    z-index: 40;
+    left: calc(18% + 5rem);
+    transform:rotate(19deg);
+    -ms-transform:rotate(19deg); 	/* IE 9 */
+    -moz-transform:rotate(19deg); 	/* Firefox */
+    -webkit-transform:rotate(19deg); /* Safari 和 Chrome */
+    -o-transform:rotate(19deg); 	/* Opera */
+}
+
+.taskFlow-line11{
+    width: 20%;
+    height: 1rem;
+    position: absolute;
+    top:74%;
+    z-index: 40;
+    left: calc(38% + 5rem);
+    transform:rotate(2deg);
+    -ms-transform:rotate(2deg); 	/* IE 9 */
+    -moz-transform:rotate(2deg); 	/* Firefox */
+    -webkit-transform:rotate(2deg); /* Safari 和 Chrome */
+    -o-transform:rotate(2deg); 	/* Opera */
+}
+
+.line-green{
+    background: url("../img/lineGreen.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.line-red{
+    background: url("../img/lineRed.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.line-blue{
+    background: url("../img/lineBlue.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.line-white{
+    background: url("../img/lineWhite.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.taskFlow-point1{
+    top:25%;
+    left:0%;
+}
+
+.taskFlow-point2{
+    top:28%;
+    left: 17%;
+}
+
+.taskFlow-point3{
+    top:21%;
+    left: 34%;
+}
+
+.taskFlow-point4{
+    bottom: 64%;
+    left: 50%;
+}
+
+.taskFlow-point5{
+    top:20%;
+    left: 67%;
+}
+
+.taskFlow-point6{
+    top:40%;
+    left: 47%;
+}
+
+.taskFlow-point7{
+    top:49%;
+    left: 68%;
+}
+
+.taskFlow-point8{
+    top:65%;
+    left:0%;
+}
+
+.taskFlow-point9{
+    top:62%;
+    left:18%;
+}
+
+.taskFlow-point10{
+    top:72%;
+    left:37%;
+}
+
+.taskFlow-point11{
+    top:73%;
+    left:59%;
+}
+
+.taskFlow-point-img{
+    width: 2.5rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.taskFlow-point-imgs{
+    position: relative;
+    top:-0.6rem;
+    width: 2.5rem;
+    display: block;
+    margin: 0 auto;
+    z-index: 48;
+}
+
+.taskFlow-title{
+    color: white;
+    position: absolute;
+    font-size: 1.3rem;
+    font-weight: bold;
+    top:calc(20% + 0.25rem);
+    right: 2rem;
+}
+
+.taskFlow-title1{
+    color: white;
+    position: absolute;
+    font-size: 1.3rem;
+    font-weight: bold;
+    top:calc(49% + 0.25rem);
+    right: 2rem;
+}
+
+.taskFlow-title2{
+    color: white;
+    position: absolute;
+    font-size: 1.3rem;
+    font-weight: bold;
+    top:calc(73% + 0.25rem);
+    right: 2rem;
+}
+
+.taskFlow-point-border{
+    padding: 0.5rem;
+    display: inline-block;
+    position: relative;
+    top:-0.4rem;
+    min-width: 60%;
+    z-index: 38;
+    margin: 0 auto;
+    height: auto;
+    color: white;
+}
+
+.taskFlow-point-border table{
+    text-align: left;
+    width: 100%;
+}
+
+.taskFlow-point-borders{
+    padding: 0.75rem 0.5rem 0.25rem;
+    display: inline-block;
+    position: relative;
+    min-width: 60%;
+    margin: 0 auto;
+    height: auto;
+    color: white;
+    z-index: 49;
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg); 	/* IE 9 */
+    -moz-transform:rotate(180deg); 	/* Firefox */
+    -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+    -o-transform:rotate(180deg); 	/* Opera */
+}
+
+.taskFlow-point-borders table{
+    width: 100%;
+    text-align: left;
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg); 	/* IE 9 */
+    -moz-transform:rotate(180deg); 	/* Firefox */
+    -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+    -o-transform:rotate(180deg); 	/* Opera */
+}
+
+.border-title{
+    font-weight: bold;
+    text-align: left;
+}
+
+.taskFlow-legend-img{
+    height: 1rem;
+    position: relative;
+    margin-left: 1rem;
+    top: 0.1rem;
+}
+
+.taskMonitor-more{
+    position: fixed;
+    z-index: 101;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    display: none;
+}
+
+.taskMonitor-flowMore{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background: url("../images/taskFlowFix.png") no-repeat;
+    background-size: 100% 100%;
+    display: block;
+}
+
+.taskMonitor-flowMore-close{
+    height: 4.5%;
+    position: absolute;
+    top: 16.5%;
+    right: 5.5%;
+    cursor: pointer;
+    z-index: 61;
+}
+
+.taskMonitor-more-content{
+    position: absolute;
+    top:20%;
+    width: 30%;
+    height: 60%;
+    left: 35%;
+    background-color: #142D4C;
+}
+
+.taskMonitor-taskMonitor-div1{
+    width: 24.2%;
+    float: left;
+    height: 100%;
+    margin-left: 2.3%;
+}
+
+.more-content-title{
+    height: 3rem;
+    color: white;
+    font-weight: 600;
+    line-height: 3rem;
+    font-size: 1.4rem;
+    padding-left: 2rem;
+    border-bottom: solid 1px #1A3254;
+}
+
+.more-content-middle{
+    height: calc(100% - 12.5rem);
+    padding: 1.5rem 2rem 2.5rem;
+    overflow-y: auto;
+}
+
+.more-table-th{
+    background-color: #24476D;
+    border: none;
+}
+
+.more-table-th th{
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    text-align: left;
+    font-weight: 500;
+}
+
+.more-content-middle>table{
+    width: 100%;
+    height: auto;
+    color: white;
+    border-spacing: 0px;
+    background-color: #0F233B;
+    padding-bottom: 1rem;
+}
+
+.more-content-middle>table td{
+    padding: 0.7rem 0 0 1.5rem;
+}
+
+.more-content-bottom{
+    height: 5.5rem;
+}
+
+.more-content-button{
+    width: 9rem;
+    padding: 0.5rem;
+    border-radius: 1.3rem;
+    background-color: #13A1E4;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 1rem auto 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.content-title-close{
+    float: right;
+    margin-right: 1.5rem;
+    font-size: 2.5rem;
+    color: #47C8EF;
+    transform:rotate(45deg);
+    -ms-transform:rotate(45deg); 	/* IE 9 */
+    -moz-transform:rotate(45deg); 	/* Firefox */
+    -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+    -o-transform:rotate(45deg); 	/* Opera */
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.taskMonitor-taskMonitor-div2{
+    width: 15%;
+    float: left;
+    height: 100%;
+}
+
+.taskMonitor-taskMonitor-div3{
+    width: 15.4%;
+    float: left;
+    height: 100%;
+}
+
+.taskMonitor-div-title{
+    height: 17%;
+}
+
+.font-title{
+    position: absolute;
+    padding: 0px 7px;
+    border-left: solid 3px #06FBFC;
+    color: white;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-left: 25px;
+}
+
+.taskMonitor-div-content{
+    height: 83%;
+    padding-left: 1.5rem;
+}
+
+.taskMonitor-div-content1{
+    height: 83%;
+    padding-left: 2.5rem;
+}
+
+.table-th{
+    color: #E0E6E8;
+}
+
+.taskMonitor-div-content1>table{
+    color: white;
+    width: 100%;
+    height: 95%;
+}
+
+.font-red{
+    color: #D33965;
+    font-weight: bold;
+}
+
+.font-green{
+    color: #40E9AA;
+    font-weight: bold;
+}
+
+.font-blue{
+    color: #47CDDE;
+    font-weight: bold;
+}
+
+.task-more-button{
+    float: right;
+    font-size: 1.5rem;
+    color: #47CDD3;
+    background-color: #23456A;
+    padding: 0px 8px 3px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.taskMonitor-div-content>table{
+    width: 100%;
+    height: 100%;
+}
+
+.data-div-content-img{
+    height: 65%;
+    float: left;
+    margin-left: 10%;
+}
+
+.data-div-content-table{
+    float: left;
+    font-size: 1.2rem;
+    color: white;
+    height: 65%;
+    margin-left: 5%;
+}
+
+.data-content-num{
+    font-size: 2rem;
+    color: #2BDBF6;
+}
+
+.taskMonitor-taskMonitor-div4{
+    width: 15.6%;
+    float: left;
+    height: 100%;
+}
+
+.taskMonitor-taskMonitor-div5{
+    width: 27.3%;
+    float: left;
+    height: 100%;
+}
+
+.dataFlow-content table{
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.blue-font{
+    color: #40BAD6;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.green-font{
+    color: #38E0AC;
+    font-size: 1.3rem;
+    font-weight: bold;
+}

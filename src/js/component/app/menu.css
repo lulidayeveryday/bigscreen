@@ -1,0 +1,37 @@
+body{
+    background-color: #FFF;
+    margin: 0;
+    height: 100%;
+}
+
+html{
+    height: 100%;
+}
+
+.menuDiv-content{
+    height:calc(100% / 3);
+}
+
+.menuDiv-content-title{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 0 0 15px;
+}
+
+.menuDiv-content-div{
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    line-height: 12px;
+}
+
+.menuDiv-content-img{
+    width: 30px;
+    height: 30px;
+    margin: 8px 0 5px;
+}
+
+.menuDiv-content-div td{
+    width: 25%;
+}

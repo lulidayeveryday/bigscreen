@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>b</title>
+    <script type="text/javascript">
+        /***
+         *读取指定的Cookie值
+         *@param {string} cookieName Cookie名称
+         */
+        function ReadCookie(cookieName) {
+            debugger;
+            var theCookie = "" + document.cookie;
+            var ind = theCookie.indexOf(cookieName);
+            if(ind==-1 || cookieName=="") return "";
+            var ind1 = theCookie.indexOf(';',ind);
+            if(ind1==-1) ind1 = theCookie.length;
+            /*读取Cookie值*/
+            return unescape(theCookie.substring(ind+cookieName.length+1,ind1));
+        }
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        function init() {
+            var username;
+            setInterval(function(){
+                username = ReadCookie("username");
+                if(username && username.length>0) {
+                    $("msg").innerHTML = "<h1>欢迎光临," + username + "!</h1>";
+                } else {
+                    $("msg").innerHTML = "<a href='a.htm'>请登录</a>";
+                }
+            }, 3000);
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="msg"></div>
+</body>
+</html>

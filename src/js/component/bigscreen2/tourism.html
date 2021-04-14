@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="tourism.css" type="text/css" />
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <script>
+        var remebers=0;
+        var remDate;
+        $(document).ready(function(){
+            echartsBar('#5760B7',"tourismCounty",'区县消费（万元）','20%');
+            echartsBar('#96CFF4',"tourismBusinessTop",'商圈消费TOP6（万元）','25%');
+            echartsBar('#5760B7',"tourismCountyCi",'行政区县消费平均次单价（元）','20%');
+            echartsBar('#96CFF4',"tourismCountyKe",'行政区县消费平均客单价（元）','20%');
+            echartsPie('行政区消费类别',"tourismDistrict");
+            echartsPie('商圈消费类别',"tourismBusiness");
+            echartsLine();
+            echartsMap();
+            tableData('2017/05/01');
+        });
+
+        function tableDatas(myDate,num) {
+            var myDates = new Date(myDate);
+            myDates.setDate(myDates.getDate() + 7*num);
+            var day=myDates.getDay();
+            if(day==0){
+                day=7;
+            }
+            var data='<table class="div2-table"><tbody><tr>';
+            for(var i=0;i<7;i++){
+                var sDates=myDates;
+                var uid="'td"+i+1+"'";
+                data+='<td id='+uid+' onclick="tdClick(this)"><span>';
+                if(i==0){
+                    sDates.setDate(sDates.getDate()-day+1);//获取AddDayCount天后的日期
+                }else {
+                    sDates.setDate(sDates.getDate()+1);//获取AddDayCount天后的日期
+                }
+                var newcurrentTimes = getNowFormatDate(sDates);
+                var d=sDates;
+                var weekday=new Array(7)
+                weekday[0]="周日"
+                weekday[1]="周一"
+                weekday[2]="周二"
+                weekday[3]="周三"
+                weekday[4]="周四"
+                weekday[5]="周五"
+                weekday[6]="周六"
+                var week = weekday[d.getDay()]//返回当前时间是星期几
+
+                data+=newcurrentTimes+'('+week+')';
+                data+='</span><br/><span>●</span><br/><span class="zf" id='+'"spantd'+i+1+'"'+'>.</span></td>';
+            }
+            data+='</tr></tbody></table>';
+            document.getElementById("tourismData").innerHTML=data;
+        }
+
+        function tableData(myDates) {
+            remDate=myDates;
+            var myDate = new Date(myDates);
+            var day=myDate.getDay();
+            if(day==0){
+                day=7;
+            }
+            var data='<table class="div2-table"><tbody><tr>';
+            for(var i=0;i<7;i++){
+                var sDate=myDate;
+                var uid="'td"+i+1+"'";
+                if((i+1)==day){
+                    data+='<td class="td-onblur" id='+uid+' onclick="tdClick(this)"><span>';
+                }else {
+                    data+='<td id='+uid+' onclick="tdClick(this)"><span>';
+                }
+                if(i==0){
+                    sDate.setDate(sDate.getDate()-day+1);//获取AddDayCount天后的日期
+                }else {
+                    sDate.setDate(sDate.getDate()+1);//获取AddDayCount天后的日期
+                }
+                var newcurrentTime = getNowFormatDate(sDate);
+
+                var d=sDate;
+                var weekday=new Array(7)
+                weekday[0]="周日"
+                weekday[1]="周一"
+                weekday[2]="周二"
+                weekday[3]="周三"
+                weekday[4]="周四"
+                weekday[5]="周五"
+                weekday[6]="周六"
+                var week = weekday[d.getDay()]//返回当前时间是星期几
+
+                data+=newcurrentTime+'('+week+')';
+                if((i+1)==day){
+                    data+='</span><br/><span>●</span><br/><span class="zf" id='+'"spantd'+i+1+'"'+'>▲</span></td>';
+                }else {
+                    data+='</span><br/><span>●</span><br/><span class="zf" id='+'"spantd'+i+1+'"'+'>.</span></td>';
+                }
+            }
+            data+='</tr></tbody></table>';
+            document.getElementById("tourismData").innerHTML=data;
+        }
+
+        function nextWeek() {
+            if (remebers==0){
+                return;
+            }
+            remebers+=1;
+            tableDatas(remDate,remebers)
+        }
+
+        function lastWeek() {
+            remebers-=1;
+            tableDatas(remDate,remebers)
+        }
+
+        function echartsMaps(){
+            var XIdx = [];
+            var data = [54, 86, 46, 45, 77, 96, 89, 88, 23, 38,
+                3, 66, 98, 43, 73, 76, 44, 16, 21, 14,
+                71, 8, 61, 65, 1, 68, 33, 69, 49, 24
+            ];
+
+            for(var i = 1; i <= data.length; i++) {
+                XIdx.push(i);
+            }
+
+            var option = {
+                backgroundColor: 'white',
+                grid: {
+                    top: 20,
+                    left: 20,
+                    right: 20,
+                    bottom: 20,
+                    containLabel: true //轴上的数值
+                },
+                xAxis: {
+                    type: 'category',
+                    data: XIdx
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                series: [{
+                    name: '人',
+                    type: 'line',
+                    data: data
+                }]
+            };
+            var myChart = echarts.init(document.getElementById("tourismMap"));
+            myChart.setOption(option);
+
+            var index = 0; //播放所在下标
+            var mTime = setInterval(function() {
+                myChart.dispatchAction({
+                    type: 'showTip',
+                    seriesIndex: 0,
+                    dataIndex: index
+                });
+                index++;
+                if(index > data.length) {
+                    index = 0;
+                }
+            }, 1000);
+        }
+
+        function echartsMap() {
+            var data = [
+                {
+                    name: '淳安县',
+                    value: 25.3,
+                    manTime: 3500
+                },
+                {
+                    name: '建德市',
+                    value: 73.8,
+                    manTime: 3500
+                },
+                {
+                    name: '桐庐县',
+                    value: 92.0,
+                    manTime: 3500
+                },
+                {
+                    name: '富阳区',
+                    value: 62.1,
+                    manTime: 3500
+                },
+                {
+                    name: '临安市',
+                    value: 93.0,
+                    manTime: 3500
+                }
+            ];
+            var option = {
+                tooltip : {
+                    trigger: 'item',
+                    formatter: function (params) {
+                        return '<div style="width: 150px"><p>'+'<span style="color:#6AC9EB;">●</span>'+params.name+'</p>'+
+                                '<span>金额:</span>'+params.data.value+'<br/>'+'<span>人次:</span>'+params.data.manTime+'</div>';
+                    },
+                },
+                /*visualMap: {
+                    text:['高','低'],
+                    realtime: false,
+                    calculable: true,
+                    inRange: {
+                        color: ['#4FA9D8','#336DA3','#234883']
+                    },
+                    textStyle : {
+                        color : 'white',
+                    }
+                },*/
+                visualMap: {
+                    show:false,
+                    type: 'continuous',
+                    text: ['', ''],
+                    showLabel: false,
+                    seriesIndex: [0],
+                    /*min: 0,*/
+                    /*max: 7,*/
+                    inRange: {
+                        color: ['#edfbfb', '#b7d6f3', '#40a9ed', '#3598c1', '#215096', ]
+                    },
+                    textStyle: {
+                        color: '#000'
+                    },
+                    bottom: 120,
+                    left: 'left',
+                },
+
+                series : [
+                    {
+                        name: '数据',
+                        type: 'map',
+                        map: 'hangzhou', // 自定义扩展图表类型
+                        roam : true,
+                        itemStyle:{
+                            normal:{
+                                label:{
+                                    show:true,
+                                    textStyle:{
+                                        color:'#727882'
+                                    }
+                                }
+                            },
+                            emphasis:{
+                                label:{show:true,
+                                    textStyle:{
+                                        color:'#fff'
+                                    }},
+                                areaColor: '#75AFD6'
+                            }
+                        },
+                        data:data,
+
+                        // 文本位置修正
+                        textFixed : {
+                            'Yau Tsim Mong' : [-10, 0]
+                        },
+
+                    }
+                ]
+            };
+
+
+
+
+
+
+            $.getJSON('./js/V0330100.json', function (data) {
+                echarts.registerMap('hangzhou', data);
+                var myChart = echarts.init(document.getElementById('tourismMap'));
+                myChart.setOption(option);
+
+
+                var count = 0;
+                var timeTicket = null;
+                var dataLength = option.series[0].data.length;
+                timeTicket && clearInterval(timeTicket);
+                timeTicket = setInterval(function() {
+                    myChart.dispatchAction({
+                        type: 'downplay',
+                        seriesIndex: 0,
+                    });
+                    myChart.dispatchAction({
+                        type: 'highlight',
+                        seriesIndex: 0,
+                        dataIndex: (count) % dataLength
+                    });
+                    myChart.dispatchAction({
+                        type: 'showTip',
+                        seriesIndex: 0,
+                        dataIndex: (count) % dataLength
+                    });
+                    count++;
+                }, 3000);
+
+                myChart.on('mouseover', function(params) {
+                    clearInterval(timeTicket);
+                    myChart.dispatchAction({
+                        type: 'downplay',
+                        seriesIndex: 0
+                    });
+                    myChart.dispatchAction({
+                        type: 'highlight',
+                        seriesIndex: 0,
+                        dataIndex: params.dataIndex
+                    });
+                    myChart.dispatchAction({
+                        type: 'showTip',
+                        seriesIndex: 0,
+                        dataIndex: params.dataIndex,
+                    });
+                });
+                myChart.on('mouseout', function(params) {
+                    timeTicket && clearInterval(timeTicket);
+                    timeTicket = setInterval(function() {
+                        myChart.dispatchAction({
+                            type: 'downplay',
+                            seriesIndex: 0,
+                        });
+                        myChart.dispatchAction({
+                            type: 'highlight',
+                            seriesIndex: 0,
+                            dataIndex: (count) % dataLength
+                        });
+                        myChart.dispatchAction({
+                            type: 'showTip',
+                            seriesIndex: 0,
+                            dataIndex: (count) % dataLength
+                        });
+                        count++;
+                    }, 3000);
+                });
+
+                $(window).resize(function() {
+                    myChart.resize();
+                });
+            });
+        }
+
+        function echartsLine() {
+            var colors = ['#ECDE4F', '#FA2FF8', '#42D7F5'];
+
+            var option = {
+                title:[
+                    {text:"一周消费趋势",
+                        x: '5%',
+                        y: '15px',
+                        textStyle:{
+                            color:"#96CFF4",
+                            fontSize:"14"
+                        }
+                    }
+                ],
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        lineStyle: {
+                            color: '#57617B'
+                        }
+                    }
+                },
+                color: colors,
+                grid: [
+                    {
+                        y: '90px',
+                        x2: '150px',
+                        y2: '30px'
+                    },
+                ],
+                legend: {
+                    data: [
+                        {
+                            name: "消费金额",
+                            icon: "roundRect",
+                            textStyle: {
+                                "color": "#7d838b"
+                            }
+                        },
+                        {
+                            "name": "消费人次",
+                            "icon": "roundRect",
+                            "textStyle": {
+                                "color": "#7d838b"
+                            }
+                        },
+                        {
+                            "name": "消费笔数",
+                            "icon": "roundRect",
+                            "textStyle": {
+                                "color": "#7d838b"
+                            }
+                        }
+                    ],
+                    "top": "15px",
+                    right:'5%',
+                    "textStyle": {
+                        "color": "#fff"
+                    }
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        axisTick: {
+                            show: false,
+                            alignWithLabel: true
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: '#939AA9'
+                            }
+                        },
+                        data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: '消费金额',
+                        position: 'right',
+                        axisLine: {
+                            lineStyle: {
+                                color: colors[0]
+                            }
+                        },
+                        splitLine: { //网格线
+                            show: true,
+                            lineStyle: {
+                                color: ['#3D4D68'],
+                                type: 'dashed'
+                            }
+                        },
+                        axisLabel: {
+                            formatter: '{value}'
+                        }
+                    },
+                    {
+                        type: 'value',
+                        name: '消费人次',
+                        position: 'right',
+                        offset: 80,
+                        splitLine: { //网格线
+                            show: false,
+                            lineStyle: {
+                                color: ['#3D4D68'],
+                                type: 'dashed'
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: colors[1]
+                            }
+                        },
+                        axisLabel: {
+                            formatter: '{value}'
+                        }
+                    },
+                    {
+                        type: 'value',
+                        name: '消费笔数',
+                        position: 'left',
+                        splitLine: { //网格线
+                            show: false,
+                            lineStyle: {
+                                color: ['#3D4D68'],
+                                type: 'dashed'
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: colors[2]
+                            }
+                        },
+                        axisLabel: {
+                            formatter: '{value}'
+                        }
+                    }
+                ],
+                series: [
+                    {
+                        name:'消费金额',
+                        type:'line',
+                        data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                        symbol:'none',
+                        itemStyle : {
+                            normal : {
+                                lineStyle:{
+                                    width:2,//折线宽度
+                                },
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 1,
+                                    color: '#C57C22' // 100% 处的颜色
+                                }, {
+                                    offset: 0,
+                                    color: '#ECDE4F' // 0% 处的颜色
+                                }], false),
+                                opacity: 0.4
+                            }
+                        }
+                    },
+                    {
+                        name:'消费人次',
+                        type:'line',
+                        yAxisIndex: 1,
+                        symbol:'none',
+                        data:[2.6, 225.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                        itemStyle : {
+                            normal : {
+                                lineStyle:{
+                                    width:2,//折线宽度
+                                },
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 1,
+                                    color: '#8D1B54' // 100% 处的颜色
+                                }, {
+                                    offset: 0,
+                                    color: '#FA2FF8' // 0% 处的颜色
+                                }], false),
+                                opacity: 0.4
+                            }
+                        }
+                    },
+                    {
+                        name:'消费笔数',
+                        type:'line',
+                        yAxisIndex: 2,
+                        symbol:'none',
+                        data:[2.0, 2.2, 3.3, 40.5, 6.3, 10.2, 320.3, 123.4, 23.0, 16.5, 12.0, 16.2],
+                        itemStyle : {
+                            normal : {
+                                lineStyle:{
+                                    width:2,//折线宽度
+                                },
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 1,
+                                    color: '#266CBF' // 100% 处的颜色
+                                }, {
+                                    offset: 0,
+                                    color: '#42D7F5' // 0% 处的颜色
+                                }], false),
+                                opacity: 0.4
+                            }
+                        }
+                    }
+                ]
+            };
+
+            var chart = echarts.init(document.getElementById('tourismWeek'));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+
+        }
+
+        function echartsPie(title,id){
+            var option = {
+                title:[
+                    {text:title,
+                        x: '5%',
+                        y: '15px',
+                        textStyle:{
+                            color:"#96CFF4",
+                            fontSize:"14"
+                        }
+                    }
+                ],
+                series: [{
+                    type: 'pie',
+                    radius: ['20%', '40%'],
+                    center: ['50%', '60%'],
+                    roseType: 'radius',
+                    color: ['#6AC8EA', '#5463C2', '#9E5ABF', '#8FDF6C', '#D7CC7C', '#F37B85'],
+                    data: [{
+                        value: 7,
+                        name: '其他'
+                    }, {
+                        value: 4,
+                        name: '自己制作'
+                    }, {
+                        value: 35,
+                        name: '线下购买'
+                    }, {
+                        value: 53,
+                        name: '网上购买'
+                    }],
+                    labelLine: {
+                        normal: {
+                            lineStyle: {
+                                color: '#96CFF4'
+                            },
+                            smooth: 0,
+                            length: 20
+                        }
+                    },
+                    label: {
+                        normal: {
+                            textStyle: {
+                                fontSize: 14,
+                                color:'#96CFF4'
+                            },
+                            formatter: "{b}:{d}%"
+                        }
+                    },
+
+                    animationType: 'scale',
+                    animationEasing: 'elasticOut'
+                }]
+            }
+            var chart = echarts.init(document.getElementById(id));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+        }
+
+        function echartsBar(color,id,title,gridx){
+            var dataAll = [389, 1259, 262, 324, 232, 176];
+            var yAxisData = ['原因1','原因2','原因3','原因4','原因5','原因6'];
+            var option = {
+                title:[
+                    {text:title,
+                        x: '5%',
+                        y: '15px',
+                        textStyle:{
+                            color:"#96CFF4",
+                            fontSize:"14"
+                        }
+                    }
+                ],
+                grid: [
+                    {
+                        x: gridx,
+                        y: '50px',
+                        width: '60%',
+                        height: '70%'
+                    },
+                ],
+                tooltip: {
+                    formatter: '{b}:{c}'
+                },
+                xAxis: [
+                    {gridIndex: 0,
+                        axisTick: {
+                            show:false
+                        },
+                        axisLabel: {
+                            show:false
+                        },
+                        splitLine: {
+                            show:false
+                        },
+                        axisLine: {
+                            show:false
+                        }
+                    },
+                ],
+                yAxis: [
+                    {  gridIndex: 0,
+                        interval:0,
+                        data:yAxisData,
+                        axisTick: {
+                            show:false
+                        },
+                        axisLabel: {
+                            show:true
+                        },
+                        splitLine: {
+                            show:false
+                        },
+                        axisLine: {
+                            show:false,
+                            lineStyle:{
+                                color:"#96CFF4"
+                            }
+                        },
+                    }
+                ],
+                series: [
+                    {
+                        name: title,
+                        type: 'bar',
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        barWidth:'30%',
+                        itemStyle:{normal:{color:color}},
+                        label:{normal:{show:true, position:"right",textStyle:{color:"#96CFF4"}}},
+                        data: dataAll,
+                    }
+                ]
+            };
+            var chart = echarts.init(document.getElementById(id));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+        }
+
+        function tdClick(obj) {
+            var data=obj.textContent;
+            data=data.slice(0,10)
+            $(".zf").each(function () {
+                $(this).text('.');
+            });
+            $("td").removeClass("td-onblur");
+            var wid="#"+obj.id;
+            var sid="#span"+obj.id;
+            $(wid).addClass('td-onblur');
+            $(sid).text('▲');
+        }
+
+        function getNowFormatDate(date) {
+            var seperator1 = "/";
+            var seperator2 = ":";
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var strDate = date.getDate();
+            if (month >= 1 && month <= 9) {
+                month = "0" + month;
+            }
+            if (strDate >= 0 && strDate <= 9) {
+                strDate = "0" + strDate;
+            }
+            /*var currentdate = year + seperator1 + month + seperator1 + strDate
+                    + " " + date.getHours() + seperator2 + date.getMinutes()
+                    + seperator2 + date.getSeconds();*/
+            var currentdate = year + seperator1 + month + seperator1 + strDate
+            return currentdate;
+        }
+    </script>
+</head>
+<body class="tourism-div">
+    <div class="tourism-top" id="tourismTop">
+        <div class="tourism-top-div1" id="topDiv1" onclick="lastWeek()">
+            <&nbsp;上一周
+        </div>
+        <div class="tourism-top-div2" id="tourismData">
+            <table class="div2-table">
+                <tbody>
+                <tr>
+                    <td class="td-onblur" id="td1" onclick="tdClick(this)">
+                        <span>2017/02/09</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd1">▲</span>
+                    </td>
+                    <td id="td2" onclick="tdClick(this)">
+                        <span>2017/02/09</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd2">.</span>
+                    </td>
+                    <td id="td3" onclick="tdClick(this)">
+                        <span>2017/02/09</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd3">.</span>
+                    </td>
+                    <td id="td4" onclick="tdClick(this)">
+                        <span>2017/02/09</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd4">.</span>
+                    </td>
+                    <td id="td5" onclick="tdClick(this)">
+                        <span>2017/02/09</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd5">.</span>
+                    </td>
+                    <td id="td6" onclick="tdClick(this)">
+                        <span>2017/02/09</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd6">.</span>
+                    </td>
+                    <td id="td7" onclick="tdClick(this)">
+                        <span>2017/02/09</span><br/>
+                        <span>●</span><br/>
+                        <span class="zf" id="spantd7">.</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="div2-div"></div>
+        </div>
+        <div class="tourism-top-div3" id="topDiv2" onclick="nextWeek()">下一周&nbsp;></div>
+    </div>
+    <div class="tourism-central">
+        <div class="tourism-central-div1">
+            <div style="width: 100%;height: 100%" id="tourismMap"></div>
+        </div>
+        <div class="tourism-central-div2">
+            <div style="width: 100%;height: 100%" id="tourismCounty"></div>
+        </div>
+        <div class="tourism-central-div3">
+            <div style="width: 100%;height: 100%" id="tourismBusinessTop"></div>
+        </div>
+        <div class="tourism-central-div4">
+            <div style="width: 100%;height: 100%" id="tourismDistrict"></div>
+        </div>
+        <div class="tourism-central-div5">
+            <div style="width: 100%;height: 100%" id="tourismBusiness"></div>
+        </div>
+    </div>
+    <div class="tourism-bottom">
+        <div class="tourism-bottom-div1">
+            <div style="width: 100%;height: 100%" id="tourismWeek"></div>
+        </div>
+        <div class="tourism-bottom-div2">
+            <div style="width: 100%;height: 100%" id="tourismCountyCi"></div>
+        </div>
+        <div class="tourism-bottom-div3">
+            <div style="width: 100%;height: 100%" id="tourismCountyKe"></div>
+        </div>
+    </div>
+</body>
+</html>

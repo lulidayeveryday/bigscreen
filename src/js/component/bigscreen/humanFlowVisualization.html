@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>大数据人流实时可视化</title>
+    <link rel="stylesheet" href="humanFlowVisualization.css" type="text/css" />
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/world2.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var widths=$(window).width();
+            var times=1;
+            if(widths<=1920&&widths>1366){
+                times=1.2
+            }else if(widths>1920){
+                times=2;
+            }else{
+                times=0.9;
+            }
+
+            //热力图
+            hot(times);
+            //省内区县人流
+            var xdata=['原因2','原因3','原因4','原因5','原因6','原因2','原因3','原因4','原因5','原因6'];
+            var ydata=[ 1259, 262, 324, 232, 176, 1259, 262, 324, 232, 176];
+            echartsBar('#2DDAFF',"flowBar",'省内区县人流TOP10(单位/人)','20%',xdata,ydata,times);
+
+
+
+
+
+            //中国柱状图
+            var chinaBarX=['操作系统', '应用服务器', '服务器','数据库','网络设备','安全设备','机柜','其他'];
+            var chinaBarY=[45,42, 40, 35, 34, 32, 30, 29];
+            xieBar('chinaBar','漫出国内地市人流TOP10(单位/千人)',chinaBarX,chinaBarY,times);
+
+
+            //世界柱状图
+            var worldBarX=['操作系统', '应用服务器', '服务器','数据库','网络设备','安全设备','机柜','其他'];
+            var worldBarY=[45,42, 40, 35, 34, 32, 30, 29];
+            xieBar('wordBar','漫出国家和地区人流TOP10(单位/千人)',worldBarX,worldBarY,times);
+
+
+            var a=0;
+
+            var interval=setInterval(function() {
+                var widths=$(window).width();
+                var times=1;
+                if(widths<=1920&&widths>1366){
+                    times=1
+                }else if(widths>1920){
+                    times=2;
+                }else{
+                    times=0.8;
+                }
+
+                if(a%2==0){
+                    rose();
+                    var dataRose='<span class="unBlur-color">热力图</span>/<span class="blur-color">玫瑰图</span>'
+                    document.getElementById("hot1").innerHTML=dataRose;
+                    document.getElementById("hot2").innerHTML=dataRose;
+                    document.getElementById("hot3").innerHTML=dataRose;
+                }else {
+                    hot(times);
+                    var dataRose='<span class="blur-color">热力图</span>/<span class="unBlur-color">玫瑰图</span>'
+                    document.getElementById("hot1").innerHTML=dataRose;
+                    document.getElementById("hot2").innerHTML=dataRose;
+                    document.getElementById("hot3").innerHTML=dataRose;
+                }
+
+                a++;
+            }, 10000);
+        });
+
+        function hot(times) {
+            //浙江地图
+            var zjData=[
+                {
+                    name: '湖州市',
+                    value: 225.3
+                },
+                {
+                    name: '杭州市',
+                    value: 73.8
+                },
+                {
+                    name: '绍兴市',
+                    value: 92.0
+                },
+            ];
+            echartsMap(zjData,times);
+
+            //中国地图
+            var chinaData=[
+                {
+                    name: '山西',
+                    value: 225.3
+                },
+                {
+                    name: '山东',
+                    value: 73.8
+                },
+                {
+                    name: '北京',
+                    value: 92.0
+                },
+            ];
+            chinaMap(chinaData,times);
+
+
+            //世界地图
+            var workdData=[
+                {value:5.38, name:'北美洲'},
+                {value:4.12, name:'南美洲'},
+                {value:12.3, name:'非洲'},
+                {value:1.8, name:'欧洲'},
+                {value:5.06, name:'大洋洲'},
+                {value:6.41, name:'亚洲'}
+            ];
+            worldMap(workdData,times);
+
+        }
+
+        function rose() {
+            //杭州玫瑰
+            var roseData1=[{
+                value: 14.7,
+                name: 'Apple'
+            },
+                {
+                    value: 10.4,
+                    name: 'Huawei'
+                },
+                {
+                    value: 6.3,
+                    name: 'Xiaomi'
+                },
+                {
+                    value: 21,
+                    name: 'Samsung'
+                },
+                {
+                    value: 7.6,
+                    name: 'Oppo'
+                },
+                {
+                    value: 39.4,
+                    name: 'others'
+                }
+            ];
+            rosePie('flowMap',roseData1);
+            //中国玫瑰
+            var roseData2=[{
+                value: 14.7,
+                name: 'Apple'
+            },
+                {
+                    value: 10.4,
+                    name: 'Huawei'
+                },
+                {
+                    value: 6.3,
+                    name: 'Xiaomi'
+                },
+                {
+                    value: 21,
+                    name: 'Samsung'
+                },
+                {
+                    value: 7.6,
+                    name: 'Oppo'
+                },
+                {
+                    value: 39.4,
+                    name: 'others'
+                }
+            ];
+            rosePie('chinaMap',roseData2);
+            //世界玫瑰
+            var roseData3=[{
+                value: 14.7,
+                name: 'Apple'
+            },
+                {
+                    value: 10.4,
+                    name: 'Huawei'
+                },
+                {
+                    value: 6.3,
+                    name: 'Xiaomi'
+                },
+                {
+                    value: 21,
+                    name: 'Samsung'
+                },
+                {
+                    value: 7.6,
+                    name: 'Oppo'
+                },
+                {
+                    value: 39.4,
+                    name: 'others'
+                }
+            ];
+            rosePie('wordMap',roseData3);
+        }
+
+        function rosePie(id,datas) {
+            var option = {
+                tooltip: {
+                    show: true
+                },
+                series: [{
+                    type: 'pie',
+                    radius: ['20%', '70%'],
+                    roseType: 'area',
+                    zlevel: 2,
+                    color:['#3682D0','#3AB6F6','#2DE4FF','#86ECB4','#B6EC86','#ECD65D','#EFBD83','#F1A770','#EA73A0','#D39DE3','#8083E3'],
+                    tooltip: {
+                        formatter: '{b}: {c}({d}%)'
+                    },
+                    label: {
+                        normal:{
+                            show: true,
+                            formatter: '{b}\n{c}',
+
+                            textStyle: {
+                                color: '#fff'
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            lineStyle: {
+                                color: '#fff'
+                            },
+                            smooth: 0.2,
+                            length: 10,
+                            length2: 20
+                        }
+                    },
+                    data: datas
+                }]
+            };
+
+            var myChart = echarts.init(document.getElementById(id));
+            myChart.setOption(option,true);
+
+            $(window).resize(function() {
+                myChart.resize();
+            });
+        }
+        
+        function worldMap(datas,times) {
+            var data=datas;
+
+            var max=datas[0].value;
+            for(var i=1;i<datas.length;i++){
+                if(datas[i].value>max){
+                    max=datas[i].value;
+                }
+            }
+            var option = {
+                tooltip : {
+                    trigger: 'item',
+                    formatter: function (params) {
+                        return '<div style="width: 150px"><p>'+'<span style="color:#6AC9EB;">●</span>'+params.name+'</p>'+
+                                '<span></span>'+params.data.value+'<br/></div>';
+                    },
+                },
+                /*visualMap: {
+                 text:['高','低'],
+                 realtime: false,
+                 calculable: true,
+                 inRange: {
+                 color: ['#4FA9D8','#336DA3','#234883']
+                 },
+                 textStyle : {
+                 color : 'white',
+                 }
+                 },*/
+                visualMap: {
+                    show:true,
+                    type: 'piecewise',
+                    showLabel: false,
+                    seriesIndex: [0],
+                    min: 0,
+                    max: max,
+                    inRange: {
+                        color: ['#22476D', '#336C94', '#2D79A5', '#2079B8', '#0163AF', ]
+                    },
+                    textStyle: {
+                        color: '#2CDAF5',
+                        fontSize:times*10
+                    },
+                    itemWidth: 10,
+                    itemHeight: 10,
+                    bottom: times*10,
+                    left: 10,
+                },
+
+                series : [
+                    {
+                        name: '数据',
+                        type: 'map',
+                        map: 'world', // 自定义扩展图表类型
+                        roam : true,
+                        left:'15%',
+                        itemStyle:{
+                            normal:{
+                                label:{
+                                    show:true,
+                                    textStyle:{
+                                        color:'rgba(0,0,0,0)'
+                                    }
+                                }
+                            },
+                            emphasis:{
+                                label:{show:true,
+                                    textStyle:{
+                                        color:'rgba(0,0,0,0)'
+                                    }},
+                                areaColor: '#75AFD6'
+                            }
+                        },
+                        data:data,
+
+                        // 文本位置修正
+                        textFixed : {
+                            'Yau Tsim Mong' : [-10, 0]
+                        },
+
+                    }
+                ]
+            };
+
+            var myChart = echarts.init(document.getElementById('wordMap'));
+            myChart.setOption(option);
+
+            $(window).resize(function() {
+                myChart.resize();
+            });
+
+
+            /*$.getJSON('./js/world.json', function (data) {
+                echarts.registerMap('world', data);
+
+                var myChart = echarts.init(document.getElementById('wordMap'));
+                myChart.setOption(option);
+
+                $(window).resize(function() {
+                    myChart.resize();
+                });
+            });*/
+        }
+
+        function xieBar(id,title,xdata,ydata,times) {
+            var option = {
+                title:[
+                    {text:title,
+                        x: '5%',
+                        y: '15px',
+                        textStyle:{
+                            color:"#2DE3FE",
+                            fontSize:"14"
+                        }
+                    }
+                ],
+                grid:{
+                    x:30,
+                    x2:10,
+                },
+                tooltip: { //提示框组件
+                    trigger: 'axis',
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        //	boundaryGap: true,//坐标轴两边留白
+                        data: xdata,
+                        axisLabel: { //坐标轴刻度标签的相关设置。
+                            //		interval: 0,//设置为 1，表示『隔一个标签显示一个标签』
+                            //	margin:15,
+                            textStyle: {
+                                color: '#fff',
+                                fontStyle: 'normal',
+                                fontFamily: '微软雅黑',
+                                fontSize: 12*times,
+                            },
+                            rotate:30,
+                            interval: 0
+                        },
+                        axisTick:{//坐标轴刻度相关设置。
+                            show: false,
+                        },
+                        axisLine:{//坐标轴轴线相关设置
+                            show:false,
+                        },
+                        splitLine: { //坐标轴在 grid 区域中的分隔线。
+                            show: false,
+                        }
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        show:false,
+                        splitNumber: 5,
+                        axisLabel: {
+                            textStyle: {
+                                color: '#fff',
+                                fontStyle: 'normal',
+                                fontFamily: '微软雅黑',
+                                fontSize: 12,
+                            }
+                        },
+                        axisLine:{
+                            show: false
+                        },
+                        axisTick:{
+                            show: false
+                        },
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                color: ['#fff'],
+                                opacity:0.06
+                            }
+                        }
+
+                    }
+                ],
+                series : [
+                    {
+                        name:'总数量',
+                        type:'bar',
+                        data:ydata,
+                        barWidth: 10,
+                        barGap:0,//柱间距离
+                        label: {//图形上的文本标签
+                            normal: {
+                                show: true,
+                                position: 'top',
+                                textStyle: {
+                                    color: '#fff',
+                                    fontStyle: 'normal',
+                                    fontFamily: '微软雅黑',
+                                    fontSize: 12,
+                                },
+                            },
+                        },
+                        itemStyle: {
+                            normal: {
+                                show: true,
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 0,
+                                    color: '#2DDAFF'
+                                }, {
+                                    offset: 1,
+                                    color: '#277ECB'
+                                }]),
+                                borderWidth: 0,
+                            }
+                        },
+                    }
+                ]
+            };
+            var chart = echarts.init(document.getElementById(id));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+        }
+        
+        function chinaMap(datas,times) {
+            var data = datas;
+            var max=datas[0].value;
+            for(var i=1;i<datas.length;i++){
+                if(datas[i].value>max){
+                    max=datas[i].value;
+                }
+            }
+            var option = {
+                tooltip : {
+                    trigger: 'item',
+                    formatter: function (params) {
+                        return '<div style="width: 150px"><p>'+'<span style="color:#6AC9EB;">●</span>'+params.name+'</p>'+
+                                '<span></span>'+params.data.value+'<br/></div>';
+                    },
+                },
+                /*visualMap: {
+                 text:['高','低'],
+                 realtime: false,
+                 calculable: true,
+                 inRange: {
+                 color: ['#4FA9D8','#336DA3','#234883']
+                 },
+                 textStyle : {
+                 color : 'white',
+                 }
+                 },*/
+                visualMap: {
+                    show:true,
+                    type: 'piecewise',
+                    showLabel: false,
+                    seriesIndex: [0],
+                    min: 0,
+                    max: max,
+                    inRange: {
+                        color: ['#22476D', '#336C94', '#2D79A5', '#2079B8', '#0163AF', ]
+                    },
+                    textStyle: {
+                        color: '#2CDAF5',
+                        fontSize:times*10
+                    },
+                    left: 10,
+                        itemWidth: 10,
+                        itemHeight: 10,
+                        bottom: times*10,
+                },
+
+                series : [
+                    {
+                        name: '数据',
+                        type: 'map',
+                        map: 'hangzhou', // 自定义扩展图表类型
+                        roam : true,
+                        left: '27%',
+                        itemStyle:{
+                            normal:{
+                                label:{
+                                    show:true,
+                                    textStyle:{
+                                        color:'#fff'
+                                    }
+                                }
+                            },
+                            emphasis:{
+                                label:{show:true,
+                                    textStyle:{
+                                        color:'#fff'
+                                    }},
+                                areaColor: '#75AFD6'
+                            }
+                        },
+                        data:data,
+
+                        // 文本位置修正
+                        textFixed : {
+                            'Yau Tsim Mong' : [-10, 0]
+                        },
+
+                    }
+                ]
+            };
+
+            $.getJSON('./js/china.json', function (data) {
+                echarts.registerMap('hangzhou', data);
+                var myChart = echarts.init(document.getElementById('chinaMap'));
+                myChart.setOption(option);
+
+/*
+                var count = 0;
+                var timeTicket = null;
+                var dataLength = option.series[0].data.length;
+                timeTicket && clearInterval(timeTicket);
+                timeTicket = setInterval(function() {
+                    myChart.dispatchAction({
+                        type: 'downplay',
+                        seriesIndex: 0,
+                    });
+                    myChart.dispatchAction({
+                        type: 'highlight',
+                        seriesIndex: 0,
+                        dataIndex: (count) % dataLength
+                    });
+                    myChart.dispatchAction({
+                        type: 'showTip',
+                        seriesIndex: 0,
+                        dataIndex: (count) % dataLength
+                    });
+                    count++;
+                }, 3000);
+
+                myChart.on('mouseover', function(params) {
+                    clearInterval(timeTicket);
+                    myChart.dispatchAction({
+                        type: 'downplay',
+                        seriesIndex: 0
+                    });
+                    myChart.dispatchAction({
+                        type: 'highlight',
+                        seriesIndex: 0,
+                        dataIndex: params.dataIndex
+                    });
+                    myChart.dispatchAction({
+                        type: 'showTip',
+                        seriesIndex: 0,
+                        dataIndex: params.dataIndex,
+                    });
+                });
+                myChart.on('mouseout', function(params) {
+                    timeTicket && clearInterval(timeTicket);
+                    timeTicket = setInterval(function() {
+                        myChart.dispatchAction({
+                            type: 'downplay',
+                            seriesIndex: 0,
+                        });
+                        myChart.dispatchAction({
+                            type: 'highlight',
+                            seriesIndex: 0,
+                            dataIndex: (count) % dataLength
+                        });
+                        myChart.dispatchAction({
+                            type: 'showTip',
+                            seriesIndex: 0,
+                            dataIndex: (count) % dataLength
+                        });
+                        count++;
+                    }, 3000);
+                });*/
+
+                $(window).resize(function() {
+                    myChart.resize();
+                });
+            });
+        }
+        
+        function echartsBar(color,id,title,gridx,xdata,ydata,times){
+            var dataAll = ydata;
+            var yAxisData = xdata;
+            var option = {
+                title:[
+                    {text:title,
+                        x: '10px',
+                        y: '10px',
+                        textStyle:{
+                            color:"#2DE3FE",
+                            fontSize:15*times
+                        }
+                    }
+                ],
+                grid: [
+                    {
+                        x: gridx,
+                        y: '40px',
+                        width: '60%',
+                        y2:'0px'
+                    },
+                ],
+                tooltip: {
+                    formatter: '{b}:{c}'
+                },
+                xAxis: [
+                    {gridIndex: 0,
+                        axisTick: {
+                            show:false
+                        },
+                        axisLabel: {
+                            show:false,
+                            interval: 0
+                        },
+                        splitLine: {
+                            show:false
+                        },
+                        axisLine: {
+                            show:false
+                        }
+                    },
+                ],
+                yAxis: [
+                    {  gridIndex: 0,
+                        interval:0,
+                        data:yAxisData,
+                        axisTick: {
+                            show:false
+                        },
+                        axisLabel: {
+                            show:true,
+                        interval: 0
+                        },
+                        splitLine: {
+                            show:false
+                        },
+                        axisLine: {
+                            show:false,
+                            lineStyle:{
+                                color:"#fff"
+                            }
+                        },
+                    }
+                ],
+                series: [
+                    {
+                        name: title,
+                        type: 'bar',
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        barWidth:'30%',
+                        itemStyle:{normal:{
+                            fontSize:times*10,
+                            color:new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                                    offset: 0,
+                                    color: '#2DDBFF'
+                                }, {
+                                    offset: 1,
+                                    color: '#2D9BFF'
+                                }]),}},
+                        label:{normal:{show:true, position:"right",textStyle:{color:"#fff"}}},
+                        data: dataAll,
+                    }
+                ]
+            };
+            var chart = echarts.init(document.getElementById(id));
+            chart.setOption(option);
+            $(window).resize(function() {
+                chart.resize();
+            });
+        }
+
+
+        function echartsMap(datas,times) {
+            var data = datas;
+            var max=datas[0].value;
+            for(var i=1;i<datas.length;i++){
+                if(datas[i].value>max){
+                    max=datas[i].value;
+                }
+            }
+            var option = {
+                tooltip : {
+                    trigger: 'item',
+                    formatter: function (params) {
+                        return '<div style="width: 150px"><p>'+'<span style="color:#6AC9EB;">●</span>'+params.name+'</p>'+
+                                '<span></span>'+params.data.value+'<br/></div>';
+                    },
+                },
+                /*visualMap: {
+                 text:['高','低'],
+                 realtime: false,
+                 calculable: true,
+                 inRange: {
+                 color: ['#4FA9D8','#336DA3','#234883']
+                 },
+                 textStyle : {
+                 color : 'white',
+                 }
+                 },*/
+                visualMap: {
+                    show:true,
+                    type: 'piecewise',
+                    showLabel: false,
+                    seriesIndex: [0],
+                    min: 0,
+                    max: max,
+                    inRange: {
+                        color: ['#22476D', '#336C94', '#2D79A5', '#2079B8', '#0163AF', ]
+                    },
+                    textStyle: {
+                        color: '#2CDAF5',
+                        fontSize:times*10
+                    },
+                    itemWidth: 10,
+                    itemHeight: 10,
+                    bottom: times*10,
+                    left: 10,
+                },
+
+                series : [
+                    {
+                        name: '数据',
+                        type: 'map',
+                        map: 'hangzhou', // 自定义扩展图表类型
+                        roam : true,
+                        left: '40%',
+                        itemStyle:{
+                            normal:{
+                                label:{
+                                    show:true,
+                                    textStyle:{
+                                        color:'#fff',
+                                        fontSize:times*10,
+                                    }
+                                }
+                            },
+                            emphasis:{
+                                label:{show:true,
+                                    textStyle:{
+                                        color:'#fff',
+                                        fontSize:times*16,
+                                    }},
+                                areaColor: '#75AFD6'
+                            }
+                        },
+                        data:data,
+
+                        // 文本位置修正
+                        textFixed : {
+                            'Yau Tsim Mong' : [-10, 0]
+                        },
+
+                    }
+                ]
+            };
+
+
+
+
+
+
+            $.getJSON('./js/036.json', function (data) {
+                echarts.registerMap('hangzhou', data);
+                var myChart = echarts.init(document.getElementById('flowMap'));
+                myChart.setOption(option);
+
+
+              /*  var count = 0;
+                var timeTicket = null;
+                var dataLength = option.series[0].data.length;
+                timeTicket && clearInterval(timeTicket);
+                timeTicket = setInterval(function() {
+                    myChart.dispatchAction({
+                        type: 'downplay',
+                        seriesIndex: 0,
+                    });
+                    myChart.dispatchAction({
+                        type: 'highlight',
+                        seriesIndex: 0,
+                        dataIndex: (count) % dataLength
+                    });
+                    myChart.dispatchAction({
+                        type: 'showTip',
+                        seriesIndex: 0,
+                        dataIndex: (count) % dataLength
+                    });
+                    count++;
+                }, 3000);
+
+                myChart.on('mouseover', function(params) {
+                    clearInterval(timeTicket);
+                    myChart.dispatchAction({
+                        type: 'downplay',
+                        seriesIndex: 0
+                    });
+                    myChart.dispatchAction({
+                        type: 'highlight',
+                        seriesIndex: 0,
+                        dataIndex: params.dataIndex
+                    });
+                    myChart.dispatchAction({
+                        type: 'showTip',
+                        seriesIndex: 0,
+                        dataIndex: params.dataIndex,
+                    });
+                });
+                myChart.on('mouseout', function(params) {
+                    timeTicket && clearInterval(timeTicket);
+                    timeTicket = setInterval(function() {
+                        myChart.dispatchAction({
+                            type: 'downplay',
+                            seriesIndex: 0,
+                        });
+                        myChart.dispatchAction({
+                            type: 'highlight',
+                            seriesIndex: 0,
+                            dataIndex: (count) % dataLength
+                        });
+                        myChart.dispatchAction({
+                            type: 'showTip',
+                            seriesIndex: 0,
+                            dataIndex: (count) % dataLength
+                        });
+                        count++;
+                    }, 3000);
+                });*/
+
+                $(window).resize(function() {
+                    myChart.resize();
+                });
+            });
+        }
+    </script>
+</head>
+<body class="human-flow-visual">
+    <div class="human-left">
+        <div class="human-div-top">
+            <span class="human-left-top-left">省内地市人流</span>
+            <span class="human-point">--------</span>
+            <span class="human-left-top-right" id="hot1">
+                <span class="blur-color">热力图</span>/<span class="unBlur-color">玫瑰图</span>
+            </span>
+        </div>
+        <div class="human-left-div1">
+            <span class="human-div1-span1">
+                <div style="height: 30%"></div>
+                <img src="./images/barbg.png" class="flow-img"/>
+            </span>
+            <span class="human-div1-span2">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td class="human-sn-flow" valign="bottom">省内总人流量</td>
+                    </tr>
+                    <tr>
+                        <td class="human-sn-num" valign="top">86,369,458</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </span>
+        </div>
+        <div class="human-left-div2">
+            <div style="height: 100%;width: 100%" id="flowMap"></div>
+        </div>
+        <div class="human-left-div3">
+            <div style="height: 100%;width: 100%" id="flowBar"></div>
+        </div>
+    </div>
+    <div class="human-right">
+        <div class="human-right-div">
+            <div class="human-div-top">
+                <span class="human-left-top-left">省内省份人流</span>
+                <span class="human-point">----------------------------------------</span>
+                <span class="human-left-top-right" id="hot2">
+                    <span class="blur-color">热力图</span>/<span class="unBlur-color">玫瑰图</span>
+                </span>
+            </div>
+            <div class="human-right-content">
+                <div class="content-left" id="chinaMap"></div>
+                <div class="content-right">
+                    <div style="height: 28%;border-bottom: dashed 1px #aaa">
+                        <span class="human-div1-span1">
+                            <div style="height: 30%"></div>
+                            <img src="./images/barbg.png" class="flow-img"/>
+                        </span>
+                                    <span class="human-div1-span2">
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="human-sn-flow" valign="bottom">省内总人流量</td>
+                                </tr>
+                                <tr>
+                                    <td class="human-sn-num" valign="top">86,369,458</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </span>
+                    </div>
+                    <div style="height: 72%" id="chinaBar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="human-right-div">
+            <div class="human-div-top">
+                <span class="human-left-top-left">省内大洲人流</span>
+                <span class="human-point">----------------------------------------</span>
+                <span class="human-left-top-right" id="hot3">
+                    <span class="blur-color">热力图</span>/<span class="unBlur-color">玫瑰图</span>
+                </span>
+            </div>
+            <div class="human-right-content1">
+                <div class="content-left" id="wordMap"></div>
+                <div class="content-right">
+                    <div style="height: 28%;border-bottom: dashed 1px #aaa">
+                        <span class="human-div1-span1">
+                            <div style="height: 30%"></div>
+                            <img src="./images/barbg.png" class="flow-img"/>
+                        </span>
+                        <span class="human-div1-span2">
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="human-sn-flow" valign="bottom">省内总人流量</td>
+                                </tr>
+                                <tr>
+                                    <td class="human-sn-num" valign="top">86,369,458</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </span>
+                    </div>
+                    <div style="height: 72%" id="wordBar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

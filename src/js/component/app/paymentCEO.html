@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>薪酬CEO</title>
+    <link href="./payment.css" type="text/css" rel="stylesheet"/>
+    <script src="../jiaxing/js/jquery-3.3.1.min.js"></script>
+    <script src="./echarts.min.js"></script>
+    <script src="./payment.js"></script>
+</head>
+<body>
+<div>
+    <div class="payment-pie">
+        <div class="payment-pie-title">
+            <span>总薪酬</span>
+            <span style="float: right;color: #888;font-size: 14px;font-weight: 500;padding-top: 4px;">单位：元</span>
+        </div>
+        <div class="payment-pie-content">
+            <div class="content1" id="paymentPie"></div>
+            <div class="content2">
+                <table style="width: 100%;height: 80%;font-size: 13px;vertical-align: middle;margin-top: 16px;">
+                    <tr>
+                        <td><span style="color: #86D560;margin-right: 8px;margin-left: 15px;">█</span>固薪</td>
+                        <td style="text-align: right;">123.0</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: #AF89D6;margin-right: 8px;margin-left: 15px;">█</span>考核变薪</td>
+                        <td style="text-align: right;"><span style="color: #FA7867">653.00</span><span style="color: #555"> ></span></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: #59ADF3;margin-right: 8px;margin-left: 15px;">█</span>积分变薪</td>
+                        <td style="text-align: right;">987.0</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: #FF999A;margin-right: 8px;margin-left: 15px;">█</span>增量分享</td>
+                        <td style="text-align: right;"><span style="color: #FA7867">1963.00</span><span style="color: #555"> ></span></td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: #FFCC67;margin-right: 8px;margin-left: 15px;">█</span>负面扣罚</td>
+                        <td style="text-align: right;"><span style="color: #FA7867">2978.00</span><span style="color: #555"> ></span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

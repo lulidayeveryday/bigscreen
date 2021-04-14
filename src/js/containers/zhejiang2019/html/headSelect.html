@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/headSelect.css" type="text/css">
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+    <link rel="stylesheet" href="../dist/My97DatePicker/skin/WdatePicker.css" />
+</head>
+<body>
+<div class="headSelect-div">
+    <div class="headSelect-div-li notHide">
+        <img class="headSelect-div-img notHide" src="../img/headSelect/time.png" onclick="WdatePicker({el:'d12',onpicked:pickedFunc})">
+
+        <div class="dayDatePickDemo notHide" id="dayDatePickDemo">
+            <input id="d12" class="notHide" type="hidden" value="2019-03-09"/>
+        </div>
+    </div>
+    <div class="headSelect-div-li">
+        <img class="headSelect-div-img locPick" src="../img/headSelect/area.png">
+    </div>
+    <div class="headSelect-div-li" onmouseover="$('.headSelect-div-legend').css('display','block')" onmouseleave="$('.headSelect-div-legend').css('display','none')">
+        <img class="headSelect-div-img" src="../img/headSelect/legend.png">
+        <div class="headSelect-div-legend">
+            <span class="headSelect-div-legend-span">
+                <img src="../img/headSelect/legend1.png" class="headSelect-div-legend-span-img"><br>
+                古镇风情
+            </span>
+            <span class="headSelect-div-legend-span">
+                <img src="../img/headSelect/legend2.png" class="headSelect-div-legend-span-img"><br>
+                购物天堂
+            </span>
+            <span class="headSelect-div-legend-span">
+                <img src="../img/headSelect/legend3.png" class="headSelect-div-legend-span-img"><br>
+                革命纪念
+            </span>
+            <span class="headSelect-div-legend-span">
+                <img src="../img/headSelect/legend4.png" class="headSelect-div-legend-span-img"><br>
+                自然风光
+            </span>
+            <span class="headSelect-div-legend-span">
+                <img src="../img/headSelect/legend5.png" class="headSelect-div-legend-span-img"><br>
+                历史遗迹
+            </span>
+            <span class="headSelect-div-legend-span">
+                <img src="../img/headSelect/legend6.png" class="headSelect-div-legend-span-img"><br>
+                休闲度假
+            </span>
+            <span class="headSelect-div-legend-span">
+                <img src="../img/headSelect/legend7.png" class="headSelect-div-legend-span-img"><br>
+                文化特色
+            </span>
+            <span class="headSelect-div-legend-span">
+                <img src="../img/headSelect/legend8.png" class="headSelect-div-legend-span-img"><br>
+                主题公园
+            </span>
+            <span class="headSelect-div-legend-span">
+                <img src="../img/headSelect/legend9.png" class="headSelect-div-legend-span-img"><br>
+                其他
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="rangeMask">
+    <div class="rangeContainer" id="rangeContainer">
+        <p>地域范围 <img class="closeMask" src="../img/headSelect/closeIcon.png"/></p>
+        <div class="maskContent">
+
+            <p class="btnP">
+                    <span>
+                        全选
+                    </span>
+                <span>
+                        反选
+                    </span>
+                <span>
+                        清空
+                    </span>
+            </p>
+            <div class="contentDiv">
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+        <div style="height: 0;">
+            <span class="inquireBtn">
+                查询
+            </span>
+        </div>
+    </div>
+</div>
+<!--<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>-->
+<script type="text/javascript" src="../js/base/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/base/echarts.min.js"></script>
+<script type="text/javascript" src="../js/headSelect.js"></script>
+<script type="text/javascript" src="../dist/My97DatePicker/WdatePicker.js"></script>
+</body>
+</html>
