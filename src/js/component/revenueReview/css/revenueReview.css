@@ -119,6 +119,21 @@ body{
     text-decoration: underline;
 }
 
+.revenueReview-div-title-table2{
+    width: 17rem;
+    height: 3rem;
+    right: 55rem;
+    font-size: 1.6rem;
+    position: absolute;
+    line-height: 3rem;
+    top: 1.5rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    text-align: center;
+    color: #308efc;
+    text-decoration: underline;
+}
+
 .revenueReview-div-content-title{
     height: 4rem;
     position: relative;

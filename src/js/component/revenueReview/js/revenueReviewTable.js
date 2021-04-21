@@ -1,5 +1,10 @@
 $(function () {
-    var month = sessionStorage.getItem('revenueMonth');
+    var type = sessionStorage.getItem('revenueType');
+    if(type === 'quiet'){
+        var month = sessionStorage.getItem('revenueMonth');
+    }else if(type === 'dynamic'){
+        var month = sessionStorage.getItem('revenueTwoMonth');
+    }
     remMonth = month;
     var list = AjaxJson({month:month})
     /*var list = {

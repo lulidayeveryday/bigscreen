@@ -36,7 +36,7 @@ body{
     overflow-y: auto;
 }
 
-.uploadDiv{
+.uploadDiv,.uploadDiv2{
     width: 70rem;
     padding: 2rem;
     background-color: white;
@@ -51,4 +51,14 @@ body{
 
 .el-textarea{
     vertical-align: top;
+}
+
+.addDiv{
+    width: 6rem;
+    height: 6rem;
+    display: inline-block;
+    background: url("../images/add.png") no-repeat;
+    background-size: 100% 100%;
+    margin: 1rem auto;
+    cursor: pointer;
 }

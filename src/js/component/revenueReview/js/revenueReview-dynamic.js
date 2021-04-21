@@ -1,5 +1,5 @@
 $(function () {
-    window.alert = function(msg, callback) {
+    window.alert = function (msg, callback) {
         var div = document.createElement("div");
         div.innerHTML = "<style type=\"text/css\">"
             + ".nbaMask { position: fixed; z-index: 1000; top: 0; right: 0; left: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); }                                                                                                                                                                       "
@@ -40,273 +40,369 @@ $(function () {
         // dialogs2.style.display = 'none';
         // };
         var dialog_ok2 = document.getElementById("dialog_ok2");
-        dialog_ok2.onclick = function() {
+        dialog_ok2.onclick = function () {
             dialogs2.style.display = 'none';
             callback();
         };
     };
     // 仪表盘以及表格数据
-    var dates = $('#test8').val();
-    var start = dates.substring(0,7)
-    var end = dates.substring(dates.length-7,dates.length)
-    var topData = AjaxJson('getReviewData',{startTime:start,endTime:end});
-    // var topData={"zbData":[{"QW_USER_NUM1":3.75,"QW_ACCT_FEE3":96.68,"QW_USER_NUM2":3.0300000000000002,"QW_ACCT_FEE1":3.32,"QW_USER_NUM3":93.22,"QW_ACCT_FEE2":0}],"dataList":[{"ACCT_FEE":355660469.3,"USER_NUM":8398181,"ACCT_FEE_TB":0,"USER_NUM_TB":0.0,"LABEL":"移网全网","ACCT_FEE_HB":2.05,"USER_IF_ACCT":"00","USER_NUM_HB":-0.45999999999999996},{"ACCT_FEE":11820653.66,"USER_NUM":315253,"ACCT_FEE_TB":0,"USER_NUM_TB":0.0,"LABEL":"新增","ACCT_FEE_HB":0,"USER_IF_ACCT":"1","USER_NUM_HB":16.03},{"ACCT_FEE":0,"USER_NUM":254131,"ACCT_FEE_TB":0,"USER_NUM_TB":0.0,"LABEL":"流失","ACCT_FEE_HB":-100,"USER_IF_ACCT":"2","USER_NUM_HB":-9.35},{"ACCT_FEE":343839815.64,"USER_NUM":7828797,"ACCT_FEE_TB":0,"USER_NUM_TB":0.0,"LABEL":"保有","ACCT_FEE_HB":1.64,"USER_IF_ACCT":"3","USER_NUM_HB":-0.7100000000000001}],"pg":"202101","pz":"202101"};
+    /*var remDates = AjaxJson('getAcctData',{})
+    remDate = remDates.acctdate;
+    var topData = AjaxJson('getReviewData',{date:remDate});*/
+    /*假数据*/
+    remDate = {"pg": "2021-04","pz": "2021-01"};
+    var topData = {
+        "zbData": [{
+            "QW_USER_NUM1": 3.75,
+            "QW_ACCT_FEE3": 96.68,
+            "QW_USER_NUM2": 3.0300000000000002,
+            "QW_ACCT_FEE1": 3.32,
+            "QW_USER_NUM3": 93.22,
+            "QW_ACCT_FEE2": 0
+        }],
+        "dataList": [{
+            "ACCT_FEE": 355660469.3,
+            "USER_NUM": 8398181,
+            "ACCT_FEE_TB": 0,
+            "USER_NUM_TB": 0.0,
+            "LABEL": "移网全网",
+            "ACCT_FEE_HB": 2.05,
+            "USER_IF_ACCT": "00",
+            "USER_NUM_HB": -0.45999999999999996
+        }, {
+            "ACCT_FEE": 11820653.66,
+            "USER_NUM": 315253,
+            "ACCT_FEE_TB": 0,
+            "USER_NUM_TB": 0.0,
+            "LABEL": "新增",
+            "ACCT_FEE_HB": 0,
+            "USER_IF_ACCT": "1",
+            "USER_NUM_HB": 16.03
+        }, {
+            "ACCT_FEE": 0,
+            "USER_NUM": 254131,
+            "ACCT_FEE_TB": 0,
+            "USER_NUM_TB": 0.0,
+            "LABEL": "流失",
+            "ACCT_FEE_HB": -100,
+            "USER_IF_ACCT": "2",
+            "USER_NUM_HB": -9.35
+        }, {
+            "ACCT_FEE": 343839815.64,
+            "USER_NUM": 7828797,
+            "ACCT_FEE_TB": 0,
+            "USER_NUM_TB": 0.0,
+            "LABEL": "保有",
+            "ACCT_FEE_HB": 1.64,
+            "USER_IF_ACCT": "3",
+            "USER_NUM_HB": -0.7100000000000001
+        }],
+        "pg": "2021-04",
+        "pz": "2021-01"
+    };
+
     remTopData = topData.dataList;
     remybData = topData.zbData[0];
+    var monthStart = topData.pz;
+    var monthEnd = topData.pg;
+    layui.use('laydate', function () {
+        var laydate = layui.laydate;
 
-    interfaceService(0,topData.zbData[0]);
-    //树图
-    revenueTree();
-    // 指标分析tab
-    var middleTab = AjaxJson('getDimensionIndexData',{});
-    /*var middleTab = {
-        "dimensionList":[
-            {
-                "FILE_DESC":"地市名称",
-                "FILE_NAME":"AREA_DESC"
-            },
-            {
-                "FILE_DESC":"区县名称",
-                "FILE_NAME":"CITY_DESC"
-            },
-            {
-                "FILE_DESC":"电话号码",
-                "FILE_NAME":"DEVICE_NUMBER"
-            },
-            {
-                "FILE_DESC":"服务状态",
-                "FILE_NAME":"USER_STATUS"
-            },
-            {
-                "FILE_DESC":"产品名称",
-                "FILE_NAME":"PRODUCT_NAME"
-            },
-            {
-                "FILE_DESC":"上月产品名称",
-                "FILE_NAME":"LAST_PRODUCT_NAME"
-            },
-            {
-                "FILE_DESC":"是否参与出帐",
-                "FILE_NAME":"IS_ACCT"
-            },
-            {
-                "FILE_DESC":"发展人名称",
-                "FILE_NAME":"DEVELOPER_NAME"
-            },
-            {
-                "FILE_DESC":"发展渠道名称",
-                "FILE_NAME":"CHANNEL_NAME"
-            },
-            {
-                "FILE_DESC":"七大渠道名称",
-                "FILE_NAME":"CHANNEL_TYPE_7_DESC"
-            },
-            {
-                "FILE_DESC":"业务类型名称",
-                "FILE_NAME":"SERVICE_TYPE_DESC"
-            },
-            {
-                "FILE_DESC":"是否2IC2",
-                "FILE_NAME":"IS_2I2C"
-            },
-            {
-                "FILE_DESC":"是否冰激凌",
-                "FILE_NAME":"IS_ICE"
-            },
-            {
-                "FILE_DESC":"是否上月出账本月不出账",
-                "FILE_NAME":"IF_ACCT_MONTH"
-            },
-            {
-                "FILE_DESC":"是否亲情号",
-                "FILE_NAME":"IS_FAMILY"
+
+        //年月范围
+        var myDate = new Date();
+        var tYear = myDate.getFullYear();
+        var tMonth = myDate.getMonth();
+        var year = tYear;
+        var month = tMonth;
+        if (tMonth == 0) {
+            year = tYear - 1;
+            month = 12;
+        }
+
+        var m = tMonth + 1;
+        if (m.toString().length == 1) {
+            m = "0" + m;
+        }
+        if (month.toString().length == 1) {
+            month = "0" + month;
+        }
+
+
+        laydate.render({
+            elem: '#test8'
+            , value: monthStart + ' - ' + monthEnd
+            , type: 'month'
+            , btns: ['confirm']
+            , range: true
+        });
+
+        interfaceService(0, topData.zbData[0]);
+        //树图
+        revenueTree();
+        // 指标分析tab
+        var middleTab = AjaxJson('getDimensionIndexData', {});
+        /*var middleTab = {
+            "dimensionList":[
+                {
+                    "FILE_DESC":"地市名称",
+                    "FILE_NAME":"AREA_DESC"
+                },
+                {
+                    "FILE_DESC":"区县名称",
+                    "FILE_NAME":"CITY_DESC"
+                },
+                {
+                    "FILE_DESC":"电话号码",
+                    "FILE_NAME":"DEVICE_NUMBER"
+                },
+                {
+                    "FILE_DESC":"服务状态",
+                    "FILE_NAME":"USER_STATUS"
+                },
+                {
+                    "FILE_DESC":"产品名称",
+                    "FILE_NAME":"PRODUCT_NAME"
+                },
+                {
+                    "FILE_DESC":"上月产品名称",
+                    "FILE_NAME":"LAST_PRODUCT_NAME"
+                },
+                {
+                    "FILE_DESC":"是否参与出帐",
+                    "FILE_NAME":"IS_ACCT"
+                },
+                {
+                    "FILE_DESC":"发展人名称",
+                    "FILE_NAME":"DEVELOPER_NAME"
+                },
+                {
+                    "FILE_DESC":"发展渠道名称",
+                    "FILE_NAME":"CHANNEL_NAME"
+                },
+                {
+                    "FILE_DESC":"七大渠道名称",
+                    "FILE_NAME":"CHANNEL_TYPE_7_DESC"
+                },
+                {
+                    "FILE_DESC":"业务类型名称",
+                    "FILE_NAME":"SERVICE_TYPE_DESC"
+                },
+                {
+                    "FILE_DESC":"是否2IC2",
+                    "FILE_NAME":"IS_2I2C"
+                },
+                {
+                    "FILE_DESC":"是否冰激凌",
+                    "FILE_NAME":"IS_ICE"
+                },
+                {
+                    "FILE_DESC":"是否上月出账本月不出账",
+                    "FILE_NAME":"IF_ACCT_MONTH"
+                },
+                {
+                    "FILE_DESC":"是否亲情号",
+                    "FILE_NAME":"IS_FAMILY"
+                }
+            ],
+            "indexList":[
+                {
+                    "FILE_DESC":"是否在网",
+                    "FILE_NAME":"IS_INNET"
+                },
+                {
+                    "FILE_DESC":"是否统计用户",
+                    "FILE_NAME":"IS_STAT"
+                },
+                {
+                    "FILE_DESC":"是否新增",
+                    "FILE_NAME":"IS_ADD"
+                },
+                {
+                    "FILE_DESC":"是否本期新发展",
+                    "FILE_NAME":"IS_THIS_DEV"
+                },
+                {
+                    "FILE_DESC":"是否流失",
+                    "FILE_NAME":"IS_LOST"
+                },
+                {
+                    "FILE_DESC":"是否本期离网",
+                    "FILE_NAME":"IS_THIS_BREAK"
+                },
+                {
+                    "FILE_DESC":"总通话时长(秒)",
+                    "FILE_NAME":"TOTAL_DURA"
+                },
+                {
+                    "FILE_DESC":"总通话次数",
+                    "FILE_NAME":"TOTAL_NUMS"
+                },
+                {
+                    "FILE_DESC":"总短信条数",
+                    "FILE_NAME":"TOTAL_SMS_NUM"
+                },
+                {
+                    "FILE_DESC":"点对点短信条数",
+                    "FILE_NAME":"PTP_SMS_NUM"
+                },
+                {
+                    "FILE_DESC":"总流量(M)",
+                    "FILE_NAME":"TOTAL_FLUX"
+                },
+                {
+                    "FILE_DESC":"计费时长",
+                    "FILE_NAME":"JF_TIMES"
+                },
+                {
+                    "FILE_DESC":"出帐费用",
+                    "FILE_NAME":"ACCT_FEE"
+                },
+                {
+                    "FILE_DESC":"上月出帐费用",
+                    "FILE_NAME":"LAST_ACCT_FEE"
+                },
+                {
+                    "FILE_DESC":"月租费",
+                    "FILE_NAME":"RENT_FEE"
+                },
+                {
+                    "FILE_DESC":"上月月租费",
+                    "FILE_NAME":"LAST_RENT_FEE"
+                },
+                {
+                    "FILE_DESC":"通话费",
+                    "FILE_NAME":"CALL_FEE"
+                },
+                {
+                    "FILE_DESC":"上月通话费",
+                    "FILE_NAME":"LAST_CALL_FEE"
+                },
+                {
+                    "FILE_DESC":"短信费",
+                    "FILE_NAME":"SMS_FEE"
+                },
+                {
+                    "FILE_DESC":"上月短信费",
+                    "FILE_NAME":"LAST_SMS_FEE"
+                },
+                {
+                    "FILE_DESC":"流量费",
+                    "FILE_NAME":"GP_FEE"
+                },
+                {
+                    "FILE_DESC":"上月流量费",
+                    "FILE_NAME":"LAST_GP_FEE"
+                },
+                {
+                    "FILE_DESC":"赠费销账",
+                    "FILE_NAME":"ZFXZ_FEE"
+                },
+                {
+                    "FILE_DESC":"上月赠费销账",
+                    "FILE_NAME":"LAST_ZFXZ_FEE"
+                },
+                {
+                    "FILE_DESC":"用户欠费金额",
+                    "FILE_NAME":"OWE_FEE"
+                },
+                {
+                    "FILE_DESC":"上月用户欠费金额",
+                    "FILE_NAME":"LAST_OWE_FEE"
+                },
+                {
+                    "FILE_DESC":"是否三无",
+                    "FILE_NAME":"IF_3WU"
+                },
+                {
+                    "FILE_DESC":"是否极低用户",
+                    "FILE_NAME":"IS_LOWER_USER"
+                },
+                {
+                    "FILE_DESC":"是否不计收",
+                    "FILE_NAME":"IS_NOFEE"
+                },
+                {
+                    "FILE_DESC":"当月不计收金额",
+                    "FILE_NAME":"NO_FEE"
+                },
+                {
+                    "FILE_DESC":"当月现金流累计缴费金额",
+                    "FILE_NAME":"RECV_FEE"
+                },
+                {
+                    "FILE_DESC":"现金流账本余额",
+                    "FILE_NAME":"DEPOSIT_MONEY"
+                },
+                {
+                    "FILE_DESC":"叠加套餐包费",
+                    "FILE_NAME":"BILL_DJB_FEE"
+                },
+                {
+                    "FILE_DESC":"流量包月租费",
+                    "FILE_NAME":"BILL_GP_RENT_FEE"
+                },
+                {
+                    "FILE_DESC":"语音叠加包月套餐费",
+                    "FILE_NAME":"BILL_CALL_RENT_FEE"
+                },
+                {
+                    "FILE_DESC":"基本月租费",
+                    "FILE_NAME":"BILL_BASE_RENT_FEE"
+                },
+                {
+                    "FILE_DESC":"增值业务",
+                    "FILE_NAME":"BILL_INC_FEE"
+                },
+                {
+                    "FILE_DESC":"手机上网流量费",
+                    "FILE_NAME":"BILL_WAP_FEE"
+                }
+            ]
+        }*/
+        var Wd = middleTab.dimensionList;
+        var Zb = middleTab.indexList;
+        var wdList = [];
+        var zbList = [];
+        for (var i = 0; i < Wd.length; i++) {
+            var arr = {};
+            arr.name = Wd[i].FILE_DESC;
+            arr.id = 'Wd' + i;
+            if (i === 0) {
+                arr.select = true;
+            } else {
+                arr.select = false;
             }
-        ],
-        "indexList":[
-            {
-                "FILE_DESC":"是否在网",
-                "FILE_NAME":"IS_INNET"
-            },
-            {
-                "FILE_DESC":"是否统计用户",
-                "FILE_NAME":"IS_STAT"
-            },
-            {
-                "FILE_DESC":"是否新增",
-                "FILE_NAME":"IS_ADD"
-            },
-            {
-                "FILE_DESC":"是否本期新发展",
-                "FILE_NAME":"IS_THIS_DEV"
-            },
-            {
-                "FILE_DESC":"是否流失",
-                "FILE_NAME":"IS_LOST"
-            },
-            {
-                "FILE_DESC":"是否本期离网",
-                "FILE_NAME":"IS_THIS_BREAK"
-            },
-            {
-                "FILE_DESC":"总通话时长(秒)",
-                "FILE_NAME":"TOTAL_DURA"
-            },
-            {
-                "FILE_DESC":"总通话次数",
-                "FILE_NAME":"TOTAL_NUMS"
-            },
-            {
-                "FILE_DESC":"总短信条数",
-                "FILE_NAME":"TOTAL_SMS_NUM"
-            },
-            {
-                "FILE_DESC":"点对点短信条数",
-                "FILE_NAME":"PTP_SMS_NUM"
-            },
-            {
-                "FILE_DESC":"总流量(M)",
-                "FILE_NAME":"TOTAL_FLUX"
-            },
-            {
-                "FILE_DESC":"计费时长",
-                "FILE_NAME":"JF_TIMES"
-            },
-            {
-                "FILE_DESC":"出帐费用",
-                "FILE_NAME":"ACCT_FEE"
-            },
-            {
-                "FILE_DESC":"上月出帐费用",
-                "FILE_NAME":"LAST_ACCT_FEE"
-            },
-            {
-                "FILE_DESC":"月租费",
-                "FILE_NAME":"RENT_FEE"
-            },
-            {
-                "FILE_DESC":"上月月租费",
-                "FILE_NAME":"LAST_RENT_FEE"
-            },
-            {
-                "FILE_DESC":"通话费",
-                "FILE_NAME":"CALL_FEE"
-            },
-            {
-                "FILE_DESC":"上月通话费",
-                "FILE_NAME":"LAST_CALL_FEE"
-            },
-            {
-                "FILE_DESC":"短信费",
-                "FILE_NAME":"SMS_FEE"
-            },
-            {
-                "FILE_DESC":"上月短信费",
-                "FILE_NAME":"LAST_SMS_FEE"
-            },
-            {
-                "FILE_DESC":"流量费",
-                "FILE_NAME":"GP_FEE"
-            },
-            {
-                "FILE_DESC":"上月流量费",
-                "FILE_NAME":"LAST_GP_FEE"
-            },
-            {
-                "FILE_DESC":"赠费销账",
-                "FILE_NAME":"ZFXZ_FEE"
-            },
-            {
-                "FILE_DESC":"上月赠费销账",
-                "FILE_NAME":"LAST_ZFXZ_FEE"
-            },
-            {
-                "FILE_DESC":"用户欠费金额",
-                "FILE_NAME":"OWE_FEE"
-            },
-            {
-                "FILE_DESC":"上月用户欠费金额",
-                "FILE_NAME":"LAST_OWE_FEE"
-            },
-            {
-                "FILE_DESC":"是否三无",
-                "FILE_NAME":"IF_3WU"
-            },
-            {
-                "FILE_DESC":"是否极低用户",
-                "FILE_NAME":"IS_LOWER_USER"
-            },
-            {
-                "FILE_DESC":"是否不计收",
-                "FILE_NAME":"IS_NOFEE"
-            },
-            {
-                "FILE_DESC":"当月不计收金额",
-                "FILE_NAME":"NO_FEE"
-            },
-            {
-                "FILE_DESC":"当月现金流累计缴费金额",
-                "FILE_NAME":"RECV_FEE"
-            },
-            {
-                "FILE_DESC":"现金流账本余额",
-                "FILE_NAME":"DEPOSIT_MONEY"
-            },
-            {
-                "FILE_DESC":"叠加套餐包费",
-                "FILE_NAME":"BILL_DJB_FEE"
-            },
-            {
-                "FILE_DESC":"流量包月租费",
-                "FILE_NAME":"BILL_GP_RENT_FEE"
-            },
-            {
-                "FILE_DESC":"语音叠加包月套餐费",
-                "FILE_NAME":"BILL_CALL_RENT_FEE"
-            },
-            {
-                "FILE_DESC":"基本月租费",
-                "FILE_NAME":"BILL_BASE_RENT_FEE"
-            },
-            {
-                "FILE_DESC":"增值业务",
-                "FILE_NAME":"BILL_INC_FEE"
-            },
-            {
-                "FILE_DESC":"手机上网流量费",
-                "FILE_NAME":"BILL_WAP_FEE"
+            arr.field = Wd[i].FILE_NAME;
+            arr.combination = {drog1Html: '', drog1Value: '', drog2Html: '', drog2Value: '', input: ''};
+            wdList.push(arr);
+        }
+        for (var m = 0; m < Zb.length; m++) {
+            var arr = {};
+            arr.name = Zb[m].FILE_DESC;
+            arr.id = 'Zb' + m;
+            if (m === 0) {
+                arr.select = true;
+            } else {
+                arr.select = false;
             }
-        ]
-    }*/
-    var Wd = middleTab.dimensionList;
-    var Zb = middleTab.indexList;
-    var wdList = [];
-    var zbList = [];
-    for (var i = 0;i<Wd.length;i++){
-        var arr = {};
-        arr.name = Wd[i].FILE_DESC;
-        arr.id = 'Wd'+i;
-        arr.select = false;
-        arr.field = Wd[i].FILE_NAME;
-        arr.combination = {drog1Html:'',drog1Value:'',drog2Html:'',drog2Value:'',input:''};
-        wdList.push(arr);
-    }
-    for (var m = 0;m<Zb.length;m++){
-        var arr = {};
-        arr.name = Zb[m].FILE_DESC;
-        arr.id = 'Zb'+m;
-        arr.select = false;
-        arr.field = Zb[m].FILE_NAME;
-        arr.combination = {drog1Html:'',drog1Value:'',drog2Html:'',drog2Value:'',input:''};
-        zbList.push(arr);
-    }
-    zbfscheckWd = wdList;
-    zbfscheckZb = zbList;
-    /*左上*/
-    dataTj(0)
-    /*左下*/
-    zbfxSel(0)
-    tabTable();
+            arr.field = Zb[m].FILE_NAME;
+            arr.combination = {drog1Html: '', drog1Value: '', drog2Html: '', drog2Value: '', input: ''};
+            zbList.push(arr);
+        }
+        zbfscheckWd = wdList;
+        zbfscheckZb = zbList;
+        /*左上*/
+        dataTj(0)
+        /*左下*/
+        zbfxSel(0)
+        tabTable();
+        zbfxTabWd();
+        zbfxTabZb();
+        fetchDataList()
+    })
 })
+var remDate = '2021-03';
 var remTopData ;
 var remybData;
 var wdNum = 0;
@@ -330,7 +426,7 @@ var datas=[{
             id:'menuYh',
             children:[
                 {
-                    name:'评估月出账拍照月不出账',
+                    name:'本月出账上月不出账',
                     id:'treeYh00',
                     point:[0,0],
                     isEnd: false,
@@ -356,7 +452,7 @@ var datas=[{
                     ]
                 },
                 {
-                    name:'拍照月出账评估月不出账',
+                    name:'上月出账本月不出账',
                     id:'treeYh01',
                     point:[0,1],
                     isEnd: false,
@@ -548,7 +644,7 @@ var datas=[{
             id:'menuCz',
             children:[
                 {
-                    name:'评估月出账拍照月不出账',
+                    name:'本月出账上月不出账',
                     id:'treeCz00',
                     point:[0,0],
                     isEnd: false,
@@ -574,7 +670,7 @@ var datas=[{
                     ]
                 },
                 {
-                    name:'拍照月出账评估月不出账',
+                    name:'上月出账本月不出账',
                     id:'treeCz01',
                     point:[0,1],
                     isEnd: false,
@@ -776,7 +872,6 @@ child.isEnd = datas[0].isEnd
 child.point = datas[0].point
 dataTree.push(child);
 
-
 var zbfscheckWd = [
     {name:'维度一',id:'0',select:false,field:'field_name1',combination:{drog1Html:'',drog1Value:'',drog2Html:'',drog2Value:'',input:''}},
     {name:'维度二',id:'1',select:false,field:'field_name2',combination:{drog1Html:'',drog1Value:'',drog2Html:'',drog2Value:'',input:''}},
@@ -831,21 +926,38 @@ var remDragIds = '';
 var remDragType = '';
 
 var remDataFxTabType = 'Table'
-
 var remDataTjType = 0;
 
-
 function refreshData() {
-    var dates = $('#test8').val();
-    var start = dates.substring(0,7)
-    var end = dates.substring(dates.length-7,dates.length)
-    var topData = AjaxJson('getReviewData',{startTime:start,endTime:end});
+    var dates = $('#test8').val().split(" - ");
+    remDate = dates;
+    var topData = AjaxJson('getReviewData',{date:dates});
     remTopData = topData.dataList;
     remybData = topData.zbData[0];
     /*复盘数据统计*/
     dataTj(remDataTjType);
 
     fetchDataList();
+}
+
+function toTableReview(object) {
+    // let htmls = window.location.href;
+    // let urls = htmls.split('revenueReview.html')
+    // let url = urls[0] + 'revenueReviewTable.html'
+    // window.open(url);
+    //
+    // sessionStorage.setItem('revenueMonth','202103')
+    sessionStorage.setItem('revenueTwoMonth',$('#test8').val().split(" - "));
+    sessionStorage.setItem('revenueType','dynamic');
+    var uniId = jsUtil.guid();
+    //为触发点击事件的按钮增加href属性
+    $(object).attr("href", "/review/toReviewTable");
+    //该属性为打开的tab的ID
+    var currentPageDataId = parent.$.nitrogenb.getCurrenTabDataId();
+    $(object).attr("data-parent-id", currentPageDataId);
+    $(object).attr("data-id", uniId);
+    $(object).attr("tab-name", "费用项相关报表展现");
+    parent.$.nitrogenb.addTab.call($(object));
 }
 
 function fetchDataList() {
@@ -909,9 +1021,6 @@ function fetchDataList() {
 }
 
 function fetchList() {
-    var dates = $('#test8').val();
-    var start = dates.substring(0,7)
-    var end = dates.substring(dates.length-7,dates.length)
     var data = {
         tree:remTreeClickAll,
         tab:{
@@ -919,8 +1028,7 @@ function fetchList() {
             indexList:[]
         },
         type:remTreeClickType,//user,fee
-        startTime:start,
-        endTime:end
+        date:remDate
     }
 
     for (var i=0;i<zbfscheckWd.length;i++){
@@ -1185,25 +1293,6 @@ function tabTable() {
     html += '<div class="export-table"  onclick = "tableToExcel(\'dataFxTable\',\'复盘分析数据\')">导出表格</div>'
 
     $('#tabTable').html(html);
-}
-
-function toTableReview() {
-    /*let htmls = window.location.href;
-    let urls = htmls.split('revenueReview.html')
-    let url = urls[0] + 'revenueReviewTable.html'
-    window.open(url);
-    sessionStorage.setItem('revenueMonth','202103')*/
-
-    sessionStorage.setItem('revenueMonth',$('#test8').val().split(" - "));
-    var uniId = jsUtil.guid();
-    //为触发点击事件的按钮增加href属性
-    $(object).attr("href", "/review/toReviewTable");
-    //该属性为打开的tab的ID
-    var currentPageDataId = parent.$.nitrogenb.getCurrenTabDataId();
-    $(object).attr("data-parent-id", currentPageDataId);
-    $(object).attr("data-id", uniId);
-    $(object).attr("tab-name", "费用项相关报表展现");
-    parent.$.nitrogenb.addTab.call($(object));
 }
 
 function tabLine() {
@@ -2097,26 +2186,42 @@ function dataTj(type) {
         {sr:'663366',hb:'63%',tb:'41%'},
     ]
     if(type === 0){
-        barData = [remybData.QW_ACCT_FEE1.toFixed(2),remybData.QW_ACCT_FEE3.toFixed(2),remybData.QW_ACCT_FEE2.toFixed(2)]
+        // barData = [remybData.QW_ACCT_FEE1.toFixed(2),remybData.QW_ACCT_FEE3.toFixed(2),remybData.QW_ACCT_FEE2.toFixed(2)]
+        barData = [{name:'新增',datas:remybData.QW_ACCT_FEE1.toFixed(2)},{name:'保有',datas:remybData.QW_ACCT_FEE3.toFixed(2)},{name:'流失',datas:remybData.QW_ACCT_FEE2.toFixed(2)}]
         data = [
-            {sr:remTopData[0].ACCT_FEE,hb:remTopData[0].ACCT_FEE_HB.toFixed(2),tb:remTopData[0].ACCT_FEE_TB.toFixed(2)},
-            {sr:remTopData[1].ACCT_FEE,hb:remTopData[1].ACCT_FEE_HB.toFixed(2),tb:remTopData[1].ACCT_FEE_TB.toFixed(2)},
-            {sr:remTopData[3].ACCT_FEE,hb:remTopData[3].ACCT_FEE_HB.toFixed(2),tb:remTopData[3].ACCT_FEE_TB.toFixed(2)},
-            {sr:remTopData[2].ACCT_FEE,hb:remTopData[2].ACCT_FEE_HB.toFixed(2),tb:remTopData[2].ACCT_FEE_TB.toFixed(2)},
+            {sr:remTopData[0].ACCT_FEE,tb:remTopData[0].ACCT_FEE_TB.toFixed(2)},
+            {sr:remTopData[1].ACCT_FEE,tb:remTopData[1].ACCT_FEE_TB.toFixed(2)},
+            {sr:remTopData[3].ACCT_FEE,tb:remTopData[3].ACCT_FEE_TB.toFixed(2)},
+            {sr:remTopData[2].ACCT_FEE,tb:remTopData[2].ACCT_FEE_TB.toFixed(2)},
         ]
     }else {
-        barData = [remybData.QW_USER_NUM1.toFixed(2),remybData.QW_USER_NUM3.toFixed(2),remybData.QW_USER_NUM2.toFixed(2)]
+        // barData = [remybData.QW_USER_NUM1.toFixed(2),remybData.QW_USER_NUM3.toFixed(2),remybData.QW_USER_NUM2.toFixed(2)]
+        barData = [{name:'新增',datas:remybData.QW_USER_NUM1.toFixed(2)},{name:'保有',datas:remybData.QW_USER_NUM3.toFixed(2)},{name:'流失',datas:remybData.QW_USER_NUM2.toFixed(2)}]
         data = [
-            {sr:remTopData[0].USER_NUM,hb:remTopData[0].USER_NUM_HB.toFixed(2),tb:remTopData[0].USER_NUM_TB.toFixed(2)},
-            {sr:remTopData[1].USER_NUM,hb:remTopData[1].USER_NUM_HB.toFixed(2),tb:remTopData[1].USER_NUM_TB.toFixed(2)},
-            {sr:remTopData[3].USER_NUM,hb:remTopData[3].USER_NUM_HB.toFixed(2),tb:remTopData[3].USER_NUM_TB.toFixed(2)},
-            {sr:remTopData[2].USER_NUM,hb:remTopData[2].USER_NUM_HB.toFixed(2),tb:remTopData[2].USER_NUM_TB.toFixed(2)},
+            {sr:remTopData[0].USER_NUM,tb:remTopData[0].USER_NUM_TB.toFixed(2)},
+            {sr:remTopData[1].USER_NUM,tb:remTopData[1].USER_NUM_TB.toFixed(2)},
+            {sr:remTopData[3].USER_NUM,tb:remTopData[3].USER_NUM_TB.toFixed(2)},
+            {sr:remTopData[2].USER_NUM,tb:remTopData[2].USER_NUM_TB.toFixed(2)},
         ]
     }
+    var max;
+    for(var i = 0;i<barData.length;i++){
+        for(var j=i+1; j<barData.length; j++){
+            if(barData[i].datas < barData[j].datas){
+                //如果arr[j]大就把此时的值赋值给最大值变量max
+                max=barData[j];
+                barData[j]=barData[i];
+                barData[i]=max;
+            }
+        }
+    }
     var option = myChartBar.getOption();
-    option.series[0].data[0].value = barData[0];
-    option.series[1].data[0].value = barData[1];
-    option.series[2].data[0].value = barData[2];
+    option.series[0].data[0].value = barData[0].datas;
+    option.series[1].data[0].value = barData[1].datas;
+    option.series[2].data[0].value = barData[2].datas;
+    option.series[0].data[0].name = barData[0].name;
+    option.series[1].data[0].name = barData[1].name;
+    option.series[2].data[0].name = barData[2].name;
     myChartBar.setOption(option);
     $('#dataTjTab span').removeClass('blue-bg');
     if(type === 0){
@@ -2132,13 +2237,15 @@ function dataTj(type) {
     dataTjHtml += '<tr style="border-bottom: solid 1px #6e6e6e">';
     if(type === 0){
         dataTjHtml += '<td style="width: 11rem" class="table-td-bottom">本月出账收入：</td>';
-        dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[0].sr + '元</td>';
+        dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[0].sr + '万元</td>';
     }else {
         dataTjHtml += '<td style="width: 11rem" class="table-td-bottom">网上用户数：</td>';
-        dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[0].sr + '户</td>';
+        dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[0].sr + '万户</td>';
     }
-    dataTjHtml += '<td style="width: 4.5rem;" class="table-td-bottom">环比：</td>';
-    dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[0].hb + '%</td>';
+    /*dataTjHtml += '<td style="width: 4.5rem;" class="table-td-bottom">环比：</td>';
+    dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[0].hb + '%</td>';*/
+    dataTjHtml += '<td style="width: 4.5rem;" class="table-td-bottom">同比：</td>';
+    dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[0].tb + '%</td>';
     dataTjHtml += '</tr>';
     dataTjHtml += '<tr>';
     dataTjHtml += '<td colSpan="6" class="revenueReview-div-content-div-infoTitle">新增</td>';
@@ -2146,13 +2253,15 @@ function dataTj(type) {
     dataTjHtml += '<tr>';
     if(type === 0){
         dataTjHtml += '<td class="table-td-bottom">新增出账收入：</td>';
-        dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[1].sr + '元</td>';
+        dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[1].sr + '万元</td>';
     }else {
         dataTjHtml += '<td class="table-td-bottom">新增用户数：</td>';
-        dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[1].sr + '户</td>';
+        dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[1].sr + '万户</td>';
     }
-    dataTjHtml += '<td class="table-td-bottom">环比：</td>';
-    dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[1].hb + '%</td>';
+    /*dataTjHtml += '<td class="table-td-bottom">环比：</td>';
+    dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[1].hb + '%</td>';*/
+    dataTjHtml += '<td class="table-td-bottom">同比：</td>';
+    dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[1].tb + '%</td>';
     dataTjHtml += '</tr>';
     dataTjHtml += '<tr>';
     dataTjHtml += '<td colSpan="6" class="revenueReview-div-content-div-infoTitle">保有</td>';
@@ -2160,27 +2269,31 @@ function dataTj(type) {
     dataTjHtml += '<tr>';
     if(type === 0){
         dataTjHtml += '<td class="table-td-bottom">保有出账收入：</td>';
-        dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[2].sr + '元</td>';
+        dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[2].sr + '万元</td>';
     }else {
         dataTjHtml += '<td class="table-td-bottom">保有用户数：</td>';
-        dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[2].sr + '户</td>';
+        dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[2].sr + '万户</td>';
     }
-    dataTjHtml += '<td class="table-td-bottom">环比：</td>';
-    dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[2].hb + '%</td>';
+    /*dataTjHtml += '<td class="table-td-bottom">环比：</td>';
+    dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[2].hb + '%</td>';*/
+    dataTjHtml += '<td class="table-td-bottom">同比：</td>';
+    dataTjHtml += '<td class="table-td-bottom" style="text-align: left;">' + data[2].tb + '%</td>';
     dataTjHtml += '</tr>';
     dataTjHtml += '<tr>';
     dataTjHtml += '<td colSpan="6" class="revenueReview-div-content-div-infoTitle">流失</td>';
     dataTjHtml += '</tr>';
     dataTjHtml += '<tr>';
     if(type === 0){
-        dataTjHtml += '<td>流失出账收入：</td>';
-        dataTjHtml += '<td style="text-align: left;">' + data[3].sr + '元</td>';
+        dataTjHtml += '<td>上月出账收入：</td>';
+        dataTjHtml += '<td style="text-align: left;">' + data[3].sr + '万元</td>';
     }else {
         dataTjHtml += '<td>流失用户数：</td>';
-        dataTjHtml += '<td style="text-align: left;">' + data[3].sr + '户</td>';
+        dataTjHtml += '<td style="text-align: left;">' + data[3].sr + '万户</td>';
     }
-    dataTjHtml += '<td>环比：</td>';
-    dataTjHtml += '<td style="text-align: left;">' + data[3].hb + '%</td>';
+    /*dataTjHtml += '<td>环比：</td>';
+    dataTjHtml += '<td style="text-align: left;">' + data[3].hb + '%</td>';*/
+    dataTjHtml += '<td>同比：</td>';
+    dataTjHtml += '<td style="text-align: left;">' + data[3].tb + '%</td>';
     dataTjHtml += '</tr>';
     dataTjHtml += '</table>';
     $('#dataTjTable').html(dataTjHtml)
@@ -2644,12 +2757,24 @@ function familyTree (arr1, point) {
 
 /*复盘数据统计*/
 function interfaceService(type,data) {
-    var datas = [data.QW_ACCT_FEE1.toFixed(2),data.QW_ACCT_FEE3.toFixed(2),data.QW_ACCT_FEE2.toFixed(2)]
+    var datas = [{name:'新增',datas:data.QW_ACCT_FEE1.toFixed(2)},{name:'保有',datas:data.QW_ACCT_FEE3.toFixed(2)},{name:'流失',datas:data.QW_ACCT_FEE2.toFixed(2)}]
     echartsBar(datas)
 }
 
 /*仪表盘*/
 function echartsBar(datas) {
+
+    var max;
+    for(var i = 0;i<datas.length;i++){
+        for(var j=i+1; j<datas.length; j++){
+            if(datas[i].datas < datas[j].datas){
+                //如果arr[j]大就把此时的值赋值给最大值变量max
+                max=datas[j];
+                datas[j]=datas[i];
+                datas[i]=max;
+            }
+        }
+    }
     var option = {
         tooltip: {
             formatter: "{b} <br/>{c} {a}"
@@ -2729,7 +2854,7 @@ function echartsBar(datas) {
                     fontWeight: 'bolder',
                     fontSize:28
                 },
-                data: [{value: datas[0], name: '新增'}]
+                data: [{value: datas[0].datas, name: datas[0].name}]
             },
             {
                 name: '%',
@@ -2770,7 +2895,7 @@ function echartsBar(datas) {
                     fontWeight: 'bolder',
                     fontSize:24
                 },
-                data: [{value: datas[1], name: '保有'}]
+                data: [{value: datas[1].datas, name: datas[1].name}]
             },
             {
                 name: '%',
@@ -2812,7 +2937,7 @@ function echartsBar(datas) {
                     fontWeight: 'bolder',
                     fontSize:24
                 },
-                data: [{value: datas[2], name: '流失'}]
+                data: [{value: datas[2].datas, name: datas[2].name}]
             },
         ]
     };

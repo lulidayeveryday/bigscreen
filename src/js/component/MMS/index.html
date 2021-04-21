@@ -11,67 +11,70 @@
 <body>
 <div id="app">
     <div class="mms-div">
-        <div id="uploadDiv1" class="uploadDiv">
-            <div class="demo-input-suffix">
-                主题：
-                <el-input
-                        placeholder="请输入主题"
-                        style="width: 60rem;"
-                        v-model="subject">
-                </el-input>
+        <template v-for="count in divNum">
+            <div :id="['uploadDiv'+(count - 1)]" class="uploadDiv">
+                <div class="demo-input-suffix">
+                    主题：
+                    <el-input
+                            placeholder="请输入主题"
+                            style="width: 60rem;"
+                            v-model="subject[(count - 1)]">
+                    </el-input>
+                </div>
+                <div class="demo-input-suffix">
+                    文本：
+                    <el-input
+                            placeholder="请输入主题"
+                            type="textarea"
+                            :rows="2"
+                            style="width: 60rem"
+                            v-model="content[(count - 1)]">
+                    </el-input>
+                </div>
+                <div class="demo-input-suffix">
+                    <el-row :gutter="20">
+                        <el-col :span="12">
+                            <el-upload
+                                    class="upload-demo"
+                                    ref="upload1"
+                                    action="https://jsonplaceholder.typicode.com/posts/"
+                                    :http-request="newAction"
+                                    :on-preview="handlePreview"
+                                    :on-remove="(file,fileList) => {handleRemoveImg(file,fileList,count - 1)}"
+                                    :on-change="(file,fileList) => {onChangeImg(file,fileList,count - 1)}"
+                                    :before-upload="(file) => {beforeUploadImg(file,count - 1)}"
+                                    accept=".gif,.jpg,.jpeg,.png,.GIF,.JPG,.PNG"
+                                    :limit="1"
+                                    :file-list="fileListImg[(count - 1)]"
+                                    :auto-upload="false">
+                                <el-button slot="trigger" size="small" type="primary">选取图片</el-button>
+                                <div slot="tip" class="el-upload__tip">只能上传图片，且不能超过200kb</div>
+                            </el-upload>
+                        </el-col>
+                        <el-col :span="12">
+                            <el-upload
+                                    class="upload-demo"
+                                    ref="upload2"
+                                    action="https://jsonplaceholder.typicode.com/posts/"
+                                    :http-request="newAction"
+                                    :on-preview="handlePreview"
+                                    :on-remove="(file,fileList) => {handleRemoveXls(file,fileList,count - 1)}"
+                                    :on-change="(file,fileList) => {onChangeXls(file,fileList,count - 1)}"
+                                    :before-upload="(file) => {beforeUploadXls(file,count - 1)}"
+                                    accept=".xlsx,.xls"
+                                    :limit="1"
+                                    :file-list="fileListXls[(count - 1)]"
+                                    :auto-upload="false">
+                                <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
+                                <div slot="tip" class="el-upload__tip">只能上传xlsx/xls文件</div>
+                            </el-upload>
+                        </el-col>
+                    </el-row>
+                </div>
             </div>
-            <div class="demo-input-suffix">
-                文本：
-                <el-input
-                        placeholder="请输入主题"
-                        type="textarea"
-                        :rows="2"
-                        style="width: 60rem"
-                        v-model="content">
-                </el-input>
-            </div>
-            <div class="demo-input-suffix">
-                <el-row :gutter="20">
-                    <el-col :span="12">
-                        <el-upload
-                                class="upload-demo"
-                                ref="upload1"
-                                action="https://jsonplaceholder.typicode.com/posts/"
-                                :http-request="newAction"
-                                :on-preview="handlePreview"
-                                :on-remove="handleRemoveImg"
-                                :on-change="onChangeImg"
-                                :before-upload="beforeUploadImg"
-                                accept=".gif,.jpg,.jpeg,.png,.GIF,.JPG,.PNG"
-                                :limit="1"
-                                :file-list="fileListImg"
-                                :auto-upload="false">
-                            <el-button slot="trigger" size="small" type="primary">选取图片</el-button>
-                            <div slot="tip" class="el-upload__tip">只能上传图片，且不能超过200kb</div>
-                        </el-upload>
-                    </el-col>
-                    <el-col :span="12">
-                        <el-upload
-                                class="upload-demo"
-                                ref="upload2"
-                                action="https://jsonplaceholder.typicode.com/posts/"
-                                :http-request="newAction"
-                                :on-preview="handlePreview"
-                                :on-remove="handleRemoveXls"
-                                :on-change="onChangeXls"
-                                :before-upload="beforeUploadXls"
-                                accept=".xlsx,.xls"
-                                :limit="1"
-                                :file-list="fileListXls"
-                                :auto-upload="false">
-                            <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
-                            <div slot="tip" class="el-upload__tip">只能上传xlsx/xls文件</div>
-                        </el-upload>
-                    </el-col>
-                </el-row>
-            </div>
-        </div>
-        <div class="uploadDiv" style="background: none;">
+        </template>
+        <div @click="addDiv" class="addDiv"></div>
+        <div class="uploadDiv2" style="background: none;">
             <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
         </div>
     </div>
@@ -80,6 +83,7 @@
 <!--<script src="./js/vue.js"></script>
 <script src="./js/element-ui.js"></script>-->
 <!-- import Vue before Element -->
+<script src="./js/jquery-3.3.1.min.js"></script>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <!-- import JavaScript -->
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
@@ -89,14 +93,17 @@
         data: function() {
             return {
                 divNum:1,
-                subject:'',
-                content:'',
+                subject:[],
+                content:[],
                 fileListXls: [],
                 fileListImg: [],
                 fileData: [],
             }
         },
         methods: {
+            addDiv(){
+                this.divNum++
+            },
             submitUpload() {
                 /*this.$refs.upload1.submit();
                 this.$refs.upload2.submit();*/
@@ -105,22 +112,22 @@
             handleRemove(file, fileList) {
                 console.log(file, fileList);
             },
-            handleRemoveImg(file, fileList){
+            handleRemoveImg(file, fileList,index){
                 debugger
-                this.fileListImg = fileList;
+                this.fileListImg[index] = fileList;
                 // this.fileData.push(file.raw)
             },
-            handleRemoveXls(file, fileList){
+            handleRemoveXls(file, fileList,index){
                 debugger
-                this.fileListXls = fileList;
+                this.fileListXls[index] = fileList;
                 // this.fileData.push(file.raw)
             },
             handlePreview(file) {
                 console.log(file);
             },
-            beforeUploadXls(file) {
+            beforeUploadXls(file,index) {
                 debugger
-                this.fileData.filesXls = file;
+                this.fileData[index].filesXls = file;
                 /*console.log(file)
                 var testmsg=file.name.substring(file.name.lastIndexOf('.')+1)
                 const extension = testmsg === 'xls'
@@ -141,9 +148,9 @@
                 // return (extension || extension2) && isLt2M
                 /*return extension || extension2*/
             },
-            beforeUploadImg(file) {
+            beforeUploadImg(file,index) {
                 debugger
-                this.fileData.filesImg = file;
+                this.fileData[index].filesImg = file;
                 /*const isJPG = file.type === 'image/jpeg';
                 const isLt2M = file.size / 1024 / 1024 < 2;
 
@@ -157,56 +164,71 @@
                 return isJPG;*/
             },
             newAction(){
+                debugger;
+                var paramData=[];
                 let params = new FormData()
                 let fileData = this.fileData;
                 let xls = this.fileListXls;
                 let img = this.fileListImg;
                 let subject = this.subject;
                 let content = this.content;
-                if(subject === ''){
-                    this.$message({
-                        message: '请输入主题',
-                        type: 'warning'
-                    });
-                    return
-                }
-                if(content === ''){
-                    this.$message({
-                        message: '请输入文本',
-                        type: 'warning'
-                    });
-                    return
-                }
-                if(xls.length!==1 || img.length!==1){
+                var length = $('.uploadDiv').length;
+                for(var i=0;i<length;i++){
+                    if(subject[i] === ''||subject[i] === undefined){
                         this.$message({
-                            message: '请选择一个图片，一个文件',
+                            message: '第'+(i+1)+'个请输入主题',
                             type: 'warning'
                         });
                         return
+                    }
+                    if(content[i] === ''||content[i] === undefined){
+                        this.$message({
+                            message: '第'+(i+1)+'个请输入文本',
+                            type: 'warning'
+                        });
+                        return
+                    }
+                    if(xls[i] === undefined || img[i] === undefined){
+                        this.$message({
+                            message: '第'+(i+1)+'个请选择一个图片，一个文件',
+                            type: 'warning'
+                        });
+                        return
+                    }
+                    if(xls[i].length!==1 || img[i].length!==1){
+                        this.$message({
+                            message: '第'+(i+1)+'个请选择一个图片，一个文件',
+                            type: 'warning'
+                        });
+                        return
+                    }
+
+                    const isLt2M = img[i][0].size / 1024 < 200;
+                    if (!isLt2M) {
+                        this.$message.error('第'+(i+1)+'个上传头像图片大小不能超过 200Kb!');
+                        return
+                    }
+
+                    var data={};
+                    data.fileImg = img[i][0]
+                    data.fileXls = xls[i][0]
+                    data.subject = subject[i]
+                    data.content = content[i]
+                    paramData.push(data)
                 }
 
-                debugger;
 
-                const isLt2M = img[0].size / 1024 < 200;
-                if (!isLt2M) {
-                    this.$message.error('上传头像图片大小不能超过 200Kb!');
-                    return
-                }
-
-                params.append("fileImg", img[0].raw);
-                params.append("fileXls", xls[0].raw);
-                params.append("subject", subject);
-                params.append("content", content);
+                params.append("fileDatas", paramData);
 
             },
-            onChangeImg(file, fileList){
+            onChangeImg(file, fileList,index){
                 debugger
-                this.fileListImg = fileList;
+                this.fileListImg[index] = fileList;
                 // this.fileData.push(file.raw)
             },
-            onChangeXls(file, fileList){
+            onChangeXls(file, fileList,index){
                 debugger
-                this.fileListXls = fileList;
+                this.fileListXls[index] = fileList;
                 // this.fileData.push(file.raw)
             }
         }
